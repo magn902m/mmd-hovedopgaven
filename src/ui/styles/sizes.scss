@@ -1,0 +1,29 @@
+/* --- sizes settings --- */
+
+:root {
+  // Icons
+  --icon-size--base: 1rem;
+
+  --icon-size--xs: calc(var(--icon-size--base) * 0.4);
+  --icon-size--sm: calc(var(--icon-size--base) * 0.8);
+  --icon-size--md: calc(var(--icon-size--base) * 2);
+  --icon-size--lg: calc(var(--icon-size--base) * 3);
+  --icon-size--xl: calc(var(--icon-size--base) * 4);
+  --icon-size--2xl: calc(var(--icon-size--base) * 6);
+
+  // Corners
+  --corner-size--base: 0.5rem;
+
+  --corner-size--xs: calc(var(--corner-size--base) * 0.6);
+  --corner-size--sm: var(--corner-size--base);
+  --corner-size--md: calc(var(--corner-size--base) * 3);
+  --corner-size--lg: calc(var(--corner-size--base) * 6);
+  --corner-circle: 50%;
+
+  // Borders
+  --border--sm: 0.1rem;
+  --border--md: 0.2rem;
+  --border--lg: 0.3rem;
+  --border--xl: 0.4rem;
+  --border--2xl: 0.5rem;
+}

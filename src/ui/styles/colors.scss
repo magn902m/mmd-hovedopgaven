@@ -1,0 +1,43 @@
+/* --- colors settings --- */
+
+:root {
+  // Neutral colors
+  --color-black: #222222;
+  --color-gray--dark: #595959;
+  --color-gray: #8f8f8f;
+  --color-gray--light: #eeeeee;
+  --color-gray--lighter: #f6f6f6;
+  --color-white: #ffffff;
+
+  // Primary colors
+  --color-primary: hsl(120, 25%, 88%); // #dae8da
+  --color-primary--50: var(--color-primary);
+  --color-primary--30: #2156608d;
+  --color-primary--20: #15454e4e;
+  --color-primary--10: #18697d2a;
+
+  // Secondary colors
+  --color-secondary: #dae8da;
+  --color-secondary--50: #dae8daab;
+  --color-secondary--30: #dae8da64;
+  --color-secondary--20: #dae8da2a;
+  --color-secondary--10: #dae8da0e;
+
+  // Text colors
+  --color-text: var(--color-black);
+
+  // Utilities colors
+  --color-error: #c80000;
+  --color-dark: #595959;
+  --color-light: #f2f2f2;
+
+  // Border colors
+  --color-border--gray: #94948f;
+  --color-border--light: #dbdbdb;
+
+  // Shadows
+  --shadow-color--milder: rgba(17, 17, 17, 0.1);
+  --shadow-color--mild: rgba(17, 17, 17, 0.2);
+  --shadow-color--basemild: rgba(17, 17, 17, 0.2);
+  --shadow-color--base: rgba(17, 17, 17, 0.5);
+}

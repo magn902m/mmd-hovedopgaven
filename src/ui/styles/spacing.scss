@@ -1,0 +1,17 @@
+/* --- spacing settings --- */
+
+:root {
+  --spacing--base: 1.6rem;
+
+  --spacing--2xs: calc(var(--spacing--base) / 4);
+  --spacing--xs: calc(var(--spacing--base) / 2);
+  --spacing--sm: calc(var(--spacing--base) * 0.75);
+  --spacing--md: calc(var(--spacing--base) * 1.25);
+  --spacing--lg: calc(var(--spacing--base) * 1.5);
+  --spacing--xl: calc(var(--spacing--base) * 2);
+  --spacing--2xl: calc(var(--spacing--base) * 2.5);
+  --spacing--3xl: calc(var(--spacing--base) * 3);
+  --spacing--4xl: calc(var(--spacing--base) * 4);
+  --spacing--5xl: calc(var(--spacing--base) * 5);
+  --spacing--6xl: calc(var(--spacing--base) * 6);
+}
