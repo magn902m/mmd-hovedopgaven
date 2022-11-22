@@ -1,21 +1,26 @@
 /* --- typography settings --- */
 
+// Font - Jost: https://fonts.google.com/specimen/Jost?category=Sans+Serif,Display&vfonly=true&preview.text=Jost&preview.text_type=custom
+// font-family: 'Jost', sans-serif;
+
 :root {
   // Font family
-  --font-primary: "Arial", sans-serif;
-  --font-secondary: "Georgia", serif;
+  --font-primary: "Jost", sans-serif;
+  // --font-secondary: 'Jost', sans-serif;
 
   // Font weights
-  --font-weight--lighter: 200;
+  --font-weight--thin: 100;
+  --font-weight--extralight: 200;
   --font-weight--light: 300;
   --font-weight--normal: 400;
   --font-weight--medium: 500;
   --font-weight--semibold: 600;
   --font-weight--bold: 700;
-  --font-weight--black: 800;
-  --font-weight--extrablack: 900;
+  --font-weight--extrabold: 800;
+  --font-weight--black: 900;
 
   // Font sizes
+  --font-size--body: 1rem;
   --font-size--2xs: 1.3rem;
   --font-size--xs: 1.4rem;
   --font-size--sm: 1.5rem;

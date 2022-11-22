@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  overflow-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+// typography
+h1 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size--8xl);
+  font-weight: var(--font-weight--bold);
+}
+h2 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size--7xl);
+  font-weight: var(--font-weight--semibold);
+}
+h3 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size--6xl);
+  font-weight: var(--font-weight--semibold);
+}
+h4 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size--4xl);
+  font-weight: var(--font-weight--semibold);
+}
+h5 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size--xl);
+  font-weight: var(--font-weight--semibold);
+}
+h6 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size--lg);
+  font-weight: var(--font-weight--semibold);
+}
+p {
+  font-family: var(--font-primary);
+  font-size: var(--font-size--body);
+  font-weight: var(--font-weight--normal);
+}
+
+// Anker tag
+a {
+  font-family: var(--font-primary);
+  font-size: var(--font-size--xs);
+  color: var(--color-nets-darkblue);
+  transition: 100ms all;
+}
+a:hover {
+  font-family: var(--font-primary);
+  font-size: var(--font-size--xs);
+  opacity: 80%;
+  text-decoration: underline;
+}
+
+// Button
+
+button {
+  font-size: var(--font-size--2xs);
+  color: var(--color-nets-darkblue);
+  padding-block: 0.4rem;
+  padding-inline: 0.6rem;
+  border-radius: var(--border--lg);
+  border: 1px solid var(--color-nets-darkblue);
+  background-color: var(--color-white);
+  transition: 100ms all;
+}
+button:hover {
+  font-size: var(--font-size--2xs);
+  color: var(--color-white);
+  padding-block: 0.4rem;
+  padding-inline: 0.6rem;
+  border-radius: var(--border--lg);
+  border: 1px solid var(--color-nets-darkblue);
+  background-color: var(--color-nets-darkblue);
+}
+
+button.cta {
+  font-size: var(--font-size--2xs);
+  color: var(--color-white);
+  padding-block: 0.4rem;
+  padding-inline: 0.6rem;
+  border-radius: var(--border--lg);
+  border: 1px solid var(--color-nets-darkblue);
+  background-color: var(--color-nets-darkblue);
+}
+button.cta:hover {
+  font-size: var(--font-size--2xs);
+  color: var(--color-nets-darkblue);
+  padding-block: 0.4rem;
+  padding-inline: 0.6rem;
+  border-radius: var(--border--lg);
+  border: 1px solid var(--color-nets-darkblue);
+  background-color: var(--color-white);
+  transition: 100ms all;
+}

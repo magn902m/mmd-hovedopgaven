@@ -1,18 +1,12 @@
 import React from "react";
-import { Button } from "../ui/components";
+import Styletile from "../ui/components/6-pages/Styletile/Styletile";
 import "../ui/styles/globals.scss";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hej</h1>
-      <Button
-        size={"large"}
-        text={"Click on me"}
-        onClick={() => {
-          console.log("you clicked me");
-        }}
-      />
+      <h1>App</h1>
+      <Styletile />
     </div>
   );
 }

@@ -16,4 +16,4 @@ export * from "./1-atoms";
 // export * from './5-templates';
 
 // // #6 - Pages
-// export * from './6-pages';
+export * from "./6-pages";
