@@ -3,13 +3,13 @@ import { Button } from "../Button";
 import styles from "./ProductCard.module.scss";
 // import { Icon } from "ui/components"
 
-export interface ButtonProps {
+export interface CardProps {
   title?: string;
   text?: React.ReactNode;
   img: string;
 }
 
-export const ProductCard: React.FC<ButtonProps> = (props) => {
+export const ProductCard: React.FC<CardProps> = (props) => {
   return (
     <div className="card">
       <div className="card_body">
