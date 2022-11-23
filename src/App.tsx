@@ -12,26 +12,39 @@ import { Account } from "./pages/Account";
 import { Cart } from "./pages/Cart";
 import { Checkout } from "./pages/Checkout";
 
+// Firebase
+import { useFirebaseApp, DatabaseProvider, AuthProvider } from "reactfire";
+import { getAuth } from "firebase/auth"; // Firebase v9+
+import { getDatabase } from "firebase/database"; // Firebase v9+
+
 function App() {
+  const app = useFirebaseApp();
+  const database = getDatabase(app);
+  const auth = getAuth(app);
+
   return (
     <div className="App">
-      <BrowserRouter>
-        {/* Header */}
-        <Routes>
-          <Route path="/" element={<Frontpage />} />
-          <Route path="/products" element={<Products />}>
-            <Route path=":produktid" element={<Product />} />
-          </Route>
-          <Route path="/green-goal" element={<GreenGoal />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/account" element={<Account />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<Checkout />} />
-        </Routes>
-        {/* Footer */}
-      </BrowserRouter>
+      <AuthProvider sdk={auth}>
+        <DatabaseProvider sdk={database}>
+          <BrowserRouter>
+            {/* Header */}
+            <Routes>
+              <Route path="/" element={<Frontpage />} />
+              <Route path="/products" element={<Products />}>
+                <Route path=":produktid" element={<Product />} />
+              </Route>
+              <Route path="/green-goal" element={<GreenGoal />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/account" element={<Account />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
+            </Routes>
+            {/* Footer */}
+          </BrowserRouter>
+        </DatabaseProvider>
+      </AuthProvider>
     </div>
   );
 }
