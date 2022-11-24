@@ -16,6 +16,7 @@ export const Products = () => {
         justifyContent="center"
         alignItems="center"
       >
+        <h3>Vælg den pakkeløsning, som passer til din forretning:</h3>
         <ProductCard
           img={Terminal}
           title="Large: Spar penge på lave gebyrer. Transaktionsgebyr fra 0,69%"
