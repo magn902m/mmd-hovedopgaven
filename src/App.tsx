@@ -12,6 +12,7 @@ import { Account } from "./pages/Account";
 import { Cart } from "./pages/Cart";
 import { Checkout } from "./pages/Checkout";
 import { Header } from "./ui/components/2-molecules/Header";
+import { Footer } from "./ui/components/2-molecules/Footer";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
+        <Footer />
         {/* Footer */}
       </BrowserRouter>
     </div>

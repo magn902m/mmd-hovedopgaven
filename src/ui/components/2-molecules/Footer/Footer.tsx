@@ -1,46 +1,68 @@
 import React from "react";
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
-import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import "./Footer.scss";
 
 export const Footer = () => {
-  const [click, setClick] = useState(false);
-
-  const handleClick = () => setClick(!click);
   return (
-    <nav className="nets_footer">
-      <ul className={click ? "nets_footer_menu active" : "nav-menu"}>
+    <footer className="nets_footer">
+      <h3>Genveje links</h3>
+      <ul className="nets_footer_menu">
         <li className="nets_footer_item">
           <a
-            href="https://www.nets.eu/dk-da/kontakt"
+            href="https://www.nets.eu/da-DK/payments/acquiring"
             className="nets_footer_links active"
-            onClick={handleClick}
           >
-            Kontakt os
+            Inløsningsaftale
           </a>
         </li>
-
-        <li className="nav-item">
-          <NavLink
-            to="/login"
+        <li className="nets_footer_item">
+          <a
+            href="https://www.nets.eu/da-DK/payments/online"
             className="nets_footer_links active"
-            onClick={handleClick}
           >
-            <PersonOutlineOutlinedIcon />
-          </NavLink>
+            Betaling online
+          </a>
         </li>
         <li className="nets_footer_item">
-          <NavLink
-            to="/cart"
+          <a
+            href="https://www.nets.eu/da-DK/payments/value-added-services"
             className="nets_footer_links active"
-            onClick={handleClick}
           >
-            <ShoppingBagOutlinedIcon />
-          </NavLink>
+            Tillægsydelser
+          </a>
+        </li>
+        <li className="nets_footer_item">
+          <a
+            href="https://www.nets.eu/da-DK/payments/value-added-services/financing"
+            className="nets_footer_links active"
+          >
+            Nets Financing
+          </a>
+        </li>
+        <li className="nets_footer_item">
+          <a
+            href="https://www.nets.eu/da-DK/payments/value-added-services/insights-and-reporting"
+            className="nets_footer_links active"
+          >
+            Indsigt & rapportering
+          </a>
+        </li>
+        <li className="nets_footer_item">
+          <a
+            href="https://www.nets.eu/Pages/Terms-and-conditions---Cookie-and-Privacy-Policy-DK.aspx"
+            className="nets_footer_links active"
+          >
+            Cookiepolitik
+          </a>
+        </li>
+        <li className="nets_footer_item">
+          <a
+            href="https://www.nets.eu/GDPR"
+            className="nets_footer_links active"
+          >
+            GDPR regulation
+          </a>
         </li>
       </ul>
-    </nav>
+    </footer>
   );
 };
