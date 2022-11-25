@@ -22,6 +22,8 @@ import {
 import { getDatabase } from "firebase/database"; // Firebase v9+
 import { getAuth } from "firebase/auth";
 import { PrivateRoute } from "./pages/PrivateRoute";
+import { Header } from "./ui/components/2-molecules/Header";
+import { Footer } from "./ui/components/2-molecules/Footer";
 
 function App() {
   const app = useFirebaseApp();
@@ -34,6 +36,7 @@ function App() {
       <AuthProvider auth={auth}>
         <DatabaseProvider sdk={database}>
           <BrowserRouter>
+            <Header />
             {/* Header */}
             <Routes>
               <Route path="/" element={<Frontpage />} />
@@ -56,6 +59,7 @@ function App() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
             </Routes>
+            <Footer />
             {/* Footer */}
           </BrowserRouter>
         </DatabaseProvider>
