@@ -1,37 +1,17 @@
-import React, { useState } from "react";
-import { useAuth } from "../contexts/AuthContext";
-import { Link, useNavigate } from "react-router-dom";
-import { UpdateProfile } from "../ui/components/UpdateAccount/UpdateAccount";
+import React from "react";
+
+import { UpdateAccount } from "../ui/components/UpdateAccount/UpdateAccount";
+import { LogoutAccount } from "../ui/components/LogoutAccount/LogoutAccount";
+import { CustomizationAccount } from "../ui/components/CustomizationAccount/CustomizationAccount";
 
 export const Account = () => {
-  const [error, setError] = useState("");
-  const { currentUser, logout } = useAuth();
-  const navigate = useNavigate();
-
-  async function handleLogout() {
-    setError("");
-
-    try {
-      await logout();
-      navigate("/");
-    } catch {
-      setError("Kunne ikke logge ud");
-    }
-  }
-
   return (
-    <>
-      <div>
-        <div>
-          <h2>Din konto</h2>
-          {error && error}
-          <strong>Email:</strong> {currentUser.email}
-        </div>
-      </div>
-      <div className="w-100 text-center mt-2">
-        <button onClick={handleLogout}>Log ud</button>
-      </div>
-      <UpdateProfile />
-    </>
+    <section className="account">
+      <h2>Din konto</h2>
+
+      <LogoutAccount />
+      <UpdateAccount />
+      <CustomizationAccount />
+    </section>
   );
 };
