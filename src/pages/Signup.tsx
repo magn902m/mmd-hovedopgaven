@@ -33,13 +33,47 @@ export const Signup = () => {
   return (
     <>
       <div className="signup_form">
-        <h2>Opret konto</h2>
         {error && error}
         <form action="" onSubmit={handleSubmit}>
+          <legend>Opret konto</legend>
+          <div className="form_double">
+            <div id="firstname">
+              <label htmlFor="">Fornavn</label>
+              <p className="hint">Indtast din fornavn</p>
+              <input type="text" ref={emailRef} placeholder="&nbsp;" required />
+            </div>
+            <div id="lastname">
+              <label htmlFor="">Efternavn</label>
+              <p className="hint">Indtast din efternavn</p>
+              <input type="text" ref={emailRef} placeholder="&nbsp;" required />
+            </div>
+          </div>
           <div id="email">
             <label htmlFor="">Email</label>
             <p className="hint">Indtast din email</p>
             <input type="email" ref={emailRef} placeholder="&nbsp;" required />
+          </div>
+          <div className="form_double">
+            <div id="telefon">
+              <label htmlFor="">Telefon nr.</label>
+              <p className="hint">Indtast din telefon nummer</p>
+              <input type="number" ref={emailRef} placeholder="&nbsp;" required />
+            </div>
+            <div id="cvr_nummer">
+              <label htmlFor="">Email</label>
+              <p className="hint">Indtast firma CVR nummer</p>
+              <input type="number" ref={emailRef} placeholder="&nbsp;" required />
+            </div>
+          </div>
+          <div id="adresse">
+            <label htmlFor="">Adresse</label>
+            <p className="hint">Indtast firma adresse</p>
+            <input type="number" ref={emailRef} placeholder="&nbsp;" required />
+          </div>
+          <div id="company_name">
+            <label htmlFor="">Firmanavn</label>
+            <p className="hint">Indtast firmanavn</p>
+            <input type="number" ref={emailRef} placeholder="&nbsp;" required />
           </div>
           <div id="password">
             <label htmlFor="">Kodeord</label>
@@ -53,10 +87,8 @@ export const Signup = () => {
           <button disabled={loading} type="submit">
             Opret konto
           </button>
+          <Link to="/login">Har du allerede en bruger?</Link>
         </form>
-        <div>
-          Har du allerede en bruger? <Link to="/login">Login</Link>
-        </div>
       </div>
     </>
   );
