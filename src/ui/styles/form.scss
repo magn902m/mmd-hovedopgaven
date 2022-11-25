@@ -1,0 +1,91 @@
+// Input
+
+form > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+form {
+  max-width: 420px;
+  padding: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-inline: auto;
+  border: 1px solid var(--color-nets-darkblue);
+  border-radius: var(--border--lg);
+}
+
+form button {
+  align-self: normal;
+}
+
+form hr {
+  color: var(--color-lightgray);
+  height: auto;
+  width: 15rem;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--color-nets-darkblue);
+  border-radius: var(--border--lg);
+}
+
+form p.hint {
+  font-size: 0.8rem;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight--normal);
+}
+
+label {
+  font-family: var(--font-primary);
+  font-size: var(--font-size--body);
+  font-weight: var(--font-weight--semibold);
+}
+
+legend {
+  font-family: var(--font-primary);
+  font-size: var(--font-size--xl);
+  font-weight: var(--font-weight--semibold);
+}
+
+// Validation:
+
+form input[type="text"]:focus {
+  border: 2px solid #a08cc2;
+}
+form input[type="tel"]:focus {
+  border: 2px solid #a08cc2;
+}
+form input[type="email"]:focus {
+  border: 2px solid #a08cc2;
+}
+
+form input:invalid:not(:placeholder-shown, :focus) {
+  background-position: right 16px center;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  color: red;
+  background-image: var(--error);
+
+  animation: shake 0.125s 2 backwards;
+}
+
+@keyframes shake {
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
+}
+
+:root {
+  --error: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'><g fill='none' fill-rule='evenodd'><circle cx='10' cy='10' r='10' fill='crimson'/><path fill='%23FFFFFF' d='M9,6.84848485 C9,5.93939394 9.4,5.33333333 10,5.33333333 C10.6,5.33333333 11,5.93939394 11,6.84848485 L11,10.4848485 C11,11.3939394 10.6,12 10,12 C9.4,12 9,11.3939394 9,10.4848485 L9,6.84848485 Z M10,14.6666667 C9.41666667,14.6666667 9,14.25 9,13.6666667 C9,13.0833333 9.41666667,12.6666667 10,12.6666667 C10.5833333,12.6666667 11,13.0833333 11,13.6666667 C11,14.25 10.5833333,14.6666667 10,14.6666667 L10,14.6666667 Z'/></g></svg>");
+}
