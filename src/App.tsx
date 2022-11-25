@@ -11,11 +11,13 @@ import { GreenGoal } from "./pages/GreenGoal";
 import { Account } from "./pages/Account";
 import { Cart } from "./pages/Cart";
 import { Checkout } from "./pages/Checkout";
+import { Header } from "./ui/components/2-molecules/Header";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Header />
         {/* Header */}
         <Routes>
           <Route path="/" element={<Frontpage />} />

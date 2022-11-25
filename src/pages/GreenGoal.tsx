@@ -26,7 +26,7 @@ export const GreenGoal = () => {
           <Button></Button>
         </Grid>
         <Grid xs={6}>
-          <img style={{ width: "10%" }} src={Terminal} alt="" />
+          <img src={Terminal} alt="" />
         </Grid>
         <Grid xs={6}>
           <img src="" alt="" />
