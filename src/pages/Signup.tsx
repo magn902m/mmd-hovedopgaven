@@ -1,19 +1,21 @@
-import React, { useRef } from "react";
-import { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
+import { getDatabase, ref, set } from "firebase/database";
 
 export const Signup = () => {
   const emailRef: any = useRef(null);
   const passwordRef: any = useRef(null);
   const passwordConfirmRef: any = useRef(null);
+  const formPostRef: any = useRef(null);
   const { signup } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  async function handleSubmit(e: any) {
+  async function handleSubmit(e: { preventDefault: () => void }) {
     e.preventDefault();
+    console.log("submittedPost");
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError("Kodeordene er ikke ens");
@@ -23,6 +25,21 @@ export const Signup = () => {
       setError("");
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
+
+      const firstname = formPostRef.current.querySelector(
+        ".signup_form form [name=firstname]"
+      ).value;
+      const lastname = formPostRef.current.querySelector(".signup_form form [name=lastname]").value;
+      const email = formPostRef.current.querySelector(".signup_form form [name=email]").value;
+      const telefon = formPostRef.current.querySelector(".signup_form form [name=telefon]").value;
+      const cvr_nummer = formPostRef.current.querySelector(
+        ".signup_form form [name=cvr_nummer]"
+      ).value;
+      const adresse = formPostRef.current.querySelector(".signup_form form [name=adresse]").value;
+      const postData: any = { firstname, lastname, email, telefon, cvr_nummer, adresse };
+      console.log(postData);
+      writeUserData(postData);
+
       navigate("/account");
     } catch {
       setError("Kunne ikke oprette en konto");
@@ -30,59 +47,99 @@ export const Signup = () => {
     setLoading(false);
   }
 
+  function writeUserData(postData: any) {
+    const db = getDatabase();
+    set(ref(db, "users/" + postData.cvr_nummer), {
+      firstname: postData?.firstname,
+      lastname: postData?.lastname,
+      email: postData?.email,
+      telefon: postData?.telefon,
+      cvr_nummer: postData?.cvr_nummer,
+      adresse: postData?.adresse,
+    });
+  }
+
   return (
     <>
       <div className="signup_form">
         {error && error}
-        <form action="" onSubmit={handleSubmit}>
+        <form action="" ref={formPostRef} onSubmit={handleSubmit}>
           <legend>Opret konto</legend>
+
           <div className="form_double">
             <div id="firstname">
-              <label htmlFor="">Fornavn</label>
+              <label htmlFor="firstname">Fornavn</label>
               <p className="hint">Indtast din fornavn</p>
-              <input type="text" ref={emailRef} placeholder="&nbsp;" required />
+              <input type="text" id="firstname" name="firstname" placeholder="&nbsp;" required />
             </div>
             <div id="lastname">
-              <label htmlFor="">Efternavn</label>
+              <label htmlFor="lastname">Efternavn</label>
               <p className="hint">Indtast din efternavn</p>
-              <input type="text" ref={emailRef} placeholder="&nbsp;" required />
+              <input type="text" id="lastname" name="lastname" placeholder="&nbsp;" required />
             </div>
           </div>
           <div id="email">
-            <label htmlFor="">Email</label>
+            <label htmlFor="email">Email</label>
             <p className="hint">Indtast din email</p>
-            <input type="email" ref={emailRef} placeholder="&nbsp;" required />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              ref={emailRef}
+              placeholder="&nbsp;"
+              required
+            />
           </div>
           <div className="form_double">
             <div id="telefon">
-              <label htmlFor="">Telefon nr.</label>
+              <label htmlFor="telefon">Telefon nr.</label>
               <p className="hint">Indtast din telefon nummer</p>
-              <input type="number" ref={emailRef} placeholder="&nbsp;" required />
+              <input type="number" id="telefon" name="telefon" placeholder="&nbsp;" required />
             </div>
             <div id="cvr_nummer">
-              <label htmlFor="">Email</label>
+              <label htmlFor="cvr_nummer">Email</label>
               <p className="hint">Indtast firma CVR nummer</p>
-              <input type="number" ref={emailRef} placeholder="&nbsp;" required />
+              <input
+                type="number"
+                id="cvr_nummer"
+                name="cvr_nummer"
+                placeholder="&nbsp;"
+                required
+              />
             </div>
           </div>
           <div id="adresse">
-            <label htmlFor="">Adresse</label>
+            <label htmlFor="adresse">Adresse</label>
             <p className="hint">Indtast firma adresse</p>
-            <input type="number" ref={emailRef} placeholder="&nbsp;" required />
+            <input type="text" id="adresse" name="adresse" placeholder="&nbsp;" required />
           </div>
           <div id="company_name">
-            <label htmlFor="">Firmanavn</label>
+            <label htmlFor="company_name">Firmanavn</label>
             <p className="hint">Indtast firmanavn</p>
-            <input type="number" ref={emailRef} placeholder="&nbsp;" required />
+            <input type="text" id="company" name="company" placeholder="&nbsp;" required />
           </div>
           <div id="password">
-            <label htmlFor="">Kodeord</label>
+            <label htmlFor="password">Kodeord</label>
             <p className="hint">Indtast din kodeord</p>
-            <input type="password" ref={passwordRef} placeholder="&nbsp;" required />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              ref={passwordRef}
+              placeholder="&nbsp;"
+              required
+            />
           </div>
           <div id="password_confirm">
-            <label htmlFor="">Kodeords bekræftelse</label>
-            <input type="password_confirm" ref={passwordConfirmRef} placeholder="&nbsp;" required />
+            <label htmlFor="password_confirm">Kodeords bekræftelse</label>
+            <input
+              type="password_confirm"
+              id="password_confirm"
+              name="password_confirm"
+              ref={passwordConfirmRef}
+              placeholder="&nbsp;"
+              required
+            />
           </div>
           <button disabled={loading} type="submit">
             Opret konto
