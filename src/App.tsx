@@ -11,11 +11,17 @@ import { GreenGoal } from "./pages/GreenGoal";
 import { Account } from "./pages/Account";
 import { Cart } from "./pages/Cart";
 import { Checkout } from "./pages/Checkout";
+import { AuthProvider } from "./contexts/AuthContext";
 
 // Firebase
-import { useFirebaseApp, DatabaseProvider, AuthProvider } from "reactfire";
-import { getAuth } from "firebase/auth"; // Firebase v9+
+import {
+  useFirebaseApp,
+  DatabaseProvider,
+  // AuthProvider
+} from "reactfire";
 import { getDatabase } from "firebase/database"; // Firebase v9+
+import { getAuth } from "firebase/auth";
+import { PrivateRoute } from "./pages/PrivateRoute";
 
 function App() {
   const app = useFirebaseApp();
@@ -24,7 +30,8 @@ function App() {
 
   return (
     <div className="App">
-      <AuthProvider sdk={auth}>
+      {/* <AuthProvider sdk={auth}> */}
+      <AuthProvider auth={auth}>
         <DatabaseProvider sdk={database}>
           <BrowserRouter>
             {/* Header */}
@@ -37,7 +44,15 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/forgot-password" element={<ForgotPassword />} />
-              <Route path="/account" element={<Account />} />
+              {/* <Route path="/account" element={<Account />} /> */}
+              <Route
+                path="/account"
+                element={
+                  <PrivateRoute>
+                    <Account />
+                  </PrivateRoute>
+                }
+              />
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
             </Routes>
@@ -45,6 +60,7 @@ function App() {
           </BrowserRouter>
         </DatabaseProvider>
       </AuthProvider>
+      {/* </AuthProvider> */}
     </div>
   );
 }
