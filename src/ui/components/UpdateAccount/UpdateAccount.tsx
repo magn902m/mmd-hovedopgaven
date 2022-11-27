@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { useAuth } from "../../../contexts/AuthContext";
 import { getDatabase, ref, update } from "firebase/database";
 import { ColorPicker } from "./ColorPicker/ColorPicker";
@@ -87,6 +87,7 @@ export const UpdateAccount = ({ profilData }: any) => {
     Promise.all(promises)
       .then(() => {
         setMessage("Kontoen er opdateret, reload siden");
+        setPickedColor(pickedColor);
       })
       .catch(() => {
         setError("Kontoen kunne ikke opdateres");

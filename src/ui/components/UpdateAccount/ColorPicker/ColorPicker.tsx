@@ -27,10 +27,14 @@ export const ColorPicker = (props: any) => {
       </div>
 
       <div className={styles.ColorPickerProfilColorContainer}>
-        <p className="hint">Nuværende gemte farve: {props.profilColor}</p>
+        <p className="hint">
+          Nuværende gemte farve: {props.profilColor ? props.profilColor : props.value}
+        </p>
         <div
           className={styles.ColorPickerProfilColor}
-          style={{ backgroundColor: `${props.profilColor}` }}
+          style={{
+            backgroundColor: `${props.profilColor ? props.profilColor : props.value}`,
+          }}
         ></div>
       </div>
     </div>
