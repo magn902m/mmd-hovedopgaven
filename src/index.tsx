@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { FirebaseAppProvider } from "reactfire";
+import { ProjectLogin } from "./definitions/ProjectLogin";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBxYgu6UGK2AdBzsYFO6nBom9PRZSuRlfA",
@@ -18,6 +19,7 @@ const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 root.render(
   <React.StrictMode>
     <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+      <ProjectLogin />
       <App />
     </FirebaseAppProvider>
   </React.StrictMode>
