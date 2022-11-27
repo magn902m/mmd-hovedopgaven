@@ -8,7 +8,7 @@ export const Signup = () => {
   const passwordRef: any = useRef(null);
   const passwordConfirmRef: any = useRef(null);
   const formPostRef: any = useRef(null);
-  const { signup } = useAuth();
+  const { signup, currentUser } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ export const Signup = () => {
     try {
       setError("");
       setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value);
+      const currentUserUid = await signup(emailRef.current.value, passwordRef.current.value);
 
       const firstname = formPostRef.current.querySelector(
         ".signup_form form [name=firstname]"
@@ -32,12 +32,23 @@ export const Signup = () => {
       const lastname = formPostRef.current.querySelector(".signup_form form [name=lastname]").value;
       const email = formPostRef.current.querySelector(".signup_form form [name=email]").value;
       const telefon = formPostRef.current.querySelector(".signup_form form [name=telefon]").value;
-      const cvr_nummer = formPostRef.current.querySelector(
-        ".signup_form form [name=cvr_nummer]"
+      const cvrNumber = formPostRef.current.querySelector(
+        ".signup_form form [name=cvrNumber]"
       ).value;
       const adresse = formPostRef.current.querySelector(".signup_form form [name=adresse]").value;
-      const postData: any = { firstname, lastname, email, telefon, cvr_nummer, adresse };
-      console.log(postData);
+      const companyName = formPostRef.current.querySelector(
+        ".signup_form form [name=company_name]"
+      ).value;
+      const postData: any = {
+        firstname,
+        lastname,
+        email,
+        telefon,
+        cvrNumber,
+        adresse,
+        companyName,
+        currentUserUid,
+      };
       writeUserData(postData);
 
       navigate("/account");
@@ -49,13 +60,15 @@ export const Signup = () => {
 
   function writeUserData(postData: any) {
     const db = getDatabase();
-    set(ref(db, "users/" + postData.cvr_nummer), {
+    set(ref(db, "users/" + postData.currentUserUid.user?.uid), {
       firstname: postData?.firstname,
       lastname: postData?.lastname,
       email: postData?.email,
       telefon: postData?.telefon,
-      cvr_nummer: postData?.cvr_nummer,
+      cvrNumber: postData?.cvrNumber,
       adresse: postData?.adresse,
+      companyName: postData?.companyName,
+      uid: postData.currentUserUid.user?.uid,
     });
   }
 
@@ -96,13 +109,13 @@ export const Signup = () => {
               <p className="hint">Indtast din telefon nummer</p>
               <input type="number" id="telefon" name="telefon" placeholder="&nbsp;" required />
             </div>
-            <div id="cvr_nummer">
-              <label htmlFor="cvr_nummer">Email</label>
+            <div id="cvr_number">
+              <label htmlFor="cvr_number">CVR nr.</label>
               <p className="hint">Indtast firma CVR nummer</p>
               <input
                 type="number"
-                id="cvr_nummer"
-                name="cvr_nummer"
+                id="cvr_number"
+                name="cvr_number"
                 placeholder="&nbsp;"
                 required
               />
@@ -116,7 +129,13 @@ export const Signup = () => {
           <div id="company_name">
             <label htmlFor="company_name">Firmanavn</label>
             <p className="hint">Indtast firmanavn</p>
-            <input type="text" id="company" name="company" placeholder="&nbsp;" required />
+            <input
+              type="text"
+              id="company_name"
+              name="company_name"
+              placeholder="&nbsp;"
+              required
+            />
           </div>
           <div id="password">
             <label htmlFor="password">Kodeord</label>
