@@ -1,10 +1,10 @@
 import React from "react";
 
 // Code to see if is works
-window.addEventListener("load", login);
-function login() {
-  console.log("login");
-}
+// window.addEventListener("load", login);
+// function login() {
+//   console.log("login");
+// }
 
 class Login extends HTMLElement {
   constructor() {

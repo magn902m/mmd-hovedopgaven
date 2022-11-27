@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@mui/material/Unstable_Grid2";
 import { ProductCard } from "../ui/components/1-atoms/ProductCard";
-import Terminal from "../ui/Asset_1.png";
+import Terminal from "../assets/images/asset_1.png";
 
 export const Products = () => {
   return (
