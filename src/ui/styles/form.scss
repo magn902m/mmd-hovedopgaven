@@ -37,7 +37,7 @@ form select {
   border-radius: var(--border--lg);
 }
 
-form p.hint {
+.hint {
   font-size: 0.8rem;
   font-family: var(--font-primary);
   font-weight: var(--font-weight--normal);
@@ -81,7 +81,7 @@ form input[type="email"]:focus {
   border: 2px solid #a08cc2;
 }
 
-form input:invalid:not(:placeholder-shown, :focus) {
+form input:invalid:not(:placeholder-shown, :focus, [type="file"]) {
   background-position: right 16px center;
   background-size: 20px 20px;
   background-repeat: no-repeat;

@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
-import { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useAuth } from "../../../contexts/AuthContext";
 import { getDatabase, ref, child, push, update } from "firebase/database";
+import { ColorPicker } from "./ColorPicker/ColorPicker";
 
 export const UpdateAccount = ({ profilData }: any) => {
   const updateAccountFormRef: any = useRef(null);
@@ -12,6 +12,11 @@ export const UpdateAccount = ({ profilData }: any) => {
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [inputColorPicked, setInputColorPicked] = useState("#005776");
+
+  const handleColorInput = (e: any) => {
+    setInputColorPicked(e.target.value);
+  };
 
   async function handleSubmit(e: any) {
     console.log("submittedGet and resetPassword");
@@ -190,6 +195,25 @@ export const UpdateAccount = ({ profilData }: any) => {
               required
             />
           </div>
+
+          <hr />
+
+          <legend>Visuel identitet</legend>
+          <div id="form-color">
+            <label htmlFor="colorText">Farve</label>
+            <p className="hint">Vælg en farve, som dit produkt skal have</p>
+            <ColorPicker onChange={handleColorInput} value={inputColorPicked} />
+          </div>
+
+          <div id="file">
+            <label htmlFor="file">Logo eller icon</label>
+            <p className="hint">Upload et logo eller icon, som skal være på produkt</p>
+            <input type="file" id="file" name="file" placeholder="&nbsp;" required />
+          </div>
+
+          <hr />
+
+          <legend>Nultil kodeord</legend>
           <div id="password">
             <label htmlFor="password">Kodeord</label>
             <p className="hint">Indtast nyt kodeord</p>
@@ -212,7 +236,8 @@ export const UpdateAccount = ({ profilData }: any) => {
               placeholder="Lad stå tomt for at bevare det samme"
             />
           </div>
-          <button disabled={loading} type="submit">
+
+          <button disabled={loading} className="primary_btn" type="submit">
             Update konto
           </button>
         </form>
