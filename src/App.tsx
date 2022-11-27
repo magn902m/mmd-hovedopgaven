@@ -37,7 +37,6 @@ function App() {
         <DatabaseProvider sdk={database}>
           <BrowserRouter>
             <Header />
-            {/* Header */}
             <Routes>
               <Route path="/" element={<Frontpage />} />
               <Route path="/products" element={<Products />}>
@@ -60,7 +59,6 @@ function App() {
               <Route path="/checkout" element={<Checkout />} />
             </Routes>
             <Footer />
-            {/* Footer */}
           </BrowserRouter>
         </DatabaseProvider>
       </AuthProvider>
