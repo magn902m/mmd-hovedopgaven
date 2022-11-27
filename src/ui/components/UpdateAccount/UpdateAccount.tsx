@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { useAuth } from "../../../contexts/AuthContext";
 import { getDatabase, ref, update } from "firebase/database";
 import { ColorPicker } from "./ColorPicker/ColorPicker";
+import classNames from "classnames";
+import styles from "./UpdateAccount.module.scss";
 
 export const UpdateAccount = ({ profilData }: any) => {
   const updateAccountFormRef: any = useRef(null);
@@ -28,8 +30,11 @@ export const UpdateAccount = ({ profilData }: any) => {
     const email = updateAccountFormRef.current.querySelector(
       ".update_account_form  [name=email]"
     ).value;
-    const telefon = updateAccountFormRef.current.querySelector(
-      ".update_account_form  [name=telefon]"
+    const phoneNum = updateAccountFormRef.current.querySelector(
+      ".update_account_form  [name=phone_num]"
+    ).value;
+    const phoneCode = updateAccountFormRef.current.querySelector(
+      ".update_account_form  [name=phone_code]"
     ).value;
     const cvrNumber = updateAccountFormRef.current.querySelector(
       ".update_account_form  [name=cvr_number]"
@@ -45,7 +50,8 @@ export const UpdateAccount = ({ profilData }: any) => {
       firstname: firstname,
       lastname: lastname,
       email: email,
-      telefon: telefon,
+      phoneNum: phoneNum,
+      phoneCode: phoneCode,
       cvrNumber: cvrNumber,
       adresse: adresse,
       companyName: companyName,
@@ -80,8 +86,7 @@ export const UpdateAccount = ({ profilData }: any) => {
 
     Promise.all(promises)
       .then(() => {
-        // navigate("/account");
-        setMessage("Kontoen er opdateret");
+        setMessage("Kontoen er opdateret, reload siden");
       })
       .catch(() => {
         setError("Kontoen kunne ikke opdateres");
@@ -146,28 +151,30 @@ export const UpdateAccount = ({ profilData }: any) => {
               required
             />
           </div>
-          <div className="form_double">
-            <div id="telefon">
-              <label htmlFor="telefon">Telefon nr.</label>
+
+          <div className={classNames("form_double", styles.UpdateAccountFullPhoneNum)}>
+            <div className="phone_code">
+              <label htmlFor="phone_code">Landekode</label>
+              <p className="hint">Indtast kode</p>
+              <select name="phone_code" id="phone_code" required>
+                <option value={profilData?.phoneCode}>{profilData?.phoneCode}</option>
+                <option value="45">+45</option>
+                <option value="47">+47</option>
+                <option value="00">+00</option>
+              </select>
+            </div>
+            <div className="phone_num">
+              <label htmlFor="phone_num">Telefon nr.</label>
               <p className="hint">Indtast din telefon nummer</p>
               <input
-                type="number"
-                id="telefon"
-                name="telefon"
+                type="tel"
+                id="phone_num"
+                name="phone_num"
+                inputMode="tel"
+                pattern="[0-9]+"
+                defaultValue={profilData?.phoneNum}
+                // maxLength="10" minLength="8"
                 placeholder="&nbsp;"
-                defaultValue={profilData?.telefon}
-                required
-              />
-            </div>
-            <div id="cvr_number">
-              <label htmlFor="cvr_number">CVR nr.</label>
-              <p className="hint">Indtast firma CVR nummer</p>
-              <input
-                type="number"
-                id="cvr_number"
-                name="cvr_number"
-                placeholder="&nbsp;"
-                defaultValue={profilData?.cvrNumber}
                 required
               />
             </div>
@@ -184,17 +191,32 @@ export const UpdateAccount = ({ profilData }: any) => {
               required
             />
           </div>
-          <div id="company_name">
-            <label htmlFor="company_name">Firmanavn</label>
-            <p className="hint">Indtast firmanavn</p>
-            <input
-              type="text"
-              id="company_name"
-              name="company_name"
-              placeholder="&nbsp;"
-              defaultValue={profilData?.companyName}
-              required
-            />
+
+          <div className="form_double">
+            <div id="company_name">
+              <label htmlFor="company_name">Firmanavn</label>
+              <p className="hint">Indtast firmanavn</p>
+              <input
+                type="text"
+                id="company_name"
+                name="company_name"
+                placeholder="&nbsp;"
+                defaultValue={profilData?.companyName}
+                required
+              />
+            </div>
+            <div id="cvr_number">
+              <label htmlFor="cvr_number">CVR nr.</label>
+              <p className="hint">Indtast firma CVR nummer</p>
+              <input
+                type="number"
+                id="cvr_number"
+                name="cvr_number"
+                placeholder="&nbsp;"
+                defaultValue={profilData?.cvrNumber}
+                required
+              />
+            </div>
           </div>
 
           <hr />

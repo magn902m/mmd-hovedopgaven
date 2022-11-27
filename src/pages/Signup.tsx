@@ -31,9 +31,14 @@ export const Signup = () => {
       ).value;
       const lastname = formPostRef.current.querySelector(".signup_form form [name=lastname]").value;
       const email = formPostRef.current.querySelector(".signup_form form [name=email]").value;
-      const telefon = formPostRef.current.querySelector(".signup_form form [name=telefon]").value;
+      const phoneNum = formPostRef.current.querySelector(
+        ".signup_form form [name=phone_num]"
+      ).value;
+      const phoneCode = formPostRef.current.querySelector(
+        ".signup_form form [name=phone_code]"
+      ).value;
       const cvrNumber = formPostRef.current.querySelector(
-        ".signup_form form [name=cvrNumber]"
+        ".signup_form form [name=cvr_number]"
       ).value;
       const adresse = formPostRef.current.querySelector(".signup_form form [name=adresse]").value;
       const companyName = formPostRef.current.querySelector(
@@ -43,7 +48,8 @@ export const Signup = () => {
         firstname,
         lastname,
         email,
-        telefon,
+        phoneNum,
+        phoneCode,
         cvrNumber,
         adresse,
         companyName,
@@ -64,7 +70,8 @@ export const Signup = () => {
       firstname: postData?.firstname,
       lastname: postData?.lastname,
       email: postData?.email,
-      telefon: postData?.telefon,
+      phoneNum: postData?.phoneNum,
+      phoneCode: postData?.phoneCode,
       cvrNumber: postData?.cvrNumber,
       adresse: postData?.adresse,
       companyName: postData?.companyName,
@@ -103,12 +110,50 @@ export const Signup = () => {
               required
             />
           </div>
-          <div className="form_double">
-            <div id="telefon">
-              <label htmlFor="telefon">Telefon nr.</label>
-              <p className="hint">Indtast din telefon nummer</p>
-              <input type="number" id="telefon" name="telefon" placeholder="&nbsp;" required />
+
+          <div className="form_double full_phone_num">
+            <div className="phone_code">
+              <label htmlFor="phone_code">Landekode</label>
+              <p className="hint">Indtast kode</p>
+              <select name="phone_code" id="phone_code" required>
+                <option value="45">+45</option>
+                <option value="47">+47</option>
+                <option value="00">+00</option>
+              </select>
             </div>
+            <div className="phone_num">
+              <label htmlFor="phone_num">Telefon nr.</label>
+              <p className="hint">Indtast din telefon nummer</p>
+              <input
+                type="tel"
+                id="phone_num"
+                name="phone_num"
+                inputMode="tel"
+                pattern="[0-9]+"
+                // maxLength="10" minLength="8"
+                placeholder="&nbsp;"
+                required
+              />
+            </div>
+          </div>
+          <div id="adresse">
+            <label htmlFor="adresse">Adresse</label>
+            <p className="hint">Indtast firma adresse</p>
+            <input type="text" id="adresse" name="adresse" placeholder="&nbsp;" required />
+          </div>
+          <div className="form_double">
+            <div id="company_name">
+              <label htmlFor="company_name">Firmanavn</label>
+              <p className="hint">Indtast firmanavn</p>
+              <input
+                type="text"
+                id="company_name"
+                name="company_name"
+                placeholder="&nbsp;"
+                required
+              />
+            </div>
+
             <div id="cvr_number">
               <label htmlFor="cvr_number">CVR nr.</label>
               <p className="hint">Indtast firma CVR nummer</p>
@@ -120,22 +165,6 @@ export const Signup = () => {
                 required
               />
             </div>
-          </div>
-          <div id="adresse">
-            <label htmlFor="adresse">Adresse</label>
-            <p className="hint">Indtast firma adresse</p>
-            <input type="text" id="adresse" name="adresse" placeholder="&nbsp;" required />
-          </div>
-          <div id="company_name">
-            <label htmlFor="company_name">Firmanavn</label>
-            <p className="hint">Indtast firmanavn</p>
-            <input
-              type="text"
-              id="company_name"
-              name="company_name"
-              placeholder="&nbsp;"
-              required
-            />
           </div>
           <div id="password">
             <label htmlFor="password">Kodeord</label>

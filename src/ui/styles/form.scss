@@ -57,6 +57,10 @@ form select {
   grid-template-columns: 1fr 1fr;
 }
 
+.full_phone_num {
+  grid-template-columns: 1fr 3fr;
+}
+
 label {
   font-family: var(--font-primary);
   font-size: var(--font-size--body);
