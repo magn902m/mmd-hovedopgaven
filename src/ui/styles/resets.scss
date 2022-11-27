@@ -81,7 +81,7 @@ button,
   cursor: pointer;
 }
 button:hover,
-.secondary_btn {
+.secondary_btn:hover {
   font-size: var(--font-size--2xs);
   color: var(--color-white);
   padding-block: 0.4rem;
@@ -91,7 +91,6 @@ button:hover,
   background-color: var(--color-nets-darkblue);
 }
 
-button,
 .primary_btn {
   font-size: var(--font-size--2xs);
   color: var(--color-white);
@@ -101,7 +100,7 @@ button,
   border: 1px solid var(--color-nets-darkblue);
   background-color: var(--color-nets-darkblue);
 }
-button:hover,
+
 .primary_btn:hover {
   font-size: var(--font-size--2xs);
   color: var(--color-nets-darkblue);

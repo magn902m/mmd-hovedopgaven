@@ -21,7 +21,9 @@ export const LogoutAccount = () => {
   return (
     <>
       {error && error}
-      <button onClick={handleLogout}>Log ud</button>
+      <button className="secondary_btn" onClick={handleLogout}>
+        Log ud
+      </button>
     </>
   );
 };
