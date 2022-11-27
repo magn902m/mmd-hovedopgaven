@@ -23,8 +23,9 @@ const AuthContext = createContext();
 export function useAuth() {
   return useContext(AuthContext);
 }
+
 // eslint-disable-next-line react/prop-types
-export function AuthProvider({ children, auth }: any) {
+export function AuthProvider({ children, auth }) {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
 
@@ -41,15 +42,29 @@ export function AuthProvider({ children, auth }: any) {
   }
 
   function resetPassword(email) {
-    return auth.sendPasswordResetEmail(auth, email);
+    return methods.sendPasswordResetEmail(auth, email);
   }
 
-  function updateEmail(email) {
-    return methods.updateEmail(auth, email);
+  async function updateEmail(email) {
+    return await methods
+      .updateEmail(currentUser, email)
+      .then(() => {
+        console.log("Email updated");
+      })
+      .catch(() => {
+        console.log("An error occurred - email");
+      });
   }
 
-  function updatePassword(password) {
-    return methods.updatePassword(auth, password);
+  async function updatePassword(password) {
+    return await methods
+      .updatePassword(currentUser, password)
+      .then(() => {
+        console.log("Password updated");
+      })
+      .catch(() => {
+        console.log("An error occurred - password");
+      });
   }
 
   useEffect(() => {
@@ -63,7 +78,7 @@ export function AuthProvider({ children, auth }: any) {
 
   const value = {
     currentUser,
-    login: login,
+    login,
     signup,
     logout,
     resetPassword,
