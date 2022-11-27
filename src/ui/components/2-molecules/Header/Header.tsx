@@ -3,10 +3,13 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import "./Header.scss";
+import { useAuth } from "../../../../contexts/AuthContext";
 
 export const Header = () => {
   const [click, setClick] = useState(false);
+  const { currentUser } = useAuth();
 
   const handleClick = () => setClick(!click);
   return (
@@ -20,20 +23,12 @@ export const Header = () => {
       </NavLink>
       <ul className={click ? "nav-menu active" : "nav-menu"}>
         <li className="nav-item">
-          <NavLink
-            to="/products"
-            className="nav-links active"
-            onClick={handleClick}
-          >
+          <NavLink to="/products" className="nav-links active" onClick={handleClick}>
             Products
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            to="/green-goal"
-            className="nav-links active"
-            onClick={handleClick}
-          >
+          <NavLink to="/green-goal" className="nav-links active" onClick={handleClick}>
             Vores Grønne Mål
           </NavLink>
         </li>
@@ -50,29 +45,20 @@ export const Header = () => {
       <ul className={click ? "nav-menu active" : "nav-menu"}>
         <li className="nav-item">
           <NavLink
-            to="/login"
+            to={currentUser ? "/account" : "/login"}
             className="nav-links active"
             onClick={handleClick}
           >
-            <PersonOutlineOutlinedIcon />
+            {currentUser ? <ManageAccountsIcon /> : <PersonOutlineOutlinedIcon />}
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink
-            to="/cart"
-            className="nav-links active"
-            onClick={handleClick}
-          >
+          <NavLink to="/cart" className="nav-links active" onClick={handleClick}>
             <ShoppingBagOutlinedIcon />
           </NavLink>
         </li>
       </ul>
-      <input
-        className="nav-icon"
-        onClick={handleClick}
-        id="menu__toggle"
-        type="checkbox"
-      />
+      <input className="nav-icon" onClick={handleClick} id="menu__toggle" type="checkbox" />
       <label className="menu__btn" htmlFor="menu__toggle">
         <span></span>
       </label>
