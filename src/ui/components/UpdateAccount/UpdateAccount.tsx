@@ -1,6 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useAuth } from "../../../contexts/AuthContext";
-import { getDatabase, ref, child, push, update } from "firebase/database";
+import { getDatabase, ref, update } from "firebase/database";
 import { ColorPicker } from "./ColorPicker/ColorPicker";
 
 export const UpdateAccount = ({ profilData }: any) => {
@@ -12,11 +12,7 @@ export const UpdateAccount = ({ profilData }: any) => {
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const [inputColorPicked, setInputColorPicked] = useState("#005776");
-
-  const handleColorInput = (e: any) => {
-    setInputColorPicked(e.target.value);
-  };
+  const [pickedColor, setPickedColor] = useState("#005776");
 
   async function handleSubmit(e: any) {
     console.log("submittedGet and resetPassword");
@@ -53,6 +49,7 @@ export const UpdateAccount = ({ profilData }: any) => {
       cvrNumber: cvrNumber,
       adresse: adresse,
       companyName: companyName,
+      color: pickedColor,
       uid: profilData.uid,
     };
 
@@ -71,9 +68,9 @@ export const UpdateAccount = ({ profilData }: any) => {
       promises.push(updatePassword(passwordRef.current.value));
     }
 
-    promises.push(writeNewPost(postData));
+    promises.push(updateAccountData(postData));
 
-    function writeNewPost(postData: any) {
+    function updateAccountData(postData: any) {
       const db = getDatabase();
       const updates: any = {};
       updates["/users/" + postData.uid + "/"] = postData;
@@ -93,6 +90,10 @@ export const UpdateAccount = ({ profilData }: any) => {
         setLoading(false);
       });
   }
+
+  const handlePickedColor = (e: any) => {
+    setPickedColor(e.target.value);
+  };
 
   return (
     <>
@@ -202,13 +203,17 @@ export const UpdateAccount = ({ profilData }: any) => {
           <div id="form-color">
             <label htmlFor="colorText">Farve</label>
             <p className="hint">Vælg en farve, som dit produkt skal have</p>
-            <ColorPicker onChange={handleColorInput} value={inputColorPicked} />
+            <ColorPicker
+              onChange={handlePickedColor}
+              value={pickedColor}
+              profilColor={profilData?.color}
+            />
           </div>
 
           <div id="file">
             <label htmlFor="file">Logo eller icon</label>
             <p className="hint">Upload et logo eller icon, som skal være på produkt</p>
-            <input type="file" id="file" name="file" placeholder="&nbsp;" required />
+            <input type="file" id="file" name="file" placeholder="&nbsp;" />
           </div>
 
           <hr />

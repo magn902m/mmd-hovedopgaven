@@ -13,9 +13,12 @@ export const Account = () => {
     lastname: "",
     telefon: "",
     companyName: "",
+    color: "",
     uid: "",
   });
   const { currentUser } = useAuth();
+
+  console.log(profilData);
 
   useEffect(() => {
     const dbRef = ref(getDatabase());

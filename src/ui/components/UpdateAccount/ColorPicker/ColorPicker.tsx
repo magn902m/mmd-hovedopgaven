@@ -25,6 +25,14 @@ export const ColorPicker = (props: any) => {
         <p className="hint">Hexcode</p>
         <input type="text" id="colorText" placeholder="&nbsp;" name="colorText" {...props} />
       </div>
+
+      <div className={styles.ColorPickerProfilColorContainer}>
+        <p className="hint">Nuværende gemte farve: {props.profilColor}</p>
+        <div
+          className={styles.ColorPickerProfilColor}
+          style={{ backgroundColor: `${props.profilColor}` }}
+        ></div>
+      </div>
     </div>
   );
 };

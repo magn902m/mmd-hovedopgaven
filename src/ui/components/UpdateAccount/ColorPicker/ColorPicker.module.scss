@@ -30,3 +30,13 @@
 .ColorPickerContainer input[type="color" i][list]::-webkit-color-swatch {
   border-radius: 99px;
 }
+
+.ColorPickerProfilColorContainer {
+  grid-column: 1 / 3;
+}
+
+.ColorPickerProfilColor {
+  height: 35px;
+  width: 100%;
+  border-radius: 0.5rem;
+}
