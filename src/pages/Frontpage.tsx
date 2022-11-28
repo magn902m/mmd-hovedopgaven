@@ -2,8 +2,15 @@ import React from "react";
 import { Button } from "../ui/components/1-atoms/Button";
 import Terminal from "../ui/Asset_1.png";
 import Logos from "../ui/logostrip-complete_1728x.webp";
+import { useNavigate } from "react-router-dom";
 
 export const Frontpage = () => {
+  const navigate = useNavigate();
+
+  const goTo = (props: any) => {
+    navigate(props);
+  };
+
   return (
     <main className="frontpage">
       <section className="frontpage_hero">
@@ -16,7 +23,10 @@ export const Frontpage = () => {
             dine betalinger går hurtigt og sikkert igennem. Kom hurtigt i gang
             med at tage imod betalinger med én af vores pakkeløsninger.
           </p>
-          <Button label="Vælg pakkeløsning"></Button>
+          <Button
+            onClick={() => goTo("/products")}
+            label="Vælg pakkeløsning"
+          ></Button>
         </div>
         <div className="frontpage_hero_img">
           <img src={Terminal} alt="nets terminal" />
@@ -96,8 +106,14 @@ export const Frontpage = () => {
               </ul>
             </p>
             <div>
-              <Button label="Læs mere om vores mål"></Button>
-              <Button label="Tilpas dit produkt nu"></Button>
+              <Button
+                onClick={() => goTo("/green-goal")}
+                label="Læs mere om vores mål"
+              ></Button>
+              <Button
+                onClick={() => goTo("/products")}
+                label="Tilpas dit produkt nu"
+              ></Button>
             </div>
           </article>
         </div>
