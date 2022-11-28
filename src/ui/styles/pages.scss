@@ -145,6 +145,44 @@ section.account form {
   }
 }
 
+.green_goals {
+  img {
+    width: 60%;
+  }
+  &_header {
+    margin: 2rem 0;
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+    p {
+      line-height: 2rem;
+    }
+  }
+  &_points {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    h3 {
+      letter-spacing: 1rem;
+      margin-top: 1rem;
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 3rem;
+    }
+    article:first-child {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+}
+
 @media only screen and (min-width: 700px) {
   main {
     padding-top: 5rem;

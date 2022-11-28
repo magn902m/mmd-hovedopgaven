@@ -5,9 +5,9 @@ import Terminal from "../ui/Asset_1.png";
 
 export const GreenGoal = () => {
   return (
-    <section className="greenGoal">
-      <article style={{ margin: "3rem 8rem" }}>
-        <h1>Vores grønne mål</h1>
+    <main className="green_goals">
+      <header className="green_goals_header">
+        <h2>Vores grønne mål</h2>
         <p>
           Hos Nets får du alt, hvad du skal bruge til at tage imod betalinger
           med alle de kortbrands, dine kunder ønsker at betale med. Så kan du
@@ -15,52 +15,48 @@ export const GreenGoal = () => {
           dine betalinger går hurtigt og sikkert igennem. Kom hurtigt i gang med
           at tage imod betalinger med én af vores pakkeløsninger.
         </p>
-      </article>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        <Grid xs={6}>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad
-            deserunt libero quasi sint a aut quae porro neque eos praesentium?
-            Nulla eveniet iste tempore. Tenetur ea eligendi maiores rem eos!
-          </p>
-          <Button></Button>
-        </Grid>
-        <Grid xs={6}>
+      </header>
+
+      <section className="green_goals_points">
+        <article>
+          <div>
+            <h3>Hvad</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad
+              deserunt libero quasi sint a aut quae porro neque eos praesentium?
+              Nulla eveniet iste tempore. Tenetur ea eligendi maiores rem eos!
+            </p>
+          </div>
+
           <img src={Terminal} alt="" />
-        </Grid>
-        <Grid xs={6}>
-          <img src="" alt="" />
-        </Grid>
-        <Grid xs={6}>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
-            consectetur accusantium sapiente, quos hic aliquam ipsam mollitia
-            quam, excepturi praesentium ipsum voluptatum? Cum, minus? Similique,
-            aperiam. Officiis doloremque tempora consequuntur!
-          </p>
-        </Grid>
-        <Grid xs={6}>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad
-            deserunt libero quasi sint a aut quae porro neque eos praesentium?
-            Nulla eveniet iste tempore. Tenetur ea eligendi maiores rem eos!
-          </p>
-        </Grid>
-        <Grid xs={6}>
-          <img style={{ width: "100%" }} src={Terminal} alt="" />
-        </Grid>
-        <Grid xs={6}>
-          <img src="" alt="" />
-        </Grid>
-        <Grid xs={6}>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
-            consectetur accusantium sapiente, quos hic aliquam ipsam mollitia
-            quam, excepturi praesentium ipsum voluptatum? Cum, minus? Similique,
-            aperiam. Officiis doloremque tempora consequuntur!
-          </p>
-        </Grid>
-      </Grid>
-    </section>
+        </article>
+
+        <article>
+          <img src={Terminal} alt="" />
+          <div>
+            <h3>Hvorfor</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
+              consectetur accusantium sapiente, quos hic aliquam ipsam mollitia
+              quam, excepturi praesentium ipsum voluptatum? Cum, minus?
+              Similique, aperiam. Officiis doloremque tempora consequuntur!
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <img src={Terminal} alt="" />
+          <div>
+            <h3>Hvordan</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
+              consectetur accusantium sapiente, quos hic aliquam ipsam mollitia
+              quam, excepturi praesentium ipsum voluptatum? Cum, minus?
+              Similique, aperiam. Officiis doloremque tempora consequuntur!
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
   );
 };
