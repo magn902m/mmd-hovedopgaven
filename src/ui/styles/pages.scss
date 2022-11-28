@@ -47,16 +47,19 @@ section.account form {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
 
     &_text {
       margin-top: 2rem;
       & > h2 {
-        font-size: var(--font-size--md);
+        font-size: var(--font-size--xl);
+      }
+      & > p {
+        margin-top: 0.6rem;
       }
 
       & > button {
-        margin-top: 2rem;
+        margin-top: 1rem;
       }
     }
 
@@ -66,11 +69,12 @@ section.account form {
   }
   &_headers {
     display: grid;
-    gap: 3rem;
-    padding-bottom: 2rem;
+    gap: 2rem;
+    padding-bottom: 3rem;
 
-    & > h4 {
-      font-size: var(--font-size--sm);
+    & > p {
+      font-weight: 600;
+      letter-spacing: 0.1rem;
     }
   }
 
@@ -86,7 +90,7 @@ section.account form {
       letter-spacing: 0.1rem;
     }
     &_grid {
-      margin-top: 3rem;
+      margin-top: 1rem;
 
       article {
         margin-bottom: 1.2rem;
@@ -111,6 +115,7 @@ section.account form {
 
     h3 {
       margin-bottom: 3rem;
+      font-size: var(--font-size--xl);
     }
 
     &_grid {
@@ -165,13 +170,19 @@ section.account form {
   .frontpage {
     &_hero {
       display: grid;
-      grid-template-columns: 50% auto;
+      grid-template-columns: 60% auto;
       min-height: 80vh;
       align-items: center;
-      justify-content: space-around;
-
+      justify-content: center;
+      margin-bottom: 5rem;
+      &_text {
+        & > h2 {
+          font-size: var(--font-size--6xl);
+        }
+      }
       &_img {
-        width: 40%;
+        width: 60%;
+        justify-self: center;
       }
     }
     &_headers {
@@ -187,9 +198,9 @@ section.account form {
       align-items: center;
       margin-top: 3rem;
 
-      &_ {
+      &_grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 2rem;
       }
     }
@@ -200,17 +211,18 @@ section.account form {
       padding: 0px 15rem;
 
       h3 {
-        text-align: center;
         margin-bottom: 3rem;
+        font-size: var(--font-size--6xl);
       }
 
-      &_ {
-        display: flex;
+      &_grid {
+        display: grid;
+        grid-template-columns: 30% auto;
         gap: 5rem;
         align-items: center;
 
         img {
-          width: 15%;
+          width: 100%;
         }
       }
     }

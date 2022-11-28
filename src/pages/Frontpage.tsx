@@ -25,9 +25,9 @@ export const Frontpage = () => {
 
       <section>
         <div className="frontpage_headers">
-          <h4>Få en alt-i-én betalingsløsning</h4>
-          <h4>Tag imod alle de populære kortbrands</h4>
-          <h4>Få pengene hurtigt på din konto</h4>
+          <p>Få en alt-i-én betalingsløsning</p>
+          <p>Tag imod alle de populære kortbrands</p>
+          <p>Få pengene hurtigt på din konto</p>
         </div>
         <img src={Logos} alt="" />
       </section>
