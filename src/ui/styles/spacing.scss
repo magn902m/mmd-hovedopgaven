@@ -15,3 +15,9 @@
   --spacing--5xl: calc(var(--spacing--base) * 5);
   --spacing--6xl: calc(var(--spacing--base) * 6);
 }
+
+main {
+  transition: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
+  position: relative;
+  overflow: hidden;
+}
