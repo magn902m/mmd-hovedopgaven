@@ -21,22 +21,22 @@ img {
 // typography
 h1 {
   font-family: var(--font-primary);
-  font-size: var(--font-size--8xl);
+  font-size: var(--font-size--6xl);
   font-weight: var(--font-weight--bold);
 }
 h2 {
   font-family: var(--font-primary);
-  font-size: var(--font-size--7xl);
+  font-size: var(--font-size--5xl);
   font-weight: var(--font-weight--semibold);
 }
 h3 {
   font-family: var(--font-primary);
-  font-size: var(--font-size--6xl);
+  font-size: var(--font-size--4xl);
   font-weight: var(--font-weight--semibold);
 }
 h4 {
   font-family: var(--font-primary);
-  font-size: var(--font-size--4xl);
+  font-size: var(--font-size--xl);
   font-weight: var(--font-weight--semibold);
 }
 h5 {
@@ -58,7 +58,7 @@ p {
 // Anker tag
 a {
   font-family: var(--font-primary);
-  font-size: var(--font-size--2xs);
+  font-size: var(--font-size--xs);
   color: var(--color-nets-darkblue);
   transition: 100ms all;
 }

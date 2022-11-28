@@ -1,3 +1,7 @@
+main {
+  padding: 2rem;
+}
+
 section.account {
   max-width: 420px;
   padding: 0.7rem;
@@ -14,4 +18,101 @@ section.account form {
   padding: 0;
   border: none;
   border-radius: none;
+}
+
+.nets_products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &_overview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+
+    & > h2 {
+      font-size: var(--font-size--m);
+    }
+
+    &_grid {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.frontpage {
+  &_hero {
+    display: flex;
+    min-height: 80vh;
+    padding: 0px 15rem;
+    align-items: center;
+    justify-content: space-around;
+
+    &_img {
+      width: 40%;
+    }
+  }
+  &_headers {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  &_how_to {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+
+    &_ {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      gap: 2rem;
+    }
+  }
+
+  &_green_id {
+    margin-top: 3rem;
+    min-height: 50vh;
+    padding: 0px 15rem;
+
+    h3 {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    &_ {
+      display: flex;
+      gap: 5rem;
+      align-items: center;
+
+      img {
+        width: 15%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  main {
+    padding-top: 5rem;
+  }
+
+  .nets_products {
+    &_overview {
+      flex-direction: column;
+
+      & > h2 {
+        font-size: var(--font-size--4xl);
+      }
+
+      &_grid {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  }
 }

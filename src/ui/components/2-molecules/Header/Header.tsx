@@ -18,49 +18,49 @@ export const Header = () => {
           alt="Nets logo"
         />
       </NavLink>
-      <ul className={click ? "nav-menu active" : "nav-menu"}>
-        <li className="nav-item">
+      <ul className={click ? "nets_header_nav active" : "nets_header_nav"}>
+        <li className="nets_header_nav_items">
           <NavLink
             to="/products"
-            className="nav-links active"
+            className="nets_header_nav_links active"
             onClick={handleClick}
           >
             Products
           </NavLink>
         </li>
-        <li className="nav-item">
+        <li className="nets_header_nav_items">
           <NavLink
             to="/green-goal"
-            className="nav-links active"
+            className="nets_header_nav_links active"
             onClick={handleClick}
           >
             Vores Grønne Mål
           </NavLink>
         </li>
-        <li className="nav-item">
+        <li className="nets_header_nav_items">
           <a
             href="https://www.nets.eu/dk-da/kontakt"
-            className="nav-links active"
+            className="nets_header_nav_links active"
             onClick={handleClick}
           >
             Kontakt os
           </a>
         </li>
       </ul>
-      <ul className={click ? "nav-menu active" : "nav-menu"}>
-        <li className="nav-item">
+      <ul className={click ? "nets_header_nav active" : "nets_header_nav"}>
+        <li className="nets_header_nav_items">
           <NavLink
             to="/login"
-            className="nav-links active"
+            className="nets_header_nav_links active"
             onClick={handleClick}
           >
             <PersonOutlineOutlinedIcon />
           </NavLink>
         </li>
-        <li className="nav-item">
+        <li className="nets_header_nav_items">
           <NavLink
             to="/cart"
-            className="nav-links active"
+            className="nets_header_nav_links active"
             onClick={handleClick}
           >
             <ShoppingBagOutlinedIcon />
