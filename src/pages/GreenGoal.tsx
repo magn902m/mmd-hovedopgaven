@@ -1,5 +1,4 @@
 import React from "react";
-import Grid from "@mui/material/Unstable_Grid2";
 import { Button } from "../ui/components/1-atoms/Button";
 import Terminal from "../ui/Asset_1.png";
 
@@ -7,7 +6,7 @@ export const GreenGoal = () => {
   return (
     <main className="green_goals">
       <header className="green_goals_header">
-        <h2>Vores grønne mål</h2>
+        <h1>Vores grønne mål</h1>
         <p>
           Hos Nets får du alt, hvad du skal bruge til at tage imod betalinger
           med alle de kortbrands, dine kunder ønsker at betale med. Så kan du
@@ -45,7 +44,6 @@ export const GreenGoal = () => {
         </article>
 
         <article>
-          <img src={Terminal} alt="" />
           <div>
             <h3>Hvordan</h3>
             <p>
@@ -55,6 +53,7 @@ export const GreenGoal = () => {
               Similique, aperiam. Officiis doloremque tempora consequuntur!
             </p>
           </div>
+          <img src={Terminal} alt="" />
         </article>
       </section>
     </main>
