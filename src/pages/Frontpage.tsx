@@ -5,7 +5,7 @@ import Logos from "../ui/logostrip-complete_1728x.webp";
 
 export const Frontpage = () => {
   return (
-    <div className="frontpage">
+    <main className="frontpage">
       <section className="frontpage_hero">
         <div className="frontpage_hero_text">
           <h2>Betalingsterminaler til alle typer af butikker</h2>
@@ -34,9 +34,9 @@ export const Frontpage = () => {
 
       <section className="frontpage_how_to">
         <h3>Sådan kommer du i gang:</h3>
-        <div className="frontpage_how_to_">
+        <div className="frontpage_how_to_grid">
           <article>
-            <h3>1. Spar penge med den pakkeløsning, som passer dig</h3>
+            <h4>1. Spar penge med den pakkeløsning, som passer dig</h4>
             <p>
               Vælg den pakkeløsning, der passer til dit behov. Vær særligt
               opmærksom på transaktionsgebyret. Hos Nets kan du spare penge ved
@@ -45,7 +45,7 @@ export const Frontpage = () => {
             </p>
           </article>
           <article>
-            <h3>2. Vælg den terminal, der passer til din forretning</h3>
+            <h4>2. Vælg den terminal, der passer til din forretning</h4>
             <p>
               Har du brug for en mobil eller stationær betalingsterminal? En
               mobil terminal giver dig mulighed for at tage imod betalinger, der
@@ -54,10 +54,10 @@ export const Frontpage = () => {
             </p>
           </article>
           <article>
-            <h3>
+            <h4>
               3. Bestil online i dag - nemt og hurtigt. Vi sikrer, at du kommer
               godt i gang
-            </h3>
+            </h4>
             <p>
               Bestil produktet. Du vil herefter blive ringet op af én af vores
               specialister, der sikrer, at du kommer hurtigt og trygt i gang med
@@ -70,9 +70,9 @@ export const Frontpage = () => {
 
       <section className="frontpage_green_id">
         <h3>En grøn vision, som passer til din visuelle identitet</h3>
-        <div className="frontpage_green_id_">
+        <div className="frontpage_green_id_grid">
           <img src={Terminal} alt="" />
-          <div>
+          <article>
             <p>
               Natur og vores planet er vigtig for os alle, derfor har vi taget
               to tiltag, som skal være starten på et mere bæredygtig
@@ -90,10 +90,8 @@ export const Frontpage = () => {
                 </li>
                 <li>Juster nemt og hurtigt</li>
                 <li>
-                  <legend>
-                    Få gratis tilpasning af dit produkt med i købtet, hvis du
-                    kompensere mere end 5%
-                  </legend>
+                  Få gratis tilpasning af dit produkt med i købtet, hvis du
+                  kompensere mere end 5%
                 </li>
               </ul>
             </p>
@@ -101,9 +99,9 @@ export const Frontpage = () => {
               <Button label="Læs mere om vores mål"></Button>
               <Button label="Tilpas dit produkt nu"></Button>
             </div>
-          </div>
+          </article>
         </div>
       </section>
-    </div>
+    </main>
   );
 };

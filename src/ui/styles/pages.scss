@@ -1,5 +1,5 @@
 main {
-  padding: 2rem;
+  padding: 1.7rem;
 }
 
 section.account {
@@ -45,52 +45,96 @@ section.account form {
 .frontpage {
   &_hero {
     display: flex;
-    min-height: 80vh;
-    padding: 0px 15rem;
+    flex-direction: column-reverse;
     align-items: center;
-    justify-content: space-around;
+    padding-bottom: 2rem;
+
+    &_text {
+      margin-top: 2rem;
+      & > h2 {
+        font-size: var(--font-size--md);
+      }
+
+      & > button {
+        margin-top: 2rem;
+      }
+    }
 
     &_img {
-      width: 40%;
+      width: 60%;
     }
   }
   &_headers {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
+    display: grid;
+    gap: 3rem;
+    padding-bottom: 2rem;
+
+    & > h4 {
+      font-size: var(--font-size--sm);
+    }
   }
 
   &_how_to {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     margin-top: 3rem;
 
-    &_ {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-      gap: 2rem;
+    & > h3 {
+      font-size: var(--font-size--2xs);
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+    }
+    &_grid {
+      margin-top: 3rem;
+
+      article {
+        margin-bottom: 1.2rem;
+      }
+
+      h4 {
+        font-size: var(--font-size--4xs);
+        letter-spacing: 0.1rem;
+        margin-bottom: 0.3rem;
+      }
+      p {
+        line-height: 1.4rem;
+        font-size: 0.8rem;
+      }
     }
   }
 
   &_green_id {
+    display: flex;
+    flex-direction: column;
     margin-top: 3rem;
-    min-height: 50vh;
-    padding: 0px 15rem;
 
     h3 {
-      text-align: center;
       margin-bottom: 3rem;
     }
 
-    &_ {
+    &_grid {
       display: flex;
-      gap: 5rem;
+      flex-direction: column;
+      gap: 3rem;
       align-items: center;
 
+      ul {
+        margin-top: 1rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.08rem;
+        line-height: 1.6rem;
+
+        li:last-child {
+          font-weight: bold;
+        }
+      }
+
       img {
-        width: 15%;
+        width: 50%;
+      }
+      button {
+        margin-top: 1rem;
       }
     }
   }
@@ -99,6 +143,8 @@ section.account form {
 @media only screen and (min-width: 700px) {
   main {
     padding-top: 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .nets_products {
@@ -112,6 +158,60 @@ section.account form {
       &_grid {
         display: flex;
         flex-direction: row;
+      }
+    }
+  }
+
+  .frontpage {
+    &_hero {
+      display: grid;
+      grid-template-columns: 50% auto;
+      min-height: 80vh;
+      align-items: center;
+      justify-content: space-around;
+
+      &_img {
+        width: 40%;
+      }
+    }
+    &_headers {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    &_how_to {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 3rem;
+
+      &_ {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 2rem;
+      }
+    }
+
+    &_green_id {
+      margin-top: 3rem;
+      min-height: 50vh;
+      padding: 0px 15rem;
+
+      h3 {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      &_ {
+        display: flex;
+        gap: 5rem;
+        align-items: center;
+
+        img {
+          width: 15%;
+        }
       }
     }
   }

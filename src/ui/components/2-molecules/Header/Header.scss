@@ -1,30 +1,30 @@
 .nets_header {
   background-color: var(--color-gray--light);
   display: flex;
-  justify-content: space-between;
   align-items: center;
   top: 0;
   z-index: 20;
-  padding: 2rem;
+  padding: 1rem;
+  width: 100%;
 
   &_nav {
-    display: flex;
-    flex-direction: column;
+    display: none;
     list-style: none;
-    width: 100%;
-    border-top: 1px solid blue;
-    position: absolute;
-    top: 70px;
-    left: -110%;
-    opacity: 1;
-    transition: all 0.5s ease;
+    background: lightblue;
 
-    &:active {
-      background: lightblue;
-      left: 0px;
-      opacity: 1;
-      transition: all 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    line-height: 3rem;
+    transform: translateY(-100%);
+    transition: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
+    overflow: hidden;
+
+    &.active {
+      display: table-cell;
       z-index: 1;
+      transform: translateY(60px);
 
       &_item .active {
         color: blue;
@@ -51,52 +51,31 @@
         border-bottom: 3px solid transparent;
       }
     }
+    &_burger_menu {
+      display: block;
+      transform: translate(-100%, 60%);
+      cursor: pointer;
+      color: blue;
+      margin-bottom: 20px;
+    }
   }
-
-  // .nav-container {
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   // width: 100%;
-  //   height: 80px;
-  //   max-width: 1500px;
-  // }
 
   .fa-code {
     margin-left: 1rem;
   }
 
-  .nav-icon {
-    display: none;
-  }
-
-  @media screen and (max-width: 960px) {
+  @media screen and (min-width: 700px) {
     .nets_header {
-      // &_nav {
-      //   text-align: center;
-      //   margin-right: 2rem;
-      //   &_item {
-      //     line-height: 40px;
-      //   }
-      // }
-
+      &_nav {
+        display: flex;
+        background-color: var(--color-gray--light);
+      }
       &_links {
         padding: 1.5rem;
         width: 100%;
         display: table;
       }
     }
-  }
-
-  .nav-icon {
-    display: block;
-    // position: absolute;
-    // top: 25px;
-    // right: 25px;
-    transform: translate(-100%, 60%);
-    cursor: pointer;
-    color: blue;
-    margin-bottom: 20px;
   }
 }
 
@@ -210,9 +189,9 @@
 }
 
 @media screen and (min-width: 960px) {
-  .nav-icon {
-    display: none;
-  }
+  // .nav-icon {
+  //   display: none;
+  // }
   .menu__btn {
     display: none;
   }

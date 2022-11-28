@@ -11,7 +11,7 @@ export const Header = () => {
   const handleClick = () => setClick(!click);
   return (
     <nav className="nets_header">
-      <NavLink to="/" className="nav-logo">
+      <NavLink to="/" className="nets_header_logo">
         <img
           src="https://images.ctfassets.net/m7fx3qzqlluq/4cxOWm16Re2uMv7ViCKb4H/5c7567614fcff06e2b49633a25ef5a7d/netsLogoColored.svg?w=100"
           width="100"
@@ -47,35 +47,32 @@ export const Header = () => {
           </a>
         </li>
       </ul>
-      <ul className={click ? "nets_header_nav active" : "nets_header_nav"}>
-        <li className="nets_header_nav_items">
-          <NavLink
-            to="/login"
-            className="nets_header_nav_links active"
-            onClick={handleClick}
-          >
-            <PersonOutlineOutlinedIcon />
-          </NavLink>
-        </li>
-        <li className="nets_header_nav_items">
-          <NavLink
-            to="/cart"
-            className="nets_header_nav_links active"
-            onClick={handleClick}
-          >
-            <ShoppingBagOutlinedIcon />
-          </NavLink>
-        </li>
-      </ul>
-      <input
-        className="nav-icon"
-        onClick={handleClick}
-        id="menu__toggle"
-        type="checkbox"
-      />
-      <label className="menu__btn" htmlFor="menu__toggle">
-        <span></span>
-      </label>
+      <div className="nets_header_icons">
+        <NavLink
+          to="/login"
+          className="nets_header_nav_links active"
+          onClick={handleClick}
+        >
+          <PersonOutlineOutlinedIcon />
+        </NavLink>
+        <NavLink
+          to="/cart"
+          className="nets_header_nav_links active"
+          onClick={handleClick}
+        >
+          <ShoppingBagOutlinedIcon />
+        </NavLink>
+
+        <input
+          className="nets_header_burger_menu"
+          onClick={handleClick}
+          id="menu__toggle"
+          type="checkbox"
+        />
+        <label className="menu__btn" htmlFor="menu__toggle">
+          <span></span>
+        </label>
+      </div>
     </nav>
   );
 };
