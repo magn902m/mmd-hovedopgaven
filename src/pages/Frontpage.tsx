@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "../ui/components/1-atoms/Button";
-import Terminal from "../ui/Asset_1.png";
+import Terminal from "../assets/images/asset_1.png";
 import Logos from "../ui/logostrip-complete_1728x.webp";
 import { useNavigate } from "react-router-dom";
 
