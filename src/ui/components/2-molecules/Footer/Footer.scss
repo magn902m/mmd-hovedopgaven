@@ -1,0 +1,40 @@
+.nets_footer {
+  background-color: var(--color-gray--light);
+  display: flex;
+  flex-direction: column;
+  z-index: 20;
+  padding: 2rem;
+  margin-top: 2rem;
+
+  &_menu {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+  }
+
+  &_links {
+    text-decoration: none;
+    height: 100%;
+    border-bottom: 3px solid transparent;
+    color: var(--color-black);
+    font-size: var(--font-size--body);
+
+    &:hover {
+      font-size: var(--font-size--body);
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .nets_footer {
+    align-items: center;
+
+    &_menu {
+      flex-direction: row;
+      align-items: center;
+    }
+    &_links {
+      padding: 0.5rem 1rem;
+    }
+  }
+}

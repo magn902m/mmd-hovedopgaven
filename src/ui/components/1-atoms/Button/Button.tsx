@@ -14,10 +14,15 @@ export interface ButtonProps {
   onClick?: (e: unknown) => void;
   icon?: unknown;
   className?: string;
-  text?: React.ReactNode;
 }
 
-export const Button: React.FC<ButtonProps> = ({ title, type, disabled, onClick, text }) => (
+export const Button: React.FC<ButtonProps> = ({
+  title,
+  type,
+  disabled,
+  onClick,
+  label,
+}) => (
   <button
     className={classNames(styles.Button)}
     type={type || "button"}
@@ -25,6 +30,6 @@ export const Button: React.FC<ButtonProps> = ({ title, type, disabled, onClick, 
     disabled={disabled}
     onClick={onClick}
   >
-    {text}
+    {label}
   </button>
 );

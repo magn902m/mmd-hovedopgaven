@@ -1,0 +1,35 @@
+.nets_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+
+  & > button {
+    margin-top: 1rem;
+  }
+  &_image {
+    width: 50%;
+    margin: 1rem;
+  }
+
+  &_title {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .nets_card {
+    justify-content: space-evenly;
+    flex-basis: 300px;
+    flex-grow: 1;
+    margin: 1rem;
+    padding: 1rem;
+
+    &:hover {
+      box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.3);
+    }
+
+    &_image {
+      width: 30%;
+    }
+  }
+}

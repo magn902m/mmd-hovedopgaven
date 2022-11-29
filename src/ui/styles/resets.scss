@@ -21,22 +21,22 @@ img {
 // typography
 h1 {
   font-family: var(--font-primary);
-  font-size: var(--font-size--8xl);
+  font-size: var(--font-size--6xl);
   font-weight: var(--font-weight--bold);
 }
 h2 {
   font-family: var(--font-primary);
-  font-size: var(--font-size--7xl);
+  font-size: var(--font-size--5xl);
   font-weight: var(--font-weight--semibold);
 }
 h3 {
   font-family: var(--font-primary);
-  font-size: var(--font-size--6xl);
+  font-size: var(--font-size--3xl);
   font-weight: var(--font-weight--semibold);
 }
 h4 {
   font-family: var(--font-primary);
-  font-size: var(--font-size--4xl);
+  font-size: var(--font-size--xl);
   font-weight: var(--font-weight--semibold);
 }
 h5 {
@@ -63,15 +63,13 @@ a {
   transition: 100ms all;
 }
 a:hover {
-  font-family: var(--font-primary);
-  font-size: var(--font-size--xs);
   opacity: 80%;
   text-decoration: underline;
 }
 
 // Button
-
-button {
+button,
+.secondary_btn {
   font-size: var(--font-size--2xs);
   color: var(--color-nets-darkblue);
   padding-block: 0.4rem;
@@ -79,9 +77,11 @@ button {
   border-radius: var(--border--lg);
   border: 1px solid var(--color-nets-darkblue);
   background-color: var(--color-white);
-  transition: 100ms all;
+  transition: 300ms all;
+  cursor: pointer;
 }
-button:hover {
+button:hover,
+.secondary_btn:hover {
   font-size: var(--font-size--2xs);
   color: var(--color-white);
   padding-block: 0.4rem;
@@ -91,7 +91,7 @@ button:hover {
   background-color: var(--color-nets-darkblue);
 }
 
-button.cta {
+.primary_btn {
   font-size: var(--font-size--2xs);
   color: var(--color-white);
   padding-block: 0.4rem;
@@ -100,7 +100,8 @@ button.cta {
   border: 1px solid var(--color-nets-darkblue);
   background-color: var(--color-nets-darkblue);
 }
-button.cta:hover {
+
+.primary_btn:hover {
   font-size: var(--font-size--2xs);
   color: var(--color-nets-darkblue);
   padding-block: 0.4rem;
