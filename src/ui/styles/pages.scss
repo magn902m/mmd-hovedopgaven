@@ -184,6 +184,31 @@ section.account form {
   }
 }
 
+.nets_cart {
+  &_grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+    // &_header {
+    //   grid-area: header;
+    // }
+    // &_body {
+    //   grid-area: main;
+    // }
+    // &_footer {
+    //   grid-area: footer;
+    // }
+    &_product_desc {
+      display: flex;
+    }
+  }
+
+  button {
+    margin-top: 3rem;
+  }
+}
+
 @media only screen and (min-width: 700px) {
   main {
     padding: 5rem 0;

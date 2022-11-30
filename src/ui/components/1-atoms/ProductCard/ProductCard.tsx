@@ -7,6 +7,8 @@ export interface CardProps {
   text?: React.ReactNode;
   img: string;
   btnLabel: string;
+  onClick?: (e: unknown) => void;
+  id: string;
 }
 
 export const ProductCard: React.FC<CardProps> = (props) => {
@@ -15,7 +17,11 @@ export const ProductCard: React.FC<CardProps> = (props) => {
       <img className="nets_card_image" src={props.img} />
       <h3 className="nets_card_title">{props.title}</h3>
       <p className="nets_card_text">{props.text}</p>
-      <Button className="nets_card_button" label={props.btnLabel}></Button>
+      <Button
+        className="nets_card_button"
+        label={props.btnLabel}
+        onClick={props.onClick}
+      ></Button>
     </div>
   );
 };

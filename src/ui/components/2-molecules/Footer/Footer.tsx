@@ -11,7 +11,7 @@ export const Footer = () => {
             href="https://www.nets.eu/da-DK/payments/acquiring"
             className="nets_footer_links active"
           >
-            Inløsningsaftale
+            Indløsningsaftale
           </a>
         </li>
         <li className="nets_footer_item">
