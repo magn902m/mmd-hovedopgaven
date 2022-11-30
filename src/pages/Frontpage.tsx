@@ -3,7 +3,6 @@ import { Button } from "../ui/components/1-atoms/Button";
 import Terminal from "../assets/images/asset_1.png";
 import Logos from "../ui/logostrip-complete_1728x.webp";
 import { useNavigate } from "react-router-dom";
-import { PaymentTerminalThreeD } from "../ui/components/3-organisms/PaymentTerminalThreeD/PaymentTerminalThreeD";
 
 export const Frontpage = () => {
   const navigate = useNavigate();
@@ -14,7 +13,6 @@ export const Frontpage = () => {
 
   return (
     <main className="frontpage">
-      <PaymentTerminalThreeD />
       <section className="frontpage_hero">
         <div className="frontpage_hero_text">
           <h2>Betalingsterminaler til alle typer af butikker</h2>

@@ -44,6 +44,8 @@ function App() {
                 <Route path="/products" element={<Products />}>
                   <Route path=":produktid" element={<Product />} />
                 </Route>
+                <Route path="/product" element={<Product />} />
+
                 <Route path="/green-goal" element={<GreenGoal />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
