@@ -12,6 +12,7 @@ import { Account } from "./pages/Account";
 import { Cart } from "./pages/Cart";
 import { Checkout } from "./pages/Checkout";
 import { AuthProvider } from "./contexts/AuthContext";
+import { ThreeJSProvider } from "./contexts/ThreeJSContext";
 
 // Firebase
 import {
@@ -35,31 +36,33 @@ function App() {
       {/* <AuthProvider sdk={auth}> */}
       <AuthProvider auth={auth}>
         <DatabaseProvider sdk={database}>
-          <BrowserRouter>
-            <Header />
-            <Routes>
-              <Route path="/" element={<Frontpage />} />
-              <Route path="/products" element={<Products />}>
-                <Route path=":produktid" element={<Product />} />
-              </Route>
-              <Route path="/green-goal" element={<GreenGoal />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/forgot-password" element={<ForgotPassword />} />
-              {/* <Route path="/account" element={<Account />} /> */}
-              <Route
-                path="/account"
-                element={
-                  <PrivateRoute>
-                    <Account />
-                  </PrivateRoute>
-                }
-              />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/checkout" element={<Checkout />} />
-            </Routes>
-            <Footer />
-          </BrowserRouter>
+          <ThreeJSProvider>
+            <BrowserRouter>
+              <Header />
+              <Routes>
+                <Route path="/" element={<Frontpage />} />
+                <Route path="/products" element={<Products />}>
+                  <Route path=":produktid" element={<Product />} />
+                </Route>
+                <Route path="/green-goal" element={<GreenGoal />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
+                {/* <Route path="/account" element={<Account />} /> */}
+                <Route
+                  path="/account"
+                  element={
+                    <PrivateRoute>
+                      <Account />
+                    </PrivateRoute>
+                  }
+                />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/checkout" element={<Checkout />} />
+              </Routes>
+              <Footer />
+            </BrowserRouter>
+          </ThreeJSProvider>
         </DatabaseProvider>
       </AuthProvider>
       {/* </AuthProvider> */}
