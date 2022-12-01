@@ -14,7 +14,7 @@ export const Terminals: TerminalsProps[] = [
     img: "../assets/images/asset_1.png",
   },
   {
-    name: "Medium: Få lave begyr og en udvidet servicepakke. Transaktionsgebyr fra 0,79%",
+    name: "Medium: Få lave gebyr og en udvidet servicepakke. Transaktionsgebyr fra 0,79%",
     desc: "Til dig med månedlig kortomsætning mellem 35.000-90.000 kr.*",
     price: "349",
     id: "md",

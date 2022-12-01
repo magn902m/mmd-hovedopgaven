@@ -39,7 +39,6 @@ function App() {
             <Header />
             <Routes>
               <Route path="/" element={<Frontpage />} />
-
               <Route path="/products" element={<Products />} />
               <Route path="/product" element={<Product />}>
                 <Route path=":produktid" element={<Product />} />

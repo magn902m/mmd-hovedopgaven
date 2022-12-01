@@ -209,6 +209,43 @@ section.account form {
   }
 }
 
+.nets_product {
+  &_top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 50%;
+    }
+    &_info {
+      display: flex;
+      flex-direction: column;
+
+      h2 {
+        font-size: var(--font-size--md);
+        color: var(--color-nets-darkblue);
+        margin-top: 3rem;
+      }
+      p {
+        font-size: 0.8rem;
+      }
+      a {
+        font-size: 0.8rem;
+        text-decoration: underline;
+      }
+    }
+    &_customize {
+      margin-top: 2rem;
+    }
+  }
+  &_bottom {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 3rem;
+    gap: 2rem;
+  }
+}
+
 @media only screen and (min-width: 700px) {
   main {
     padding: 5rem 0;
