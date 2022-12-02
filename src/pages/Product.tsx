@@ -5,10 +5,25 @@ import Switch from "@mui/material/Switch";
 import { Link, useParams } from "react-router-dom";
 import { NetsAccordion } from "../ui/components/2-molecules/NetsAccordion";
 import Logos from "../ui/logostrip-complete_1728x.webp";
+import { Button } from "../ui/components/1-atoms/Button";
+import { useNavigate } from "react-router-dom";
+import Modal from "@mui/material/Modal";
+import Box from "@mui/material/Box";
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
 
 export const Product = () => {
   const [checked, setChecked] = useState(true);
-
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
   };
@@ -18,6 +33,11 @@ export const Product = () => {
   const singleProduct = Terminals.filter((t) => {
     return t.id === params.produktid;
   })[0];
+  const navigate = useNavigate();
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <main className="nets_product">
       <section className="nets_product_top">
@@ -35,14 +55,46 @@ export const Product = () => {
               inputProps={{ "aria-label": "controlled" }}
             />
           </div>
-          <div>
-            <label htmlFor="color">Vælg farve</label>
-            <select name="color" id="color">
-              <option value="color">Rød</option>
-            </select>
-          </div>
+
+          <Button
+            className="nets_modal_open"
+            label={"Skræddersy din terminal"}
+            onClick={handleOpen}
+          ></Button>
+          <Button
+            className="nets_card_button"
+            label={"Tilføj til kurv"}
+            onClick={() => navigate(`/cart`, { state: singleProduct })}
+          ></Button>
         </div>
       </section>
+
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box className="nets_modal">
+          <section className="nets_modal_top">
+            <h3>{singleProduct.name}</h3>
+            <Button
+              className="nets_modal_close"
+              label={"Færdig"}
+              onClick={handleClose}
+            ></Button>
+          </section>
+          <img src="" alt="" />
+          <section className="nets_modal_bottom">
+            <div>
+              <label htmlFor="color">Vælg farve</label>
+              <select name="color" id="color">
+                <option value="color">Rød</option>
+              </select>
+            </div>
+          </section>
+        </Box>
+      </Modal>
 
       <section className="nets_product_bottom">
         <div>

@@ -244,6 +244,10 @@ section.account form {
     margin-top: 3rem;
     gap: 2rem;
   }
+  .nets_modal {
+    width: auto;
+    position: absolute;
+  }
 }
 
 @media only screen and (min-width: 700px) {
@@ -375,6 +379,39 @@ section.account form {
         align-items: center;
         margin-top: 1rem;
       }
+    }
+  }
+  .nets_product {
+    &_top {
+      flex-direction: row;
+      max-width: 700px;
+      gap: 2rem;
+      img {
+        width: 15%;
+      }
+      &_info {
+        h2 {
+          font-size: var(--font-size--md);
+          color: var(--color-nets-darkblue);
+          margin-top: 3rem;
+        }
+        p {
+          font-size: 0.8rem;
+        }
+        a {
+          font-size: 0.8rem;
+          text-decoration: underline;
+        }
+      }
+      &_customize {
+        margin-top: 2rem;
+      }
+    }
+    &_bottom {
+      display: flex;
+      flex-direction: column-reverse;
+      margin-top: 3rem;
+      gap: 2rem;
     }
   }
 }
