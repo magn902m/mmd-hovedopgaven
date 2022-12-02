@@ -17,16 +17,15 @@ export const Account = () => {
     uid: "",
   });
   const { currentUser } = useAuth();
-
-  console.log(profilData);
+  const [pickedColor, setPickedColor] = useState("#005776");
 
   useEffect(() => {
     const dbRef = ref(getDatabase());
     get(child(dbRef, `users/${currentUser.uid}`))
       .then((snapshot) => {
         if (snapshot.exists()) {
-          // console.log(snapshot.val());
           setProfilData(snapshot.val());
+          setPickedColor(snapshot.val().color);
         } else {
           console.log("No data available");
         }
@@ -41,7 +40,11 @@ export const Account = () => {
       <h2>Din konto</h2>
 
       <section className="account">
-        <UpdateAccount profilData={profilData} />
+        <UpdateAccount
+          profilData={profilData}
+          setPickedColor={setPickedColor}
+          pickedColor={pickedColor}
+        />
         <LogoutAccount />
       </section>
     </>

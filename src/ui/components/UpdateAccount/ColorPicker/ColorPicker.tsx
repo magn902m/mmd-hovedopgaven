@@ -26,17 +26,17 @@ export const ColorPicker = (props: any) => {
         <input type="text" id="colorText" placeholder="&nbsp;" name="colorText" {...props} />
       </div>
 
-      <div className={styles.ColorPickerProfilColorContainer}>
+      {/* <div className={styles.ColorPickerProfilColorContainer}>
         <p className="hint">
-          Nuværende gemte farve: {props.profilColor ? props.profilColor : props.value}
+          Nuværende gemte farve: {props.profilcolor ? props.profilcolor : props.value}
         </p>
         <div
           className={styles.ColorPickerProfilColor}
           style={{
-            backgroundColor: `${props.profilColor ? props.profilColor : props.value}`,
+            backgroundColor: `${props.profilcolor ? props.profilcolor : props.value}`,
           }}
         ></div>
-      </div>
+      </div> */}
     </div>
   );
 };
