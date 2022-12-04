@@ -23,8 +23,8 @@ export function PaymentTerminalModel(props) {
   function handleRotation360() {
     updateModel.setIsRatation360Clicked(false);
     gsap.to(paymentTerminalRef.current.rotation, {
-      duration: 1,
-      y: paymentTerminalRef.current.rotation.y + Math.PI * 1,
+      duration: 4,
+      y: paymentTerminalRef.current.rotation.y + Math.PI * 2,
     });
   }
 
@@ -32,8 +32,8 @@ export function PaymentTerminalModel(props) {
   function handleRotation180() {
     updateModel.setIsRatation180Clicked(false);
     gsap.to(paymentTerminalRef.current.rotation, {
-      duration: 1,
-      y: paymentTerminalRef.current.rotation.y + Math.PI * 0.5,
+      duration: 2,
+      y: paymentTerminalRef.current.rotation.y + Math.PI * 1,
     });
   }
 
