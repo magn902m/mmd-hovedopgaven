@@ -1,14 +1,14 @@
 import React, { useState, useContext, useEffect, useRef } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { child, get, getDatabase, ref, update } from "firebase/database";
-import { PaymentTerminalThreeD } from "../ui/components/3-organisms/PaymentTerminalThreeD/PaymentTerminalThreeD";
+import { PaymentTerminalCanvas } from "../ui/components/3-organisms/PaymentTerminalCanvas/PaymentTerminalCanvas";
 import { ColorPicker } from "../ui/components/UpdateAccount/ColorPicker/ColorPicker";
 import { ThreeJSContext } from "../contexts/ThreeJSContext";
 import { Link } from "react-router-dom";
 
 export const Product = () => {
   const productRef: any = useRef(null);
-  const { updateCube, setUpdateCube } = useContext(ThreeJSContext);
+  const { updateModel, setUpdateModel } = useContext(ThreeJSContext);
   const { currentUser } = useAuth();
   const [profilData, setProfilData] = useState({
     adresse: "",
@@ -53,8 +53,8 @@ export const Product = () => {
     //   });
   }, []);
 
-  function updateCubeSettings() {
-    setUpdateCube((old: any) => {
+  function updateModelSettings() {
+    setUpdateModel((old: any) => {
       return {
         ...old,
         pickedColor,
@@ -63,7 +63,7 @@ export const Product = () => {
     });
   }
   useEffect(() => {
-    updateCubeSettings();
+    updateModelSettings();
   }, [pickedColor]);
 
   async function saveUserPreference(e: any) {
@@ -73,7 +73,7 @@ export const Product = () => {
 
     const postData: any = {
       ...profilData,
-      color: updateCube.pickedColor,
+      color: updateModel.pickedColor,
       uid: profilData.uid,
     };
 
@@ -101,7 +101,7 @@ export const Product = () => {
   return (
     <>
       <section className="product" ref={productRef}>
-        <PaymentTerminalThreeD />
+        <PaymentTerminalCanvas />
         <ColorPicker
           onChange={handlePickedColor}
           value={pickedColor}

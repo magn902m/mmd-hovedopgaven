@@ -4,11 +4,11 @@ import React, { createContext, useState } from "react";
 export const ThreeJSContext = createContext();
 
 export const ThreeJSProvider = ({ children }) => {
-  const [updateCube, setUpdateCube] = useState({});
+  const [updateModel, setUpdateModel] = useState({});
 
   const value = {
-    updateCube,
-    setUpdateCube,
+    updateModel,
+    setUpdateModel,
   };
 
   return <ThreeJSContext.Provider value={value}>{children}</ThreeJSContext.Provider>;

@@ -1,19 +1,19 @@
 import React, { useContext, useEffect, useState } from "react";
-import styles from "./PaymentTerminalThreeD.module.scss";
+import styles from "./PaymentTerminalCanvas.module.scss";
 import { Canvas } from "@react-three/fiber";
 import { Environment } from "./Environment";
 import { ThreeJSContext } from "../../../../contexts/ThreeJSContext";
 
 import * as THREE from "three";
 
-export const PaymentTerminalThreeD = () => {
-  const { setUpdateCube } = useContext(ThreeJSContext);
+export const PaymentTerminalCanvas = () => {
+  const { setUpdateModel } = useContext(ThreeJSContext);
 
   const [isRatation360Clicked, setIsRatation360Clicked] = useState(false);
   const [isRatation180Clicked, setIsRatation180Clicked] = useState(false);
 
   function updateCubeSettings() {
-    setUpdateCube((old: any) => {
+    setUpdateModel((old: any) => {
       return {
         ...old,
         isRatation360Clicked,
@@ -29,7 +29,7 @@ export const PaymentTerminalThreeD = () => {
   }, [isRatation360Clicked, isRatation180Clicked]);
 
   return (
-    <div className={styles.PaymentTerminalThreeD_container}>
+    <div className={styles.PaymentTerminalCanvas_container}>
       <Canvas
         gl={{
           antialias: true,
