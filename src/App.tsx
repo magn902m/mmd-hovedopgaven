@@ -32,6 +32,7 @@ function App() {
 
   return (
     <div className="App">
+      {/* <shoppingCartProvider> */}
       {/* <AuthProvider sdk={auth}> */}
       <AuthProvider auth={auth}>
         <DatabaseProvider sdk={database}>
@@ -64,6 +65,7 @@ function App() {
         </DatabaseProvider>
       </AuthProvider>
       {/* </AuthProvider> */}
+      {/* </shoppingCartProvider> */}
     </div>
   );
 }

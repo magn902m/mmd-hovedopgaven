@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Button } from "../Button";
 import "./ProductCard.scss";
 
@@ -6,9 +6,9 @@ export interface CardProps {
   title?: string;
   text?: React.ReactNode;
   img: string;
-  btnLabel: string;
+  btnLabel: any;
   onClick?: (e: unknown) => void;
-  id: string;
+  id: number;
 }
 
 export const ProductCard: React.FC<CardProps> = (props) => {

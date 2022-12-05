@@ -9,20 +9,22 @@ import { Button } from "../ui/components/1-atoms/Button";
 import { useNavigate } from "react-router-dom";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
+import { useShoppingCart } from "../contexts/ProductContex";
 
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
+// const style = {
+//   position: "absolute",
+//   top: "50%",
+//   left: "50%",
+//   transform: "translate(-50%, -50%)",
+//   width: 400,
+//   bgcolor: "background.paper",
+//   border: "2px solid #000",
+//   boxShadow: 24,
+//   p: 4,
+// };
 
 export const Product = () => {
+  const { increaseCartQuantity } = useShoppingCart();
   const [checked, setChecked] = useState(true);
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
@@ -31,12 +33,17 @@ export const Product = () => {
   console.log(params.produktid);
 
   const singleProduct = Terminals.filter((t) => {
-    return t.id === params.produktid;
+    return t.id.toString() === params.produktid;
+    console.log(singleProduct.id);
   })[0];
   const navigate = useNavigate();
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const handleClick = () => {
+    increaseCartQuantity(singleProduct.id);
+  };
 
   return (
     <main className="nets_product">
@@ -64,7 +71,7 @@ export const Product = () => {
           <Button
             className="nets_card_button"
             label={"Tilføj til kurv"}
-            onClick={() => navigate(`/cart`, { state: singleProduct })}
+            onClick={() => increaseCartQuantity(singleProduct.id)}
           ></Button>
         </div>
       </section>
