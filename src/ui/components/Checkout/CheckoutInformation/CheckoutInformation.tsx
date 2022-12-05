@@ -2,14 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./CheckoutInformation.module.scss";
 
-export const CheckoutInformation = () => {
+export const CheckoutInformation = ({ toggleCheckoutArr }: any) => {
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    toggleCheckoutArr.setToggleCheckoutInformation(false);
+    toggleCheckoutArr.setToggleCheckoutDelivery(true);
+  };
+
   return (
     <article className="checkout_overview">
       <form
         action=""
         className="update_account_form"
         //   ref={updateAccountFormRef}
-        //   onSubmit={handleSubmit}
+        onSubmit={handleSubmit}
       >
         <legend>Kontaktinformation</legend>
         <div id="email">
@@ -21,7 +27,6 @@ export const CheckoutInformation = () => {
             name="email"
             //   ref={emailRef}
             placeholder="&nbsp;"
-            required
           />
         </div>
 
@@ -41,12 +46,12 @@ export const CheckoutInformation = () => {
           <div id="firstname">
             <label htmlFor="firstname">Fornavn</label>
             <p className="hint">Indtast din fornavn</p>
-            <input type="text" id="firstname" name="firstname" placeholder="&nbsp;" required />
+            <input type="text" id="firstname" name="firstname" placeholder="&nbsp;" />
           </div>
           <div id="lastname">
             <label htmlFor="lastname">Efternavn</label>
             <p className="hint">Indtast din efternavn</p>
-            <input type="text" id="lastname" name="lastname" placeholder="&nbsp;" required />
+            <input type="text" id="lastname" name="lastname" placeholder="&nbsp;" />
           </div>
         </div>
 
@@ -54,7 +59,7 @@ export const CheckoutInformation = () => {
           <div className="phone_code">
             <label htmlFor="phone_code">Landekode</label>
             <p className="hint">Indtast kode</p>
-            <select name="phone_code" id="phone_code" required>
+            <select name="phone_code" id="phone_code">
               <option value="45">+45</option>
               <option value="47">+47</option>
               <option value="00">+00</option>
@@ -71,32 +76,25 @@ export const CheckoutInformation = () => {
               pattern="[0-9]+"
               // maxLength="10" minLength="8"
               placeholder="&nbsp;"
-              required
             />
           </div>
         </div>
         <div id="adresse">
           <label htmlFor="adresse">Adresse</label>
           <p className="hint">Indtast firma adresse</p>
-          <input type="text" id="adresse" name="adresse" placeholder="&nbsp;" required />
+          <input type="text" id="adresse" name="adresse" placeholder="&nbsp;" />
         </div>
 
         <div className="form_double">
           <div id="company_name">
             <label htmlFor="company_name">Firmanavn</label>
             <p className="hint">Indtast firmanavn</p>
-            <input
-              type="text"
-              id="company_name"
-              name="company_name"
-              placeholder="&nbsp;"
-              required
-            />
+            <input type="text" id="company_name" name="company_name" placeholder="&nbsp;" />
           </div>
           <div id="cvr_number">
             <label htmlFor="cvr_number">CVR nr.</label>
             <p className="hint">Indtast firma CVR nummer</p>
-            <input type="number" id="cvr_number" name="cvr_number" placeholder="&nbsp;" required />
+            <input type="number" id="cvr_number" name="cvr_number" placeholder="&nbsp;" />
           </div>
         </div>
 
@@ -104,12 +102,12 @@ export const CheckoutInformation = () => {
           <div id="zip_code">
             <label htmlFor="zip_code">Postnr.</label>
             <p className="hint">Indtast firmaets postnummer</p>
-            <input type="number" id="zip_code" name="zip_code" placeholder="&nbsp;" required />
+            <input type="number" id="zip_code" name="zip_code" placeholder="&nbsp;" />
           </div>
           <div id="city">
             <label htmlFor="city">By</label>
             <p className="hint">Indtast firmas by</p>
-            <input type="text" id="city" name="city" placeholder="&nbsp;" required />
+            <input type="text" id="city" name="city" placeholder="&nbsp;" />
           </div>
         </div>
 

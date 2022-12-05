@@ -1,26 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./CheckoutOverview.module.scss";
+import { useNavigate } from "react-router-dom";
 
-export const CheckoutOverview = () => {
+export const CheckoutOverview = ({ toggleCheckoutArr }: any) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: any) => {
+    navigate("/");
+  };
+
   return (
     <article className="checkout_overview">
       <form
         action=""
         className="update_account_form"
         //   ref={updateAccountFormRef}
-        //   onSubmit={handleSubmit}
+        onSubmit={handleSubmit}
       >
         <legend>Levering og oplysninger</legend>
         <div id="email" className={styles.CheckoutOverview_input}>
           <label htmlFor="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Email" disabled required />
+          <input type="email" id="email" name="email" placeholder="Email" disabled />
           <Link to="cart">Skift</Link>
         </div>
 
         <div id="send_to" className={styles.CheckoutOverview_input}>
           <label htmlFor="send_to">Send til</label>
-          <input type="text" id="send_to" name="send_to" placeholder="Send til" disabled required />
+          <input type="text" id="send_to" name="send_to" placeholder="Send til" disabled />
           <Link to="cart">Skift</Link>
         </div>
 
@@ -32,7 +39,6 @@ export const CheckoutOverview = () => {
             name="radio_text"
             placeholder="Standard - 49,00 kr."
             disabled
-            required
           />
         </div>
 
@@ -45,7 +51,6 @@ export const CheckoutOverview = () => {
             name="payment"
             placeholder="Betaling via fakture"
             disabled
-            required
           />
         </div>
 
@@ -60,7 +65,6 @@ export const CheckoutOverview = () => {
               id="delivery_metode"
               name="delivery_metode"
               placeholder="Standard"
-              required
             />
             <input
               type="text"
@@ -68,7 +72,6 @@ export const CheckoutOverview = () => {
               name="payment"
               placeholder="Samme adresse som leveringsadressen"
               disabled
-              required
             />
           </div>
         </div>
@@ -80,7 +83,6 @@ export const CheckoutOverview = () => {
               id="delivery_metode"
               name="delivery_metode"
               placeholder="Standard"
-              required
             />
             <input
               type="text"
@@ -88,15 +90,19 @@ export const CheckoutOverview = () => {
               name="payment"
               placeholder="Brug en anden faktureringsadresse"
               disabled
-              required
             />
           </div>
         </div>
 
         <nav className={styles.CheckoutOverview_buttons}>
-          <Link to="/cart">
+          <button
+            onClick={() => {
+              toggleCheckoutArr.setToggleCheckoutOverview(false);
+              toggleCheckoutArr.setToggleCheckoutDelivery(true);
+            }}
+          >
             <p> {"<"} Tilbage til levering</p>
-          </Link>
+          </button>
           <button className="primary_btn" type="submit">
             Fuldfør ordren
           </button>
