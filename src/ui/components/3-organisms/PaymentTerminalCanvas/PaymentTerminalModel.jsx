@@ -762,4 +762,4 @@ export function PaymentTerminalModel(props) {
   );
 }
 
-useGLTF.preload("./models/payment_terminal.glb");
+useGLTF.preload(PaymentTerminalGLB);
