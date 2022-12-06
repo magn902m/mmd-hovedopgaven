@@ -11,7 +11,7 @@ import { useShoppingCart } from "../contexts/ShoppingCartContex";
 import { useAuth } from "../contexts/AuthContext";
 import { child, get, getDatabase, ref, update } from "firebase/database";
 import { PaymentTerminalCanvas } from "../ui/components/3-organisms/PaymentTerminalCanvas/PaymentTerminalCanvas";
-import { ColorPicker } from "../ui/components/UpdateAccount/ColorPicker/ColorPicker";
+import { ColorPicker } from "../ui/components/2-molecules/ColorPicker/ColorPicker";
 import { ThreeJSContext } from "../contexts/ThreeJSContext";
 
 const style = {

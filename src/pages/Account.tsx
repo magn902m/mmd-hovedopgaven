@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getDatabase, ref, child, get } from "firebase/database";
-import { UpdateAccount } from "../ui/components/UpdateAccount/UpdateAccount";
-import { LogoutAccount } from "../ui/components/LogoutAccount/LogoutAccount";
+import { UpdateAccount } from "../ui/components/2-molecules/UpdateAccount/UpdateAccount";
+import { LogoutAccount } from "../ui/components/2-molecules/LogoutAccount/LogoutAccount";
 import { useAuth } from "../contexts/AuthContext";
 
 export const Account = () => {

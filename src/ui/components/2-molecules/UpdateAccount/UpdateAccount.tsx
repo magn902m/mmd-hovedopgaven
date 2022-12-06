@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
-import { useAuth } from "../../../contexts/AuthContext";
+import { useAuth } from "../../../../contexts/AuthContext";
 import { getDatabase, ref, update } from "firebase/database";
-import { ColorPicker } from "./ColorPicker/ColorPicker";
+import { ColorPicker } from "../ColorPicker/ColorPicker";
 import classNames from "classnames";
 import styles from "./UpdateAccount.module.scss";
 

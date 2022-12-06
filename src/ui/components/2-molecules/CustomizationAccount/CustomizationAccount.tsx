@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useState } from "react";
-import { useAuth } from "../../../contexts/AuthContext";
-import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../../../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export const CustomizationAccount = () => {
   const emailRef: any = useRef(null);
