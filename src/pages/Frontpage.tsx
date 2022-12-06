@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "../ui/components/1-atoms/Button";
 import Terminal from "../assets/images/asset_1.png";
-import Logos from "../ui/logostrip-complete_1728x.webp";
+import Logos from "../assets/images/logostrip-complete_1728x.webp";
 import { useNavigate } from "react-router-dom";
 
 export const Frontpage = () => {

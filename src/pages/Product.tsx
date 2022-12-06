@@ -3,7 +3,7 @@ import Terminal from "../assets/images/asset_1.png";
 import WebshopItems from "../data/terminals.json";
 import { Link, useParams } from "react-router-dom";
 import { NetsAccordion } from "../ui/components/2-molecules/NetsAccordion";
-import Logos from "../ui/logostrip-complete_1728x.webp";
+import Logos from "../assets/images/logostrip-complete_1728x.webp";
 import { Button } from "../ui/components/1-atoms/Button";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
