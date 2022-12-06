@@ -1,3 +1,15 @@
-.CheckoutTotal_container {
-  color: green;
+.CheckoutTotal_product_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    width: 7%;
+  }
+}
+
+.CheckoutTotal_price_layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
