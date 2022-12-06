@@ -22,7 +22,7 @@ export const Environment = () => {
 
       {/* <Cube /> */}
       <Stage controls={ref} preset="rembrandt" intensity={1} environment="city">
-        <Suspense fallback={null}>
+        <Suspense fallback={null} r3f>
           <PaymentTerminalModel scale={0.35} />
         </Suspense>
       </Stage>

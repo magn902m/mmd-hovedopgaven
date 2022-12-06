@@ -37,34 +37,36 @@ function App() {
       {/* <AuthProvider sdk={auth}> */}
       <AuthProvider auth={auth}>
         <DatabaseProvider sdk={database}>
-          <BrowserRouter>
-            <ShoppingCartProvider>
-              <Navbar />
-              <Routes>
-                <Route path="/" element={<Frontpage />} />
-                <Route path="/products" element={<Products />} />
-                <Route path="/product" element={<Product />}>
-                  <Route path=":produktid" element={<Product />} />
-                </Route>
-                <Route path="/green-goal" element={<GreenGoal />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Signup />} />
-                <Route path="/forgot-password" element={<ForgotPassword />} />
-                {/* <Route path="/account" element={<Account />} /> */}
-                <Route
-                  path="/account"
-                  element={
-                    <PrivateRoute>
-                      <Account />
-                    </PrivateRoute>
-                  }
-                />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/checkout" element={<Checkout />} />
-              </Routes>
-              <Footer />
-            </ShoppingCartProvider>
-          </BrowserRouter>
+          <ThreeJSProvider>
+            <BrowserRouter>
+              <ShoppingCartProvider>
+                <Navbar />
+                <Routes>
+                  <Route path="/" element={<Frontpage />} />
+                  <Route path="/products" element={<Products />} />
+                  <Route path="/product" element={<Product />}>
+                    <Route path=":productid" element={<Product />} />
+                  </Route>
+                  <Route path="/green-goal" element={<GreenGoal />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/signup" element={<Signup />} />
+                  <Route path="/forgot-password" element={<ForgotPassword />} />
+                  {/* <Route path="/account" element={<Account />} /> */}
+                  <Route
+                    path="/account"
+                    element={
+                      <PrivateRoute>
+                        <Account />
+                      </PrivateRoute>
+                    }
+                  />
+                  <Route path="/cart" element={<Cart />} />
+                  <Route path="/checkout" element={<Checkout />} />
+                </Routes>
+                <Footer />
+              </ShoppingCartProvider>
+            </BrowserRouter>
+          </ThreeJSProvider>
         </DatabaseProvider>
       </AuthProvider>
       {/* </AuthProvider> */}
