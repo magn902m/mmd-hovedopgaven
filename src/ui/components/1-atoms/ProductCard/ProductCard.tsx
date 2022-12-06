@@ -1,10 +1,10 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { Button } from "../Button";
 import "./ProductCard.scss";
 
 export interface CardProps {
   title?: string;
-  text?: React.ReactNode;
+  text?: string;
   img: string;
   btnLabel: any;
   onClick?: (e: unknown) => void;

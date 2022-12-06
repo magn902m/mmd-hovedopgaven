@@ -7,7 +7,6 @@ function App() {
     <div className="App">
       <h1>Hej</h1>
       <Button
-        size={"large"}
         label={"Click on me"}
         onClick={() => {
           console.log("you clicked me");

@@ -24,8 +24,8 @@ export const Frontpage = () => {
             med at tage imod betalinger med én af vores pakkeløsninger.
           </p>
           <Button
+            label={"Vælg pakkeløsning"}
             onClick={() => goTo("/products")}
-            label="Vælg pakkeløsning"
           ></Button>
         </div>
         <div className="frontpage_hero_img">

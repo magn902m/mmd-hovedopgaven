@@ -4,12 +4,14 @@ import "../ui/styles/globals.scss";
 import { Button } from "../ui/components/1-atoms/Button";
 import { useShoppingCart } from "../contexts/ProductContex";
 import { CartItem } from "../ui/components/2-molecules";
-import { Terminals } from "./terminals";
+import WebshopItems from "./terminals.json";
 
 export const Cart = () => {
   const { cartItems } = useShoppingCart();
+
   // const location = useLocation();
   // const cartItem = location.state;
+
   return (
     <main className="nets_cart">
       <header className="nets_cart_header">
@@ -24,14 +26,16 @@ export const Cart = () => {
           <h4 className="grid_header_amount">Antal</h4>
           <h4 className="grid_header_total">I alt</h4>
         </div>
-        {cartItems.map((item) => (
-          <CartItem key={item.id} {...item} />
-        ))}
+        <div>
+          {cartItems.map((item) => (
+            <CartItem key={item.id} {...item} />
+          ))}
+        </div>
         <div className="nets_cart_grid_footer">
           <p>I alt</p>
           <p>
             {cartItems.reduce((total, cartItem) => {
-              const item = Terminals.find((i) => i.id === cartItem.id);
+              const item = WebshopItems.find((i) => i.id === cartItem.id);
               return total + (item?.price || 0) * cartItem.quantity;
             }, 0)}
             kr. pr. måned

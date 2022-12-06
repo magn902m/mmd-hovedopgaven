@@ -1,49 +1,43 @@
 import React, { useState } from "react";
 import Terminal from "../assets/images/asset_1.png";
-import { Terminals } from "./terminals";
+import WebshopItems from "./terminals.json";
 import Switch from "@mui/material/Switch";
 import { Link, useParams } from "react-router-dom";
 import { NetsAccordion } from "../ui/components/2-molecules/NetsAccordion";
 import Logos from "../ui/logostrip-complete_1728x.webp";
 import { Button } from "../ui/components/1-atoms/Button";
-import { useNavigate } from "react-router-dom";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { useShoppingCart } from "../contexts/ProductContex";
 
-// const style = {
-//   position: "absolute",
-//   top: "50%",
-//   left: "50%",
-//   transform: "translate(-50%, -50%)",
-//   width: 400,
-//   bgcolor: "background.paper",
-//   border: "2px solid #000",
-//   boxShadow: 24,
-//   p: 4,
-// };
+const style = {
+  position: "absolute",
+  top: "0",
+  left: "0",
+  width: "100%",
+  height: "100%",
+  bgcolor: "background.paper",
+  p: 4,
+};
 
 export const Product = () => {
+  const params = useParams();
+
+  const singleProduct = WebshopItems.filter((t) => {
+    return t.id === Number(params.produktid);
+  })[0];
+
   const { increaseCartQuantity } = useShoppingCart();
+
   const [checked, setChecked] = useState(true);
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
   };
-  const params = useParams();
-  console.log(params.produktid);
 
-  const singleProduct = Terminals.filter((t) => {
-    return t.id.toString() === params.produktid;
-    console.log(singleProduct.id);
-  })[0];
-  const navigate = useNavigate();
+  //Modal
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
-  const handleClick = () => {
-    increaseCartQuantity(singleProduct.id);
-  };
 
   return (
     <main className="nets_product">
@@ -54,14 +48,7 @@ export const Product = () => {
           <p>{singleProduct.desc}</p>
           {/* link til accordian */}
           <Link to="">Læs mere</Link>
-          <div className="nets_product_top_customize">
-            <label>Tilføj eget logo</label>
-            <Switch
-              checked={checked}
-              onChange={handleChange}
-              inputProps={{ "aria-label": "controlled" }}
-            />
-          </div>
+          <div className="nets_product_top_footprint"></div>
 
           <Button
             className="nets_modal_open"
@@ -77,12 +64,13 @@ export const Product = () => {
       </section>
 
       <Modal
+        hideBackdrop
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box className="nets_modal">
+        <Box sx={style} className="nets_modal">
           <section className="nets_modal_top">
             <h3>{singleProduct.name}</h3>
             <Button

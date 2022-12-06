@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "../ui/components/1-atoms/Button";
 import Terminal from "../assets/images/asset_1.png";
 
 export const GreenGoal = () => {

@@ -6,7 +6,6 @@ import classNames from "classnames";
 export interface ButtonProps {
   primary?: boolean;
   backgroundColor?: string;
-  size?: "small" | "medium" | "large";
   title?: string;
   label?: string;
   type?: "button" | "submit" | "reset";

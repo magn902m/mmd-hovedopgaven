@@ -9,7 +9,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export const NetsAccordion = () => {
   return (
-    <div>
+    <div className="akkordian">
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}

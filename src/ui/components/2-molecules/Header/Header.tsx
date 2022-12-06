@@ -7,40 +7,40 @@ import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import "./Header.scss";
 import { useAuth } from "../../../../contexts/AuthContext";
 
-export const Header = () => {
+export const Navbar = () => {
   const [click, setClick] = useState(false);
   const { currentUser } = useAuth();
 
   const handleClick = () => setClick(!click);
   return (
-    <nav className="nets_header">
-      <NavLink to="/" className="nets_header_logo">
+    <nav className="nets_navbar">
+      <NavLink to="/" className="nets_navbar_logo">
         <img
           src="https://images.ctfassets.net/m7fx3qzqlluq/4cxOWm16Re2uMv7ViCKb4H/5c7567614fcff06e2b49633a25ef5a7d/netsLogoColored.svg?w=100"
           width="100"
           alt="Nets logo"
         />
       </NavLink>
-      <ul className={click ? "nets_header_nav active" : "nets_header_nav"}>
-        <li className="nets_header_nav_items">
+      <ul className={click ? "nets_navbar_menu active" : "nets_navbar_menu"}>
+        <li className="nets_navbar_items">
           <NavLink
             to="/products"
-            className="nets_header_nav_links active"
+            className="nets_navbar_links active"
             onClick={handleClick}
           >
             Products
           </NavLink>
         </li>
-        <li className="nets_header_nav_items">
+        <li className="nets_navbar_items">
           <NavLink
             to="/green-goal"
-            className="nets_header_nav_links active"
+            className="nets_navbar_links active"
             onClick={handleClick}
           >
             Vores Grønne Mål
           </NavLink>
         </li>
-        <li className="nets_header_nav_items">
+        <li className="nets_navbar_items">
           <a
             href="https://www.nets.eu/dk-da/kontakt"
             className="nets_header_nav_links active"
@@ -50,30 +50,19 @@ export const Header = () => {
           </a>
         </li>
       </ul>
-      <ul className={click ? "nav-menu active" : "nav-menu"}>
-        <li className="nav-item">
-          <NavLink
-            to={currentUser ? "/account" : "/login"}
-            className="nav-links active"
-            onClick={handleClick}
-          >
-            {currentUser ? (
-              <ManageAccountsIcon />
-            ) : (
-              <PersonOutlineOutlinedIcon />
-            )}
-          </NavLink>
-        </li>
-        <li className="nav-item">
-          <NavLink
-            to="/cart"
-            className="nav-links active"
-            onClick={handleClick}
-          >
-            <ShoppingBagOutlinedIcon />
-          </NavLink>
-        </li>
-      </ul>
+      <div className="nets_navbar_icons">
+        <NavLink
+          to={currentUser ? "/account" : "/login"}
+          className="nav-links active"
+          onClick={handleClick}
+        >
+          {currentUser ? <ManageAccountsIcon /> : <PersonOutlineOutlinedIcon />}
+        </NavLink>
+
+        <NavLink to="/cart" className="nav-links active" onClick={handleClick}>
+          <ShoppingBagOutlinedIcon />
+        </NavLink>
+      </div>
       <input
         className="nav-icon"
         onClick={handleClick}

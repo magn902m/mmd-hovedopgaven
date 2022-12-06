@@ -1,3 +1,14 @@
 .Button {
-  border-radius: 0.2rem;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  isolation: isolate;
+  outline: 0 solid var(--color-nets-lightblue);
+  border-style: solid;
+  border-radius: 9999px;
+  overflow: hidden;
 }

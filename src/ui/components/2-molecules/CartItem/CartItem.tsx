@@ -2,7 +2,7 @@ import React from "react";
 import "./CartItem.scss";
 import { Link } from "react-router-dom";
 import { useShoppingCart } from "../../../../contexts/ProductContex";
-import { Terminals } from "../../../../pages/terminals";
+import WebshopItems from "../../../../pages/terminals.json";
 
 type CartItemProps = {
   id: number;
@@ -11,8 +11,9 @@ type CartItemProps = {
 
 export function CartItem({ id, quantity }: CartItemProps) {
   const { removeFromCart } = useShoppingCart();
-  const item = Terminals.find((i) => i.id === id);
+  const item = WebshopItems.find((i) => i.id === id);
   if (item == null) return null;
+  console.log(item);
   return (
     <section className="nets_cart_item">
       <img src="" alt="" />

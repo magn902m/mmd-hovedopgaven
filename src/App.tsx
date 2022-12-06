@@ -22,8 +22,9 @@ import {
 import { getDatabase } from "firebase/database"; // Firebase v9+
 import { getAuth } from "firebase/auth";
 import { PrivateRoute } from "./pages/PrivateRoute";
-import { Header } from "./ui/components/2-molecules/Header";
+import { Navbar } from "./ui/components/2-molecules/Header";
 import { Footer } from "./ui/components/2-molecules/Footer";
+import { ShoppingCartProvider } from "./contexts/ProductContex";
 
 function App() {
   const app = useFirebaseApp();
@@ -32,12 +33,12 @@ function App() {
 
   return (
     <div className="App">
-      {/* <shoppingCartProvider> */}
+      {/* <ShoppingCartProvider> */}
       {/* <AuthProvider sdk={auth}> */}
       <AuthProvider auth={auth}>
         <DatabaseProvider sdk={database}>
           <BrowserRouter>
-            <Header />
+            <Navbar />
             <Routes>
               <Route path="/" element={<Frontpage />} />
               <Route path="/products" element={<Products />} />
@@ -65,7 +66,7 @@ function App() {
         </DatabaseProvider>
       </AuthProvider>
       {/* </AuthProvider> */}
-      {/* </shoppingCartProvider> */}
+      {/* </ShoppingCartProvider> */}
     </div>
   );
 }

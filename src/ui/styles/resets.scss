@@ -60,7 +60,7 @@ a {
   font-family: var(--font-primary);
   font-size: var(--font-size--xs);
   color: var(--color-nets-darkblue);
-  transition: 100ms all;
+  // transition: 100ms all;
 }
 a:hover {
   opacity: 80%;
@@ -72,21 +72,15 @@ button,
 .secondary_btn {
   font-size: var(--font-size--2xs);
   color: var(--color-nets-darkblue);
-  padding-block: 0.4rem;
-  padding-inline: 0.6rem;
-  border-radius: var(--border--lg);
   border: 1px solid var(--color-nets-darkblue);
   background-color: var(--color-white);
-  transition: 300ms all;
   cursor: pointer;
 }
 button:hover,
 .secondary_btn:hover {
   font-size: var(--font-size--2xs);
   color: var(--color-white);
-  padding-block: 0.4rem;
-  padding-inline: 0.6rem;
-  border-radius: var(--border--lg);
+
   border: 1px solid var(--color-nets-darkblue);
   background-color: var(--color-nets-darkblue);
 }
@@ -94,8 +88,6 @@ button:hover,
 .primary_btn {
   font-size: var(--font-size--2xs);
   color: var(--color-white);
-  padding-block: 0.4rem;
-  padding-inline: 0.6rem;
   border-radius: var(--border--lg);
   border: 1px solid var(--color-nets-darkblue);
   background-color: var(--color-nets-darkblue);
@@ -104,10 +96,6 @@ button:hover,
 .primary_btn:hover {
   font-size: var(--font-size--2xs);
   color: var(--color-nets-darkblue);
-  padding-block: 0.4rem;
-  padding-inline: 0.6rem;
-  border-radius: var(--border--lg);
   border: 1px solid var(--color-nets-darkblue);
   background-color: var(--color-white);
-  transition: 100ms all;
 }
