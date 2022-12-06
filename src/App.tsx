@@ -24,7 +24,7 @@ import { getAuth } from "firebase/auth";
 import { PrivateRoute } from "./pages/PrivateRoute";
 import { Navbar } from "./ui/components/2-molecules/Header";
 import { Footer } from "./ui/components/2-molecules/Footer";
-import { ShoppingCartProvider } from "./contexts/ProductContex";
+import { ShoppingCartProvider } from "./contexts/ShoppingCartContex";
 
 function App() {
   const app = useFirebaseApp();
@@ -36,8 +36,8 @@ function App() {
       {/* <AuthProvider sdk={auth}> */}
       <AuthProvider auth={auth}>
         <DatabaseProvider sdk={database}>
-          <ShoppingCartProvider>
-            <BrowserRouter>
+          <BrowserRouter>
+            <ShoppingCartProvider>
               <Navbar />
               <Routes>
                 <Route path="/" element={<Frontpage />} />
@@ -62,8 +62,8 @@ function App() {
                 <Route path="/checkout" element={<Checkout />} />
               </Routes>
               <Footer />
-            </BrowserRouter>
-          </ShoppingCartProvider>
+            </ShoppingCartProvider>
+          </BrowserRouter>
         </DatabaseProvider>
       </AuthProvider>
       {/* </AuthProvider> */}
