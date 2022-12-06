@@ -8,9 +8,6 @@
   width: 100%;
   justify-content: space-between;
 
-  &_icons {
-  }
-
   &_menu {
     display: none;
     list-style: none;
@@ -29,9 +26,6 @@
       z-index: 1;
       transform: translateY(60px);
       width: 100%;
-      &.active + main {
-        transform: translate3d(0px, 164px, 0px);
-      }
 
       &_item .active {
         color: blue;

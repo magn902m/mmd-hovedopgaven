@@ -33,40 +33,40 @@ function App() {
 
   return (
     <div className="App">
-      {/* <ShoppingCartProvider> */}
       {/* <AuthProvider sdk={auth}> */}
       <AuthProvider auth={auth}>
         <DatabaseProvider sdk={database}>
-          <BrowserRouter>
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<Frontpage />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/product" element={<Product />}>
-                <Route path=":produktid" element={<Product />} />
-              </Route>
-              <Route path="/green-goal" element={<GreenGoal />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/forgot-password" element={<ForgotPassword />} />
-              {/* <Route path="/account" element={<Account />} /> */}
-              <Route
-                path="/account"
-                element={
-                  <PrivateRoute>
-                    <Account />
-                  </PrivateRoute>
-                }
-              />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/checkout" element={<Checkout />} />
-            </Routes>
-            <Footer />
-          </BrowserRouter>
+          <ShoppingCartProvider>
+            <BrowserRouter>
+              <Navbar />
+              <Routes>
+                <Route path="/" element={<Frontpage />} />
+                <Route path="/products" element={<Products />} />
+                <Route path="/product" element={<Product />}>
+                  <Route path=":produktid" element={<Product />} />
+                </Route>
+                <Route path="/green-goal" element={<GreenGoal />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
+                {/* <Route path="/account" element={<Account />} /> */}
+                <Route
+                  path="/account"
+                  element={
+                    <PrivateRoute>
+                      <Account />
+                    </PrivateRoute>
+                  }
+                />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/checkout" element={<Checkout />} />
+              </Routes>
+              <Footer />
+            </BrowserRouter>
+          </ShoppingCartProvider>
         </DatabaseProvider>
       </AuthProvider>
       {/* </AuthProvider> */}
-      {/* </ShoppingCartProvider> */}
     </div>
   );
 }

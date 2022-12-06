@@ -13,7 +13,9 @@ export const Products = () => {
   };
   return (
     <main className="nets_products">
-      <h1>Products</h1>
+      <header>
+        <h1>Products</h1>
+      </header>
       <section className="nets_products_overview">
         {/* <div className="nets_products_overview_grid"> */}
         {WebshopItems.map((t) => (
