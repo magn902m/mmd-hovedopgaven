@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect, useRef } from "react";
 import Terminal from "../assets/images/asset_1.png";
 import WebshopItems from "./terminals.json";
 import { Link, useParams } from "react-router-dom";
@@ -8,6 +8,11 @@ import { Button } from "../ui/components/1-atoms/Button";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { useShoppingCart } from "../contexts/ShoppingCartContex";
+import { useAuth } from "../contexts/AuthContext";
+import { child, get, getDatabase, ref, update } from "firebase/database";
+import { PaymentTerminalCanvas } from "../ui/components/3-organisms/PaymentTerminalCanvas/PaymentTerminalCanvas";
+import { ColorPicker } from "../ui/components/UpdateAccount/ColorPicker/ColorPicker";
+import { ThreeJSContext } from "../contexts/ThreeJSContext";
 
 const style = {
   position: "absolute",
@@ -32,7 +37,7 @@ export const Product = () => {
   const params = useParams();
 
   const singleProduct = WebshopItems.filter((t) => {
-    return t.id === Number(params.produktid);
+    return t.id === Number(params.productid);
   })[0];
 
   const { increaseCartQuantity } = useShoppingCart();
@@ -47,8 +52,111 @@ export const Product = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  // ThreeJS
+  const productRef: any = useRef(null);
+  const { updateModel, setUpdateModel } = useContext(ThreeJSContext);
+  const { currentUser } = useAuth();
+  const [profilData, setProfilData] = useState({
+    adresse: "",
+    cvrNumber: "",
+    email: "",
+    firstname: "",
+    lastname: "",
+    telefon: "",
+    companyName: "",
+    color: "",
+    uid: "",
+  });
+
+  const [pickedColor, setPickedColor] = useState("");
+  const handlePickedColor = (e: any) => setPickedColor(e.target.value);
+
+  useEffect(() => {
+    const dbRef = ref(getDatabase());
+    async function fetchData() {
+      const snapshot = await get(child(dbRef, `users/${currentUser.uid}`));
+      if (snapshot.exists()) {
+        // console.log(snapshot.val());
+        setProfilData(snapshot.val());
+        setPickedColor(snapshot.val().color);
+      } else {
+        console.log("No data available");
+      }
+    }
+    fetchData();
+    // get(child(dbRef, `users/${currentUser.uid}`))
+    //   .then((snapshot) => {
+    //     if (snapshot.exists()) {
+    //       setProfilData(snapshot.val());
+    //       setPickedColor(profilData.color);
+    //       console.log(pickedColor);
+    //     } else {
+    //       console.log("No data available");
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+    //   });
+  }, []);
+
+  function updateModelSettings() {
+    setUpdateModel((old: any) => {
+      return {
+        ...old,
+        pickedColor,
+        handlePickedColor,
+      };
+    });
+  }
+  useEffect(() => {
+    updateModelSettings();
+  }, [pickedColor]);
+
+  async function saveUserPreference(e: any) {
+    console.log("saveUserPreference");
+
+    // e.preventDefault();
+
+    const postData: any = {
+      ...profilData,
+      color: updateModel.pickedColor,
+      uid: profilData.uid,
+    };
+
+    const promises = [];
+
+    promises.push(updateAccountData(postData));
+
+    function updateAccountData(postData: any) {
+      const db = getDatabase();
+      const updates: any = {};
+      updates["/users/" + postData.uid + "/"] = postData;
+
+      return update(ref(db), updates);
+    }
+
+    Promise.all(promises)
+      .then(() => {
+        console.log("Kontoen er opdateret, reload siden");
+      })
+      .catch(() => {
+        console.log("Kontoen kunne ikke opdateres");
+      });
+  }
+
   return (
     <main className="nets_product">
+      <section className="product" ref={productRef}>
+        <PaymentTerminalCanvas />
+        <ColorPicker
+          onChange={handlePickedColor}
+          value={pickedColor}
+          profilcolor={profilData?.color}
+        />
+        <Link to="/cart" onClick={saveUserPreference}>
+          Køb
+        </Link>
+      </section>
       <section className="nets_product_top">
         <img src={Terminal} alt="" />
         <div className="nets_product_top_info">
@@ -71,7 +179,7 @@ export const Product = () => {
         </div>
       </section>
 
-      <Modal
+      {/* <Modal
         hideBackdrop
         open={open}
         onClose={handleClose}
@@ -93,7 +201,7 @@ export const Product = () => {
             </div>
           </section>
         </Box>
-      </Modal>
+      </Modal> */}
 
       <section className="nets_product_bottom">
         <div>

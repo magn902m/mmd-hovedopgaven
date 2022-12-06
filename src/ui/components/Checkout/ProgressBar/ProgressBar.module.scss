@@ -1,0 +1,26 @@
+.ProgressBar_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block: 3rem;
+}
+.ProgressBar_steps_container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style-type: none;
+}
+
+.ProgressBar_step_item {
+  opacity: 80%;
+}
+
+.ProgressBar_current_item {
+  font-weight: var(--font-weight--extrabold);
+}
+
+.ProgressBar_progress_count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

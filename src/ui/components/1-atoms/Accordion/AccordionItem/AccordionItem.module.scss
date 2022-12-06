@@ -1,0 +1,21 @@
+.AccordionItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.AccordionTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.AccordionContent {
+  margin-block-end: var(--spacing--lg);
+  margin-inline: var(--spacing--md);
+}
+
+.AccordionIcon {
+  height: 2rem;
+  width: 2rem;
+}

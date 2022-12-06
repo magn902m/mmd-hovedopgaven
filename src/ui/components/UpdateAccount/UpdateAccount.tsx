@@ -5,7 +5,7 @@ import { ColorPicker } from "./ColorPicker/ColorPicker";
 import classNames from "classnames";
 import styles from "./UpdateAccount.module.scss";
 
-export const UpdateAccount = ({ profilData }: any) => {
+export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) => {
   const updateAccountFormRef: any = useRef(null);
   const emailRef: any = useRef(null);
   const passwordRef: any = useRef(null);
@@ -14,7 +14,6 @@ export const UpdateAccount = ({ profilData }: any) => {
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const [pickedColor, setPickedColor] = useState("#005776");
 
   async function handleSubmit(e: any) {
     console.log("submittedGet and resetPassword");
@@ -229,7 +228,7 @@ export const UpdateAccount = ({ profilData }: any) => {
             <ColorPicker
               onChange={handlePickedColor}
               value={pickedColor}
-              profilColor={profilData?.color}
+              profilcolor={profilData?.color}
             />
           </div>
 

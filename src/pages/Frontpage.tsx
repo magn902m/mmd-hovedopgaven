@@ -22,7 +22,7 @@ export const Frontpage = () => {
             og er bedst til. Vi sørger for, at dine betalinger går hurtigt og sikkert igennem. Kom
             hurtigt i gang med at tage imod betalinger med én af vores pakkeløsninger.
           </p>
-          <Button label={"Vælg pakkeløsning"} onClick={() => goTo("/products")}></Button>
+          <Button onClick={() => goTo("/products")} label="Vælg pakkeløsning"></Button>
         </div>
         <div className="frontpage_hero_img">
           <img src={Terminal} alt="nets terminal" />

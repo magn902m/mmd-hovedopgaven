@@ -12,6 +12,7 @@ import { Account } from "./pages/Account";
 import { Cart } from "./pages/Cart";
 import { Checkout } from "./pages/Checkout";
 import { AuthProvider } from "./contexts/AuthContext";
+import { ThreeJSProvider } from "./contexts/ThreeJSContext";
 
 // Firebase
 import {

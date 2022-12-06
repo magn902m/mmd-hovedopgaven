@@ -1,0 +1,51 @@
+.CheckoutDelivery_buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.CheckoutDelivery_input {
+  position: relative;
+  top: 0;
+  right: 0;
+
+  a {
+    position: absolute;
+    top: 40%;
+    right: 2%;
+    text-decoration: underline;
+  }
+}
+
+.CheckoutDelivery_input_radio {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 100%;
+
+  p {
+    position: absolute;
+    top: 20%;
+    right: 2%;
+    text-decoration: underline;
+  }
+
+  input[type="radio"] {
+    width: auto;
+    position: absolute;
+    top: 28%;
+    right: 94%;
+  }
+
+  input[name="radio_text"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--color-nets-darkblue);
+    border-radius: var(--border--lg);
+    padding-inline-start: 2rem;
+  }
+}
