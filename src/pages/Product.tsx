@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import Terminal from "../assets/images/asset_1.png";
 import WebshopItems from "./terminals.json";
-import Switch from "@mui/material/Switch";
 import { Link, useParams } from "react-router-dom";
 import { NetsAccordion } from "../ui/components/2-molecules/NetsAccordion";
 import Logos from "../ui/logostrip-complete_1728x.webp";
 import { Button } from "../ui/components/1-atoms/Button";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
-import { useShoppingCart } from "../contexts/ProductContex";
+import { useShoppingCart } from "../contexts/ShoppingCartContex";
 
 const style = {
   position: "absolute",
@@ -20,6 +19,15 @@ const style = {
   p: 4,
 };
 
+// interface WebshopItemProps {
+//   id: number;
+//   desc: string;
+//   name: string;
+//   price: number;
+//   img: string;
+// }
+// ({ id, desc, name, price, img }: WebshopItemProps)
+
 export const Product = () => {
   const params = useParams();
 
@@ -29,10 +37,10 @@ export const Product = () => {
 
   const { increaseCartQuantity } = useShoppingCart();
 
-  const [checked, setChecked] = useState(true);
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked(event.target.checked);
-  };
+  // const [checked, setChecked] = useState(true);
+  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setChecked(event.target.checked);
+  // };
 
   //Modal
   const [open, setOpen] = React.useState(false);
@@ -73,11 +81,7 @@ export const Product = () => {
         <Box sx={style} className="nets_modal">
           <section className="nets_modal_top">
             <h3>{singleProduct.name}</h3>
-            <Button
-              className="nets_modal_close"
-              label={"Færdig"}
-              onClick={handleClose}
-            ></Button>
+            <Button className="nets_modal_close" label={"Færdig"} onClick={handleClose}></Button>
           </section>
           <img src="" alt="" />
           <section className="nets_modal_bottom">
@@ -95,19 +99,17 @@ export const Product = () => {
         <div>
           <h4>Modtag de mest populære kort</h4>
           <p>
-            Med pakkeløsningen LARGE får du alt du skal bruge for at tage imod
-            kortbetalinger samt vores komplette service og tilvalgspakke. I
-            aftalen kan du vælge mellem en mobil eller stationær terminal, og du
-            får en indløsningsaftale, så dine kunder kan betale med de mest
-            populære kort.
+            Med pakkeløsningen LARGE får du alt du skal bruge for at tage imod kortbetalinger samt
+            vores komplette service og tilvalgspakke. I aftalen kan du vælge mellem en mobil eller
+            stationær terminal, og du får en indløsningsaftale, så dine kunder kan betale med de
+            mest populære kort.
           </p>
           <img src={Logos} alt="" />
         </div>
         <div>
           <p>
-            Pakkeløsningen Large passer til forretninger, der kortomsætter for
-            mere end 90.000 kr. pr. måned baseret på månedspris og
-            gennemsnitligt transaktionsgebyr.*
+            Pakkeløsningen Large passer til forretninger, der kortomsætter for mere end 90.000 kr.
+            pr. måned baseret på månedspris og gennemsnitligt transaktionsgebyr.*
           </p>
           <NetsAccordion />
         </div>

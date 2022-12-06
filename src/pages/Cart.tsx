@@ -2,15 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../ui/styles/globals.scss";
 import { Button } from "../ui/components/1-atoms/Button";
-import { useShoppingCart } from "../contexts/ProductContex";
+import { useShoppingCart } from "../contexts/ShoppingCartContex";
 import { CartItem } from "../ui/components/2-molecules";
 import WebshopItems from "./terminals.json";
 
 export const Cart = () => {
   const { cartItems } = useShoppingCart();
-
-  // const location = useLocation();
-  // const cartItem = location.state;
 
   return (
     <main className="nets_cart">
