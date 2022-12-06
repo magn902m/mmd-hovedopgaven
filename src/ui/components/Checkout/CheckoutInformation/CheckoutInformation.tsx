@@ -7,6 +7,7 @@ export const CheckoutInformation = ({ toggleCheckoutArr }: any) => {
     e.preventDefault();
     toggleCheckoutArr.setToggleCheckoutInformation(false);
     toggleCheckoutArr.setToggleCheckoutDelivery(true);
+    toggleCheckoutArr.setIsCurrent(2);
   };
 
   return (

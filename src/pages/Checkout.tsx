@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { CheckoutDelivery } from "../ui/components/Checkout/CheckoutDelivery/CheckoutDelivery";
 import { CheckoutInformation } from "../ui/components/Checkout/CheckoutInformation/CheckoutInformation";
 import { CheckoutOverview } from "../ui/components/Checkout/CheckoutOverview/CheckoutOverview";
+import { ProgressBar } from "../ui/components/Checkout/ProgressBar/ProgressBar";
 
 export const Checkout = () => {
   const [toggleCheckoutInformation, setToggleCheckoutInformation] = useState(true);
@@ -26,6 +27,7 @@ export const Checkout = () => {
     <section className="checkout">
       <h1>Checkout</h1>
       <Link to="/cart">Tilbage til kurven</Link>
+      <ProgressBar toggleCheckoutArr={toggleCheckoutArr} />
       {toggleCheckoutInformation && <CheckoutInformation toggleCheckoutArr={toggleCheckoutArr} />}
       {toggleCheckoutDelivery && <CheckoutDelivery toggleCheckoutArr={toggleCheckoutArr} />}
       {toggleCheckoutOverview && <CheckoutOverview toggleCheckoutArr={toggleCheckoutArr} />}

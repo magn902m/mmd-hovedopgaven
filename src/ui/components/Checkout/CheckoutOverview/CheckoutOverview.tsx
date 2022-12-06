@@ -99,6 +99,7 @@ export const CheckoutOverview = ({ toggleCheckoutArr }: any) => {
             onClick={() => {
               toggleCheckoutArr.setToggleCheckoutOverview(false);
               toggleCheckoutArr.setToggleCheckoutDelivery(true);
+              toggleCheckoutArr.setIsCurrent(2);
             }}
           >
             <p> {"<"} Tilbage til levering</p>

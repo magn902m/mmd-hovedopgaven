@@ -6,6 +6,7 @@ export const CheckoutDelivery = ({ toggleCheckoutArr }: any) => {
   const handleSubmit = (e: any) => {
     toggleCheckoutArr.setToggleCheckoutDelivery(false);
     toggleCheckoutArr.setToggleCheckoutOverview(true);
+    toggleCheckoutArr.setIsCurrent(3);
   };
 
   return (
@@ -53,6 +54,7 @@ export const CheckoutDelivery = ({ toggleCheckoutArr }: any) => {
             onClick={() => {
               toggleCheckoutArr.setToggleCheckoutDelivery(false);
               toggleCheckoutArr.setToggleCheckoutInformation(true);
+              toggleCheckoutArr.setIsCurrent(1);
             }}
           >
             <p> {"<"} Tilbage til information</p>
