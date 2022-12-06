@@ -10,7 +10,7 @@ export const CheckoutDelivery = ({ toggleCheckoutArr }: any) => {
   };
 
   return (
-    <article className="checkout_delivery">
+    <article className={styles.CheckoutDelivery_container}>
       <form
         action=""
         className="update_account_form"

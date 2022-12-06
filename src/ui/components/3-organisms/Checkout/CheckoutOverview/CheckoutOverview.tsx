@@ -11,7 +11,7 @@ export const CheckoutOverview = ({ toggleCheckoutArr }: any) => {
   };
 
   return (
-    <article className="checkout_overview">
+    <article className={styles.CheckoutOverview_container}>
       <form
         action=""
         className="update_account_form"

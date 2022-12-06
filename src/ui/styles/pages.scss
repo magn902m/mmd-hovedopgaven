@@ -274,6 +274,14 @@ section.account form {
   }
 }
 
+.checkout {
+  .checkout_information {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing--4xl);
+  }
+}
+
 @media only screen and (min-width: 700px) {
   main {
     justify-items: center;

@@ -30,11 +30,13 @@ export const Checkout = () => {
       <h1>Checkout</h1>
       <Link to="/cart">Tilbage til kurven</Link>
       <ProgressBar toggleCheckoutArr={toggleCheckoutArr} />
-      <CheckoutTotal />
+      <article className="checkout_information">
+        {toggleCheckoutInformation && <CheckoutInformation toggleCheckoutArr={toggleCheckoutArr} />}
+        {toggleCheckoutDelivery && <CheckoutDelivery toggleCheckoutArr={toggleCheckoutArr} />}
+        {toggleCheckoutOverview && <CheckoutOverview toggleCheckoutArr={toggleCheckoutArr} />}
 
-      {toggleCheckoutInformation && <CheckoutInformation toggleCheckoutArr={toggleCheckoutArr} />}
-      {toggleCheckoutDelivery && <CheckoutDelivery toggleCheckoutArr={toggleCheckoutArr} />}
-      {toggleCheckoutOverview && <CheckoutOverview toggleCheckoutArr={toggleCheckoutArr} />}
+        <CheckoutTotal />
+      </article>
     </section>
   );
 };

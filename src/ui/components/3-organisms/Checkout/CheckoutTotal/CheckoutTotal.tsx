@@ -10,7 +10,7 @@ export const CheckoutTotal = () => {
   console.log(cartItems);
 
   return (
-    <>
+    <section className={styles.CheckoutTotal_container}>
       <div className={styles.CheckoutTotal_product_info}>
         <img src={PaymentTerminalImg} alt="" />
         <div>
@@ -37,6 +37,6 @@ export const CheckoutTotal = () => {
         <h4>I alt</h4>
         <p className="total_price">573,75 kr.</p>
       </div>
-    </>
+    </section>
   );
 };
