@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { CheckoutDelivery } from "../ui/components/3-organisms/Checkout/CheckoutDelivery/CheckoutDelivery";
-import { CheckoutInformation } from "../ui/components/3-organisms/Checkout/CheckoutInformation/CheckoutInformation";
-import { CheckoutOverview } from "../ui/components/3-organisms/Checkout/CheckoutOverview/CheckoutOverview";
-import { ProgressBar } from "../ui/components/3-organisms/Checkout/ProgressBar/ProgressBar";
+import { CheckoutDelivery } from "../ui/components";
+import { CheckoutInformation } from "../ui/components";
+import { CheckoutOverview } from "../ui/components";
+import { CheckoutTotal } from "../ui/components/3-organisms/Checkout/CheckoutTotal/CheckoutTotal";
+// import { CheckoutTotal } from "../ui/components";
+import { ProgressBar } from "../ui/components";
 
 export const Checkout = () => {
   const [toggleCheckoutInformation, setToggleCheckoutInformation] = useState(true);
@@ -28,6 +30,8 @@ export const Checkout = () => {
       <h1>Checkout</h1>
       <Link to="/cart">Tilbage til kurven</Link>
       <ProgressBar toggleCheckoutArr={toggleCheckoutArr} />
+      <CheckoutTotal />
+
       {toggleCheckoutInformation && <CheckoutInformation toggleCheckoutArr={toggleCheckoutArr} />}
       {toggleCheckoutDelivery && <CheckoutDelivery toggleCheckoutArr={toggleCheckoutArr} />}
       {toggleCheckoutOverview && <CheckoutOverview toggleCheckoutArr={toggleCheckoutArr} />}
