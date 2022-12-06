@@ -35,11 +35,13 @@ export const Login = () => {
             <label htmlFor="">Email</label>
             <p className="hint">Indtast din email</p>
             <input type="email" ref={emailRef} placeholder="&nbsp;" required />
+            <p>Test email: test@test.com</p>
           </div>
           <div id="password">
             <label htmlFor="">Kodeord</label>
             <p className="hint">Indtast din kodeord</p>
             <input type="password" ref={passwordRef} placeholder="&nbsp;" required />
+            <p>Test kodeord: 123456</p>
           </div>
 
           <button className="primary_btn" disabled={loading} type="submit">
