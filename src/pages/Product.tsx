@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect, useRef } from "react";
 import Terminal from "../assets/images/asset_1.png";
-import WebshopItems from "./terminals.json";
+import WebshopItems from "../data/terminals.json";
 import { Link, useParams } from "react-router-dom";
 import { NetsAccordion } from "../ui/components/2-molecules/NetsAccordion";
 import Logos from "../ui/logostrip-complete_1728x.webp";

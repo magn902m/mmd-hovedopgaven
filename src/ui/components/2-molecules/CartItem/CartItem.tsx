@@ -2,7 +2,7 @@ import React from "react";
 import "./CartItem.scss";
 import { Link } from "react-router-dom";
 import { useShoppingCart } from "../../../../contexts/ShoppingCartContex";
-import WebshopItems from "../../../../pages/terminals.json";
+import WebshopItems from "../../../../data/terminals.json";
 
 type CartItemProps = {
   id: number;
