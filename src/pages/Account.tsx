@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getDatabase, ref, child, get } from "firebase/database";
-import { UpdateAccount } from "../ui/components";
+import { UpdateAccount } from "../ui/components/2-molecules/UpdateAccount/UpdateAccount";
 import { LogoutAccount } from "../ui/components";
 import { useAuth } from "../contexts/AuthContext";
 

@@ -7,6 +7,10 @@ form > div {
   width: 100%;
 }
 
+.is-invalid {
+  border: 1px solid var(--color-error);
+}
+
 form {
   max-width: 420px;
   padding: 0.7rem;
@@ -43,7 +47,8 @@ form select {
   font-weight: var(--font-weight--normal);
 }
 
-.form_double {
+.form_double,
+.form_group {
   // display: flex;
   // flex-direction: row;
   // width: auto;
