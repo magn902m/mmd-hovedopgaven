@@ -134,3 +134,20 @@
     justify-content: center;
   }
 }
+
+.shopping_cart {
+  position: relative;
+  .header_cart_quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1.3rem;
+    height: 1.3rem;
+    transform: translate(30%, 50%);
+    background-color: var(--color-nets-middleblue);
+    border-radius: 1rem;
+  }
+}

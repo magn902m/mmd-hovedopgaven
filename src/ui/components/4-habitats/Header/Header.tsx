@@ -6,12 +6,16 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import "./Header.scss";
 import { useAuth } from "../../../../contexts/AuthContext";
+import { useShoppingCart } from "../../../../contexts/ShoppingCartContex";
 
 export const Navbar = () => {
+  const { cartQuantity } = useShoppingCart();
   const [click, setClick] = useState(false);
   const { currentUser } = useAuth();
 
   const handleClick = () => setClick(!click);
+
+  console.log(cartQuantity);
   return (
     <nav className="nets_navbar">
       <NavLink to="/" className="nets_navbar_logo">
@@ -23,20 +27,12 @@ export const Navbar = () => {
       </NavLink>
       <ul className={click ? "nets_navbar_menu active" : "nets_navbar_menu"}>
         <li className="nets_navbar_items">
-          <NavLink
-            to="/products"
-            className="nets_navbar_links active"
-            onClick={handleClick}
-          >
+          <NavLink to="/products" className="nets_navbar_links active" onClick={handleClick}>
             Products
           </NavLink>
         </li>
         <li className="nets_navbar_items">
-          <NavLink
-            to="/green-goal"
-            className="nets_navbar_links active"
-            onClick={handleClick}
-          >
+          <NavLink to="/green-goal" className="nets_navbar_links active" onClick={handleClick}>
             Vores Grønne Mål
           </NavLink>
         </li>
@@ -60,15 +56,15 @@ export const Navbar = () => {
         </NavLink>
 
         <NavLink to="/cart" className="nav-links active" onClick={handleClick}>
-          <ShoppingBagOutlinedIcon />
+          <div className="shopping_cart">
+            <ShoppingBagOutlinedIcon />
+            <div className="header_cart_quantity">
+              <p>{cartQuantity}</p>
+            </div>
+          </div>
         </NavLink>
       </div>
-      <input
-        className="nav-icon"
-        onClick={handleClick}
-        id="menu__toggle"
-        type="checkbox"
-      />
+      <input className="nav-icon" onClick={handleClick} id="menu__toggle" type="checkbox" />
       <label className="menu__btn" htmlFor="menu__toggle">
         <span></span>
       </label>
