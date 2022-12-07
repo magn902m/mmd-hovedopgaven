@@ -158,7 +158,7 @@ export const Product = () => {
             pr. måned baseret på månedspris og gennemsnitligt transaktionsgebyr.*
           </p>
           {/* <Accordion data={accordionData} /> */}
-          <NetsAccordion />
+          {isOpen ? null : <NetsAccordion />}
         </div>
       </section>
     </main>
