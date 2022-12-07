@@ -1,37 +1,16 @@
-import React, { useState, useContext, useEffect, useRef } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Terminal from "../assets/images/asset_1.png";
 import WebshopItems from "../data/terminals.json";
 import { Link, useParams } from "react-router-dom";
 import { NetsAccordion } from "../ui/components/2-molecules/NetsAccordion";
 import Logos from "../assets/images/logostrip-complete_1728x.webp";
 import { Button } from "../ui/components/1-atoms/Button";
-import Modal from "@mui/material/Modal";
-import Box from "@mui/material/Box";
 import { useShoppingCart } from "../contexts/ShoppingCartContex";
 import { useAuth } from "../contexts/AuthContext";
 import { child, get, getDatabase, ref, update } from "firebase/database";
-import { PaymentTerminalCanvas } from "../ui/components/3-organisms/PaymentTerminalCanvas/PaymentTerminalCanvas";
-import { ColorPicker } from "../ui/components/2-molecules/ColorPicker/ColorPicker";
 import { ThreeJSContext } from "../contexts/ThreeJSContext";
 
-const style = {
-  position: "absolute",
-  top: "0",
-  left: "0",
-  width: "100%",
-  height: "100%",
-  bgcolor: "background.paper",
-  p: 4,
-};
-
-// interface WebshopItemProps {
-//   id: number;
-//   desc: string;
-//   name: string;
-//   price: number;
-//   img: string;
-// }
-// ({ id, desc, name, price, img }: WebshopItemProps)
+import { Modal } from "../ui/components";
 
 export const Product = () => {
   const params = useParams();
@@ -48,12 +27,9 @@ export const Product = () => {
   // };
 
   //Modal
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   // ThreeJS
-  const productRef: any = useRef(null);
   const { updateModel, setUpdateModel } = useContext(ThreeJSContext);
   const { currentUser } = useAuth();
   const [profilData, setProfilData] = useState({
@@ -76,7 +52,6 @@ export const Product = () => {
     async function fetchData() {
       const snapshot = await get(child(dbRef, `users/${currentUser.uid}`));
       if (snapshot.exists()) {
-        // console.log(snapshot.val());
         setProfilData(snapshot.val());
         setPickedColor(snapshot.val().color);
       } else {
@@ -84,19 +59,6 @@ export const Product = () => {
       }
     }
     fetchData();
-    // get(child(dbRef, `users/${currentUser.uid}`))
-    //   .then((snapshot) => {
-    //     if (snapshot.exists()) {
-    //       setProfilData(snapshot.val());
-    //       setPickedColor(profilData.color);
-    //       console.log(pickedColor);
-    //     } else {
-    //       console.log("No data available");
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //   });
   }, []);
 
   function updateModelSettings() {
@@ -114,8 +76,6 @@ export const Product = () => {
 
   async function saveUserPreference(e: any) {
     console.log("saveUserPreference");
-
-    // e.preventDefault();
 
     const postData: any = {
       ...profilData,
@@ -146,17 +106,6 @@ export const Product = () => {
 
   return (
     <main className="nets_product">
-      <section className="product" ref={productRef}>
-        <PaymentTerminalCanvas />
-        <ColorPicker
-          onChange={handlePickedColor}
-          value={pickedColor}
-          profilcolor={profilData?.color}
-        />
-        <Link to="/cart" onClick={saveUserPreference}>
-          Køb
-        </Link>
-      </section>
       <section className="nets_product_top">
         <img src={Terminal} alt="" />
         <div className="nets_product_top_info">
@@ -169,7 +118,7 @@ export const Product = () => {
           <Button
             className="nets_modal_open"
             label={"Skræddersy din terminal"}
-            onClick={handleOpen}
+            onClick={() => setIsOpen(true)}
           ></Button>
           <Button
             className="nets_card_button"
@@ -179,29 +128,17 @@ export const Product = () => {
         </div>
       </section>
 
-      {/* <Modal
-        hideBackdrop
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style} className="nets_modal">
-          <section className="nets_modal_top">
-            <h3>{singleProduct.name}</h3>
-            <Button className="nets_modal_close" label={"Færdig"} onClick={handleClose}></Button>
-          </section>
-          <img src="" alt="" />
-          <section className="nets_modal_bottom">
-            <div>
-              <label htmlFor="color">Vælg farve</label>
-              <select name="color" id="color">
-                <option value="color">Rød</option>
-              </select>
-            </div>
-          </section>
-        </Box>
-      </Modal> */}
+      {isOpen && (
+        <Modal
+          setIsOpen={setIsOpen}
+          handlePickedColor={handlePickedColor}
+          pickedColor={pickedColor}
+          profilcolor={profilData?.color}
+          saveUserPreference={saveUserPreference}
+          name={singleProduct.name}
+          desc={singleProduct.desc}
+        />
+      )}
 
       <section className="nets_product_bottom">
         <div>
