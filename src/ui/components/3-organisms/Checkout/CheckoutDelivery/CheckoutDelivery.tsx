@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./CheckoutDelivery.module.scss";
 
-export const CheckoutDelivery = ({ toggleCheckoutArr }: any) => {
+export const CheckoutDelivery = ({ toggleCheckoutArr, setDeliveryMetode }: any) => {
   const handleSubmit = (e: any) => {
     toggleCheckoutArr.setToggleCheckoutDelivery(false);
     toggleCheckoutArr.setToggleCheckoutOverview(true);
@@ -39,6 +39,7 @@ export const CheckoutDelivery = ({ toggleCheckoutArr }: any) => {
               id="delivery_metode"
               name="delivery_metode"
               placeholder="Standard"
+              onClick={() => setDeliveryMetode({ metode: "standard", price: 49 })}
             />
             <input type="text" id="radio_text" name="radio_text" placeholder="Standard" disabled />
             {/* <span className={styles.CheckoutDelivery_delivery_radio_text}>

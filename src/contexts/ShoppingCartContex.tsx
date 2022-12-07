@@ -1,5 +1,4 @@
 import React, { createContext, ReactNode, useContext } from "react";
-import { Cart } from "../pages/Cart";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 type ShoppingCartProviderProps = {

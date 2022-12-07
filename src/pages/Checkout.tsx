@@ -11,6 +11,7 @@ export const Checkout = () => {
   const [toggleCheckoutInformation, setToggleCheckoutInformation] = useState(true);
   const [toggleCheckoutDelivery, setToggleCheckoutDelivery] = useState(false);
   const [toggleCheckoutOverview, setToggleCheckoutOverview] = useState(false);
+  const [deliveryMetode, setDeliveryMetode] = useState({ metode: "standard", price: 49 });
 
   const [isCurrent, setIsCurrent] = useState(1);
 
@@ -32,10 +33,15 @@ export const Checkout = () => {
       <ProgressBar toggleCheckoutArr={toggleCheckoutArr} />
       <article className="checkout_information">
         {toggleCheckoutInformation && <CheckoutInformation toggleCheckoutArr={toggleCheckoutArr} />}
-        {toggleCheckoutDelivery && <CheckoutDelivery toggleCheckoutArr={toggleCheckoutArr} />}
+        {toggleCheckoutDelivery && (
+          <CheckoutDelivery
+            toggleCheckoutArr={toggleCheckoutArr}
+            setDeliveryMetode={setDeliveryMetode}
+          />
+        )}
         {toggleCheckoutOverview && <CheckoutOverview toggleCheckoutArr={toggleCheckoutArr} />}
 
-        <CheckoutTotal />
+        <CheckoutTotal deliveryMetode={deliveryMetode} />
       </article>
     </section>
   );
