@@ -9,8 +9,9 @@ import { useShoppingCart } from "../contexts/ShoppingCartContex";
 import { useAuth } from "../contexts/AuthContext";
 import { child, get, getDatabase, ref, update } from "firebase/database";
 import { ThreeJSContext } from "../contexts/ThreeJSContext";
+import { accordionData } from "../data/accordionData";
 
-import { Modal } from "../ui/components";
+import { Accordion, Modal } from "../ui/components";
 
 export const Product = () => {
   const params = useParams();
@@ -141,7 +142,7 @@ export const Product = () => {
       )}
 
       <section className="nets_product_bottom">
-        <div>
+        <div className="product_bottom_div">
           <h4>Modtag de mest populære kort</h4>
           <p>
             Med pakkeløsningen LARGE får du alt du skal bruge for at tage imod kortbetalinger samt
@@ -151,11 +152,12 @@ export const Product = () => {
           </p>
           <img src={Logos} alt="" />
         </div>
-        <div>
+        <div className="product_bottom_div">
           <p>
             Pakkeløsningen Large passer til forretninger, der kortomsætter for mere end 90.000 kr.
             pr. måned baseret på månedspris og gennemsnitligt transaktionsgebyr.*
           </p>
+          {/* <Accordion data={accordionData} /> */}
           <NetsAccordion />
         </div>
       </section>

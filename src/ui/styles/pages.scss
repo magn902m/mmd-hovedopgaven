@@ -450,14 +450,18 @@ section.account form {
       margin-top: 6rem;
       gap: 5rem;
 
-      .akkordian {
+      ul {
+        padding-inline-start: 2rem;
+      }
+
+      .accordian {
         margin-top: 3rem;
       }
 
       img {
         margin-top: 3rem;
       }
-      div {
+      .product_bottom_div {
         flex: 1;
       }
     }
