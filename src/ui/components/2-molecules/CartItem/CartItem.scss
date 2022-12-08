@@ -26,8 +26,26 @@
     }
   }
   &_price {
-    label {
-      margin-right: 0.5rem;
+    p {
+      font-size: 0.8rem;
+    }
+    .item_amount {
+      display: flex;
+      align-items: self-end;
+      justify-content: flex-start;
+      gap: 1rem;
+      margin-top: 1rem;
+
+      span {
+        border: solid var(--color-nets-darkblue);
+        padding: 0.3rem;
+      }
+
+      button {
+        padding: 0.2rem;
+        border: none;
+        margin-top: 0;
+      }
     }
   }
   .table_body_total {

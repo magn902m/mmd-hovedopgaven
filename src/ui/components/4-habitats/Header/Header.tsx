@@ -26,12 +26,20 @@ export const Navbar = () => {
       </NavLink>
       <ul className={click ? "nets_navbar_menu active" : "nets_navbar_menu"}>
         <li className="nets_navbar_items">
-          <NavLink to="/products" className="nets_navbar_links active" onClick={handleClick}>
+          <NavLink
+            to="/products"
+            className="nets_navbar_links active"
+            onClick={handleClick}
+          >
             Products
           </NavLink>
         </li>
         <li className="nets_navbar_items">
-          <NavLink to="/green-goal" className="nets_navbar_links active" onClick={handleClick}>
+          <NavLink
+            to="/green-goal"
+            className="nets_navbar_links active"
+            onClick={handleClick}
+          >
             Vores Grønne Mål
           </NavLink>
         </li>
@@ -63,7 +71,12 @@ export const Navbar = () => {
           </div>
         </NavLink>
       </div>
-      <input className="nav-icon" onClick={handleClick} id="menu__toggle" type="checkbox" />
+      <input
+        className="nav-icon"
+        onClick={handleClick}
+        id="menu__toggle"
+        type="checkbox"
+      />
       <label className="menu__btn" htmlFor="menu__toggle">
         <span></span>
       </label>
