@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth } from "../../../../contexts/AuthContext";
 import { getDatabase, ref, update } from "firebase/database";
 import { ColorPicker } from "../ColorPicker/ColorPicker";
@@ -15,7 +15,6 @@ export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) 
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-
   interface UserSubmitForm {
     firstname: string;
     lastname: string;
@@ -29,31 +28,31 @@ export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) 
     password_confirm: string;
   }
 
-  // const validationSchema = yup.object().shape({
-  //   firstname: yup.string().required("Fornavn er påkrævet").default(profilData?.firstname),
-  //   lastname: yup.string().required("Efternavn er påkrævet"),
-  //   email: yup.string().required("E-mail er påkrævet").email("E-mail er ugyldig"),
-  //   phone_code: yup.string().required("Telefonkode er påkrævet"),
-  //   phone_num: yup
-  //     .string()
-  //     .min(8, "Nummeret skal skal 8 tal")
-  //     .max(8, "Nummeret må ikke have mere end 8 tal")
-  //     .required("Telefonnummer er påkrævet"),
-  //   company_name: yup.string().required("Virksomhedsnavn er påkrævet"),
-  //   adresse: yup.string().required("Adresse er påkrævet"),
-  //   cvr_number: yup
-  //     .string()
-  //     .min(5, "Nummeret skal min være 5 tal")
-  //     .max(8, "Nummeret må ikke have mere end 8 tal")
-  //     .required("CVR-nummer er påkrævet"),
-  //   password: yup
-  //     .string()
-  //     .min(6, "Adgangskoden skal være på mindst 6 tegn")
-  //     .max(40, "Adgangskoden må ikke overstige 40 tegn"),
-  //   password_confirm: yup
-  //     .string()
-  //     .oneOf([yup.ref("password"), null], "Bekræft adgangskoden matcher ikke"),
-  // });
+  const validationSchema = yup.object().shape({
+    firstname: yup.string().required("Fornavn er påkrævet"),
+    lastname: yup.string().required("Efternavn er påkrævet"),
+    email: yup.string().required("E-mail er påkrævet").email("E-mail er ugyldig"),
+    phone_code: yup.string().required("Telefonkode er påkrævet"),
+    phone_num: yup
+      .string()
+      .min(8, "Nummeret skal skal 8 tal")
+      .max(8, "Nummeret må ikke have mere end 8 tal")
+      .required("Telefonnummer er påkrævet"),
+    company_name: yup.string().required("Virksomhedsnavn er påkrævet"),
+    adresse: yup.string().required("Adresse er påkrævet"),
+    cvr_number: yup
+      .string()
+      .min(5, "Nummeret skal min være 5 tal")
+      .max(8, "Nummeret må ikke have mere end 8 tal")
+      .required("CVR-nummer er påkrævet"),
+    password: yup
+      .string()
+      .min(6, "Adgangskoden skal være på mindst 6 tegn")
+      .max(40, "Adgangskoden må ikke overstige 40 tegn"),
+    password_confirm: yup
+      .string()
+      .oneOf([yup.ref("password"), null], "Bekræft adgangskoden matcher ikke"),
+  });
 
   const {
     register,
@@ -62,8 +61,20 @@ export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) 
     reset,
     formState: { errors },
   } = useForm<UserSubmitForm>({
-    mode: "onChange",
-    // resolver: yupResolver(validationSchema),
+    mode: "onBlur",
+    resolver: yupResolver(validationSchema),
+    defaultValues: {
+      firstname: "",
+      lastname: "",
+      email: "",
+      phone_code: "",
+      phone_num: 0,
+      company_name: "",
+      adresse: "",
+      cvr_number: 0,
+      password: "",
+      password_confirm: "",
+    },
     // defaultValues: validationSchema.cast(),
   });
 
@@ -81,8 +92,35 @@ export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) 
   //   reset(user);
   // }, [user]);
 
+  useEffect(() => {
+    console.log(profilData);
+    // setValue([{ firstname: profilData?.firstName }, { lastname: profilData?.lastName }]);
+    setValue("firstname", `Test`);
+  }, [profilData]);
+
+  useEffect(() => {
+    reset({
+      firstname: profilData?.firstName,
+      lastname: profilData?.lastName,
+    });
+    // if (profilData) {}
+  }, [profilData]);
+
+  //   useEffect(() => {
+  //     if (userData) {
+  //         setValue([
+  //             { name: userData.name },
+  //             { phone: userData.phone }
+  //         ]);
+  //     }
+  // }, [userData]);
+  console.log(profilData.firstname);
+
+  // setValue: (name: string, value: unknown, config?: Object) => void
+
   async function onSubmit(data: UserSubmitForm) {
     const formData = data;
+    console.log(formData);
 
     if (formData.password !== formData.password_confirm) {
       return setError("Kodeordene er ikke ens");
@@ -95,6 +133,8 @@ export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) 
       profilUid,
     };
 
+    console.log(postData);
+
     const promises = [];
     setLoading(true);
     setError("");
@@ -105,31 +145,31 @@ export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) 
     // if (formData.email !== currentUser.email) {
     //   promises.push(updateEmail(formData.email));
     // }
-    if (formData.password) {
-      promises.push(updatePassword(formData.password));
-    }
+    // if (formData.password) {
+    //   promises.push(updatePassword(formData.password));
+    // }
 
-    promises.push(updateAccountData(postData));
+    // promises.push(updateAccountData(postData));
 
-    function updateAccountData(postData: any) {
-      const db = getDatabase();
-      const updates: any = {};
-      updates["/users/" + postData.uid + "/"] = postData;
+    // function updateAccountData(postData: any) {
+    //   const db = getDatabase();
+    //   const updates: any = {};
+    //   updates["/users/" + postData.uid + "/"] = postData;
 
-      return update(ref(db), updates);
-    }
+    //   return update(ref(db), updates);
+    // }
 
-    Promise.all(promises)
-      .then(() => {
-        setMessage("Kontoen er opdateret, reload siden");
-        setPickedColor(pickedColor);
-      })
-      .catch(() => {
-        setError("Kontoen kunne ikke opdateres");
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    // Promise.all(promises)
+    //   .then(() => {
+    //     setMessage("Kontoen er opdateret, reload siden");
+    //     setPickedColor(pickedColor);
+    //   })
+    //   .catch(() => {
+    //     setError("Kontoen kunne ikke opdateres");
+    //   })
+    //   .finally(() => {
+    //     setLoading(false);
+    //   });
   }
 
   const handlePickedColor = (e: any) => {
@@ -151,12 +191,12 @@ export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) 
                 type="text"
                 id="firstname"
                 placeholder="&nbsp;"
-                required
-                defaultValue={profilData.firstname}
+                // required
+                // defaultValue={profilData.firstname}
                 {...register("firstname")}
                 className={`form_control ${errors.firstname ? "is-invalid" : ""}`}
               />
-              {/* <div className="invalid-feedback">{errors.firstname?.message}</div> */}
+              <div className="invalid-feedback">{errors.firstname?.message}</div>
             </div>
             <div className="form_field">
               <label htmlFor="lastname">Efternavn</label>
@@ -164,12 +204,12 @@ export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) 
               <input
                 type="text"
                 id="lastname"
-                required
-                defaultValue={profilData.lastname}
+                // required
+                // defaultValue={profilData.lastname}
                 {...register("lastname")}
                 className={`form_control ${errors.lastname ? "is-invalid" : ""}`}
               />
-              {/* <div className="invalid-feedback">{errors.lastname?.message}</div> */}
+              <div className="invalid-feedback">{errors.lastname?.message}</div>
             </div>
           </div>
 
@@ -180,8 +220,8 @@ export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) 
               type="email"
               id="email"
               placeholder="&nbsp;"
-              required
-              defaultValue={profilData.email}
+              // required
+              // defaultValue={profilData.email}
               {...register("email")}
               className={`form_control ${errors.email ? "is-invalid" : ""}`}
             />
@@ -194,8 +234,8 @@ export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) 
               <p className="hint">Indtast kode</p>
               <select
                 id="phone_code"
-                required
-                defaultValue={profilData.phoneCode}
+                // required
+                // defaultValue={profilData.phoneCode}
                 {...register("phone_code")}
                 onChange={(e) => setValue("phone_code", e.target.value, { shouldValidate: true })}
                 className={`form_control ${errors.phone_code ? "is-invalid" : ""}`}
@@ -217,8 +257,8 @@ export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) 
                 pattern="[0-9]+"
                 // maxLength="10" minLength="8"
 
-                required
-                defaultValue={profilData.phoneNum}
+                // required
+                // defaultValue={profilData.phoneNum}
                 {...register("phone_num")}
                 className={`form_control ${errors.phone_num ? "is-invalid" : ""}`}
               />
@@ -233,8 +273,8 @@ export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) 
               type="text"
               id="adresse"
               placeholder="&nbsp;"
-              defaultValue={profilData?.adresse}
-              required
+              // defaultValue={profilData?.adresse}
+              // required
               {...register("adresse")}
               className={`form_control ${errors.adresse ? "is-invalid" : ""}`}
             />
@@ -248,8 +288,8 @@ export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) 
                 type="text"
                 id="company_name"
                 placeholder="&nbsp;"
-                defaultValue={profilData?.companyName}
-                required
+                // defaultValue={profilData?.companyName}
+                // required
                 {...register("company_name")}
                 className={`form_control ${errors.company_name ? "is-invalid" : ""}`}
               />
@@ -263,8 +303,8 @@ export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) 
                 type="number"
                 id="cvr_number"
                 placeholder="&nbsp;"
-                defaultValue={profilData?.cvrNumber}
-                required
+                // defaultValue={profilData?.cvrNumber}
+                // required
                 {...register("cvr_number")}
                 className={`form_control ${errors.cvr_number ? "is-invalid" : ""}`}
               />
@@ -321,7 +361,14 @@ export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) 
             {/* <p className="invalid-feedback">{errors.password_confirm?.message}</p> */}
           </div>
 
-          <Button disabled={loading} type="submit" label={"Update konto"} />
+          <Button
+            // onClick={() => {
+            //   reset({ firstname: profilData.firstname, lastname: profilData.lastname });
+            // }}
+            disabled={loading}
+            type="submit"
+            label={"Update konto"}
+          />
         </form>
       </div>
     </>
