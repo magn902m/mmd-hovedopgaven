@@ -54,6 +54,9 @@
 
 @media screen and (max-width: 600px) {
   .nets_navbar {
+    &_logo {
+      padding-left: 0;
+    }
     &_menu {
       display: none;
       transform: translateY(-100%);
