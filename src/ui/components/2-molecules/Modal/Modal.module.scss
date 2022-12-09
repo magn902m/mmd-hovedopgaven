@@ -12,6 +12,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .Model_heading {

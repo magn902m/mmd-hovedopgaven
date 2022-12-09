@@ -33,18 +33,19 @@ export const Modal = (props: any) => {
       <aside className={styles.Model_centered}>
         <div className={styles.Model_modal}>
           <header>
-            <h3 className={styles.Model_heading}>{props.name}</h3>
-            <p className={styles.Model_description}>{props.desc}</p>
+            <div>
+              <h3 className={styles.Model_heading}>{props.name}</h3>
+              <p className={styles.Model_description}>{props.desc}</p>
+            </div>
+            <Button
+              label="Færdig"
+              onClick={() => {
+                props.saveUserPreference();
+                props.setIsOpen(false);
+              }}
+            />
           </header>
-          <button
-            className={styles.Model_close_btn}
-            onClick={() => {
-              props.saveUserPreference();
-              props.setIsOpen(false);
-            }}
-          >
-            Færdig
-          </button>
+
           <PaymentTerminalCanvas />
           <div className={styles.Model_actions_container}>
             <div className={styles.Model_action_btns_container}>

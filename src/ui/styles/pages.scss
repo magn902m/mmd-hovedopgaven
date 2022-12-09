@@ -349,11 +349,24 @@ section.account form {
       display: grid;
       grid-template-columns: 60% auto;
       align-items: center;
-
       margin-bottom: 5rem;
+
+      &_buttons {
+        margin-top: 2rem;
+        display: flex;
+        gap: 1rem;
+
+        button {
+          font-size: var(--font-size--4xs);
+        }
+      }
       &_text {
+        align-items: flex-start;
         & > h2 {
-          font-size: var(--font-size--6xl);
+          font-size: var(--font-size--4xl);
+        }
+        & > p {
+          margin-right: 3.2rem;
         }
       }
       &_img {
