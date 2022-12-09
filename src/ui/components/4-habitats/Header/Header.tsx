@@ -55,22 +55,20 @@ export const Navbar = () => {
         </li>
 
         <li>
-          {click && (
-            <NavLink
-              to={currentUser ? "/account" : "/login"}
-              className="nav-links"
-              onClick={handleClick}
-            >
-              {currentUser ? "Log ud" : "Log mig ind"}
-            </NavLink>
-          )}
+          <NavLink
+            to={currentUser ? "/account" : "/login"}
+            className="nav-links login_mobile"
+            onClick={handleClick}
+          >
+            {currentUser ? "Log ud" : "Log ind"}
+          </NavLink>
         </li>
       </ul>
 
       <ul className="nets_navbar_burger">
         <NavLink
           to={currentUser ? "/account" : "/login"}
-          className="nav-links login"
+          className="nav-links login_desctop"
           onClick={handleClick}
         >
           {currentUser ? "Log ud" : "Log ind"}

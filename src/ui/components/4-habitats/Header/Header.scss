@@ -8,49 +8,25 @@
   width: 100%;
   justify-content: space-between;
 
+  &_logo {
+    padding-left: 2rem;
+  }
   &_menu {
-    display: none;
-    list-style: none;
-    background: lightblue;
-    position: absolute;
-    opacity: 1;
-    line-height: 4rem;
-    transform: translateY(-100%);
-    transition: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
-    overflow: hidden;
-
-    &.active {
-      display: block;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      transform: translateY(70px);
-      width: 100%;
-      padding-left: 1rem;
-
-      &_links {
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        height: 100%;
-        border-bottom: 3px solid transparent;
-      }
-    }
-  }
-  .login {
-    display: none;
-  }
-  &_burger {
     display: flex;
-    align-items: center;
-    gap: 1.7rem;
-
-    .shopping_cart {
-      padding-top: 0.5rem;
-    }
+    list-style: none;
+    background: var(--color-gray--light);
+    position: relative;
+    opacity: 1;
+    padding-left: 1rem;
+    gap: 1.5rem;
+  }
+  .login_mobile {
+    display: none;
   }
 
   .shopping_cart {
     position: relative;
+    padding-top: 0.5rem;
     .header_cart_quantity {
       display: flex;
       justify-content: center;
@@ -69,20 +45,44 @@
       }
     }
   }
+  &_burger {
+    display: flex;
+    align-items: center;
+    gap: 1.7rem;
+  }
 }
-@media screen and (min-width: 700px) {
+
+@media screen and (max-width: 600px) {
   .nets_navbar {
-    &_logo {
-      padding-left: 2rem;
-    }
     &_menu {
-      display: flex;
-      background-color: var(--color-gray--light);
-      transform: translate(0);
-      gap: 1.5rem;
-      position: relative;
+      display: none;
+      transform: translateY(-100%);
+      transition: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
+
+      &.active {
+        display: block;
+        background-color: var(--color-nets-lightblue);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        transform: translateY(70px);
+        width: 100%;
+        overflow: hidden;
+
+        line-height: 4rem;
+        &_links {
+          text-decoration: none;
+          padding: 0.5rem 1rem;
+          height: 100%;
+          border-bottom: 3px solid transparent;
+        }
+      }
     }
-    .login {
+    .login_desctop {
+      display: none;
+    }
+    .login_mobile {
       display: block;
     }
   }
@@ -135,7 +135,7 @@
   top: 8px;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 575px) {
   .burger_menu_btn {
     position: fixed;
     top: 35px;
