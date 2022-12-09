@@ -18,7 +18,7 @@ export const Login = () => {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      navigate("/account");
+      navigate("/products");
     } catch {
       setError("Kunne ikke logge ind");
     }

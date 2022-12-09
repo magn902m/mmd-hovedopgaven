@@ -46,16 +46,32 @@ function App() {
                   <Routes>
                     <Route path="/" element={<Frontpage />} />
                     <Route path="/products" element={<Products />} />
-                    <Route path="/product" element={<Product />}>
+                    {/* <Route path="/product" element={<Product />}>
                       <Route path=":productid" element={<Product />} />
+                    </Route> */}
+
+                    <Route
+                      path="/product"
+                      element={
+                        <PrivateRoute>
+                          <Product />
+                        </PrivateRoute>
+                      }
+                    >
+                      <Route
+                        path=":productid"
+                        element={
+                          <PrivateRoute>
+                            <Product />
+                          </PrivateRoute>
+                        }
+                      />
                     </Route>
+
                     <Route path="/green-goal" element={<GreenGoal />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/signup" element={<Signup />} />
-                    <Route
-                      path="/forgot-password"
-                      element={<ForgotPassword />}
-                    />
+                    <Route path="/forgot-password" element={<ForgotPassword />} />
                     {/* <Route path="/account" element={<Account />} /> */}
                     <Route
                       path="/account"
