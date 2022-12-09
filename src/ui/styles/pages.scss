@@ -283,6 +283,9 @@ section.account form {
         font-size: 0.8rem;
         text-decoration: underline;
       }
+      button {
+        margin-top: 3rem;
+      }
     }
     &_customize {
       margin-top: 2rem;
@@ -559,6 +562,7 @@ section.account form {
     }
     button {
       margin-top: 3rem;
+      grid-column: 3;
     }
   }
 }

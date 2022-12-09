@@ -9,9 +9,8 @@ import { useShoppingCart } from "../contexts/ShoppingCartContex";
 import { useAuth } from "../contexts/AuthContext";
 import { child, get, getDatabase, ref, update } from "firebase/database";
 import { ThreeJSContext } from "../contexts/ThreeJSContext";
-import { accordionData } from "../data/accordionData";
 
-import { Accordion, Modal } from "../ui/components";
+import { Modal } from "../ui/components";
 
 export const Product = () => {
   const params = useParams();
@@ -21,11 +20,6 @@ export const Product = () => {
   })[0];
 
   const { increaseCartQuantity } = useShoppingCart();
-
-  // const [checked, setChecked] = useState(true);
-  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   setChecked(event.target.checked);
-  // };
 
   //Modal
   const [isOpen, setIsOpen] = useState(false);
@@ -145,17 +139,19 @@ export const Product = () => {
         <div className="product_bottom_div">
           <h4>Modtag de mest populære kort</h4>
           <p>
-            Med pakkeløsningen LARGE får du alt du skal bruge for at tage imod kortbetalinger samt
-            vores komplette service og tilvalgspakke. I aftalen kan du vælge mellem en mobil eller
-            stationær terminal, og du får en indløsningsaftale, så dine kunder kan betale med de
-            mest populære kort.
+            Med pakkeløsningen LARGE får du alt du skal bruge for at tage imod
+            kortbetalinger samt vores komplette service og tilvalgspakke. I
+            aftalen kan du vælge mellem en mobil eller stationær terminal, og du
+            får en indløsningsaftale, så dine kunder kan betale med de mest
+            populære kort.
           </p>
           <img src={Logos} alt="" />
         </div>
         <div className="product_bottom_div">
           <p>
-            Pakkeløsningen Large passer til forretninger, der kortomsætter for mere end 90.000 kr.
-            pr. måned baseret på månedspris og gennemsnitligt transaktionsgebyr.*
+            Pakkeløsningen Large passer til forretninger, der kortomsætter for
+            mere end 90.000 kr. pr. måned baseret på månedspris og
+            gennemsnitligt transaktionsgebyr.*
           </p>
           {/* <Accordion data={accordionData} /> */}
           {isOpen ? null : <NetsAccordion />}

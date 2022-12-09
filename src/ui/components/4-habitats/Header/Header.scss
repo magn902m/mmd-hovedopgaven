@@ -8,63 +8,82 @@
   width: 100%;
   justify-content: space-between;
 
+  &_logo {
+    padding-left: 2rem;
+  }
   &_menu {
-    display: none;
+    display: flex;
     list-style: none;
-    background: lightblue;
-    position: absolute;
-    top: 0;
-    left: 0;
+    background: var(--color-gray--light);
+    position: relative;
     opacity: 1;
-    line-height: 3rem;
-    transform: translateY(-100%);
-    transition: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
-    overflow: hidden;
+    padding-left: 1rem;
+    gap: 1.5rem;
+  }
+  .login_mobile {
+    display: none;
+  }
 
-    &.active {
-      display: block;
-      z-index: 1;
-      transform: translateY(60px);
-      width: 100%;
+  .shopping_cart {
+    position: relative;
+    padding-top: 0.5rem;
+    .header_cart_quantity {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1.2rem;
+      height: 1.2rem;
+      transform: translate(30%, 90%);
+      background-color: var(--color-nets-middleblue);
+      border-radius: 1rem;
 
-      &_item .active {
-        color: blue;
-        border: none;
-      }
-
-      &_item:after {
-        content: "";
-        display: block;
-        height: 3px;
-        width: 0;
-        background: transparent;
-        transition: width 0.7s ease, background-color 0.5s ease;
-      }
-
-      &_item:hover:after {
-        width: 100%;
-        background: white;
-      }
-      &_links {
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        height: 100%;
-        border-bottom: 3px solid transparent;
+      p {
+        font-size: 0.8rem;
       }
     }
   }
+  &_burger {
+    display: flex;
+    align-items: center;
+    gap: 1.7rem;
+  }
+}
 
-  @media screen and (min-width: 700px) {
-    .nets_navbar {
-      &_menu {
-        display: flex;
-        background-color: var(--color-gray--light);
-      }
-      &_links {
-        padding: 1.5rem;
+@media screen and (max-width: 600px) {
+  .nets_navbar {
+    &_menu {
+      display: none;
+      transform: translateY(-100%);
+      transition: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
+
+      &.active {
+        display: block;
+        background-color: var(--color-nets-lightblue);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        transform: translateY(70px);
         width: 100%;
-        display: table;
+        overflow: hidden;
+
+        line-height: 4rem;
+        &_links {
+          text-decoration: none;
+          padding: 0.5rem 1rem;
+          height: 100%;
+          border-bottom: 3px solid transparent;
+        }
       }
+    }
+    .login_desctop {
+      display: none;
+    }
+    .login_mobile {
+      display: block;
     }
   }
 }
@@ -74,21 +93,21 @@
   width: 26px;
   height: 26px;
 }
-#menu__toggle:checked + .menu__btn > span {
+#menu__toggle:checked + .burger_menu_btn > span {
   transform: rotate(45deg);
 }
-#menu__toggle:checked + .menu__btn > span::before {
+#menu__toggle:checked + .burger_menu_btn > span::before {
   top: 0;
   transform: rotate(0deg);
 }
-#menu__toggle:checked + .menu__btn > span::after {
+#menu__toggle:checked + .burger_menu_btn > span::after {
   top: 0;
   transform: rotate(90deg);
 }
 #menu__toggle:checked ~ .menu__box {
   left: 0 !important;
 }
-.menu__btn {
+.burger_menu_btn {
   position: fixed;
   // top: 30px;
   right: 20px;
@@ -97,28 +116,27 @@
   cursor: pointer;
   z-index: 1;
 }
-.menu__btn > span,
-.menu__btn > span::before,
-.menu__btn > span::after {
+.burger_menu_btn > span,
+.burger_menu_btn > span::before,
+.burger_menu_btn > span::after {
   display: block;
   position: absolute;
   width: 100%;
   height: 3px;
-  background-color: blue;
+  background-color: var(--color-nets-darkblue);
   transition-duration: 0.25s;
-  top: 4px;
 }
-.menu__btn > span::before {
+.burger_menu_btn > span::before {
   content: "";
   top: -8px;
 }
-.menu__btn > span::after {
+.burger_menu_btn > span::after {
   content: "";
   top: 8px;
 }
 
 @media screen and (min-width: 575px) {
-  .menu__btn {
+  .burger_menu_btn {
     position: fixed;
     top: 35px;
     right: 25px;
@@ -132,22 +150,5 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-}
-
-.shopping_cart {
-  position: relative;
-  .header_cart_quantity {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 1.3rem;
-    height: 1.3rem;
-    transform: translate(30%, 50%);
-    background-color: var(--color-nets-middleblue);
-    border-radius: 1rem;
   }
 }
