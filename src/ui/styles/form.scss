@@ -61,6 +61,11 @@ form select {
   grid-template-columns: 1fr 3fr;
 }
 
+input[name="colorText"] {
+  width: 100%;
+  padding: 0.5rem;
+}
+
 label {
   font-family: var(--font-primary);
   font-size: var(--font-size--body);

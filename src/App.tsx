@@ -26,6 +26,7 @@ import { PrivateRoute } from "./pages/PrivateRoute";
 import { Navbar } from "./ui/components";
 import { Footer } from "./ui/components";
 import { ShoppingCartProvider } from "./contexts/ShoppingCartContex";
+import { ScrollToTop } from "./hooks/scrollToTop";
 
 function App() {
   const app = useFirebaseApp();
@@ -41,29 +42,51 @@ function App() {
             <BrowserRouter>
               <ShoppingCartProvider>
                 <Navbar />
-                <Routes>
-                  <Route path="/" element={<Frontpage />} />
-                  <Route path="/products" element={<Products />} />
-                  <Route path="/product" element={<Product />}>
-                    <Route path=":productid" element={<Product />} />
-                  </Route>
-                  <Route path="/green-goal" element={<GreenGoal />} />
-                  <Route path="/login" element={<Login />} />
-                  <Route path="/signup" element={<Signup />} />
-                  <Route path="/forgot-password" element={<ForgotPassword />} />
-                  {/* <Route path="/account" element={<Account />} /> */}
-                  <Route
-                    path="/account"
-                    element={
-                      <PrivateRoute>
-                        <Account />
-                      </PrivateRoute>
-                    }
-                  />
-                  <Route path="/cart" element={<Cart />} />
-                  <Route path="/checkout" element={<Checkout />} />
-                </Routes>
-                <Footer />
+                <ScrollToTop>
+                  <Routes>
+                    <Route path="/" element={<Frontpage />} />
+                    <Route path="/products" element={<Products />} />
+                    {/* <Route path="/product" element={<Product />}>
+                      <Route path=":productid" element={<Product />} />
+                    </Route> */}
+
+                    <Route
+                      path="/product"
+                      element={
+                        <PrivateRoute>
+                          <Product />
+                        </PrivateRoute>
+                      }
+                    >
+                      <Route
+                        path=":productid"
+                        element={
+                          <PrivateRoute>
+                            <Product />
+                          </PrivateRoute>
+                        }
+                      />
+                    </Route>
+
+                    <Route path="/green-goal" element={<GreenGoal />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/signup" element={<Signup />} />
+                    <Route path="/forgot-password" element={<ForgotPassword />} />
+                    {/* <Route path="/account" element={<Account />} /> */}
+                    <Route
+                      path="/account"
+                      element={
+                        <PrivateRoute>
+                          <Account />
+                        </PrivateRoute>
+                      }
+                    />
+                    <Route path="/cart" element={<Cart />} />
+                    <Route path="/checkout" element={<Checkout />} />
+                  </Routes>
+
+                  <Footer />
+                </ScrollToTop>
               </ShoppingCartProvider>
             </BrowserRouter>
           </ThreeJSProvider>

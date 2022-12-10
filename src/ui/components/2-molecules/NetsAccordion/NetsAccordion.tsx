@@ -8,7 +8,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export const NetsAccordion = () => {
   return (
-    <div className="akkordian">
+    <div className="accordian">
       <Accordion>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -21,24 +21,43 @@ export const NetsAccordion = () => {
           <p>Information omkring pakke og alle fordelene:</p>
 
           <br />
+
           <ul>
-            <li>Transaktionsgebyr: Fra 0,69 % pr. transaktion.</li>
-            <li>Analytics PRO: Sammenlign din forretning med andre i din branche.</li>
-            <li>Abonnement på bonruller: Modtag 20 bonruller i kvartalet</li>
             <li>
-              Udbetaling: Hver anden dag på alle de internationale kortbrands – og med Dankort er
-              der daglig udbetaling
-            </li>
-            <li>Kundeservice: 24/7</li>
-            <li>Ombytningsservice på din terminal: På din adresse inden for 4 timer.</li>
-            <li>
-              Gratis kundeindsigt: App og portal med adgang til dine salgs- og transaktionsdata
+              <p>Transaktionsgebyr: Fra 0,69 % pr. transaktion.</p>
             </li>
             <li>
-              Indløsningsaftale der giver dig mulighed for at modtage betalinger med de mest
-              populære kort
+              <p>Analytics PRO: Sammenlign din forretning med andre i din branche.</p>
             </li>
-            <li>Bindingsperiode: 36 måneder</li>
+            <li>
+              <p>Abonnement på bonruller: Modtag 20 bonruller i kvartalet</p>
+            </li>
+            <li>
+              <p>
+                Udbetaling: Hver anden dag på alle de internationale kortbrands – og med Dankort er
+                der daglig udbetaling
+              </p>
+            </li>
+            <li>
+              <p>Kundeservice: 24/7</p>
+            </li>
+            <li>
+              <p>Ombytningsservice på din terminal: På din adresse inden for 4 timer.</p>
+            </li>
+            <li>
+              <p>
+                Gratis kundeindsigt: App og portal med adgang til dine salgs- og transaktionsdata
+              </p>
+            </li>
+            <li>
+              <p>
+                Indløsningsaftale der giver dig mulighed for at modtage betalinger med de mest
+                populære kort
+              </p>
+            </li>
+            <li>
+              <p>Bindingsperiode: 36 måneder</p>
+            </li>
           </ul>
           <p>
             *Intervaller er vejledende og afhænger af dit specifikke kortmix – og Dankort er
@@ -63,9 +82,15 @@ export const NetsAccordion = () => {
           </p>
 
           <ul>
-            <li>Mulighed for at kompensere mere end 1% for at nutralisere mere CO2</li>
-            <li>Juster nemt og hurtigt</li>
-            <li>Få gratis tilpasning af dit produkt med i købet, hvis du kompensere mere end 5%</li>
+            <li>
+              <p>Mulighed for at kompensere mere end 1% for at nutralisere mere CO2</p>
+            </li>
+            <li>
+              <p>Juster nemt og hurtigt</p>
+            </li>
+            <li>
+              <p>Få gratis tilpasning af dit produkt med i købet, hvis du kompensere mere end 5%</p>
+            </li>
           </ul>
         </AccordionDetails>
       </Accordion>

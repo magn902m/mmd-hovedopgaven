@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import styles from "./Button.module.scss";
 import classNames from "classnames";
 // import { Icon } from "ui/components"
@@ -13,6 +13,7 @@ export interface ButtonProps {
   onClick?: (e: unknown) => void;
   icon?: unknown;
   className?: string;
+  children?: ReactNode;
 }
 
 export const Button: React.FC<ButtonProps> = ({
