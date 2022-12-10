@@ -3,7 +3,6 @@ import "./CartItem.scss";
 import { Link } from "react-router-dom";
 import { useShoppingCart } from "../../../../contexts/ShoppingCartContex";
 import WebshopItems from "../../../../data/terminals.json";
-import { Button } from "../../1-atoms/Button";
 
 type CartItemProps = {
   id: number;
@@ -11,35 +10,27 @@ type CartItemProps = {
 };
 
 export function CartItem({ id, quantity }: CartItemProps) {
-  const { removeFromCart, increaseCartQuantity, decreaseCartQuantity } =
-    useShoppingCart();
+  const { removeFromCart } = useShoppingCart();
   const item = WebshopItems.find((i) => i.id === id);
   if (item == null) return null;
 
   return (
     <section className="nets_cart_item">
+      <img src="" alt="" />
       <div className="nets_cart_item_desc">
-        <img src={item.img} alt="" />
-        <div>
-          <Link to={`/product/${item.id}`}>{item.name}</Link>
-          <p>Til dig med månedlig kortomsætning over 90.000 kr.*</p>
-          <a onClick={() => removeFromCart(item.id)}>Fjern</a>
-        </div>
+        <Link to="/products">{item.name}</Link>
+        <p>Til dig med månedlig kortomsætning over 90.000 kr.*</p>
+        <a onClick={() => removeFromCart(item.id)}>Fjern</a>
       </div>
 
-      <div className="nets_cart_item_price">
+      <div>
         <p>{`${item.price} kr. pr. måned`}</p>
-        <div className="item_amount">
-          <Button onClick={() => decreaseCartQuantity(id)} label="-"></Button>
-
-          <span className="fs-3">{quantity}</span>
-
-          <Button onClick={() => increaseCartQuantity(id)} label="+"></Button>
+        <div>
+          <label htmlFor="">Antal</label>
+          <input type="text" />
         </div>
       </div>
-      <p className="table_body_total">{`${
-        item.price * quantity
-      } kr. pr. måned`}</p>
+      <p className="table_body_total">{item.price * quantity}</p>
     </section>
   );
 }

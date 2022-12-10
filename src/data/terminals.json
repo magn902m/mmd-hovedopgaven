@@ -4,20 +4,20 @@
     "desc": "Til dig med månedlig kortomsætning under 35.000 kr.*",
     "price": 299,
     "id": 1,
-    "img": "./images/asset_1.png"
+    "img": "./assets/images/asset_1.png"
   },
   {
     "name": "Medium: Få lave gebyr og en udvidet servicepakke. Transaktionsgebyr fra 0,79%",
     "desc": "Til dig med månedlig kortomsætning mellem 35.000-90.000 kr.*",
     "price": 349,
     "id": 2,
-    "img": "./images/asset_1.png"
+    "img": "./assets/images/asset_1.png"
   },
   {
     "name": "Small: Få fest lav månedlig ydelse. Transaktionsgebyr fra 0,89%",
     "desc": "Til dig med månedlig kortomsætning over 90.000 kr.*",
     "price": 459,
     "id": 3,
-    "img": "./images/asset_1.png"
+    "img": "./assets/images/asset_1.png"
   }
 ]

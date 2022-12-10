@@ -16,12 +16,15 @@ export const CheckoutTotal = ({ deliveryMetode }: any) => {
     return { ...item };
   });
 
+  console.log(checkoutItems);
+
   const subtotal = checkoutItems.map((checkoutItem) => {
     const itemQuantity = checkoutItem.itemQuantity;
     const itemPrice: any = checkoutItem.price;
     const itemSubtotal = itemQuantity * itemPrice;
     return itemSubtotal;
   });
+  console.log(subtotal);
 
   const calcSubtotal = subtotal.reduce((total, currentValue) => total + currentValue, 0);
 

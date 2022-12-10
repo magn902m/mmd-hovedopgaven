@@ -202,58 +202,25 @@ section.account form {
 }
 
 .nets_cart {
-  display: flex;
-  flex-direction: column;
-
   &_grid {
     display: grid;
-    grid-template-columns: 60% 1fr;
-    gap: 1rem;
-    margin-top: 4rem;
 
-    h4 {
-      font-weight: 400;
-    }
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
-    &_header {
-      grid-column: 1 / 3;
-      display: grid;
-      border-bottom: solid var(--color-nets-darkblue);
-    }
-
-    .grid_header {
-      grid-column: 1 / 2;
-      &_mobile_none {
-        display: none;
-      }
-      &_subtotal {
-        justify-self: end;
-        grid-column: 2 /3;
-      }
-
-      &_product_desc {
-        display: flex;
-      }
-    }
-    &_body {
-      grid-column: 1 / 3;
-      display: grid;
-      border-bottom: solid var(--color-nets-darkblue);
-    }
-
-    &_footer {
-      grid-column: 1 / 3;
-      display: grid;
-
-      & > p {
-        grid-column: 1 / 2;
-      }
-      .grid_footer_total {
-        grid-column: 2/3;
-        justify-self: end;
-      }
+    // &_header {
+    //   grid-area: header;
+    // }
+    // &_body {
+    //   grid-area: main;
+    // }
+    // &_footer {
+    //   grid-area: footer;
+    // }
+    &_product_desc {
+      display: flex;
     }
   }
+
   button {
     margin-top: 3rem;
   }
@@ -282,9 +249,6 @@ section.account form {
       a {
         font-size: 0.8rem;
         text-decoration: underline;
-      }
-      button {
-        margin-top: 3rem;
       }
     }
     &_customize {
@@ -349,24 +313,11 @@ section.account form {
       display: grid;
       grid-template-columns: 60% auto;
       align-items: center;
+
       margin-bottom: 5rem;
-
-      &_buttons {
-        margin-top: 2rem;
-        display: flex;
-        gap: 1rem;
-
-        button {
-          font-size: var(--font-size--4xs);
-        }
-      }
       &_text {
-        align-items: flex-start;
         & > h2 {
-          font-size: var(--font-size--4xl);
-        }
-        & > p {
-          margin-right: 3.2rem;
+          font-size: var(--font-size--6xl);
         }
       }
       &_img {
@@ -499,83 +450,16 @@ section.account form {
       margin-top: 6rem;
       gap: 5rem;
 
-      ul {
-        padding-inline-start: 2rem;
-      }
-
-      .accordian {
+      .akkordian {
         margin-top: 3rem;
       }
 
       img {
         margin-top: 3rem;
       }
-      .product_bottom_div {
+      div {
         flex: 1;
       }
-    }
-  }
-
-  .nets_cart {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    &_section {
-      text-align: center;
-    }
-
-    &_grid {
-      max-width: 1000px;
-      align-items: center;
-      display: grid;
-      grid-template-columns: 50% 1fr 1fr;
-      gap: 1rem;
-      margin-top: 4rem;
-
-      &_header {
-        padding: 0 2rem;
-        grid-column: 1/ 4;
-        border-bottom: solid var(--color-nets-darkblue);
-      }
-
-      .grid_header {
-        &_mobile_none {
-          display: block;
-          grid-column: 2/3;
-        }
-        &_subtotal {
-          justify-self: end;
-          grid-column: 3 /4;
-        }
-
-        &_product_desc {
-          display: flex;
-        }
-      }
-      &_body {
-        grid-column: 1 / 4;
-        display: grid;
-        border-bottom: solid var(--color-nets-darkblue);
-      }
-
-      &_footer {
-        grid-column: 1 / 4;
-        display: grid;
-
-        & > h4 {
-          grid-column: 3;
-        }
-        .grid_footer_total {
-          grid-column: 4;
-          justify-self: end;
-          justify-items: end;
-        }
-      }
-    }
-    button {
-      margin-top: 3rem;
-      grid-column: 3;
     }
   }
 }

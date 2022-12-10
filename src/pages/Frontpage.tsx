@@ -15,27 +15,14 @@ export const Frontpage = () => {
     <main className="frontpage">
       <section className="frontpage_hero">
         <div className="frontpage_hero_text">
-          <h2>Betalingsterminaler lavet til dig</h2>
+          <h2>Betalingsterminaler til alle typer af butikker</h2>
           <p>
-            Hos Nets stræber vi os på at give tilbage - både til dig og naturen.
-            Med vores betalingsterminaler får du alt, hvad du skal bruge til at
-            tage imod betalinger med alle de kortbrands, dine kunder ønsker at
-            betale med. Som noget nyt kan du skræddersy dem, så de passer
-            præcist ind i din visuelle verden. Vi har selvfølgelig også tænkt på
-            miljøet, og hvordan vi kan mindske vores CO2 aftryk.
+            Hos Nets får du alt, hvad du skal bruge til at tage imod betalinger med alle de
+            kortbrands, dine kunder ønsker at betale med. Så kan du fokusere på det, du brænder for
+            og er bedst til. Vi sørger for, at dine betalinger går hurtigt og sikkert igennem. Kom
+            hurtigt i gang med at tage imod betalinger med én af vores pakkeløsninger.
           </p>
-          <div className="frontpage_hero_buttons">
-            <Button
-              className="primary_btn"
-              onClick={() => goTo("/products")}
-              label="Vælg pakkeløsning"
-            ></Button>{" "}
-            <Button
-              className="secondary_btn"
-              onClick={() => goTo("/green-goal")}
-              label="Læs om vore nye bærdygtige initiativer"
-            ></Button>
-          </div>
+          <Button onClick={() => goTo("/products")} label="Vælg pakkeløsning"></Button>
         </div>
         <div className="frontpage_hero_img">
           <img src={Terminal} alt="nets terminal" />
@@ -57,31 +44,25 @@ export const Frontpage = () => {
           <article>
             <h4>1. Spar penge med den pakkeløsning, som passer dig</h4>
             <p>
-              Vælg den pakkeløsning, der passer til dit behov. Vær særligt
-              opmærksom på transaktionsgebyret. Hos Nets kan du spare penge ved
-              at vælge den pakke, der passer dig. Du kan altid skifte pakke,
-              hvis din omsætning ændrer sig!
+              Vælg den pakkeløsning, der passer til dit behov. Vær særligt opmærksom på
+              transaktionsgebyret. Hos Nets kan du spare penge ved at vælge den pakke, der passer
+              dig. Du kan altid skifte pakke, hvis din omsætning ændrer sig!
             </p>
           </article>
           <article>
             <h4>2. Vælg den terminal, der passer til din forretning</h4>
             <p>
-              Har du brug for en mobil eller stationær betalingsterminal? En
-              mobil terminal giver dig mulighed for at tage imod betalinger, der
-              hvor dine kunder er. En stationær terminal er til dig, hvor
-              betalingen klares ved kassen.
+              Har du brug for en mobil eller stationær betalingsterminal? En mobil terminal giver
+              dig mulighed for at tage imod betalinger, der hvor dine kunder er. En stationær
+              terminal er til dig, hvor betalingen klares ved kassen.
             </p>
           </article>
           <article>
-            <h4>
-              3. Bestil online i dag - nemt og hurtigt. Vi sikrer, at du kommer
-              godt i gang
-            </h4>
+            <h4>3. Bestil online i dag - nemt og hurtigt. Vi sikrer, at du kommer godt i gang</h4>
             <p>
-              Bestil produktet. Du vil herefter blive ringet op af én af vores
-              specialister, der sikrer, at du kommer hurtigt og trygt i gang med
-              den løsning og pris, der passer til din forretning. Det er derfor
-              mange forretninger vælger os.
+              Bestil produktet. Du vil herefter blive ringet op af én af vores specialister, der
+              sikrer, at du kommer hurtigt og trygt i gang med den løsning og pris, der passer til
+              din forretning. Det er derfor mange forretninger vælger os.
             </p>
           </article>
         </div>
@@ -93,37 +74,25 @@ export const Frontpage = () => {
           <img src={Terminal} alt="" />
           <article>
             <p>
-              Natur og vores planet er vigtig for os alle, derfor har vi taget
-              to tiltag, som skal være starten på et mere bæredygtig
-              internetter. Derudover er vigtig for os, at de produkter de køber
-              passer ind i din visuelle identitet, så det passer med resten af
+              Natur og vores planet er vigtig for os alle, derfor har vi taget to tiltag, som skal
+              være starten på et mere bæredygtig internetter. Derudover er vigtig for os, at de
+              produkter de køber passer ind i din visuelle identitet, så det passer med resten af
               din virksomhed.
               <br />
-              Som en del af de produkter du køber, går 1% af dit køb til at
-              kompensere for det klimaaftryk produkter har og vil lave i
-              fremtiden.
+              Som en del af de produkter du køber, går 1% af dit køb til at kompensere for det
+              klimaaftryk produkter har og vil lave i fremtiden.
             </p>
             <ul>
-              <li>
-                Mulighed for at kompensere mere end 1% for at nutralisere mere
-                CO2
-              </li>
+              <li>Mulighed for at kompensere mere end 1% for at nutralisere mere CO2</li>
               <li>Juster nemt og hurtigt</li>
               <li>
-                Få gratis tilpasning af dit produkt med i købtet, hvis du
-                kompensere mere end 5%
+                Få gratis tilpasning af dit produkt med i købtet, hvis du kompensere mere end 5%
               </li>
             </ul>
 
             <div>
-              <Button
-                onClick={() => goTo("/green-goal")}
-                label="Læs mere om vores mål"
-              ></Button>
-              <Button
-                onClick={() => goTo("/products")}
-                label="Tilpas dit produkt nu"
-              ></Button>
+              <Button onClick={() => goTo("/green-goal")} label="Læs mere om vores mål"></Button>
+              <Button onClick={() => goTo("/products")} label="Tilpas dit produkt nu"></Button>
             </div>
           </article>
         </div>

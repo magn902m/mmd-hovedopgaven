@@ -9,46 +9,38 @@ import WebshopItems from "../data/terminals.json";
 export const Cart = () => {
   const { cartItems } = useShoppingCart();
 
-  console.log(cartItems);
-  const emptyCart = cartItems.length < 0;
-
   return (
     <main className="nets_cart">
-      <section className="nets_cart_section">
-        <h3>Din indkøbskurv</h3>
+      <header className="nets_cart_header">
+        <h1>Din indkøbskurv</h1>
         <Link to={`/products`}>Tilbage til produkter</Link>
+      </header>
+
+      <section className="nets_cart_grid">
+        <div className="nets_cart_grid_header">
+          <h4 className="grid_header_product">Produkt</h4>
+          <h4 className="grid_header_price">Pris</h4>
+          <h4 className="grid_header_amount">Antal</h4>
+          <h4 className="grid_header_total">I alt</h4>
+        </div>
+        <div>
+          {cartItems.map((item) => (
+            <CartItem key={item.id} {...item} />
+          ))}
+        </div>
+        <div className="nets_cart_grid_footer">
+          <p>I alt</p>
+          <p>
+            {cartItems.reduce((total, cartItem) => {
+              const item = WebshopItems.find((i) => i.id === cartItem.id);
+              return total + (item?.price || 0) * cartItem.quantity;
+            }, 0)}
+            kr. pr. måned
+          </p>
+        </div>
       </section>
-      {emptyCart ? (
-        <span>
-          <p>Din kurv er tom</p>
-          <Link to={"/products"}></Link>
-        </span>
-      ) : (
-        <section className="nets_cart_grid">
-          <div className="nets_cart_grid_header">
-            <h4 className="grid_header_product">Produkt</h4>
-            <h4 className="grid_header_subtotal">Total pris</h4>
-          </div>
 
-          <div className="nets_cart_grid_body">
-            {cartItems.map((item) => (
-              <CartItem key={item.id} {...item} />
-            ))}
-          </div>
-
-          <div className="nets_cart_grid_footer">
-            <h4>I alt</h4>
-            <h4 className="grid_footer_total">
-              {cartItems.reduce((total, cartItem) => {
-                const item = WebshopItems.find((i) => i.id === cartItem.id);
-                return total + (item?.price || 0) * cartItem.quantity;
-              }, 0)}
-              kr. pr. måned
-            </h4>
-          </div>
-          <Button label="Fortsæt til bestilling"></Button>
-        </section>
-      )}
+      <Button label="Fortsæt til bestilling"></Button>
     </main>
   );
 };

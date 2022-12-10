@@ -1,17 +1,10 @@
 .ColorPickerContainer {
   grid-column-gap: 1rem;
-  gap: 1rem;
+  column-gap: 1rem;
   display: grid;
   flex-direction: row;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   width: 100%;
-
-  div:first-child {
-    grid-column: 2/3;
-  }
-  div:last-child {
-    grid-column: 3/4;
-  }
 }
 
 .ColorPickerContainer p {
