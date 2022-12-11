@@ -23,7 +23,10 @@ export const CheckoutTotal = ({ deliveryMetode }: any) => {
     return itemSubtotal;
   });
 
-  const calcSubtotal = subtotal.reduce((total, currentValue) => total + currentValue, 0);
+  const calcSubtotal = subtotal.reduce(
+    (total, currentValue) => total + currentValue,
+    0
+  );
 
   const taxPrice = Math.floor((calcSubtotal / 100) * 25);
 
@@ -38,8 +41,10 @@ export const CheckoutTotal = ({ deliveryMetode }: any) => {
           {/* <img src={checkoutItem.img} alt="" /> */}
           <img src={PaymentTerminalImg} alt="" />
           <div>
-            <p className={styles.CheckoutTotal_item_name}>{checkoutItem.name}</p>
-            <p>{checkoutItem.desc}</p>
+            <p className={styles.CheckoutTotal_item_name}>
+              {checkoutItem.name}
+            </p>
+            <p>{checkoutItem.desc1}</p>
           </div>
           <p className="price">{checkoutItem.price} kr.</p>
         </div>

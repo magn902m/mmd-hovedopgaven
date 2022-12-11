@@ -22,7 +22,7 @@ export const Products = () => {
           <ProductCard
             img={t.img}
             title={t.name}
-            text={t.desc}
+            text={t.desc1}
             btnLabel={`${t.price} kr pr måned`}
             id={t.id}
             key={t.id}

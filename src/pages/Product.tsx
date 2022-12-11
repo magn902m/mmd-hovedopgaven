@@ -105,7 +105,8 @@ export const Product = () => {
         <img src={Terminal} alt="" />
         <div className="nets_product_top_info">
           <h2>{singleProduct.name}</h2>
-          <p>{singleProduct.desc}</p>
+          <h4>{singleProduct.desc1}</h4>
+          <p>{singleProduct.desc2}</p>
           {/* link til accordian */}
           <Link to="">Læs mere</Link>
           <div className="nets_product_top_footprint"></div>
@@ -131,7 +132,7 @@ export const Product = () => {
           profilcolor={profilData?.color}
           saveUserPreference={saveUserPreference}
           name={singleProduct.name}
-          desc={singleProduct.desc}
+          desc={singleProduct.desc1}
         />
       )}
 
