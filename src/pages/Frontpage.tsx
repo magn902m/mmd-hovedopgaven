@@ -15,7 +15,7 @@ export const Frontpage = () => {
     <main className="frontpage">
       <section className="frontpage_hero">
         <div className="frontpage_hero_text">
-          <h2>Betalingsterminaler lavet til dig</h2>
+          <h1>Betalingsterminaler lavet til dig</h1>
           <p>
             Hos Nets stræber vi os på at give tilbage - både til dig og naturen.
             Med vores betalingsterminaler får du alt, hvad du skal bruge til at
