@@ -363,7 +363,7 @@ section.account form {
       &_text {
         align-items: flex-start;
         & > h2 {
-          font-size: var(--font-size--4xl);
+          font-size: var(--font-size--xl);
         }
         & > p {
           margin-right: 3.2rem;
@@ -375,9 +375,10 @@ section.account form {
       }
     }
     &_headers {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 2rem;
-      justify-content: center;
+      justify-items: baseline;
     }
 
     &_how_to {
@@ -412,6 +413,23 @@ section.account form {
 
         img {
           width: 100%;
+        }
+        ul {
+          font-family: var(--font-primary);
+          font-size: var(--font-size--body);
+          font-weight: var(--font-weight--normal);
+
+          li {
+            list-style-type: circle;
+          }
+        }
+      }
+      &_buttons {
+        display: flex;
+        gap: 1rem;
+
+        button {
+          font-size: 0.8rem;
         }
       }
     }

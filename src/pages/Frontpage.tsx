@@ -115,7 +115,7 @@ export const Frontpage = () => {
               </li>
             </ul>
 
-            <div>
+            <div className="frontpage_green_id_buttons">
               <Button
                 onClick={() => goTo("/green-goal")}
                 label="Læs mere om vores mål"

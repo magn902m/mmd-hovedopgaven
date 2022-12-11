@@ -8,6 +8,9 @@
   width: 100%;
   justify-content: space-between;
 
+  &_links {
+    font-size: var(--font-size--body);
+  }
   &_logo {
     padding-left: 2rem;
   }
@@ -18,7 +21,7 @@
     position: relative;
     opacity: 1;
     padding-left: 1rem;
-    gap: 1.5rem;
+    gap: 3rem;
   }
   .login_mobile {
     display: none;
@@ -49,6 +52,11 @@
     display: flex;
     align-items: center;
     gap: 1.7rem;
+
+    .login_desctop {
+      display: flex;
+      font-size: var(--font-size--body);
+    }
   }
 }
 
