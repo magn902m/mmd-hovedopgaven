@@ -590,3 +590,12 @@ section.account form {
     }
   }
 }
+
+@media only screen and (max-width: 1012px) {
+  .checkout {
+    .checkout_information {
+      flex-direction: column-reverse;
+      gap: var(--spacing--2xl);
+    }
+  }
+}
