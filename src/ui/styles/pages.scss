@@ -251,8 +251,9 @@ section.account form {
       }
     }
   }
-  button {
+  a.primary_btn {
     margin-top: 3rem;
+    grid-column: 2/4;
   }
 }
 
@@ -312,6 +313,9 @@ section.account form {
     display: flex;
     justify-content: center;
     gap: var(--spacing--4xl);
+  }
+  .checkout_header {
+    text-align: center;
   }
 }
 

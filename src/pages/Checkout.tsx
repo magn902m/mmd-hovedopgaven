@@ -29,8 +29,10 @@ export const Checkout = () => {
   return (
     <main>
       <section className="checkout">
-        <h1>Checkout</h1>
-        <Link to="/cart">Tilbage til kurven</Link>
+        <section className="checkout_header">
+          <h1>Checkout</h1>
+          <Link to="/cart">Tilbage til kurven</Link>
+        </section>
         <ProgressBar toggleCheckoutArr={toggleCheckoutArr} />
         <article className="checkout_information">
           {toggleCheckoutInformation && (

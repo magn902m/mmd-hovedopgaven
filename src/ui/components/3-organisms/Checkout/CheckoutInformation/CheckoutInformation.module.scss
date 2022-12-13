@@ -7,8 +7,5 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-
-  a {
-    text-decoration: underline;
-  }
+  gap: 1rem;
 }

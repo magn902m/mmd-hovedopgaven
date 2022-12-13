@@ -23,13 +23,29 @@ export const CheckoutOverview = ({ toggleCheckoutArr }: any) => {
         <div id="email" className={styles.CheckoutOverview_input}>
           <label htmlFor="email">Email</label>
           <input type="email" id="email" name="email" placeholder="Email" disabled />
-          <Link to="cart">Skift</Link>
+          <Button
+            btnTypeStyle="link_btn"
+            onClick={() => {
+              toggleCheckoutArr.setToggleCheckoutOverview(false);
+              toggleCheckoutArr.setToggleCheckoutInformation(true);
+              toggleCheckoutArr.setIsCurrent(1);
+            }}
+            label="Skift"
+          />
         </div>
 
         <div id="send_to" className={styles.CheckoutOverview_input}>
           <label htmlFor="send_to">Send til</label>
           <input type="text" id="send_to" name="send_to" placeholder="Send til" disabled />
-          <Link to="cart">Skift</Link>
+          <Button
+            btnTypeStyle="link_btn"
+            onClick={() => {
+              toggleCheckoutArr.setToggleCheckoutOverview(false);
+              toggleCheckoutArr.setToggleCheckoutInformation(true);
+              toggleCheckoutArr.setIsCurrent(1);
+            }}
+            label="Skift"
+          />
         </div>
 
         <div id="delivery_metode">
@@ -71,7 +87,7 @@ export const CheckoutOverview = ({ toggleCheckoutArr }: any) => {
               type="text"
               id="payment"
               name="payment"
-              placeholder="Samme adresse som leveringsadressen"
+              placeholder="     Samme adresse som leveringsadressen"
               disabled
             />
           </div>
@@ -89,7 +105,7 @@ export const CheckoutOverview = ({ toggleCheckoutArr }: any) => {
               type="text"
               id="payment"
               name="payment"
-              placeholder="Brug en anden faktureringsadresse"
+              placeholder="     Brug en anden faktureringsadresse"
               disabled
             />
           </div>

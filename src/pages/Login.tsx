@@ -29,10 +29,14 @@ export const Login = () => {
   return (
     <main>
       <section className="login_form">
-        <h2>Login</h2>
-        <p>For at kunne tilgå dele af hjemmeside, skal man have en konto.</p>
-        <p>Opret en konto, eller login her</p>
+        <h1>Login</h1>
+
         <form action="" onSubmit={handleSubmit}>
+          <p>
+            For at kunne tilgå dele af hjemmeside, skal man have en konto. Opret en konto, eller
+            login her
+          </p>
+
           {error && error}
           <div id="email">
             <label htmlFor="">Email</label>

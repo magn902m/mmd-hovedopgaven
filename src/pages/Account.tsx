@@ -38,7 +38,7 @@ export const Account = () => {
   return (
     <main>
       <section>
-        <h2>Din konto</h2>
+        <h1>Din konto</h1>
       </section>
       <section className="account">
         <UpdateAccount

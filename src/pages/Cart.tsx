@@ -9,21 +9,13 @@ import WebshopItems from "../data/terminals.json";
 export const Cart = () => {
   const { cartItems } = useShoppingCart();
 
-  console.log(cartItems);
-  const emptyCart = cartItems.length < 0;
-
   return (
     <main className="nets_cart">
       <section className="nets_cart_section">
-        <h3>Din indkøbskurv</h3>
-        <Link to={`/products`}>Tilbage til produkter</Link>
+        <h1>Din indkøbskurv</h1>
+        {cartItems.length > 0 ? <Link to={`/products`}>Tilbage til produkter</Link> : null}
       </section>
-      {emptyCart ? (
-        <span>
-          <p>Din kurv er tom</p>
-          <Link to={"/products"}></Link>
-        </span>
-      ) : (
+      {cartItems.length > 0 ? (
         <section className="nets_cart_grid">
           <div className="nets_cart_grid_header">
             <h4 className="grid_header_product">Produkt</h4>
@@ -46,7 +38,17 @@ export const Cart = () => {
               kr. pr. måned
             </h4>
           </div>
-          <Button btnTypeStyle="primary_btn" label="Fortsæt til bestilling" />
+          <Link className="primary_btn" to="/checkout">
+            Fortsæt til bestilling
+          </Link>
+        </section>
+      ) : (
+        <section>
+          <p>Din kurv er ligenu tom, gå til produkterne</p>
+
+          <Link className="primary_btn" to="/products">
+            Tilbage til produkter
+          </Link>
         </section>
       )}
     </main>

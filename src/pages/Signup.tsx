@@ -84,9 +84,10 @@ export const Signup = () => {
     <main>
       <section className="signup_form">
         {error && error}
-        <form action="" ref={formPostRef} onSubmit={handleSubmit}>
-          <legend>Opret konto</legend>
+        <h1>Opret konto</h1>
 
+        <form action="" ref={formPostRef} onSubmit={handleSubmit}>
+          <legend>Lav din konto</legend>
           <div className="form_double">
             <div id="firstname">
               <label htmlFor="firstname">Fornavn</label>
@@ -190,7 +191,7 @@ export const Signup = () => {
               required
             />
           </div>
-          <Button disabled={loading} type="submit" label="Opret konto" />
+          <Button disabled={loading} type="submit" label="Opret konto" btnTypeStyle="primary_btn" />
           <Link to="/login">Har du allerede en bruger?</Link>
         </form>
       </section>

@@ -22,13 +22,29 @@ export const CheckoutDelivery = ({ toggleCheckoutArr, setDeliveryMetode }: any) 
         <div id="email" className={styles.CheckoutDelivery_input}>
           <label htmlFor="email">Email</label>
           <input type="email" id="email" name="email" placeholder="Email" disabled />
-          <Link to="cart">Skift</Link>
+          <Button
+            btnTypeStyle="link_btn"
+            onClick={() => {
+              toggleCheckoutArr.setToggleCheckoutDelivery(false);
+              toggleCheckoutArr.setToggleCheckoutInformation(true);
+              toggleCheckoutArr.setIsCurrent(1);
+            }}
+            label="Skift"
+          />
         </div>
 
         <div id="send_to" className={styles.CheckoutDelivery_input}>
           <label htmlFor="send_to">Send til</label>
           <input type="text" id="send_to" name="send_to" placeholder="Send til" disabled />
-          <Link to="cart">Skift</Link>
+          <Button
+            btnTypeStyle="link_btn"
+            onClick={() => {
+              toggleCheckoutArr.setToggleCheckoutDelivery(false);
+              toggleCheckoutArr.setToggleCheckoutInformation(true);
+              toggleCheckoutArr.setIsCurrent(1);
+            }}
+            label="Skift"
+          />
         </div>
 
         <legend>Leveringsmetode</legend>
@@ -58,7 +74,7 @@ export const CheckoutDelivery = ({ toggleCheckoutArr, setDeliveryMetode }: any) 
               toggleCheckoutArr.setToggleCheckoutInformation(true);
               toggleCheckoutArr.setIsCurrent(1);
             }}
-            label="Tilbage til information"
+            label="Tilbage til info"
           />
           <Button btnTypeStyle="primary_btn" type="submit" label="Gennemgå orden" />
         </nav>

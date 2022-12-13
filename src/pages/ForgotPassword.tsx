@@ -30,7 +30,7 @@ export const ForgotPassword = () => {
   return (
     <main>
       <section className="forgot_password_form">
-        <h2>Nulstil kodeord</h2>
+        <h1>Nulstil kodeord</h1>
         {error && error}
         {message && message}
         <form action="" onSubmit={handleSubmit}>
