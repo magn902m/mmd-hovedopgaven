@@ -60,7 +60,7 @@ export const Navbar = () => {
             className="nav-links login_mobile"
             onClick={handleClick}
           >
-            {currentUser ? "Log ud" : "Log ind"}
+            {currentUser ? "Din profil" : "Log ind"}
           </NavLink>
         </li>
       </ul>
@@ -71,7 +71,7 @@ export const Navbar = () => {
           className="nav-links login_desctop"
           onClick={handleClick}
         >
-          {currentUser ? "Log ud" : "Log ind"}
+          {currentUser ? "Din profil" : "Log ind"}
         </NavLink>
 
         <NavLink

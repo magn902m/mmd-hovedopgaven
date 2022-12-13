@@ -21,32 +21,34 @@ img {
 // typography
 h1 {
   font-family: var(--font-primary);
-  font-size: var(--font-size--6xl);
+  font-size: var(--font-size--3xl);
   font-weight: var(--font-weight--bold);
+  color: var(--color-nets-darkblue);
 }
 h2 {
   font-family: var(--font-primary);
-  font-size: var(--font-size--5xl);
+  font-size: var(--font-size--xl);
   font-weight: var(--font-weight--semibold);
+  color: var(--color-nets-darkblue);
 }
 h3 {
   font-family: var(--font-primary);
-  font-size: var(--font-size--3xl);
+  font-size: var(--font-size--md);
   font-weight: var(--font-weight--semibold);
 }
 h4 {
   font-family: var(--font-primary);
-  font-size: var(--font-size--xl);
+  font-size: var(--font-size--sm);
   font-weight: var(--font-weight--semibold);
 }
 h5 {
   font-family: var(--font-primary);
-  font-size: var(--font-size--xl);
+  font-size: var(--font-size--xs);
   font-weight: var(--font-weight--semibold);
 }
 h6 {
   font-family: var(--font-primary);
-  font-size: var(--font-size--lg);
+  font-size: var(--font-size--2xs);
   font-weight: var(--font-weight--semibold);
 }
 p {

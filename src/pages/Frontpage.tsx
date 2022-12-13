@@ -33,7 +33,7 @@ export const Frontpage = () => {
             <Button
               className="secondary_btn"
               onClick={() => goTo("/green-goal")}
-              label="Læs om vore nye bærdygtige initiativer"
+              label="Læs om vores nye bæredygtige initiativer"
             ></Button>
           </div>
         </div>
@@ -88,7 +88,7 @@ export const Frontpage = () => {
       </section>
 
       <section className="frontpage_green_id">
-        <h3>En grøn vision, som passer til din visuelle identitet</h3>
+        <h2>En grøn vision, som passer til din visuelle identitet</h2>
         <div className="frontpage_green_id_grid">
           <img src={Terminal} alt="" />
           <article>

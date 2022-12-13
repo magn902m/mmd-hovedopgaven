@@ -22,7 +22,7 @@ export function CartItem({ id, quantity }: CartItemProps) {
         <img src={item.img} alt="" />
         <div>
           <Link to={`/product/${item.id}`}>{item.name}</Link>
-          <p>Til dig med månedlig kortomsætning over 90.000 kr.*</p>
+          <p>{item.desc1}</p>
           <a onClick={() => removeFromCart(item.id)}>Fjern</a>
         </div>
       </div>

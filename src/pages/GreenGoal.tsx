@@ -43,7 +43,6 @@ export const GreenGoal = () => {
         </article>
 
         <article>
-          <img src={Terminal} alt="" />
           <div>
             <h3>Hvordan</h3>
             <p>
@@ -53,6 +52,7 @@ export const GreenGoal = () => {
               Similique, aperiam. Officiis doloremque tempora consequuntur!
             </p>
           </div>
+          <img src={Terminal} alt="" />
         </article>
       </section>
     </main>
