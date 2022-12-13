@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "../../1-atoms";
 import styles from "./Styletile.module.scss";
 
 export default function Styletile() {
@@ -22,8 +23,8 @@ export default function Styletile() {
       </section>
 
       <a href="/home">Home</a>
-      <button>Click me</button>
-      <button className="cta">Click me</button>
+      <Button label="Click me" />
+      <Button btnTypeStyle="primary_btn" label="Click me" />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useState } from "react";
 import { useAuth } from "../../../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { Button } from "../../1-atoms";
 
 export const CustomizationAccount = () => {
   const emailRef: any = useRef(null);
@@ -66,9 +67,7 @@ export const CustomizationAccount = () => {
             <input type="file" id="file" name="file" placeholder="&nbsp;" required />
           </div>
 
-          <button disabled={loading} type="submit">
-            Gem visuelle identitet
-          </button>
+          <Button disabled={loading} type="submit" label="Gem visuelle identitet" />
         </form>
       </div>
     </>

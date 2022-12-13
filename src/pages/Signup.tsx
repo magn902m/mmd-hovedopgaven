@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { getDatabase, ref, set } from "firebase/database";
+import { Button } from "../ui/components";
 
 export const Signup = () => {
   const emailRef: any = useRef(null);
@@ -189,9 +190,7 @@ export const Signup = () => {
               required
             />
           </div>
-          <button disabled={loading} type="submit">
-            Opret konto
-          </button>
+          <Button disabled={loading} type="submit" label="Opret konto" />
           <Link to="/login">Har du allerede en bruger?</Link>
         </form>
       </section>

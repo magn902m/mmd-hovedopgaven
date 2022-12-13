@@ -5,10 +5,20 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 12px 24px;
+  padding: 0.8rem 1.2rem;
   isolation: isolate;
   outline: 0 solid var(--color-nets-lightblue);
-  border-style: solid;
-  border-radius: 9999px;
+  border-radius: 0.4rem;
   overflow: hidden;
+
+  font-size: var(--font-size--2xs);
+  color: var(--color-nets-darkblue);
+  border: 1px solid var(--color-nets-darkblue);
+  background-color: var(--color-white);
+
+  &:hover {
+    color: var(--color-white);
+    border: 1px solid var(--color-nets-darkblue);
+    background-color: var(--color-nets-darkblue);
+  }
 }

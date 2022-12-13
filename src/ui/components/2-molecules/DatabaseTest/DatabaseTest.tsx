@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { getDatabase, ref, set } from "firebase/database";
 import { child, get } from "firebase/database";
 import { push, update } from "firebase/database";
+import { Button } from "../../1-atoms";
 // Read more about the api calls: https://firebase.google.com/docs/database/web/read-and-write#web-version-9_1
 
 export default function DatabaseTest() {
@@ -103,7 +104,7 @@ export default function DatabaseTest() {
         <form id="post_form" ref={formPostElm} onSubmit={submittedPost}>
           <h4>Write data (Post)</h4>
 
-          <button type="submit">Post data</button>
+          <Button type="submit" label="Post data" />
         </form>
       </section>
       <section>
@@ -118,7 +119,7 @@ export default function DatabaseTest() {
             </ul>
           )}
 
-          <button type="submit">Get data</button>
+          <Button type="submit" label="Get data" />
         </form>
       </section>
 
@@ -126,7 +127,7 @@ export default function DatabaseTest() {
         <form id="put_delete_form" ref={formPutDeleteElm} onSubmit={submittedPutDelete}>
           <h4>Updating or deleting data (Put and Delete)</h4>
 
-          <button type="submit">Put/delete data</button>
+          <Button type="submit" label="Put/delete data" />
         </form>
       </section>
     </>

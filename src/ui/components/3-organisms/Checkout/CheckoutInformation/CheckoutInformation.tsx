@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Button } from "../../../1-atoms";
 import styles from "./CheckoutInformation.module.scss";
 
 export const CheckoutInformation = ({ toggleCheckoutArr }: any) => {
@@ -114,11 +115,9 @@ export const CheckoutInformation = ({ toggleCheckoutArr }: any) => {
 
         <nav className={styles.CheckoutInformation_buttons}>
           <Link to="/cart">
-            <p> {"<"} Returner til kurven?</p>
+            <p>Tilbage til kurven</p>
           </Link>
-          <button className="primary_btn" type="submit">
-            Fortsæt til levering
-          </button>
+          <Button btnTypeStyle="primary_btn" type="submit" label="Fortsæt til levering" />
         </nav>
       </form>
     </article>

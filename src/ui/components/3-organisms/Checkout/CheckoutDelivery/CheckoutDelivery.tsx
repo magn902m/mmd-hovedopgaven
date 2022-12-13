@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Button } from "../../../1-atoms";
 import styles from "./CheckoutDelivery.module.scss";
 
 export const CheckoutDelivery = ({ toggleCheckoutArr, setDeliveryMetode }: any) => {
@@ -51,18 +52,15 @@ export const CheckoutDelivery = ({ toggleCheckoutArr, setDeliveryMetode }: any) 
         </div>
 
         <nav className={styles.CheckoutDelivery_buttons}>
-          <button
+          <Button
             onClick={() => {
               toggleCheckoutArr.setToggleCheckoutDelivery(false);
               toggleCheckoutArr.setToggleCheckoutInformation(true);
               toggleCheckoutArr.setIsCurrent(1);
             }}
-          >
-            <p> {"<"} Tilbage til information</p>
-          </button>
-          <button className="primary_btn" type="submit">
-            Gennemgå orden
-          </button>
+            label="Tilbage til information"
+          />
+          <Button btnTypeStyle="primary_btn" type="submit" label="Gennemgå orden" />
         </nav>
       </form>
     </article>

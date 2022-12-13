@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../../../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { Button } from "../../1-atoms";
 
 export const LogoutAccount = () => {
   const [error, setError] = useState("");
@@ -21,9 +22,7 @@ export const LogoutAccount = () => {
   return (
     <>
       {error && error}
-      <button className="secondary_btn" onClick={handleLogout}>
-        Log ud
-      </button>
+      <Button onClick={handleLogout} label="Log ud" />
     </>
   );
 };

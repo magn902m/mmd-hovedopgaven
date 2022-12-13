@@ -14,6 +14,7 @@ export interface ButtonProps {
   icon?: unknown;
   className?: string;
   children?: ReactNode;
+  btnTypeStyle?: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -22,9 +23,10 @@ export const Button: React.FC<ButtonProps> = ({
   disabled,
   onClick,
   label,
+  btnTypeStyle,
 }) => (
   <button
-    className={classNames(styles.Button)}
+    className={classNames(styles.Button, btnTypeStyle)}
     type={type || "button"}
     title={title}
     disabled={disabled}

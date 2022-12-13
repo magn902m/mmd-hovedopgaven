@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { Link } from "react-router-dom";
+import { Button } from "../ui/components";
 
 export const ForgotPassword = () => {
   const emailRef: any = useRef(null);
@@ -28,7 +29,7 @@ export const ForgotPassword = () => {
 
   return (
     <main>
-      <div className="forgot_password_form">
+      <section className="forgot_password_form">
         <h2>Nulstil kodeord</h2>
         {error && error}
         {message && message}
@@ -38,12 +39,16 @@ export const ForgotPassword = () => {
             <p className="hint">Indtast din email</p>
             <input type="email" ref={emailRef} placeholder="&nbsp;" required />
           </div>
-          <button className="primary" disabled={loading} type="submit">
-            Nulstil kodeord
-          </button>
+          <Button
+            btnTypeStyle="primary_btn"
+            disabled={loading}
+            type="submit"
+            label="Nulstil kodeord"
+          />
+
           <Link to="/signup">Har du allerede en konto?</Link>
         </form>
-      </div>
+      </section>
     </main>
   );
 };

@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
+import { Button } from "../ui/components";
 
 export const Login = () => {
   const emailRef: any = useRef(null);
@@ -46,13 +47,11 @@ export const Login = () => {
             <p>Test kodeord: 123456</p>
           </div>
 
-          <button className="primary_btn" disabled={loading} type="submit">
-            Login
-          </button>
+          <Button btnTypeStyle="primary_btn" disabled={loading} type="submit" label="Login" />
           <Link to="/forgot-password">Glemt dit koedord?</Link>
           <hr />
           <Link className="secondary_btn" to="/signup">
-            Opret konto
+            Opret en konto
           </Link>
         </form>
       </section>

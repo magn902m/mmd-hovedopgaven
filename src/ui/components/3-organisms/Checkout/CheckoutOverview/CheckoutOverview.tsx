@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./CheckoutOverview.module.scss";
 import { useNavigate } from "react-router-dom";
+import { Button } from "../../../1-atoms";
 
 export const CheckoutOverview = ({ toggleCheckoutArr }: any) => {
   const navigate = useNavigate();
@@ -95,18 +96,15 @@ export const CheckoutOverview = ({ toggleCheckoutArr }: any) => {
         </div>
 
         <nav className={styles.CheckoutOverview_buttons}>
-          <button
+          <Button
             onClick={() => {
               toggleCheckoutArr.setToggleCheckoutOverview(false);
               toggleCheckoutArr.setToggleCheckoutDelivery(true);
               toggleCheckoutArr.setIsCurrent(2);
             }}
-          >
-            <p> {"<"} Tilbage til levering</p>
-          </button>
-          <button className="primary_btn" type="submit">
-            Fuldfør ordren
-          </button>
+            label={"Tilbage til levering"}
+          />
+          <Button btnTypeStyle="primary_btn" type="submit" label={"Fuldfør ordren"} />
         </nav>
       </form>
     </article>

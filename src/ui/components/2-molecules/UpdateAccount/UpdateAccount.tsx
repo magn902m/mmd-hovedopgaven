@@ -4,6 +4,7 @@ import { getDatabase, ref, update } from "firebase/database";
 import { ColorPicker } from "../ColorPicker";
 import classNames from "classnames";
 import styles from "./UpdateAccount.module.scss";
+import { Button } from "../../1-atoms";
 
 export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) => {
   const updateAccountFormRef: any = useRef(null);
@@ -263,9 +264,12 @@ export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) 
             />
           </div>
 
-          <button disabled={loading} className="primary_btn" type="submit">
-            Update konto
-          </button>
+          <Button
+            disabled={loading}
+            btnTypeStyle="primary_btn"
+            type="submit"
+            label="Update konto"
+          />
         </form>
       </div>
     </>
