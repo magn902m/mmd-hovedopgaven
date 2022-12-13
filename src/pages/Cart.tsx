@@ -46,7 +46,7 @@ export const Cart = () => {
               kr. pr. måned
             </h4>
           </div>
-          <Button label="Fortsæt til bestilling"></Button>
+          <Button btnTypeStyle="primary_btn" label="Fortsæt til bestilling" />
         </section>
       )}
     </main>

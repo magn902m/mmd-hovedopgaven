@@ -86,14 +86,41 @@ a:hover {
   color: var(--color-nets-darkblue);
   border: 1px solid var(--color-nets-darkblue);
   background-color: var(--color-white);
+
+  &:hover {
+    font-size: var(--font-size--2xs);
+    color: var(--color-white);
+    border: 1px solid var(--color-nets-darkblue);
+    background-color: var(--color-nets-darkblue);
+    opacity: 100%;
+    text-decoration: none;
+  }
 }
-.secondary_btn:hover {
+
+.primary_btn {
   font-size: var(--font-size--2xs);
   color: var(--color-white);
+  border-radius: var(--border--lg);
   border: 1px solid var(--color-nets-darkblue);
   background-color: var(--color-nets-darkblue);
-  opacity: 100%;
-  text-decoration: none;
+
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+  isolation: isolate;
+  outline: 0 solid var(--color-nets-lightblue);
+  border-radius: 0.4rem;
+  overflow: hidden;
+
+  &:hover {
+    color: var(--color-nets-darkblue);
+    border: 1px solid var(--color-nets-darkblue);
+    background-color: var(--color-white);
+  }
 }
 
 button.primary_btn {
@@ -102,10 +129,10 @@ button.primary_btn {
   border-radius: var(--border--lg);
   border: 1px solid var(--color-nets-darkblue);
   background-color: var(--color-nets-darkblue);
-}
 
-button.primary_btn:hover {
-  color: var(--color-nets-darkblue);
-  border: 1px solid var(--color-nets-darkblue);
-  background-color: var(--color-white);
+  &:hover {
+    color: var(--color-nets-darkblue);
+    border: 1px solid var(--color-nets-darkblue);
+    background-color: var(--color-white);
+  }
 }

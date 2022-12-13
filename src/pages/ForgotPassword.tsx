@@ -46,7 +46,7 @@ export const ForgotPassword = () => {
             label="Nulstil kodeord"
           />
 
-          <Link to="/signup">Har du allerede en konto?</Link>
+          <Link to="/signup">Opret en konto</Link>
         </form>
       </section>
     </main>

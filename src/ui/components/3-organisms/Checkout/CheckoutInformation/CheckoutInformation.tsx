@@ -114,7 +114,7 @@ export const CheckoutInformation = ({ toggleCheckoutArr }: any) => {
         </div>
 
         <nav className={styles.CheckoutInformation_buttons}>
-          <Link to="/cart">
+          <Link to="/cart" className="secondary_btn">
             <p>Tilbage til kurven</p>
           </Link>
           <Button btnTypeStyle="primary_btn" type="submit" label="Fortsæt til levering" />
