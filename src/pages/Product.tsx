@@ -9,7 +9,6 @@ import { useShoppingCart } from "../contexts/ShoppingCartContex";
 import { useAuth } from "../contexts/AuthContext";
 import { child, get, getDatabase, ref, update } from "firebase/database";
 import { ThreeJSContext } from "../contexts/ThreeJSContext";
-
 import { Modal } from "../ui/components";
 
 export const Product = () => {
@@ -45,7 +44,7 @@ export const Product = () => {
   useEffect(() => {
     const dbRef = ref(getDatabase());
     async function fetchData() {
-      const snapshot = await get(child(dbRef, `users/${currentUser.uid}`));
+      const snapshot = await get(child(dbRef, `users/${currentUser.uid}/`));
       if (snapshot.exists()) {
         setProfilData(snapshot.val());
         setPickedColor(snapshot.val().color);
@@ -86,7 +85,6 @@ export const Product = () => {
       const db = getDatabase();
       const updates: any = {};
       updates["/users/" + postData.uid + "/"] = postData;
-
       return update(ref(db), updates);
     }
 
@@ -115,12 +113,13 @@ export const Product = () => {
             className="nets_modal_open"
             label={"Skræddersy din terminal"}
             onClick={() => setIsOpen(true)}
-          ></Button>
+          />
+
           <Button
             className="nets_card_button"
             label={"Tilføj til kurv"}
             onClick={() => increaseCartQuantity(singleProduct.id)}
-          ></Button>
+          />
         </div>
       </section>
 
@@ -140,19 +139,17 @@ export const Product = () => {
         <div className="product_bottom_div">
           <h4>Modtag de mest populære kort</h4>
           <p>
-            Med pakkeløsningen LARGE får du alt du skal bruge for at tage imod
-            kortbetalinger samt vores komplette service og tilvalgspakke. I
-            aftalen kan du vælge mellem en mobil eller stationær terminal, og du
-            får en indløsningsaftale, så dine kunder kan betale med de mest
-            populære kort.
+            Med pakkeløsningen LARGE får du alt du skal bruge for at tage imod kortbetalinger samt
+            vores komplette service og tilvalgspakke. I aftalen kan du vælge mellem en mobil eller
+            stationær terminal, og du får en indløsningsaftale, så dine kunder kan betale med de
+            mest populære kort.
           </p>
           <img src={Logos} alt="" />
         </div>
         <div className="product_bottom_div">
           <p>
-            Pakkeløsningen Large passer til forretninger, der kortomsætter for
-            mere end 90.000 kr. pr. måned baseret på månedspris og
-            gennemsnitligt transaktionsgebyr.*
+            Pakkeløsningen Large passer til forretninger, der kortomsætter for mere end 90.000 kr.
+            pr. måned baseret på månedspris og gennemsnitligt transaktionsgebyr.*
           </p>
           {/* <Accordion data={accordionData} /> */}
           {isOpen ? null : <NetsAccordion />}

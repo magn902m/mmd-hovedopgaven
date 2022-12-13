@@ -17,8 +17,8 @@ export const Login = () => {
     try {
       setError("");
       setLoading(true);
+      navigate(-1);
       await login(emailRef.current.value, passwordRef.current.value);
-      navigate("/products");
     } catch {
       setError("Kunne ikke logge ind");
     }
@@ -27,10 +27,12 @@ export const Login = () => {
 
   return (
     <>
-      <div className="login_form">
+      <section className="login_form">
         <h2>Login</h2>
-        {error && error}
+        <p>For at kunne tilgå dele af hjemmeside, skal man have en konto</p>
+        <p>Opret derfor en konto, eller login her</p>
         <form action="" onSubmit={handleSubmit}>
+          {error && error}
           <div id="email">
             <label htmlFor="">Email</label>
             <p className="hint">Indtast din email</p>
@@ -53,8 +55,7 @@ export const Login = () => {
             Opret konto
           </Link>
         </form>
-        <div></div>
-      </div>
+      </section>
     </>
   );
 };

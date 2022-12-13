@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ThreeJSContext } from "../../../../contexts/ThreeJSContext";
+import { PrivateRoute } from "../../../../pages/PrivateRoute";
 import { Button } from "../../1-atoms";
 import { PaymentTerminalCanvas } from "../../3-organisms";
 import { ColorPicker } from "../ColorPicker";
@@ -30,42 +31,44 @@ export const Modal = (props: any) => {
 
   return (
     <>
-      <aside className={styles.Model_centered}>
-        <div className={styles.Model_modal}>
-          <header>
-            <div>
-              <h3 className={styles.Model_heading}>{props.name}</h3>
-              <p className={styles.Model_description}>{props.desc}</p>
-            </div>
-            <Button
-              label="Færdig"
-              onClick={() => {
-                props.saveUserPreference();
-                props.setIsOpen(false);
-              }}
-            />
-          </header>
+      <PrivateRoute>
+        <aside className={styles.Model_centered}>
+          <div className={styles.Model_modal}>
+            <header>
+              <div>
+                <h3 className={styles.Model_heading}>{props.name}</h3>
+                <p className={styles.Model_description}>{props.desc}</p>
+              </div>
+              <Button
+                label="Færdig"
+                onClick={() => {
+                  props.saveUserPreference();
+                  props.setIsOpen(false);
+                }}
+              />
+            </header>
 
-          <PaymentTerminalCanvas />
-          <div className={styles.Model_actions_container}>
-            <div className={styles.Model_action_btns_container}>
-              <Button
-                label={"Se produkt 360°"}
-                onClick={() => updateModel.setIsRatation360Clicked(true)}
-              />
-              <Button
-                label={"Vend 180°"}
-                onClick={() => updateModel.setIsRatation180Clicked(true)}
+            <PaymentTerminalCanvas />
+            <div className={styles.Model_actions_container}>
+              <div className={styles.Model_action_btns_container}>
+                <Button
+                  label={"Se produkt 360°"}
+                  onClick={() => updateModel.setIsRatation360Clicked(true)}
+                />
+                <Button
+                  label={"Vend 180°"}
+                  onClick={() => updateModel.setIsRatation180Clicked(true)}
+                />
+              </div>
+              <ColorPicker
+                onChange={props.handlePickedColor}
+                value={props.pickedColor}
+                profilcolor={props.profilData?.color}
               />
             </div>
-            <ColorPicker
-              onChange={props.handlePickedColor}
-              value={props.pickedColor}
-              profilcolor={props.profilData?.color}
-            />
           </div>
-        </div>
-      </aside>
+        </aside>
+      </PrivateRoute>
     </>
   );
 };

@@ -50,22 +50,8 @@ function App() {
                       <Route path=":productid" element={<Product />} />
                     </Route> */}
 
-                    <Route
-                      path="/product"
-                      element={
-                        <PrivateRoute>
-                          <Product />
-                        </PrivateRoute>
-                      }
-                    >
-                      <Route
-                        path=":productid"
-                        element={
-                          <PrivateRoute>
-                            <Product />
-                          </PrivateRoute>
-                        }
-                      />
+                    <Route path="/product" element={<Product />}>
+                      <Route path=":productid" element={<Product />} />
                     </Route>
 
                     <Route path="/green-goal" element={<GreenGoal />} />

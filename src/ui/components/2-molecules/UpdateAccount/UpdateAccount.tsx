@@ -5,11 +5,7 @@ import { ColorPicker } from "../ColorPicker";
 import classNames from "classnames";
 import styles from "./UpdateAccount.module.scss";
 
-export const UpdateAccount = ({
-  profilData,
-  pickedColor,
-  setPickedColor,
-}: any) => {
+export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) => {
   const updateAccountFormRef: any = useRef(null);
   const emailRef: any = useRef(null);
   const passwordRef: any = useRef(null);
@@ -83,7 +79,6 @@ export const UpdateAccount = ({
       const db = getDatabase();
       const updates: any = {};
       updates["/users/" + postData.uid + "/"] = postData;
-
       return update(ref(db), updates);
     }
 
@@ -156,19 +151,12 @@ export const UpdateAccount = ({
             />
           </div>
 
-          <div
-            className={classNames(
-              "form_double",
-              styles.UpdateAccountFullPhoneNum
-            )}
-          >
+          <div className={classNames("form_double", styles.UpdateAccountFullPhoneNum)}>
             <div className="phone_code">
               <label htmlFor="phone_code">Landekode</label>
               <p className="hint">Indtast kode</p>
               <select name="phone_code" id="phone_code" required>
-                <option value={profilData?.phoneCode}>
-                  {profilData?.phoneCode}
-                </option>
+                <option value={profilData?.phoneCode}>{profilData?.phoneCode}</option>
                 <option value="45">+45</option>
                 <option value="47">+47</option>
                 <option value="00">+00</option>
@@ -245,9 +233,7 @@ export const UpdateAccount = ({
 
           <div id="file">
             <label htmlFor="file">Logo eller icon</label>
-            <p className="hint">
-              Upload et logo eller icon, som skal være på produkt
-            </p>
+            <p className="hint">Upload et logo eller icon, som skal være på produkt</p>
             <input type="file" id="file" name="file" placeholder="&nbsp;" />
           </div>
 
