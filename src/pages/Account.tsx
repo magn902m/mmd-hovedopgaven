@@ -36,9 +36,10 @@ export const Account = () => {
   }, []);
 
   return (
-    <>
-      <h2>Din konto</h2>
-
+    <main>
+      <section>
+        <h2>Din konto</h2>
+      </section>
       <section className="account">
         <UpdateAccount
           profilData={profilData}
@@ -47,6 +48,6 @@ export const Account = () => {
         />
         <LogoutAccount />
       </section>
-    </>
+    </main>
   );
 };

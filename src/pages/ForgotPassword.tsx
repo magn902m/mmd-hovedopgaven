@@ -27,7 +27,7 @@ export const ForgotPassword = () => {
   }
 
   return (
-    <>
+    <main>
       <div className="forgot_password_form">
         <h2>Nulstil kodeord</h2>
         {error && error}
@@ -44,7 +44,6 @@ export const ForgotPassword = () => {
           <Link to="/signup">Har du allerede en konto?</Link>
         </form>
       </div>
-      <div></div>
-    </>
+    </main>
   );
 };

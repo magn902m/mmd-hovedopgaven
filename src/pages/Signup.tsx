@@ -80,8 +80,8 @@ export const Signup = () => {
   }
 
   return (
-    <>
-      <div className="signup_form">
+    <main>
+      <section className="signup_form">
         {error && error}
         <form action="" ref={formPostRef} onSubmit={handleSubmit}>
           <legend>Opret konto</legend>
@@ -194,7 +194,7 @@ export const Signup = () => {
           </button>
           <Link to="/login">Har du allerede en bruger?</Link>
         </form>
-      </div>
-    </>
+      </section>
+    </main>
   );
 };
