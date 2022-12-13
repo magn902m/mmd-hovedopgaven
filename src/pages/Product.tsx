@@ -23,80 +23,6 @@ export const Product = () => {
   //Modal
   const [isOpen, setIsOpen] = useState(false);
 
-  // ThreeJS
-  const { updateModel, setUpdateModel } = useContext(ThreeJSContext);
-  const { currentUser } = useAuth();
-  const [profilData, setProfilData] = useState({
-    adresse: "",
-    cvrNumber: "",
-    email: "",
-    firstname: "",
-    lastname: "",
-    telefon: "",
-    companyName: "",
-    color: "",
-    uid: "",
-  });
-
-  const [pickedColor, setPickedColor] = useState("");
-  const handlePickedColor = (e: any) => setPickedColor(e.target.value);
-
-  useEffect(() => {
-    const dbRef = ref(getDatabase());
-    async function fetchData() {
-      const snapshot = await get(child(dbRef, `users/${currentUser.uid}/`));
-      if (snapshot.exists()) {
-        setProfilData(snapshot.val());
-        setPickedColor(snapshot.val().color);
-      } else {
-        console.log("No data available");
-      }
-    }
-    fetchData();
-  }, []);
-
-  function updateModelSettings() {
-    setUpdateModel((old: any) => {
-      return {
-        ...old,
-        pickedColor,
-        handlePickedColor,
-      };
-    });
-  }
-  useEffect(() => {
-    updateModelSettings();
-  }, [pickedColor]);
-
-  async function saveUserPreference(e: any) {
-    console.log("saveUserPreference");
-
-    const postData: any = {
-      ...profilData,
-      color: updateModel.pickedColor,
-      uid: profilData.uid,
-    };
-
-    const promises = [];
-
-    promises.push(updateAccountData(postData));
-
-    function updateAccountData(postData: any) {
-      const db = getDatabase();
-      const updates: any = {};
-      updates["/users/" + postData.uid + "/"] = postData;
-      return update(ref(db), updates);
-    }
-
-    Promise.all(promises)
-      .then(() => {
-        console.log("Kontoen er opdateret, reload siden");
-      })
-      .catch(() => {
-        console.log("Kontoen kunne ikke opdateres");
-      });
-  }
-
   return (
     <main className="nets_product">
       <section className="nets_product_top">
@@ -126,10 +52,10 @@ export const Product = () => {
       {isOpen && (
         <Modal
           setIsOpen={setIsOpen}
-          handlePickedColor={handlePickedColor}
-          pickedColor={pickedColor}
-          profilcolor={profilData?.color}
-          saveUserPreference={saveUserPreference}
+          // handlePickedColor={handlePickedColor}
+          // pickedColor={pickedColor}
+          // profilcolor={profilData?.color}
+          // saveUserPreference={saveUserPreference}
           name={singleProduct.name}
           desc={singleProduct.desc1}
         />

@@ -1,17 +1,97 @@
-import React, { useContext, useEffect, useState } from "react";
+// import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ThreeJSContext } from "../../../../contexts/ThreeJSContext";
+// import { ThreeJSContext } from "../../../../contexts/ThreeJSContext";
 import { PrivateRoute } from "../../../../pages/PrivateRoute";
 import { Button } from "../../1-atoms";
 import { PaymentTerminalCanvas } from "../../3-organisms";
 import { ColorPicker } from "../ColorPicker";
 import styles from "./Modal.module.scss";
 
+import React, { useState, useContext, useEffect } from "react";
+
+import { useAuth } from "../../../../contexts/AuthContext";
+import { child, get, getDatabase, ref, update } from "firebase/database";
+import { ThreeJSContext } from "../../../../contexts/ThreeJSContext";
+
 export const Modal = (props: any) => {
   const { updateModel, setUpdateModel } = useContext(ThreeJSContext);
 
   const [isRatation360Clicked, setIsRatation360Clicked] = useState(false);
   const [isRatation180Clicked, setIsRatation180Clicked] = useState(false);
+
+  //* Database
+
+  const { currentUser } = useAuth();
+  const [profilData, setProfilData] = useState({
+    adresse: "",
+    cvrNumber: "",
+    email: "",
+    firstname: "",
+    lastname: "",
+    telefon: "",
+    companyName: "",
+    color: "",
+    uid: "",
+  });
+
+  const [pickedColor, setPickedColor] = useState("");
+  const handlePickedColor = (e: any) => setPickedColor(e.target.value);
+
+  useEffect(() => {
+    const dbRef = ref(getDatabase());
+    async function fetchData() {
+      const snapshot = await get(child(dbRef, `users/${currentUser.uid}/`));
+      if (snapshot.exists()) {
+        setProfilData(snapshot.val());
+        setPickedColor(snapshot.val().color);
+      } else {
+        console.log("No data available");
+      }
+    }
+    fetchData();
+  }, []);
+
+  function updateModelSettings() {
+    setUpdateModel((old: any) => {
+      return {
+        ...old,
+        pickedColor,
+        handlePickedColor,
+      };
+    });
+  }
+  useEffect(() => {
+    updateModelSettings();
+  }, [pickedColor]);
+
+  async function saveUserPreference() {
+    const postData: any = {
+      ...profilData,
+      color: updateModel.pickedColor,
+      uid: profilData.uid,
+    };
+
+    const promises = [];
+
+    promises.push(updateAccountData(postData));
+
+    function updateAccountData(postData: any) {
+      const db = getDatabase();
+      const updates: any = {};
+      updates["/users/" + postData.uid + "/"] = postData;
+      return update(ref(db), updates);
+    }
+
+    Promise.all(promises)
+      .then(() => {
+        console.log("Produkt er opdateret");
+      })
+      .catch(() => {
+        console.log("Produkt kunne ikke opdateres");
+      });
+  }
+
+  //* Database
 
   function updateCubeSettings() {
     setUpdateModel((old: any) => {
@@ -42,7 +122,7 @@ export const Modal = (props: any) => {
               <Button
                 label="Færdig"
                 onClick={() => {
-                  props.saveUserPreference();
+                  saveUserPreference();
                   props.setIsOpen(false);
                 }}
               />
@@ -61,9 +141,9 @@ export const Modal = (props: any) => {
                 />
               </div>
               <ColorPicker
-                onChange={props.handlePickedColor}
-                value={props.pickedColor}
-                profilcolor={props.profilData?.color}
+                onChange={handlePickedColor}
+                value={pickedColor}
+                profilcolor={profilData?.color}
               />
             </div>
           </div>
