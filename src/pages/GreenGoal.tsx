@@ -18,7 +18,7 @@ export const GreenGoal = () => {
       <section className="green_goals_points">
         <article>
           <div>
-            <h3>Hvad</h3>
+            <h2>Hvad</h2>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad
               deserunt libero quasi sint a aut quae porro neque eos praesentium?
@@ -32,7 +32,7 @@ export const GreenGoal = () => {
         <article>
           <img src={Terminal} alt="" />
           <div>
-            <h3>Hvorfor</h3>
+            <h2>Hvorfor</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
               consectetur accusantium sapiente, quos hic aliquam ipsam mollitia
@@ -44,7 +44,7 @@ export const GreenGoal = () => {
 
         <article>
           <div>
-            <h3>Hvordan</h3>
+            <h2>Hvordan</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
               consectetur accusantium sapiente, quos hic aliquam ipsam mollitia

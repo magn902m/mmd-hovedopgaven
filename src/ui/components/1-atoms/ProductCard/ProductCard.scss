@@ -8,12 +8,15 @@
     margin-top: 1rem;
   }
   &_image {
-    width: 50%;
+    width: 30%;
     margin: 1rem;
   }
 
   &_title {
     font-size: 1rem;
+  }
+  &_text {
+    font-size: 0.8rem;
   }
 }
 @media only screen and (min-width: 700px) {

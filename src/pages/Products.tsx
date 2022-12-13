@@ -17,7 +17,6 @@ export const Products = () => {
         <h1>Produkter</h1>
       </header>
       <section className="nets_products_overview">
-        {/* <div className="nets_products_overview_grid"> */}
         {WebshopItems.map((t) => (
           <ProductCard
             img={t.img}
@@ -29,7 +28,6 @@ export const Products = () => {
             onClick={(e) => goToSingleview(e, t.id)}
           ></ProductCard>
         ))}
-        {/* </div> */}
       </section>
     </main>
   );

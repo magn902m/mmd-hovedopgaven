@@ -40,15 +40,9 @@ section.account form {
   &_overview {
     display: flex;
     flex-direction: column;
-    align-items: center;
 
     & > h2 {
       font-size: var(--font-size--m);
-    }
-
-    &_grid {
-      display: flex;
-      flex-direction: column;
     }
   }
 }
@@ -183,9 +177,9 @@ section.account form {
     align-items: center;
     gap: 3rem;
 
-    h3 {
-      letter-spacing: 1rem;
+    h2 {
       margin-top: 1rem;
+      text-transform: uppercase;
     }
 
     article {
@@ -333,10 +327,6 @@ section.account form {
         font-size: var(--font-size--4xl);
       }
 
-      &_grid {
-        display: flex;
-        flex-direction: row;
-      }
       .nets_card {
         align-items: flex-start;
       }
@@ -461,10 +451,6 @@ section.account form {
       margin: 3rem 0;
       max-width: 1000px;
 
-      h3 {
-        letter-spacing: 1rem;
-        margin-top: 1rem;
-      }
       div {
         flex-basis: 60%;
       }

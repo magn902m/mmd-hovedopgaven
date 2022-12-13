@@ -57,7 +57,7 @@ export const Navbar = () => {
         <li>
           <NavLink
             to={currentUser ? "/account" : "/login"}
-            className="nav-links login_mobile"
+            className="nav-links login_mobile nets_navbar_links "
             onClick={handleClick}
           >
             {currentUser ? "Din profil" : "Log ind"}
