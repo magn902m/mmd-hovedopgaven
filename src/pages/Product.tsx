@@ -32,7 +32,7 @@ export const Product = () => {
           <h4>{singleProduct.desc1}</h4>
           <p>{singleProduct.desc2}</p>
           {/* link til accordian */}
-          <Link to="">Læs mere</Link>
+          <p>Læs mere under produktet</p>
           <div className="nets_product_top_footprint"></div>
 
           <Button
