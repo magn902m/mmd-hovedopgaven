@@ -1,8 +1,5 @@
 import React from "react";
 import { Button } from "../ui/components/1-atoms/Button";
-// import Terminal from "./images/asset_1.png";
-// import Terminal from "../assets/images/payment_terminal.svg";
-// import Logos from "./images/logostrip-complete_1728x.webp";
 import { useNavigate } from "react-router-dom";
 
 export const Frontpage = () => {

@@ -9,7 +9,7 @@ export const Signup = () => {
   const passwordRef: any = useRef(null);
   const passwordConfirmRef: any = useRef(null);
   const formPostRef: any = useRef(null);
-  const { signup, currentUser } = useAuth();
+  const { signup } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();

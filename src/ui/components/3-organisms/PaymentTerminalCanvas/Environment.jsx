@@ -3,9 +3,8 @@ import React, { Suspense, useRef } from "react";
 import { extend, useThree } from "@react-three/fiber";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { Stage } from "@react-three/drei";
-
-import { Cube } from "./Cube";
 import { PaymentTerminalModel } from "./PaymentTerminalModel";
+// import { Cube } from "./Cube";
 
 extend({ OrbitControls });
 

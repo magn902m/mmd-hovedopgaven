@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import "./Header.scss";
 import { useAuth } from "../../../../contexts/AuthContext";

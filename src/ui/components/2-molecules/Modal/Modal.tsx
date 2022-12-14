@@ -1,13 +1,9 @@
-// import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-// import { ThreeJSContext } from "../../../../contexts/ThreeJSContext";
+import React, { useState, useContext, useEffect } from "react";
+import styles from "./Modal.module.scss";
 import { PrivateRoute } from "../../../../pages/PrivateRoute";
 import { Button } from "../../1-atoms";
 import { PaymentTerminalCanvas } from "../../3-organisms";
 import { ColorPicker } from "../ColorPicker";
-import styles from "./Modal.module.scss";
-
-import React, { useState, useContext, useEffect } from "react";
 
 import { useAuth } from "../../../../contexts/AuthContext";
 import { child, get, getDatabase, ref, update } from "firebase/database";

@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../ui/styles/globals.scss";
-import { Button } from "../ui/components/1-atoms/Button";
 import { useShoppingCart } from "../contexts/ShoppingCartContex";
 import { CartItem } from "../ui/components/2-molecules";
 import WebshopItems from "../data/terminals.json";
