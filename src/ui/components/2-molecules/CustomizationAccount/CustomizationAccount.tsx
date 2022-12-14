@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { useState } from "react";
 import { useAuth } from "../../../../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
 import { Button } from "../../1-atoms";
 
 export const CustomizationAccount = () => {
@@ -12,7 +11,6 @@ export const CustomizationAccount = () => {
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
 
   async function handleSubmit(e: any) {
     e.preventDefault();

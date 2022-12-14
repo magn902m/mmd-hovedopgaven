@@ -9,7 +9,7 @@ export const Cube = () => {
   const { updateModel } = useContext(ThreeJSContext);
 
   // useFrame(({ clock }) => cubeRef.current.rotation.x = clock.getElapsedTime();
-  useFrame((state, delta) => {
+  useFrame(() => {
     // cubeRef.current.rotation.x += 0.01;
   });
 

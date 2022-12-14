@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Button } from "../../../1-atoms";
 import styles from "./CheckoutDelivery.module.scss";
 

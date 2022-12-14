@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styles from "./CheckoutOverview.module.scss";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../../1-atoms";
@@ -7,7 +6,7 @@ import { Button } from "../../../1-atoms";
 export const CheckoutOverview = ({ toggleCheckoutArr }: any) => {
   const navigate = useNavigate();
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = () => {
     navigate("/");
   };
 

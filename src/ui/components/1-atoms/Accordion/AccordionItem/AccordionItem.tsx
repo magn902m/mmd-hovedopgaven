@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styles from "./AccordionItem.module.scss";
-import CloseIcon from "../../../../../assets/icons/close.svg";
-import PlusIcon from "../../../../../assets/icons/plus.svg";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+// import CloseIcon from "../../../../../assets/icons/close.svg";
+// import PlusIcon from "../../../../../assets/icons/plus.svg";
+// import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 export interface AccordionItemProps {
   title: string;
