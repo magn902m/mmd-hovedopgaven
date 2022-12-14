@@ -12,7 +12,7 @@ export const Products = () => {
     return navigate(url);
   };
   return (
-    <main className="nets_products">
+    <main id="main" className="nets_products">
       <header>
         <h1>Produkter</h1>
       </header>

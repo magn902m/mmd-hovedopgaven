@@ -27,7 +27,7 @@ export const Login = () => {
   }
 
   return (
-    <main>
+    <main id="main">
       <section className="login_form">
         <h1>Login</h1>
 

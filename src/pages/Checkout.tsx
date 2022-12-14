@@ -27,7 +27,7 @@ export const Checkout = () => {
   };
 
   return (
-    <main>
+    <main id="main">
       <section className="checkout">
         <section className="checkout_header">
           <h1>Checkout</h1>

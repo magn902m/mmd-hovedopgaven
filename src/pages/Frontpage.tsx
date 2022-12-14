@@ -13,7 +13,7 @@ export const Frontpage = () => {
   };
 
   return (
-    <main className="frontpage">
+    <main id="main" className="frontpage">
       <section className="frontpage_hero">
         <div className="frontpage_hero_text">
           <h1>Betalingsterminaler lavet til dig</h1>

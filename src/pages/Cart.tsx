@@ -10,7 +10,7 @@ export const Cart = () => {
   const { cartItems } = useShoppingCart();
 
   return (
-    <main className="nets_cart">
+    <main id="main" className="nets_cart">
       <section className="nets_cart_section">
         <h1>Din indkøbskurv</h1>
         {cartItems.length > 0 ? <Link to={`/products`}>Tilbage til produkter</Link> : null}

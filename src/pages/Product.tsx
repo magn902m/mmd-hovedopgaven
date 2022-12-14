@@ -19,7 +19,7 @@ export const Product = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <main className="nets_product">
+    <main id="main" className="nets_product">
       <section className="nets_product_top">
         <img
           src={process.env.PUBLIC_URL + "/images/payment_terminal.svg"}

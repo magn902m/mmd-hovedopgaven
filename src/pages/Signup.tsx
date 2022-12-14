@@ -81,7 +81,7 @@ export const Signup = () => {
   }
 
   return (
-    <main>
+    <main id="#main">
       <section className="signup_form">
         {error && error}
         <h1>Opret konto</h1>

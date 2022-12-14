@@ -27,6 +27,7 @@ import { Navbar } from "./ui/components";
 import { Footer } from "./ui/components";
 import { ShoppingCartProvider } from "./contexts/ShoppingCartContex";
 import { ScrollToTop } from "./hooks/scrollToTop";
+import { SkipToMainContent } from "./ui/components/1-atoms/SkipToMainContent";
 
 function App() {
   const app = useFirebaseApp();
@@ -41,6 +42,7 @@ function App() {
           <ThreeJSProvider>
             <BrowserRouter>
               <ShoppingCartProvider>
+                <SkipToMainContent />
                 <Navbar />
                 <ScrollToTop>
                   <Routes>

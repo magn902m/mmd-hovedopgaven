@@ -36,7 +36,7 @@ export const Account = () => {
   }, []);
 
   return (
-    <main>
+    <main id="main">
       <section>
         <h1>Din konto</h1>
       </section>

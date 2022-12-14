@@ -2,7 +2,7 @@ import React from "react";
 
 export const GreenGoal = () => {
   return (
-    <main className="green_goals">
+    <main id="main" className="green_goals">
       <header className="green_goals_header">
         <h1>Vores grønne mål</h1>
         <p>

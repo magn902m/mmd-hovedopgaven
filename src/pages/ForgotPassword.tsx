@@ -28,7 +28,7 @@ export const ForgotPassword = () => {
   }
 
   return (
-    <main>
+    <main id="main">
       <section className="forgot_password_form">
         <h1>Nulstil kodeord</h1>
         {error && error}
