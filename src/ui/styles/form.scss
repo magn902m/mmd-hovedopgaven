@@ -9,7 +9,6 @@ form > div {
 
 form {
   max-width: 420px;
-  width: 420px;
   padding: 0.7rem;
   display: flex;
   flex-direction: column;
@@ -112,4 +111,11 @@ form input:invalid:not(:placeholder-shown, :focus, [type="file"]) {
 
 :root {
   --error: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'><g fill='none' fill-rule='evenodd'><circle cx='10' cy='10' r='10' fill='crimson'/><path fill='%23FFFFFF' d='M9,6.84848485 C9,5.93939394 9.4,5.33333333 10,5.33333333 C10.6,5.33333333 11,5.93939394 11,6.84848485 L11,10.4848485 C11,11.3939394 10.6,12 10,12 C9.4,12 9,11.3939394 9,10.4848485 L9,6.84848485 Z M10,14.6666667 C9.41666667,14.6666667 9,14.25 9,13.6666667 C9,13.0833333 9.41666667,12.6666667 10,12.6666667 C10.5833333,12.6666667 11,13.0833333 11,13.6666667 C11,14.25 10.5833333,14.6666667 10,14.6666667 L10,14.6666667 Z'/></g></svg>");
+}
+
+@media only screen and (min-width: 700px) {
+  form,
+  section.account {
+    width: 420px;
+  }
 }

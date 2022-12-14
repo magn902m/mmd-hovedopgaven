@@ -5,6 +5,12 @@
   text-decoration: none;
 }
 
+:root {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  margin: 0rem;
+}
+
 body {
   overflow-wrap: break-word;
   hyphens: auto;
