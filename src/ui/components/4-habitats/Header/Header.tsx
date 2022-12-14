@@ -14,7 +14,7 @@ export const Navbar = () => {
   const handleClick = () => setClick(!click);
 
   return (
-    <header>
+    <header className="navbar_header">
       <nav className="nets_navbar">
         <NavLink to="/" className={"nets_navbar_logo"}>
           <img

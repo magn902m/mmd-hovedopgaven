@@ -167,3 +167,9 @@
 .navbar_burger_li {
   display: contents;
 }
+
+.navbar_header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
