@@ -33,7 +33,8 @@ export const Frontpage = () => {
             <Button
               className="secondary_btn"
               onClick={() => goTo("/green-goal")}
-              label="Læs om vores nye bæredygtige initiativer"
+              // label="Læs om vores nye bæredygtige initiativer"
+              label="Læs om vores grønne mål"
             />
           </div>
         </div>
