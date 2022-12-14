@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./CheckoutTotal.module.scss";
 
 import { useShoppingCart } from "../../../../../contexts/ShoppingCartContex";
-import PaymentTerminalImg from "../../../../../assets/images/asset_1.png";
 import WebshopItems from "../../../../../data/terminals.json";
 
 export const CheckoutTotal = ({ deliveryMetode }: any) => {
@@ -23,10 +22,7 @@ export const CheckoutTotal = ({ deliveryMetode }: any) => {
     return itemSubtotal;
   });
 
-  const calcSubtotal = subtotal.reduce(
-    (total, currentValue) => total + currentValue,
-    0
-  );
+  const calcSubtotal = subtotal.reduce((total, currentValue) => total + currentValue, 0);
 
   const taxPrice = Math.floor((calcSubtotal / 100) * 25);
 
@@ -39,11 +35,14 @@ export const CheckoutTotal = ({ deliveryMetode }: any) => {
       {checkoutItems.map((checkoutItem, index) => (
         <div key={index} className={styles.CheckoutTotal_product_info}>
           {/* <img src={checkoutItem.img} alt="" /> */}
-          <img src={PaymentTerminalImg} alt="" />
+          <img
+            src={process.env.PUBLIC_URL + "./images/payment_terminal.svg"}
+            alt="Payment terminal"
+            width="1600"
+            height="900"
+          />{" "}
           <div>
-            <p className={styles.CheckoutTotal_item_name}>
-              {checkoutItem.name}
-            </p>
+            <p className={styles.CheckoutTotal_item_name}>{checkoutItem.name}</p>
             <p>{checkoutItem.desc1}</p>
           </div>
           <p className="price">{checkoutItem.price} kr.</p>

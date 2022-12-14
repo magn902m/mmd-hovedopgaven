@@ -1,14 +1,9 @@
-import React, { useState, useContext, useEffect } from "react";
-import Terminal from "../assets/images/asset_1.png";
+import React, { useState } from "react";
 import WebshopItems from "../data/terminals.json";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { NetsAccordion } from "../ui/components/2-molecules/NetsAccordion";
-import Logos from "../assets/images/logostrip-complete_1728x.webp";
 import { Button } from "../ui/components/1-atoms/Button";
 import { useShoppingCart } from "../contexts/ShoppingCartContex";
-import { useAuth } from "../contexts/AuthContext";
-import { child, get, getDatabase, ref, update } from "firebase/database";
-import { ThreeJSContext } from "../contexts/ThreeJSContext";
 import { Modal } from "../ui/components";
 
 export const Product = () => {
@@ -26,7 +21,12 @@ export const Product = () => {
   return (
     <main className="nets_product">
       <section className="nets_product_top">
-        <img src={Terminal} alt="" />
+        <img
+          src={process.env.PUBLIC_URL + "/images/payment_terminal.svg"}
+          alt="Payment terminal"
+          width="1600"
+          height="900"
+        />
         <div className="nets_product_top_info">
           <h2>{singleProduct.name}</h2>
           <h4>{singleProduct.desc1}</h4>
@@ -70,7 +70,12 @@ export const Product = () => {
             stationær terminal, og du får en indløsningsaftale, så dine kunder kan betale med de
             mest populære kort.
           </p>
-          <img src={Logos} alt="" />
+          <img
+            src={process.env.PUBLIC_URL + "/images/logostrip-complete_1728x.webp"}
+            alt="Cards you can pay with"
+            width="1600"
+            height="900"
+          />
         </div>
         <div className="product_bottom_div">
           <p>

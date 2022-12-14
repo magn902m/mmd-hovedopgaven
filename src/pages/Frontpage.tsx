@@ -1,7 +1,8 @@
 import React from "react";
 import { Button } from "../ui/components/1-atoms/Button";
-import Terminal from "../assets/images/asset_1.png";
-import Logos from "../assets/images/logostrip-complete_1728x.webp";
+// import Terminal from "./images/asset_1.png";
+// import Terminal from "../assets/images/payment_terminal.svg";
+// import Logos from "./images/logostrip-complete_1728x.webp";
 import { useNavigate } from "react-router-dom";
 
 export const Frontpage = () => {
@@ -37,7 +38,12 @@ export const Frontpage = () => {
           </div>
         </div>
         <div className="frontpage_hero_img">
-          <img src={Terminal} alt="nets terminal" />
+          <img
+            src={process.env.PUBLIC_URL + "./images/payment_terminal.svg"}
+            alt="Payment terminal"
+            width="1600"
+            height="900"
+          />
         </div>
       </section>
 
@@ -47,14 +53,19 @@ export const Frontpage = () => {
           <p>Tag imod alle de populære kortbrands</p>
           <p>Få pengene hurtigt på din konto</p>
         </div>
-        <img src={Logos} alt="" />
+        <img
+          src={process.env.PUBLIC_URL + "./images/logostrip-complete_1728x.webp"}
+          alt="Cards you can pay with"
+          width="1600"
+          height="900"
+        />
       </section>
 
       <section className="frontpage_how_to">
-        <h3>Sådan kommer du i gang:</h3>
+        <h2>Sådan kommer du i gang:</h2>
         <div className="frontpage_how_to_grid">
           <article>
-            <h4>1. Spar penge med den pakkeløsning, som passer dig</h4>
+            <h3>1. Spar penge med den pakkeløsning, som passer dig</h3>
             <p>
               Vælg den pakkeløsning, der passer til dit behov. Vær særligt opmærksom på
               transaktionsgebyret. Hos Nets kan du spare penge ved at vælge den pakke, der passer
@@ -62,7 +73,7 @@ export const Frontpage = () => {
             </p>
           </article>
           <article>
-            <h4>2. Vælg den terminal, der passer til din forretning</h4>
+            <h3>2. Vælg den terminal, der passer til din forretning</h3>
             <p>
               Har du brug for en mobil eller stationær betalingsterminal? En mobil terminal giver
               dig mulighed for at tage imod betalinger, der hvor dine kunder er. En stationær
@@ -70,7 +81,7 @@ export const Frontpage = () => {
             </p>
           </article>
           <article>
-            <h4>3. Bestil online i dag - nemt og hurtigt. Vi sikrer, at du kommer godt i gang</h4>
+            <h3>3. Bestil online i dag - nemt og hurtigt. Vi sikrer, at du kommer godt i gang</h3>
             <p>
               Bestil produktet. Du vil herefter blive ringet op af én af vores specialister, der
               sikrer, at du kommer hurtigt og trygt i gang med den løsning og pris, der passer til
@@ -83,7 +94,12 @@ export const Frontpage = () => {
       <section className="frontpage_green_id">
         <h2>En grøn vision, som passer til din visuelle identitet</h2>
         <div className="frontpage_green_id_grid">
-          <img src={Terminal} alt="" />
+          <img
+            src={process.env.PUBLIC_URL + "./images/payment_terminal.svg"}
+            alt="Payment terminal"
+            width="1600"
+            height="900"
+          />
           <article>
             <p>
               Natur og vores planet er vigtig for os alle, derfor har vi taget to tiltag, som skal

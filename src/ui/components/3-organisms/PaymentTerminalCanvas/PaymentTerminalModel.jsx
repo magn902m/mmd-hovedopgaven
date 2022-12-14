@@ -7,7 +7,7 @@ import React, { useRef, useContext, useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 import { ThreeJSContext } from "../../../../contexts/ThreeJSContext";
 import gsap from "gsap";
-import { default as PaymentTerminalGLB } from "../../../../assets/models/payment_terminal.glb";
+// import PaymentTerminalModelGLB from "./models/payment_terminal.glb";
 
 export function PaymentTerminalModel(props) {
   const { updateModel } = useContext(ThreeJSContext);
@@ -19,7 +19,7 @@ export function PaymentTerminalModel(props) {
   }, [updateModel.pickedColor]);
 
   // const { nodes, materials } = useGLTF("./models/payment_terminal.glb");
-  const { nodes, materials } = useGLTF(PaymentTerminalGLB);
+  const { nodes, materials } = useGLTF("/models/payment_terminal.glb");
 
   updateModel.isRatation360Clicked === true ? handleRotation360() : null;
   function handleRotation360() {
@@ -762,4 +762,4 @@ export function PaymentTerminalModel(props) {
   );
 }
 
-useGLTF.preload(PaymentTerminalGLB);
+useGLTF.preload("/models/payment_terminal.glb");
