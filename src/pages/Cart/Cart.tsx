@@ -1,35 +1,36 @@
 import React from "react";
+import styles from "./Cart.module.scss";
 import { Link } from "react-router-dom";
-import "../ui/styles/globals.scss";
-import { useShoppingCart } from "../contexts/ShoppingCartContex";
-import { CartItem } from "../ui/components/2-molecules";
-import WebshopItems from "../data/terminals.json";
+import { useShoppingCart } from "../../contexts/ShoppingCartContex";
+import { CartItem } from "../../ui/components/2-molecules";
+import WebshopItems from "../../data/terminals.json";
+import classNames from "classnames";
 
 export const Cart = () => {
   const { cartItems } = useShoppingCart();
 
   return (
-    <main id="main" className="nets_cart">
-      <section className="nets_cart_section">
+    <main id="main" className={styles.Cart_container}>
+      <section className={styles.Cart_section}>
         <h1>Din indkøbskurv</h1>
         {cartItems.length > 0 ? <Link to={`/products`}>Tilbage til produkter</Link> : null}
       </section>
       {cartItems.length > 0 ? (
-        <section className="nets_cart_grid">
-          <div className="nets_cart_grid_header">
-            <h4 className="grid_header_product">Produkt</h4>
-            <h4 className="grid_header_subtotal">Total pris</h4>
+        <section className={styles.Cart_grid}>
+          <div className={styles.Cart_grid_header}>
+            <h4 className={styles.Cart_grid_product}>Produkt</h4>
+            <h4 className={styles.Cart_grid_subtotal}>Total pris</h4>
           </div>
 
-          <div className="nets_cart_grid_body">
+          <div className={styles.Cart_grid_body}>
             {cartItems.map((item) => (
               <CartItem key={item.id} {...item} />
             ))}
           </div>
 
-          <div className="nets_cart_grid_footer">
+          <div className={styles.Cart_grid_footer}>
             <h4>I alt</h4>
-            <h4 className="grid_footer_total">
+            <h4 className={styles.Cart_grid_footer_total}>
               {cartItems.reduce((total, cartItem) => {
                 const item = WebshopItems.find((i) => i.id === cartItem.id);
                 return total + (item?.price || 0) * cartItem.quantity;
@@ -37,7 +38,7 @@ export const Cart = () => {
               kr. pr. måned
             </h4>
           </div>
-          <Link className="primary_btn" to="/checkout">
+          <Link className={classNames(styles.Cart_primary_btn, "primary_btn")} to="/checkout">
             Fortsæt til bestilling
           </Link>
         </section>

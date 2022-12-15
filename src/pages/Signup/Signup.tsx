@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
-import { useAuth } from "../contexts/AuthContext";
+import { useAuth } from "../../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { getDatabase, ref, set } from "firebase/database";
-import { Button } from "../ui/components";
+import { Button } from "../../ui/components";
 import { Helmet } from "react-helmet";
 
 export const Signup = () => {

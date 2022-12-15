@@ -1,16 +1,16 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./ui/styles/globals.scss";
-import { Frontpage } from "./pages/Frontpage";
-import { Products } from "./pages/Products";
-import { Product } from "./pages/Product";
-import { Login } from "./pages/Login";
-import { Signup } from "./pages/Signup";
-import { ForgotPassword } from "./pages/ForgotPassword";
-import { GreenGoal } from "./pages/GreenGoal";
-import { Account } from "./pages/Account";
-import { Cart } from "./pages/Cart";
-import { Checkout } from "./pages/Checkout";
+import { Frontpage } from "./pages/Frontpage/Frontpage";
+import { Products } from "./pages/Products/Products";
+import { Product } from "./pages/Product/Product";
+import { Login } from "./pages/Login/Login";
+import { Signup } from "./pages/Signup/Signup";
+import { ForgotPassword } from "./pages/ForgotPassword/ForgotPassword";
+import { GreenGoal } from "./pages/GreenGoal/GreenGoal";
+import { Account } from "./pages/Account/Account";
+import { Cart } from "./pages/Cart/Cart";
+import { Checkout } from "./pages/Checkout/Checkout";
 import { AuthProvider } from "./contexts/AuthContext";
 import { ThreeJSProvider } from "./contexts/ThreeJSContext";
 

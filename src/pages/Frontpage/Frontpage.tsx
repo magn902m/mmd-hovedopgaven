@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../ui/components/1-atoms/Button";
+import { Button } from "../../ui/components/1-atoms/Button";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 

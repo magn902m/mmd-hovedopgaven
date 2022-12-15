@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import WebshopItems from "../data/terminals.json";
+import WebshopItems from "../../data/terminals.json";
 import { useParams } from "react-router-dom";
-import { NetsAccordion } from "../ui/components/2-molecules/NetsAccordion";
-import { Button } from "../ui/components/1-atoms/Button";
-import { useShoppingCart } from "../contexts/ShoppingCartContex";
-import { Modal } from "../ui/components";
+import { NetsAccordion } from "../../ui/components/2-molecules/NetsAccordion";
+import { Button } from "../../ui/components/1-atoms/Button";
+import { useShoppingCart } from "../../contexts/ShoppingCartContex";
+import { Modal } from "../../ui/components";
 import { Helmet } from "react-helmet";
 
 export const Product = () => {

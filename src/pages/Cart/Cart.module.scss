@@ -1,0 +1,125 @@
+.Cart_container {
+  display: flex;
+  flex-direction: column;
+
+  @media only screen and (min-width: 700px) {
+    .nets_cart {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .Cart_section {
+    text-align: center;
+  }
+}
+
+.Cart_grid {
+  display: grid;
+  grid-template-columns: 60% 1fr;
+  gap: 1rem;
+  margin-top: 4rem;
+
+  @media only screen and (min-width: 700px) {
+    max-width: 1000px;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 50% 1fr 1fr;
+    gap: 1rem;
+    margin-top: 4rem;
+  }
+}
+
+.Cart_grid_header {
+  grid-column: 1 / 3;
+  display: grid;
+  border-bottom: solid var(--color-nets-darkblue);
+
+  &_mobile_none {
+    display: none;
+  }
+
+  @media only screen and (min-width: 700px) {
+    padding: 0 2rem;
+    grid-column: 1/ 4;
+    border-bottom: solid var(--color-nets-darkblue);
+
+    &_mobile_none {
+      display: block;
+      grid-column: 2/3;
+    }
+  }
+}
+
+.Cart_grid_product {
+  display: flex;
+  font-weight: 400;
+
+  @media only screen and (min-width: 700px) {
+    // justify-self: end;
+    // grid-column: 3 /4;
+    grid-column: 1/2;
+  }
+}
+
+.Cart_grid_subtotal {
+  justify-self: end;
+  grid-column: 2/3;
+  font-weight: 400;
+
+  @media only screen and (min-width: 700px) {
+    display: flex;
+  }
+}
+
+.Cart_grid_body {
+  grid-column: 1 / 3;
+  display: grid;
+  border-bottom: solid var(--color-nets-darkblue);
+
+  @media only screen and (min-width: 700px) {
+    grid-column: 1 / 4;
+    display: grid;
+    border-bottom: solid var(--color-nets-darkblue);
+  }
+}
+.Cart_grid_footer {
+  grid-column: 1 / 3;
+  display: grid;
+
+  & > p {
+    grid-column: 1 / 2;
+  }
+
+  @media only screen and (min-width: 700px) {
+    grid-column: 1 / 4;
+    display: grid;
+
+    & > h4 {
+      grid-column: 3;
+    }
+  }
+}
+.Cart_grid_footer_total {
+  grid-column: 2/3;
+  justify-self: end;
+
+  @media only screen and (min-width: 700px) {
+    grid-column: 4;
+    justify-self: end;
+    justify-items: end;
+  }
+}
+
+.Cart_primary_btn {
+  margin-top: 3rem;
+  grid-column: 2/4;
+
+  @media only screen and (min-width: 700px) {
+    margin-top: 3rem;
+    grid-column: 3;
+  }
+}

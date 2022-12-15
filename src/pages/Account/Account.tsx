@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import styles from "./Account.module.scss";
 import { getDatabase, ref, child, get } from "firebase/database";
-import { UpdateAccount } from "../ui/components";
-import { LogoutAccount } from "../ui/components";
-import { useAuth } from "../contexts/AuthContext";
+import { UpdateAccount } from "../../ui/components";
+import { LogoutAccount } from "../../ui/components";
+import { useAuth } from "../../contexts/AuthContext";
 
 export const Account = () => {
   const [profilData, setProfilData] = useState({
@@ -43,7 +44,7 @@ export const Account = () => {
           Velkommen til {profilData.firstname}, på vegne af virksomheden {profilData.companyName}
         </p>
       </section>
-      <section className="account">
+      <section className={styles.Account_container}>
         <UpdateAccount
           profilData={profilData}
           setPickedColor={setPickedColor}

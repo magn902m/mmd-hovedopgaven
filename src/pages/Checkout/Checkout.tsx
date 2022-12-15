@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { CheckoutDelivery } from "../ui/components";
-import { CheckoutInformation } from "../ui/components";
-import { CheckoutOverview } from "../ui/components";
-import { CheckoutTotal } from "../ui/components/3-organisms/Checkout/CheckoutTotal/CheckoutTotal";
-import { ProgressBar } from "../ui/components";
+import { CheckoutDelivery } from "../../ui/components";
+import { CheckoutInformation } from "../../ui/components";
+import { CheckoutOverview } from "../../ui/components";
+import { CheckoutTotal } from "../../ui/components/3-organisms/Checkout/CheckoutTotal/CheckoutTotal";
+import { ProgressBar } from "../../ui/components";
 
 export const Checkout = () => {
   const [toggleCheckoutInformation, setToggleCheckoutInformation] = useState(true);
