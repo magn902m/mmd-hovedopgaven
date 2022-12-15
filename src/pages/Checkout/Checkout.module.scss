@@ -1,0 +1,14 @@
+.Checkout_container {
+}
+
+.Checkout_steps {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing--4xl);
+
+  @media only screen and (max-width: 1012px) {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing--3xl);
+  }
+}

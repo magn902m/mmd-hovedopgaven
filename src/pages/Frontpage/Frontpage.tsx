@@ -1,4 +1,5 @@
 import React from "react";
+import "./Frontpage.scss";
 import { Button } from "../../ui/components/1-atoms/Button";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Product.scss";
 import WebshopItems from "../../data/terminals.json";
 import { useParams } from "react-router-dom";
 import { NetsAccordion } from "../../ui/components/2-molecules/NetsAccordion";

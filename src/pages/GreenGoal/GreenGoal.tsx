@@ -1,4 +1,5 @@
 import React from "react";
+import "./GreenGoal.scss";
 import { Helmet } from "react-helmet";
 
 export const GreenGoal = () => {

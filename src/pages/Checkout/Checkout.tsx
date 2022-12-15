@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import styles from "./Checkout.module.scss";
 import { CheckoutDelivery } from "../../ui/components";
 import { CheckoutInformation } from "../../ui/components";
 import { CheckoutOverview } from "../../ui/components";
@@ -28,9 +28,9 @@ export const Checkout = () => {
   return (
     <>
       <main id="main">
-        <section className="checkout">
+        <section className={styles.Checkout_container}>
           <h1>Checkout</h1>
-          <article className="checkout_steps">
+          <article className={styles.Checkout_steps}>
             <div>
               <ProgressBar toggleCheckoutArr={toggleCheckoutArr} />
               {toggleCheckoutInformation && (
