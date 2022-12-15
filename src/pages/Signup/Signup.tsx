@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import "./Signup.scss";
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { getDatabase, ref, set } from "firebase/database";

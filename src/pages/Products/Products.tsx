@@ -1,4 +1,5 @@
 import React from "react";
+import "./Products.scss";
 import { ProductCard } from "../../ui/components/1-atoms/ProductCard";
 import WebshopItems from "../../data/terminals.json";
 import { useNavigate } from "react-router-dom";
