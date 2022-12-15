@@ -66,7 +66,7 @@ export const Navbar = () => {
             >
               {currentUser ? "Din profil" : "Log ind"}
             </NavLink>
-            <NavLink to="/cart" className="nav-links shopping_cart" onClick={handleClick}>
+            <NavLink to="/cart" className="nav-links shopping_cart">
               <ShoppingBagOutlinedIcon />
               <div className="header_cart_quantity">
                 <p>{cartQuantity}</p>
@@ -78,6 +78,7 @@ export const Navbar = () => {
               id="menu__toggle"
               name="menu__toggle"
               type="checkbox"
+              checked={click}
             />
             <label className="burger_menu_btn" htmlFor="menu__toggle">
               <span></span>
