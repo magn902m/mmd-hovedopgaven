@@ -103,7 +103,7 @@ export const Product = () => {
         </section>
 
         {isOpen && (
-          <Modal setIsOpen={setIsOpen} name={singleProduct.name} desc={singleProduct.desc1} />
+          <Modal setIsOpen={setIsOpen} name={singleProduct.name} desc1={singleProduct.desc1} />
         )}
 
         <section id="product_info" className="nets_product_bottom">

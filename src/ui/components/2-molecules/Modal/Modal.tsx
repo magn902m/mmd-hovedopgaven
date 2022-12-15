@@ -108,41 +108,51 @@ export const Modal = (props: any) => {
   return (
     <>
       <PrivateRoute>
-        <aside className={styles.Model_centered}>
-          <div className={styles.Model_modal}>
-            <header>
-              <div>
-                <h3 className={styles.Model_heading}>{props.name}</h3>
-                <p className={styles.Model_description}>{props.desc}</p>
-              </div>
-              <Button
-                label="Færdig"
-                onClick={() => {
-                  saveUserPreference();
-                  props.setIsOpen(false);
-                }}
-              />
-            </header>
+        <aside className={styles.Modal_centered}>
+          <section className={styles.Modal_modal}>
+            <div className={styles.Modal_wrapper}>
+              <header className={styles.Modal_header}>
+                <div>
+                  <h2>Design dit produkt</h2>
+                  <p>Prøv at vælg en farve og udforsk terminal, ved at trække rundt på den</p>
+                </div>
+                <Button
+                  label="Gem dine ændriner"
+                  onClick={() => {
+                    saveUserPreference();
+                    props.setIsOpen(false);
+                  }}
+                />
+              </header>
+              <article className={styles.Modal_content}>
+                <PaymentTerminalCanvas />
+                <div className={styles.Modal_actions_container}>
+                  <div className={styles.Modal_rotate_container}>
+                    <h4>Drej produktet</h4>
+                    <div className={styles.Modal_action_btns_container}>
+                      <Button
+                        label={"Drej 360°"}
+                        onClick={() => updateModel.setIsRatation360Clicked(true)}
+                      />
+                      <Button
+                        label={"Vend 180°"}
+                        onClick={() => updateModel.setIsRatation180Clicked(true)}
+                      />
+                    </div>
+                  </div>
 
-            <PaymentTerminalCanvas />
-            <div className={styles.Model_actions_container}>
-              <div className={styles.Model_action_btns_container}>
-                <Button
-                  label={"Se produkt 360°"}
-                  onClick={() => updateModel.setIsRatation360Clicked(true)}
-                />
-                <Button
-                  label={"Vend 180°"}
-                  onClick={() => updateModel.setIsRatation180Clicked(true)}
-                />
-              </div>
-              <ColorPicker
-                onChange={handlePickedColor}
-                value={pickedColor}
-                profilcolor={profilData?.color}
-              />
+                  <div className={styles.Modal_color_container}>
+                    <h4>Vælg din farve</h4>
+                    <ColorPicker
+                      onChange={handlePickedColor}
+                      value={pickedColor}
+                      profilcolor={profilData?.color}
+                    />
+                  </div>
+                </div>
+              </article>
             </div>
-          </div>
+          </section>
         </aside>
       </PrivateRoute>
     </>
