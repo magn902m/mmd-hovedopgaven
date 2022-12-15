@@ -12,15 +12,16 @@
 }
 
 .ProgressBar_step_item {
-  opacity: 80%;
-}
-
-.ProgressBar_current_item {
-  font-weight: var(--font-weight--extrabold);
+  cursor: pointer;
 }
 
 .ProgressBar_progress_count {
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 45%;
+}
+
+.ProgressBar_current_item {
+  opacity: 100%;
 }
