@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
-import "./Header.scss";
+import "./Navbar.scss";
 import { useAuth } from "../../../../contexts/AuthContext";
 import { useShoppingCart } from "../../../../contexts/ShoppingCartContex";
 
