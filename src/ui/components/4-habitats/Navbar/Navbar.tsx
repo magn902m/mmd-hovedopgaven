@@ -33,7 +33,7 @@ export const Navbar = () => {
           </li>
           <li className="nets_navbar_items">
             <NavLink to="/green-goal" onClick={handleClick} className="nets_navbar_links">
-              Vores Grønne Mål
+              Vores grønne mål
             </NavLink>
           </li>
           <li className="nets_navbar_items">
