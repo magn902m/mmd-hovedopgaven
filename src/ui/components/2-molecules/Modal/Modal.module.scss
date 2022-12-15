@@ -14,10 +14,11 @@
   flex-direction: column;
   align-items: center;
   margin-block-end: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .Modal_heading {
-  //   font-size: var(--font-size--xl);
   font-size: var(--font-size--body);
 }
 
@@ -45,7 +46,6 @@
 
 .Modal_action_btns_container {
   display: flex;
-  // justify-content: center;
   gap: 1rem;
 }
 
@@ -54,20 +54,23 @@
   flex-direction: column;
   justify-content: space-between;
   padding: var(--spacing--lg);
-  gap: var(--spacing--2xl);
+  gap: var(--spacing--base);
+
   @media only screen and (min-width: 800px) {
     flex-direction: row;
+    gap: var(--spacing--2xl);
   }
 }
 
 .Modal_content {
   display: flex;
   flex-direction: column;
+  margin-block: var(--spacing--lg);
+  gap: var(--spacing--lg);
 
   @media only screen and (min-width: 800px) {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    // height: 80vh;
   }
 }
 
@@ -84,5 +87,4 @@
 }
 .Modal_wrapper {
   max-width: 1000px;
-  // align-self: center;
 }

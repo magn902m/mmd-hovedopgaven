@@ -117,7 +117,7 @@ export const Modal = (props: any) => {
                   <p>Prøv at vælg en farve og udforsk terminal, ved at trække rundt på den</p>
                 </div>
                 <Button
-                  label="Gem dine ændriner"
+                  label="Luk og gem dine ændringer"
                   onClick={() => {
                     saveUserPreference();
                     props.setIsOpen(false);
