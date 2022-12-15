@@ -74,12 +74,11 @@ export const Navbar = () => {
             </NavLink>
             <input
               className="nav-icon"
-              onClick={handleClick}
               id="menu__toggle"
               name="menu__toggle"
               type="checkbox"
+              onChange={handleClick}
               checked={click}
-              // defaultChecked={false}
             />
             <label className="burger_menu_btn" htmlFor="menu__toggle">
               <span></span>
