@@ -8,9 +8,12 @@
   width: 100%;
   justify-content: space-between;
 
-  a.active {
-    text-decoration: underline;
-    font-weight: var(--font-weight--bold);
+  a {
+    text-decoration: none;
+    &.active {
+      text-decoration: underline;
+      text-decoration-thickness: 0.2rem;
+    }
   }
   &_links {
     font-size: var(--font-size--body);

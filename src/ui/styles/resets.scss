@@ -69,11 +69,12 @@ a {
   font-family: var(--font-primary);
   font-size: var(--font-size--xs);
   color: var(--color-nets-darkblue);
-  // transition: 100ms all;
+  text-decoration: underline;
+  transition: 100ms all;
 }
 a:hover {
   opacity: 80%;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 // Button
