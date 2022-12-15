@@ -11,10 +11,15 @@ export const Product = () => {
   const params = useParams();
   const { increaseCartQuantity } = useShoppingCart();
   const [isOpen, setIsOpen] = useState(false);
+  const [isImage, setIsImage] = useState(false);
 
   const singleProduct = WebshopItems.filter((webshopItem) => {
     return webshopItem.id === Number(params.productid);
   })[0];
+
+  const changeImage = () => {
+    setIsImage(!isImage);
+  };
 
   return (
     <>
@@ -67,12 +72,32 @@ export const Product = () => {
 
       <main id="main" className="nets_product">
         <section className="nets_product_top">
-          <img
-            src={process.env.PUBLIC_URL + "/images/payment_terminal.svg"}
-            alt="Payment terminal"
-            width="1600"
-            height="900"
-          />
+          <article className="product_top_image">
+            {isImage ? (
+              <>
+                <img
+                  className="real_product_image"
+                  src={process.env.PUBLIC_URL + "/images/move-3500-nexi-square-tilt.webp"}
+                  alt="Payment terminal"
+                  width="1600"
+                  height="900"
+                  onClick={changeImage}
+                />
+                <p>Klik på billede for at se det optimerede billede</p>
+              </>
+            ) : (
+              <>
+                <img
+                  src={process.env.PUBLIC_URL + "/images/payment_terminal.svg"}
+                  alt="Payment terminal"
+                  width="1600"
+                  height="900"
+                  onClick={changeImage}
+                />
+                <p>Klik på billede for at se den rigtige terminal</p>
+              </>
+            )}
+          </article>
           <article className="nets_product_top_content">
             <div className="nets_product_top_text">
               <div>

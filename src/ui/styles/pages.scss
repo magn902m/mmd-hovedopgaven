@@ -302,6 +302,19 @@ section.account form {
       gap: 2rem;
     }
 
+    .product_top_image {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 350px;
+      text-align: center;
+
+      .real_product_image {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
     .nets_product_top_text {
     }
 
