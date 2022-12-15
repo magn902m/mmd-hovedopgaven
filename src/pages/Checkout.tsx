@@ -26,28 +26,27 @@ export const Checkout = () => {
   };
 
   return (
-    <main id="main">
-      <section className="checkout">
-        <section className="checkout_header">
-          <h1>Checkout</h1>
-          <Link to="/cart">Tilbage til kurven</Link>
+    <>
+      <main id="main">
+        <section className="checkout">
+          <article className="checkout_steps">
+            <div>
+              <ProgressBar toggleCheckoutArr={toggleCheckoutArr} />
+              {toggleCheckoutInformation && (
+                <CheckoutInformation toggleCheckoutArr={toggleCheckoutArr} />
+              )}
+              {toggleCheckoutDelivery && (
+                <CheckoutDelivery
+                  toggleCheckoutArr={toggleCheckoutArr}
+                  setDeliveryMetode={setDeliveryMetode}
+                />
+              )}
+              {toggleCheckoutOverview && <CheckoutOverview toggleCheckoutArr={toggleCheckoutArr} />}
+            </div>
+            <CheckoutTotal deliveryMetode={deliveryMetode} />
+          </article>
         </section>
-        <ProgressBar toggleCheckoutArr={toggleCheckoutArr} />
-        <article className="checkout_information">
-          {toggleCheckoutInformation && (
-            <CheckoutInformation toggleCheckoutArr={toggleCheckoutArr} />
-          )}
-          {toggleCheckoutDelivery && (
-            <CheckoutDelivery
-              toggleCheckoutArr={toggleCheckoutArr}
-              setDeliveryMetode={setDeliveryMetode}
-            />
-          )}
-          {toggleCheckoutOverview && <CheckoutOverview toggleCheckoutArr={toggleCheckoutArr} />}
-
-          <CheckoutTotal deliveryMetode={deliveryMetode} />
-        </article>
-      </section>
-    </main>
+      </main>
+    </>
   );
 };

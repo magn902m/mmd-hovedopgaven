@@ -2,12 +2,25 @@
   display: flex;
   align-items: center;
   margin-block: 3rem;
+
+  @media only screen and (max-width: 1012px) {
+    justify-content: center;
+    display: none;
+  }
 }
 .ProgressBar_steps_container {
   display: flex;
   align-items: center;
   gap: 1rem;
   list-style-type: none;
+
+  @media only screen and (max-width: 1012px) {
+    flex-direction: column;
+
+    li:nth-child(2n) {
+      rotate: 90deg;
+    }
+  }
 }
 
 .ProgressBar_step_item {

@@ -32,42 +32,44 @@ export const CheckoutTotal = ({ deliveryMetode }: any) => {
 
   return (
     <section className={styles.CheckoutTotal_container}>
-      {checkoutItems.map((checkoutItem, index) => (
-        <article key={index} className={styles.CheckoutTotal_product_info}>
-          {/* <img src={checkoutItem.img} alt="" /> */}
-          <img
-            src={process.env.PUBLIC_URL + "./images/payment_terminal.svg"}
-            alt="Payment terminal"
-            width="1600"
-            height="900"
-          />{" "}
-          <div>
-            <p className={styles.CheckoutTotal_item_name}>{checkoutItem.name}</p>
-            <p>{checkoutItem.desc1}</p>
+      <article className={styles.CheckoutTotal_wrapper}>
+        {checkoutItems.map((checkoutItem, index) => (
+          <div key={index} className={styles.CheckoutTotal_product_info}>
+            {/* <img src={checkoutItem.img} alt="" /> */}
+            <img
+              src={process.env.PUBLIC_URL + "./images/payment_terminal.svg"}
+              alt="Payment terminal"
+              width="1600"
+              height="900"
+            />
+            <div>
+              <p className={styles.CheckoutTotal_item_name}>{checkoutItem.name}</p>
+              <p>{checkoutItem.desc1}</p>
+            </div>
+            <p className="price">{checkoutItem.price + "kr."} </p>
           </div>
-          <p className="price">{checkoutItem.price + "kr."} </p>
-        </article>
-      ))}
-      <article className={styles.CheckoutTotal_price_overview}>
-        <hr />
-        <div className={styles.CheckoutTotal_price_layout}>
-          <p className={styles.CheckoutTotal_price_text}>Subtotal</p>
-          <p className="price">{calcSubtotal} kr.</p>
+        ))}
+        <div className={styles.CheckoutTotal_price_overview}>
+          <hr />
+          <div className={styles.CheckoutTotal_price_layout}>
+            <p className={styles.CheckoutTotal_price_text}>Subtotal</p>
+            <p className="price">{calcSubtotal} kr.</p>
+          </div>
+          <div className={styles.CheckoutTotal_price_layout}>
+            <p className={styles.CheckoutTotal_price_text}>Levering</p>
+            <p className="price">{deliveryPrice} kr.</p>
+          </div>
+          <div className={styles.CheckoutTotal_price_layout}>
+            <p className={styles.CheckoutTotal_price_text}>Moms</p>
+            <p className="price">{taxPrice} kr.</p>
+          </div>
+          <hr />
         </div>
         <div className={styles.CheckoutTotal_price_layout}>
-          <p className={styles.CheckoutTotal_price_text}>Levering</p>
-          <p className="price">{deliveryPrice} kr.</p>
+          <h4>I alt</h4>
+          <p className="total_price">{totalPrice} kr.</p>
         </div>
-        <div className={styles.CheckoutTotal_price_layout}>
-          <p className={styles.CheckoutTotal_price_text}>Moms</p>
-          <p className="price">{taxPrice} kr.</p>
-        </div>
-        <hr />
       </article>
-      <div className={styles.CheckoutTotal_price_layout}>
-        <h4>I alt</h4>
-        <p className="total_price">{totalPrice} kr.</p>
-      </div>
     </section>
   );
 };

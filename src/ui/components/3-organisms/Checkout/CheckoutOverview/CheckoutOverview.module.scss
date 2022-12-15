@@ -1,6 +1,10 @@
 .CheckoutOverview_container {
   max-width: 420px;
   width: 420px;
+
+  @media only screen and (max-width: 1012px) {
+    width: auto;
+  }
 }
 
 .CheckoutOverview_buttons {
