@@ -64,6 +64,8 @@ export const Products = () => {
       <main id="main" className="nets_products">
         <header>
           <h1>Produkter</h1>
+          <p>Vælg det produkt, som passer din virksomhed bedst</p>
+          <p className="webshop_items_count">{WebshopItems.length} produkter</p>
         </header>
         <section className="nets_products_overview">
           {WebshopItems.map((t) => (

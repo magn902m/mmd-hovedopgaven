@@ -347,6 +347,12 @@ section.account form {
       display: grid;
       grid-template-columns: repeat(3, minmax(200px, 1fr));
     }
+    .webshop_items_count {
+      text-align: center;
+      font-style: italic;
+      margin-block-start: 1rem;
+      font-size: 0.8rem;
+    }
   }
 }
 

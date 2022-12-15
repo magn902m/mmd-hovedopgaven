@@ -60,7 +60,7 @@ export const Frontpage = () => {
       <main id="main" className="frontpage">
         <section className="frontpage_hero">
           <div className="frontpage_hero_text">
-            <h1>Betalingsterminaler lavet til dig</h1>
+            <h1>Design din egen betalingsterminal</h1>
             <p>
               Hos Nets stræber vi os på at give tilbage - både til dig og naturen. Med vores
               betalingsterminaler får du alt, hvad du skal bruge til at tage imod betalinger med
@@ -72,7 +72,7 @@ export const Frontpage = () => {
               <Button
                 btnTypeStyle="primary_btn"
                 onClick={() => goTo("/products")}
-                label="Vælg pakkeløsning"
+                label="Kom igang"
               />
               <Button
                 className="secondary_btn"
