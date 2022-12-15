@@ -3,10 +3,11 @@ main {
   grid-template-columns: 1fr minmax(0, 1200px) 1fr;
   margin: 20px;
 
-  header {
+  > header {
     display: flex;
     flex-direction: column;
     padding: 2rem;
+    text-align: center;
   }
 }
 
@@ -37,6 +38,13 @@ section.account form {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .webshop_items_count {
+    text-align: center;
+    font-style: italic;
+    margin-block-start: 1rem;
+    font-size: 0.8rem;
+  }
 
   &_overview {
     // display: flex;
@@ -285,7 +293,18 @@ section.account form {
     align-items: center;
     img {
       width: 50%;
+      max-width: 200px;
     }
+
+    .nets_product_top_text {
+    }
+
+    .nets_product_top_btns {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
     &_info {
       display: flex;
       flex-direction: column;
@@ -346,12 +365,6 @@ section.account form {
       // flex-direction: row;
       display: grid;
       grid-template-columns: repeat(3, minmax(200px, 1fr));
-    }
-    .webshop_items_count {
-      text-align: center;
-      font-style: italic;
-      margin-block-start: 1rem;
-      font-size: 0.8rem;
     }
   }
 }
