@@ -9,9 +9,9 @@ export const Products = () => {
 
   const goToSingleview = (e: any, id: any) => {
     const url = `/product/${id}`;
-
     return navigate(url);
   };
+
   return (
     <>
       <Helmet>
@@ -68,17 +68,11 @@ export const Products = () => {
           <p className="webshop_items_count">{WebshopItems.length} produkter</p>
         </header>
         <section className="nets_products_overview">
-          {WebshopItems.map((t) => (
+          {WebshopItems.map((webshopItem) => (
             <ProductCard
-              key={t.id}
-              productInfo={t}
-              // img={t.img}
-              // title={t.name}
-              // text={t.desc1}
-              // btnLabel={`${t.price} kr pr måned`}
-              // id={t.id}
-              // key={t.id}
-              onClick={(e) => goToSingleview(e, t.id)}
+              key={webshopItem.id}
+              productInfo={webshopItem}
+              onClick={(e) => goToSingleview(e, webshopItem.id)}
             ></ProductCard>
           ))}
         </section>
