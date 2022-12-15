@@ -79,13 +79,10 @@ export const Login = () => {
 
       <main id="main">
         <section className="login_form">
-          <h1>Login</h1>
+          <h1>Log ind</h1>
 
           <form action="" onSubmit={handleSubmit}>
-            <p>
-              For at kunne tilgå dele af hjemmeside, skal man have en konto. Opret en konto, eller
-              login her
-            </p>
+            <p>Log ind for at kunne designe din terminal og andre fordele.</p>
 
             {error && error}
             <div id="email">

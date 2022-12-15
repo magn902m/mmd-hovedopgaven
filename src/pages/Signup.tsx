@@ -135,6 +135,10 @@ export const Signup = () => {
         <section className="signup_form">
           {error && error}
           <h1>Opret konto</h1>
+          <p>
+            Bliv medlem, gå ikke glip af muligheden for at desinge dine terminaler, månedlige
+            statestikker og feedback.
+          </p>
 
           <form action="" ref={formPostRef} onSubmit={handleSubmit}>
             <legend>Lav din konto</legend>

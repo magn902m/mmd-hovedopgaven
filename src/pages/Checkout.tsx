@@ -29,6 +29,7 @@ export const Checkout = () => {
     <>
       <main id="main">
         <section className="checkout">
+          <h1>Checkout</h1>
           <article className="checkout_steps">
             <div>
               <ProgressBar toggleCheckoutArr={toggleCheckoutArr} />

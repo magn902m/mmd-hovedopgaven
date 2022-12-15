@@ -39,6 +39,9 @@ export const Account = () => {
     <main id="main">
       <section>
         <h1>Din konto</h1>
+        <p>
+          Velkommen til {profilData.firstname}, på vegne af virksomheden {profilData.companyName}
+        </p>
       </section>
       <section className="account">
         <UpdateAccount

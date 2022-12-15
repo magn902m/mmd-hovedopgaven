@@ -78,6 +78,10 @@ export const ForgotPassword = () => {
       <main id="main">
         <section className="forgot_password_form">
           <h1>Nulstil kodeord</h1>
+          <p>
+            Indtast den e-mailadresse, du har brugt til at oprette dit virksomhedsprofil konto, så
+            sender vi et link, hvor du kan nulstille dit password.
+          </p>
           {error && error}
           {message && message}
           <form action="" onSubmit={handleSubmit}>
