@@ -94,6 +94,7 @@ a:hover {
   color: var(--color-nets-darkblue);
   border: 1px solid var(--color-nets-darkblue);
   background-color: var(--color-white);
+  text-decoration: none;
 
   &:hover {
     font-size: var(--font-size--2xs);
@@ -111,6 +112,7 @@ a:hover {
   border-radius: var(--border--lg);
   border: 1px solid var(--color-nets-darkblue);
   background-color: var(--color-nets-darkblue);
+  text-decoration: none;
 
   cursor: pointer;
   position: relative;
