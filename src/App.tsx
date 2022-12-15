@@ -23,7 +23,7 @@ import {
 import { getDatabase } from "firebase/database"; // Firebase v9+
 import { getAuth } from "firebase/auth";
 import { PrivateRoute } from "./pages/PrivateRoute";
-import { Navbar } from "./ui/components";
+import { Navbar } from "./ui/components/4-habitats/Navbar/Navbar";
 import { Footer } from "./ui/components";
 import { ShoppingCartProvider } from "./contexts/ShoppingCartContex";
 import { ScrollToTop } from "./hooks/scrollToTop";
