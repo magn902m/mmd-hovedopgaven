@@ -5,13 +5,13 @@ import { FirebaseAppProvider } from "reactfire";
 import { ProjectLogin } from "./definitions/ProjectLogin";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBxYgu6UGK2AdBzsYFO6nBom9PRZSuRlfA",
-  authDomain: "mmd-hovedopgaven.firebaseapp.com",
-  databaseURL: "https://mmd-hovedopgaven-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "mmd-hovedopgaven",
-  storageBucket: "mmd-hovedopgaven.appspot.com",
-  messagingSenderId: "676255958131",
-  appId: "1:676255958131:web:c368091b440d88d043d606",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
