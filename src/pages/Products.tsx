@@ -68,12 +68,14 @@ export const Products = () => {
         <section className="nets_products_overview">
           {WebshopItems.map((t) => (
             <ProductCard
-              img={t.img}
-              title={t.name}
-              text={t.desc1}
-              btnLabel={`${t.price} kr pr måned`}
-              id={t.id}
               key={t.id}
+              productInfo={t}
+              // img={t.img}
+              // title={t.name}
+              // text={t.desc1}
+              // btnLabel={`${t.price} kr pr måned`}
+              // id={t.id}
+              // key={t.id}
               onClick={(e) => goToSingleview(e, t.id)}
             ></ProductCard>
           ))}

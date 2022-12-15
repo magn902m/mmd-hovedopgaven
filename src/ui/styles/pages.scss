@@ -39,8 +39,11 @@ section.account form {
   align-items: center;
 
   &_overview {
+    // display: flex;
+    // flex-direction: column;
     display: flex;
     flex-direction: column;
+    gap: var(--spacing--2xl);
 
     & > h2 {
       font-size: var(--font-size--m);
@@ -337,6 +340,16 @@ section.account form {
   }
 }
 
+@media only screen and (min-width: 800px) {
+  .nets_products {
+    &_overview {
+      // flex-direction: row;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(200px, 1fr));
+    }
+  }
+}
+
 @media only screen and (min-width: 700px) {
   main {
     justify-items: center;
@@ -349,14 +362,14 @@ section.account form {
 
   .nets_products {
     &_overview {
-      flex-direction: row;
+      // flex-direction: row;
 
       & > h2 {
         font-size: var(--font-size--4xl);
       }
 
       .nets_card {
-        align-items: flex-start;
+        // align-items: flex-start;
       }
     }
   }

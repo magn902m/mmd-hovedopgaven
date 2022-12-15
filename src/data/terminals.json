@@ -1,25 +1,28 @@
 [
   {
-    "name": "Terminal Large",
-    "desc1": "Spar penge på lave gebyrer. Transaktionsgebyr fra 0,69%",
-    "desc2": "Til dig med månedlig kortomsætning under 35.000 kr.*",
+    "name": "Small",
+    "transactionInfo": 0.89,
+    "desc1": "Få fast lav månedlig ydelse. Transaktionsgebyr fra 0,89%",
+    "desc2": "Månedlig kortomsætning under 35.000 kr.",
     "price": 299,
     "id": 1,
     "img": "./images/payment_terminal.svg"
   },
   {
-    "name": "Terminal Medium",
+    "name": "Medium",
+    "transactionInfo": 0.79,
     "desc1": "Få lave gebyr og en udvidet servicepakke. Transaktionsgebyr fra 0,79%",
-    "desc2": "Til dig med månedlig kortomsætning mellem 35.000-90.000 kr.*",
+    "desc2": "Månedlig kortomsætning mellem 35.000-90.000 kr.",
     "price": 349,
     "id": 2,
     "img": "./images/payment_terminal.svg"
   },
   {
-    "name": "Terminal Small",
-    "desc1": "Få fast lav månedlig ydelse. Transaktionsgebyr fra 0,89%",
-    "desc2": "Til dig med månedlig kortomsætning over 90.000 kr.*",
-    "price": 459,
+    "name": "Large",
+    "transactionInfo": 0.69,
+    "desc1": "Spar penge på lave gebyrer. Transaktionsgebyr fra 0,69%",
+    "desc2": "Månedlig kortomsætning over 90.000 kr.",
+    "price": 299,
     "id": 3,
     "img": "./images/payment_terminal.svg"
   }

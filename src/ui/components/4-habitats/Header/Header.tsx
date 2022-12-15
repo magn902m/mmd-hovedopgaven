@@ -79,6 +79,7 @@ export const Navbar = () => {
               name="menu__toggle"
               type="checkbox"
               checked={click}
+              // defaultChecked={false}
             />
             <label className="burger_menu_btn" htmlFor="menu__toggle">
               <span></span>
