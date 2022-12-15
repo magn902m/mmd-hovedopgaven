@@ -1,6 +1,5 @@
 .ProgressBar_container {
   display: flex;
-  justify-content: center;
   align-items: center;
   margin-block: 3rem;
 }
@@ -24,4 +23,9 @@
 
 .ProgressBar_current_item {
   opacity: 100%;
+}
+
+.ProgressBar_to_cart {
+  font-size: var(--font-size--body);
+  text-decoration: none;
 }
