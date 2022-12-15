@@ -1,30 +1,18 @@
 .nets_navbar {
-  background-color: var(--color-gray--light);
   display: flex;
   align-items: center;
   top: 0;
   z-index: 20;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   width: 100%;
   justify-content: space-between;
 
-  a {
-    text-decoration: none;
-    &.active {
-      text-decoration: underline;
-      text-decoration-thickness: 0.2rem;
-    }
-  }
-  &_links {
-    font-size: var(--font-size--body);
-  }
   &_logo {
-    padding-left: 2rem;
+    width: 100px;
   }
   &_menu {
     display: flex;
     list-style: none;
-    background: var(--color-gray--light);
     position: relative;
     opacity: 1;
     padding-left: 1rem;
@@ -71,6 +59,7 @@
   .nets_navbar {
     &_logo {
       padding-left: 0;
+      width: 80px;
     }
     &_menu {
       display: none;
@@ -79,7 +68,7 @@
 
       &.active {
         display: block;
-        background-color: var(--color-nets-lightblue);
+        background-color: var(--color-nets-darkblue-25);
         position: absolute;
         top: 0;
         left: 0;
@@ -108,6 +97,7 @@
 
 #menu__toggle {
   opacity: 0;
+  display: block;
   width: 26px;
   height: 26px;
 }
@@ -127,10 +117,8 @@
 }
 .burger_menu_btn {
   position: fixed;
-  // top: 30px;
   right: 20px;
   width: 26px;
-  // height: 26px;
   cursor: pointer;
   z-index: 1;
 }
@@ -141,7 +129,7 @@
   position: absolute;
   width: 100%;
   height: 3px;
-  background-color: var(--color-nets-darkblue);
+  background-color: var(--color-gray--light);
   transition-duration: 0.25s;
 }
 .burger_menu_btn > span::before {
@@ -169,6 +157,10 @@
     flex-direction: column;
     justify-content: center;
   }
+
+  #menu__toggle {
+    display: none;
+  }
 }
 
 .navbar_burger_li {
@@ -178,5 +170,18 @@
 .navbar_header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  background-color: var(--color-nets-darkblue);
+  z-index: 10;
+
+  a {
+    font-size: var(--font-size--body);
+    color: var(--color-gray--light);
+    text-decoration: none;
+
+    &.active {
+      text-decoration: underline;
+      text-decoration-thickness: 0.2rem;
+      text-decoration-color: var(--color-white);
+    }
+  }
 }

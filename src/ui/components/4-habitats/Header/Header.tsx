@@ -18,7 +18,7 @@ export const Navbar = () => {
       <nav className="nets_navbar">
         <NavLink to="/" className={"nets_navbar_logo"}>
           <img
-            src={process.env.PUBLIC_URL + "/images/nets_logo_primary.svg"}
+            src={process.env.PUBLIC_URL + "/images/nets_logo_white.svg"}
             width="100"
             height="30"
             alt="Nets logo"
