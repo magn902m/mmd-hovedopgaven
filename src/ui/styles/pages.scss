@@ -291,9 +291,15 @@ section.account form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0.5rem;
     img {
       width: 50%;
       max-width: 200px;
+    }
+    .nets_product_top_content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
     }
 
     .nets_product_top_text {
@@ -551,13 +557,23 @@ section.account form {
   }
   .nets_product {
     &_top {
-      flex-direction: row;
-      align-items: flex-start;
-      max-width: 800px;
-      gap: 2rem;
+      // flex-direction: row;
+      // align-items: flex-start;
+      // max-width: 800px;
+      // gap: 2rem;
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      max-width: 1000px;
+
+      .nets_product_top_text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
       img {
-        width: 5%;
-        flex-basis: 30%;
+        // width: 5%;
+        // flex-basis: 30%;
+        justify-self: center;
       }
       &_info {
         h2 {
@@ -581,8 +597,10 @@ section.account form {
       }
     }
     &_bottom {
-      display: flex;
-      flex-direction: row;
+      // display: flex;
+      // flex-direction: row;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       margin-top: 6rem;
       gap: 5rem;
 

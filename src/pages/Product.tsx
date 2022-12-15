@@ -9,15 +9,12 @@ import { Helmet } from "react-helmet";
 
 export const Product = () => {
   const params = useParams();
-
-  const singleProduct = WebshopItems.filter((t) => {
-    return t.id === Number(params.productid);
-  })[0];
-
   const { increaseCartQuantity } = useShoppingCart();
-
-  //Modal
   const [isOpen, setIsOpen] = useState(false);
+
+  const singleProduct = WebshopItems.filter((webshopItem) => {
+    return webshopItem.id === Number(params.productid);
+  })[0];
 
   return (
     <>
@@ -76,41 +73,40 @@ export const Product = () => {
             width="1600"
             height="900"
           />
-          <div className="nets_product_top_info">
-            <h2>{singleProduct.name}</h2>
-            <h4>{singleProduct.desc1}</h4>
-            <p>{singleProduct.desc2}</p>
-            {/* link til accordian */}
-            <p>Læs mere under produktet</p>
-            <div className="nets_product_top_footprint"></div>
+          <article className="nets_product_top_content">
+            <div className="nets_product_top_text">
+              <div>
+                <h2>{singleProduct.name}</h2>
+                <h4>{singleProduct.desc1}</h4>
+                <p>
+                  {singleProduct.desc2} til {`${singleProduct.price} kr. pr. måned`}
+                </p>
+              </div>
+              <a href="#product_info">Læs mere om pakkeløsningen</a>
+              <div className="nets_product_top_footprint"></div>
+            </div>
+            <div className="nets_product_top_btns">
+              <Button
+                btnTypeStyle="primary_btn"
+                className="nets_modal_open"
+                label={"Design dit produkt"}
+                onClick={() => setIsOpen(true)}
+              />
 
-            <Button
-              className="nets_modal_open"
-              label={"Skræddersy din terminal"}
-              onClick={() => setIsOpen(true)}
-            />
-
-            <Button
-              className="nets_card_button"
-              label={"Tilføj til kurv"}
-              onClick={() => increaseCartQuantity(singleProduct.id)}
-            />
-          </div>
+              <Button
+                className="nets_card_button"
+                label={"Tilføj til kurv"}
+                onClick={() => increaseCartQuantity(singleProduct.id)}
+              />
+            </div>
+          </article>
         </section>
 
         {isOpen && (
-          <Modal
-            setIsOpen={setIsOpen}
-            // handlePickedColor={handlePickedColor}
-            // pickedColor={pickedColor}
-            // profilcolor={profilData?.color}
-            // saveUserPreference={saveUserPreference}
-            name={singleProduct.name}
-            desc={singleProduct.desc1}
-          />
+          <Modal setIsOpen={setIsOpen} name={singleProduct.name} desc={singleProduct.desc1} />
         )}
 
-        <section className="nets_product_bottom">
+        <section id="product_info" className="nets_product_bottom">
           <div className="product_bottom_div">
             <h4>Modtag de mest populære kort</h4>
             <p>
