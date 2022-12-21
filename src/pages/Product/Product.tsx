@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Product.scss";
 import WebshopItems from "../../data/terminals.json";
 import { useParams } from "react-router-dom";
@@ -7,12 +7,16 @@ import { Button } from "../../ui/components/1-atoms/Button";
 import { useShoppingCart } from "../../contexts/ShoppingCartContex";
 import { Modal } from "../../ui/components";
 import { Helmet } from "react-helmet";
+import { getDatabase, ref, child, get } from "firebase/database";
+import { useAuth } from "../../contexts/AuthContext";
 
 export const Product = () => {
   const params = useParams();
   const { increaseCartQuantity } = useShoppingCart();
   const [isOpen, setIsOpen] = useState(false);
   const [isImage, setIsImage] = useState(false);
+  const { currentUser } = useAuth();
+  const [pickedColor, setPickedColor] = useState("#005776");
 
   const singleProduct = WebshopItems.filter((webshopItem) => {
     return webshopItem.id === Number(params.productid);
@@ -21,6 +25,21 @@ export const Product = () => {
   const changeImage = () => {
     setIsImage(!isImage);
   };
+
+  useEffect(() => {
+    const dbRef = ref(getDatabase());
+    get(child(dbRef, `users/${currentUser.uid}`))
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          setPickedColor(snapshot.val().color);
+        } else {
+          console.log("No data available");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
   return (
     <>
@@ -108,6 +127,10 @@ export const Product = () => {
                   {singleProduct.desc2} til {`${singleProduct.price} kr. pr. måned`}
                 </p>
               </div>
+              <p className="product_top_pickedcolor">
+                Din valgte farve:{" "}
+                <span style={{ backgroundColor: `${pickedColor}` }}>{pickedColor}</span>
+              </p>
               <a href="#product_info">Læs mere om pakkeløsningen</a>
               <div className="nets_product_top_footprint"></div>
             </div>
