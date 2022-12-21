@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Product.scss";
 import WebshopItems from "../../data/terminals.json";
 import { useParams } from "react-router-dom";
@@ -9,6 +9,7 @@ import { Modal } from "../../ui/components";
 import { Helmet } from "react-helmet";
 import { getDatabase, ref, child, get } from "firebase/database";
 import { useAuth } from "../../contexts/AuthContext";
+import { ThreeJSContext } from "../../contexts/ThreeJSContext";
 
 export const Product = () => {
   const params = useParams();
@@ -17,6 +18,7 @@ export const Product = () => {
   const [isImage, setIsImage] = useState(false);
   const { currentUser } = useAuth();
   const [pickedColor, setPickedColor] = useState("#005776");
+  const { updateModel } = useContext(ThreeJSContext);
 
   const singleProduct = WebshopItems.filter((webshopItem) => {
     return webshopItem.id === Number(params.productid);
@@ -40,6 +42,10 @@ export const Product = () => {
         console.error(error);
       });
   }, []);
+
+  useEffect(() => {
+    setPickedColor(updateModel.pickedColor);
+  }, [updateModel.pickedColor]);
 
   return (
     <>
