@@ -29,18 +29,20 @@ export const Product = () => {
   };
 
   useEffect(() => {
-    const dbRef = ref(getDatabase());
-    get(child(dbRef, `users/${currentUser.uid}`))
-      .then((snapshot) => {
-        if (snapshot.exists()) {
-          setPickedColor(snapshot.val().color);
-        } else {
-          console.log("No data available");
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    if (currentUser) {
+      const dbRef = ref(getDatabase());
+      get(child(dbRef, `users/${currentUser.uid}`))
+        .then((snapshot) => {
+          if (snapshot.exists()) {
+            setPickedColor(snapshot.val().color);
+          } else {
+            console.log("No data available");
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
   }, []);
 
   useEffect(() => {
@@ -133,10 +135,12 @@ export const Product = () => {
                   {singleProduct.desc2} til {`${singleProduct.price} kr. pr. måned`}
                 </p>
               </div>
-              <p className="product_top_pickedcolor">
-                Din valgte farve:{" "}
-                <span style={{ backgroundColor: `${pickedColor}` }}>{pickedColor}</span>
-              </p>
+              {currentUser ? (
+                <p className="product_top_pickedcolor">
+                  Din valgte farve:{" "}
+                  <span style={{ backgroundColor: `${pickedColor}` }}>{pickedColor}</span>
+                </p>
+              ) : null}
               <a href="#product_info">Læs mere om pakkeløsningen</a>
               <div className="nets_product_top_footprint"></div>
             </div>
