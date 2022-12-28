@@ -8,6 +8,7 @@ import { ColorPicker } from "../ColorPicker";
 import { useAuth } from "../../../../contexts/AuthContext";
 import { child, get, getDatabase, ref, update } from "firebase/database";
 import { ThreeJSContext } from "../../../../contexts/ThreeJSContext";
+import { getStorage, ref as refStorage, uploadBytes, getDownloadURL, list } from "firebase/storage";
 
 export const Modal = (props: any) => {
   const { updateModel, setUpdateModel } = useContext(ThreeJSContext);
@@ -105,6 +106,39 @@ export const Modal = (props: any) => {
     updateCubeSettings();
   }, [isRatation360Clicked, isRatation180Clicked]);
 
+  //* Storage
+  const [imageUpload, setImageUpload]: any = useState();
+  const [imageUrl, setImageUrl] = useState("");
+  const [isNewImageUpload, setIsNewImageUpload] = useState(false);
+
+  const storage = getStorage();
+  const imagesListRef = refStorage(storage, "images/");
+  const uploadFile = () => {
+    if (imageUpload === null) return;
+    // const imageRef = refStorage(storage, `images/${imageUpload.name + currentUser.uid}`);
+    const imageRef = refStorage(storage, `images/${currentUser.uid}`);
+
+    uploadBytes(imageRef, imageUpload).then((snapshot) => {
+      getDownloadURL(snapshot.ref).then((url) => {
+        setImageUrl(url);
+      });
+    });
+  };
+
+  useEffect(() => {
+    setIsNewImageUpload(false);
+    list(imagesListRef).then((response) => {
+      response.items.map((item) => {
+        if (item.name === currentUser.uid) {
+          getDownloadURL(item).then((url) => {
+            setImageUrl(url);
+          });
+        }
+        return null;
+      });
+    });
+  }, [isNewImageUpload]);
+
   return (
     <>
       <PrivateRoute>
@@ -127,6 +161,34 @@ export const Modal = (props: any) => {
               <article className={styles.Modal_content}>
                 <PaymentTerminalCanvas />
                 <div className={styles.Modal_actions_container}>
+                  <div className={styles.Modal_image_container}>
+                    <label className={styles.Modal_image_label}>Vælg dit logo eller ikon</label>
+
+                    <div className={styles.Modal_image_main_content}>
+                      <input
+                        type="file"
+                        id="image_file"
+                        name="image_file"
+                        placeholder="&nbsp;"
+                        required
+                        onChange={(event: any) => {
+                          setImageUpload(event.target.files[0]);
+                        }}
+                      />
+                      <Button
+                        btnTypeStyle="se_btn"
+                        label="Upload billede"
+                        type="button"
+                        onClick={() => {
+                          uploadFile();
+                          setIsNewImageUpload(true);
+                        }}
+                      />
+                    </div>
+
+                    <img src={imageUrl} alt="Logo eller ikon, som bruger har uploadet" />
+                  </div>
+
                   <div className={styles.Modal_rotate_container}>
                     <h4>Drej produktet</h4>
                     <div className={styles.Modal_action_btns_container}>
