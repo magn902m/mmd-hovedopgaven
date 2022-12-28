@@ -18,10 +18,13 @@ import { ThreeJSProvider } from "./contexts/ThreeJSContext";
 import {
   useFirebaseApp,
   DatabaseProvider,
+  StorageProvider,
   // AuthProvider
 } from "reactfire";
 import { getDatabase } from "firebase/database"; // Firebase v9+
 import { getAuth } from "firebase/auth";
+import { getStorage } from "firebase/storage";
+
 import { PrivateRoute } from "./pages/PrivateRoute";
 import { Navbar } from "./ui/components/4-habitats/Navbar/Navbar";
 import { Footer } from "./ui/components";
@@ -33,51 +36,49 @@ function App() {
   const app = useFirebaseApp();
   const database = getDatabase(app);
   const auth = getAuth(app);
+  const storage = getStorage(app);
 
   return (
     <div className="App">
       {/* <AuthProvider sdk={auth}> */}
       <AuthProvider auth={auth}>
         <DatabaseProvider sdk={database}>
-          <ThreeJSProvider>
-            <BrowserRouter>
-              <ShoppingCartProvider>
-                <SkipToMainContent />
-                <Navbar />
-                <ScrollToTop>
-                  <Routes>
-                    <Route path="/" element={<Frontpage />} />
-                    <Route path="/products" element={<Products />} />
-                    {/* <Route path="/product" element={<Product />}>
-                      <Route path=":productid" element={<Product />} />
-                    </Route> */}
+          <StorageProvider sdk={storage}>
+            <ThreeJSProvider>
+              <BrowserRouter>
+                <ShoppingCartProvider>
+                  <SkipToMainContent />
+                  <Navbar />
+                  <ScrollToTop>
+                    <Routes>
+                      <Route path="/" element={<Frontpage />} />
+                      <Route path="/products" element={<Products />} />
+                      <Route path="/product" element={<Product />}>
+                        <Route path=":productid" element={<Product />} />
+                      </Route>
 
-                    <Route path="/product" element={<Product />}>
-                      <Route path=":productid" element={<Product />} />
-                    </Route>
-
-                    <Route path="/green-goal" element={<GreenGoal />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/signup" element={<Signup />} />
-                    <Route path="/forgot-password" element={<ForgotPassword />} />
-                    {/* <Route path="/account" element={<Account />} /> */}
-                    <Route
-                      path="/account"
-                      element={
-                        <PrivateRoute>
-                          <Account />
-                        </PrivateRoute>
-                      }
-                    />
-                    <Route path="/cart" element={<Cart />} />
-                    <Route path="/checkout" element={<Checkout />} />
-                  </Routes>
-
-                  <Footer />
-                </ScrollToTop>
-              </ShoppingCartProvider>
-            </BrowserRouter>
-          </ThreeJSProvider>
+                      <Route path="/green-goal" element={<GreenGoal />} />
+                      <Route path="/login" element={<Login />} />
+                      <Route path="/signup" element={<Signup />} />
+                      <Route path="/forgot-password" element={<ForgotPassword />} />
+                      {/* <Route path="/account" element={<Account />} /> */}
+                      <Route
+                        path="/account"
+                        element={
+                          <PrivateRoute>
+                            <Account />
+                          </PrivateRoute>
+                        }
+                      />
+                      <Route path="/cart" element={<Cart />} />
+                      <Route path="/checkout" element={<Checkout />} />
+                    </Routes>
+                    <Footer />
+                  </ScrollToTop>
+                </ShoppingCartProvider>
+              </BrowserRouter>
+            </ThreeJSProvider>
+          </StorageProvider>
         </DatabaseProvider>
       </AuthProvider>
       {/* </AuthProvider> */}
