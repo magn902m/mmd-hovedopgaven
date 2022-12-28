@@ -15,8 +15,9 @@ export const Modal = (props: any) => {
 
   const [isRatation360Clicked, setIsRatation360Clicked] = useState(false);
   const [isRatation180Clicked, setIsRatation180Clicked] = useState(false);
+  const [showImage, setShowImage] = useState(true);
 
-  //* Database
+  //* Database start
 
   const { currentUser } = useAuth();
   const [profilData, setProfilData] = useState({
@@ -48,19 +49,6 @@ export const Modal = (props: any) => {
     fetchData();
   }, []);
 
-  function updateModelSettings() {
-    setUpdateModel((old: any) => {
-      return {
-        ...old,
-        pickedColor,
-        handlePickedColor,
-      };
-    });
-  }
-  useEffect(() => {
-    updateModelSettings();
-  }, [pickedColor]);
-
   async function saveUserPreference() {
     const postData: any = {
       ...profilData,
@@ -88,25 +76,10 @@ export const Modal = (props: any) => {
       });
   }
 
-  //* Database
+  //* Database end
 
-  function updateCubeSettings() {
-    setUpdateModel((old: any) => {
-      return {
-        ...old,
-        isRatation360Clicked,
-        setIsRatation360Clicked,
-        isRatation180Clicked,
-        setIsRatation180Clicked,
-      };
-    });
-  }
+  //* Storage start
 
-  useEffect(() => {
-    updateCubeSettings();
-  }, [isRatation360Clicked, isRatation180Clicked]);
-
-  //* Storage
   const [imageUpload, setImageUpload]: any = useState();
   const [imageUrl, setImageUrl] = useState("");
   const [isNewImageUpload, setIsNewImageUpload] = useState(false);
@@ -139,6 +112,30 @@ export const Modal = (props: any) => {
     });
   }, [isNewImageUpload]);
 
+  const handleShowImage = () => setShowImage(!showImage);
+
+  //* Storage end
+
+  function updateModelSettings() {
+    setUpdateModel((old: any) => {
+      return {
+        ...old,
+        pickedColor,
+        handlePickedColor,
+        isRatation360Clicked,
+        setIsRatation360Clicked,
+        isRatation180Clicked,
+        setIsRatation180Clicked,
+        imageUrl,
+        showImage,
+      };
+    });
+  }
+
+  useEffect(() => {
+    updateModelSettings();
+  }, [pickedColor, isRatation360Clicked, isRatation180Clicked, imageUrl, showImage]);
+
   return (
     <>
       <PrivateRoute>
@@ -163,7 +160,6 @@ export const Modal = (props: any) => {
                 <div className={styles.Modal_actions_container}>
                   <div className={styles.Modal_image_container}>
                     <label className={styles.Modal_image_label}>Vælg dit logo eller ikon</label>
-
                     <div className={styles.Modal_image_main_content}>
                       <input
                         type="file"
@@ -185,8 +181,16 @@ export const Modal = (props: any) => {
                         }}
                       />
                     </div>
-
-                    <img src={imageUrl} alt="Logo eller ikon, som bruger har uploadet" />
+                    <label htmlFor="show_image">Show image</label>
+                    <div className={styles.Modal_image_checkbox}>
+                      <input
+                        type="checkbox"
+                        name="show_image"
+                        id="show_image"
+                        onClick={handleShowImage}
+                        checked={showImage}
+                      />
+                    </div>
                   </div>
 
                   <div className={styles.Modal_rotate_container}>
