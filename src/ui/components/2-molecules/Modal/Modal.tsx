@@ -187,7 +187,7 @@ export const Modal = (props: any) => {
                         type="checkbox"
                         name="show_image"
                         id="show_image"
-                        onClick={handleShowImage}
+                        onChange={handleShowImage}
                         checked={showImage}
                       />
                     </div>
