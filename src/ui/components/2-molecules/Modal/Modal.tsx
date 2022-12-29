@@ -181,8 +181,8 @@ export const Modal = (props: any) => {
                         }}
                       />
                     </div>
-                    <label htmlFor="show_image">Show image</label>
                     <div className={styles.Modal_image_checkbox}>
+                      <label htmlFor="show_image">Show image</label>
                       <input
                         type="checkbox"
                         name="show_image"
@@ -191,6 +191,7 @@ export const Modal = (props: any) => {
                         checked={showImage}
                       />
                     </div>
+                    <img src={imageUrl} alt="Logo eller ikon, som bruger har uploadet" />
                   </div>
 
                   <div className={styles.Modal_rotate_container}>
