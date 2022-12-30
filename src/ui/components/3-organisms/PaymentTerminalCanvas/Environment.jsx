@@ -54,7 +54,7 @@ export const Environment = () => {
         //     transparent
         //   />
         // </mesh>
-        <Html center position={[0, 0.3, 0.34]}>
+        <Html center transform occlude position={[0, 0.4, 0.33]} scale={[0.3, 0.4, 1]}>
           <img
             className={styles.Environment_imageHTML}
             src={updateModel.imageUrl}
