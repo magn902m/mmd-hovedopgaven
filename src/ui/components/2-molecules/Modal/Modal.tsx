@@ -159,7 +159,7 @@ export const Modal = (props: any) => {
                 <PaymentTerminalCanvas />
                 <div className={styles.Modal_actions_container}>
                   <div className={styles.Modal_image_container}>
-                    <label className={styles.Modal_image_label}>Vælg dit logo eller ikon</label>
+                    <label className={styles.Modal_image_label}>Vælg dit billede</label>
                     <div className={styles.Modal_image_main_content}>
                       <input
                         type="file"
@@ -182,7 +182,7 @@ export const Modal = (props: any) => {
                       />
                     </div>
                     <div className={styles.Modal_image_checkbox}>
-                      <label htmlFor="show_image">Show image</label>
+                      <label htmlFor="show_image">Vis billede</label>
                       <input
                         type="checkbox"
                         name="show_image"
@@ -191,7 +191,7 @@ export const Modal = (props: any) => {
                         checked={showImage}
                       />
                     </div>
-                    <img src={imageUrl} alt="Logo eller ikon, som bruger har uploadet" />
+                    {/* <img src={imageUrl} alt="Logo eller ikon, som bruger har uploadet" /> */}
                   </div>
 
                   <div className={styles.Modal_rotate_container}>

@@ -26,7 +26,7 @@ export const Environment = () => {
 
       {/* <Cube /> */}
       {updateModel.showImage ? (
-        <Html center transform occlude position={[0, 0.4, 0.33]} scale={[0.3, 0.4, 1]}>
+        <Html center transform occlude position={[0.22, 0.4, 0.33]} scale={[0.3, 0.4, 1]}>
           <img
             className={styles.Environment_imageHTML}
             src={updateModel.imageUrl}

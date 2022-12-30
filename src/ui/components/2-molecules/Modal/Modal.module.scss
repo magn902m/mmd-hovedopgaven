@@ -103,6 +103,8 @@
 
 .Modal_image_main_content {
   display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .Modal_image_checkbox {
