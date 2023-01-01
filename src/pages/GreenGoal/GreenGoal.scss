@@ -83,3 +83,40 @@
     }
   }
 }
+
+.turbine {
+  width: 30%;
+}
+.blades {
+  transform-origin: 50% 38%;
+  animation: 4s infinite rotate linear;
+}
+
+#blades {
+  transform-origin: 49.18% 37.59%;
+  animation: 4s infinite rotate linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.earth {
+  max-width: 100%;
+}
+
+#continents {
+  animation: 10s infinite marquee linear;
+}
+
+@keyframes marquee {
+  100% {
+    transform: translate(150px);
+  }
+}
