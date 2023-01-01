@@ -87,10 +87,6 @@
 .turbine {
   width: 30%;
 }
-.blades {
-  transform-origin: 50% 38%;
-  animation: 4s infinite rotate linear;
-}
 
 #blades {
   transform-origin: 49.18% 37.59%;
@@ -108,7 +104,7 @@
 }
 
 .earth {
-  max-width: 100%;
+  max-width: 80%;
 }
 
 #continents {
@@ -119,4 +115,8 @@
   100% {
     transform: translate(150px);
   }
+}
+
+.co2 {
+  width: 30%;
 }

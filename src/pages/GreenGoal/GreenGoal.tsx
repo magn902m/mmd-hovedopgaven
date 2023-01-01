@@ -106,10 +106,10 @@ export const GreenGoal = () => {
 
                 <g id="logo">
                   <g id="globe">
-                    <use href="#ellipseClip" fill="red" />
+                    <use href="#ellipseClip" fill="none" />
                     <g id="continents">
                       <g id="middle" clipPath="url(#clipPath)">
-                        <g fill="yellow">
+                        <g fill="none" stroke="black" strokeWidth={".5px"}>
                           <path
                             d="M263.1,107.1c-0.6,0-1.2,0-1.8-0.1c-1.5,0.8-3,1.6-4.3,2.5c0.4,0.3,0.8,0.8,0.9,1.2
               c0.2,0.3,0.1,0.6-0.3,0.8c-0.2,0.1-0.4,0.2-0.6,0.3c0.3-1.3-0.1-2.2-1.2-2.7c-0.4-0.2-0.8-0.4-1.2-0.5l-0.2,1l1.1,0.9
@@ -473,6 +473,168 @@ export const GreenGoal = () => {
             <svg
               id="Layer_1"
               xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1199 1249.86"
+              className="co2"
+            >
+              <polygon
+                points="1.5 1248.36 1.5 634.86 114.57 634.86 178.72 1063.08 334.06 933.54 334.06 1058.96 499.44 917.78 499.44 1057.54 656 916.24 656 1248.36 1.5 1248.36"
+                style={{
+                  fill: "#fff",
+                  stroke: "#000",
+                  strokeMiterlimit: "10",
+                  strokeWidth: "3px",
+                }}
+              />
+              <g className="cloud">
+                <path
+                  d="m601,426.36c-46.12,0-76.5-51-83.5-83.5-9.71-45.08,35-123.5,83.5-83.5"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <path
+                  d="m601.5,259.36c0-46.94,45-141,124-99"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <path
+                  d="m725.5,159.86c0-86.98,95.45-149.55,189-157.5,153-13,226,125,188,186"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <path
+                  d="m1130,342.86c0,56.35-8.34,96.5-86.5,96.5"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <line
+                  x1="601"
+                  y1="426.36"
+                  x2="1043.5"
+                  y2="439.36"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <path
+                  d="m1102.5,188.36c52.47,0,95,39.62,95,88.5s-17,65.5-68,88.5"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <text
+                  transform="translate(781.76 287.12) scale(1.38 1)"
+                  style={{
+                    fontFamily: "MyriadPro-Regular",
+                    fontSize: "94.95px",
+                  }}
+                >
+                  <tspan x="0" y="0" style={{ letterSpacing: "-.02em" }}>
+                    C
+                  </tspan>
+                  <tspan x="53.08" y="0">
+                    O2
+                  </tspan>
+                </text>
+              </g>
+              <g className="cloud">
+                <path
+                  d="m191.36,568.77c-18.05,0-29.94-19.96-32.68-32.68-3.8-17.64,13.7-48.33,32.68-32.68"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <path
+                  d="m191.56,503.41c0-18.37,17.61-55.18,48.53-38.74"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <path
+                  d="m240.09,464.47c0-34.04,37.35-58.53,73.97-61.64,59.88-5.09,88.45,48.92,73.57,72.79"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <path
+                  d="m398.39,536.09c0,22.05-3.26,37.77-33.85,37.77"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <line
+                  x1="191.36"
+                  y1="568.77"
+                  x2="364.54"
+                  y2="573.86"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <path
+                  d="m387.63,475.63c20.53,0,37.18,15.51,37.18,34.64s-6.65,25.63-26.61,34.64"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <text
+                  transform="translate(262.11 514.28) scale(1.38 1)"
+                  style={{
+                    fontFamily: "MyriadPro-Regular",
+                    fontSize: "37.16px",
+                  }}
+                >
+                  <tspan x="0" y="0" style={{ letterSpacing: "-.02em" }}>
+                    C
+                  </tspan>
+                  <tspan x="20.77" y="0">
+                    O2
+                  </tspan>
+                </text>
+              </g>
+            </svg>
+            {/* <svg
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 196.22 288.65"
               className="turbine"
             >
@@ -486,7 +648,7 @@ export const GreenGoal = () => {
                 <polygon points="94.17 .17 95.92 104.29 101.45 104.29 111.43 79.06 95.92 0 94.17 .17" />
                 <polygon points="196.22 160.04 105.6 109.09 102.8 113.88 119.51 135.19 195.49 161.63 196.22 160.04" />
               </g>
-            </svg>
+            </svg> */}
 
             <div>
               <h2>Hvorfor</h2>

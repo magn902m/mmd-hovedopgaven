@@ -240,3 +240,22 @@
     }
   }
 }
+
+.frontpage_svg {
+  width: 200%;
+}
+
+#blades2 {
+  transform-origin: 76.4% 25.2%;
+  animation: 3s infinite rotate linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
