@@ -669,55 +669,169 @@ export const GreenGoal = () => {
                 stand til at reducere vores nye sites CO2 aftryk
               </p>
             </div>
-            <svg
-              id="Layer_1"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 150.75 218.45"
-              className="turbine"
-            >
-              <polygon
-                id="_body_"
-                points="82.58 217.95 64.92 217.95 70.56 89.4 77.23 89.4 82.58 217.95"
-                style={{ fill: "none", stroke: "#000", strokeMiterlimit: "10" }}
-              />
-              <g id="blades">
-                <circle
-                  id="_center_"
-                  cx="73.79"
-                  cy="82.32"
-                  r="5.42"
+            <div className="turbines">
+              <svg
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 150.75 218.45"
+                className="turbine"
+              >
+                <polygon
+                  id="_body_"
+                  points="82.58 217.95 64.92 217.95 70.56 89.4 77.23 89.4 82.58 217.95"
+                  style={{
+                    fill: "none",
+                    stroke: "#005776",
+                    strokeMiterlimit: "10",
+                  }}
+                />
+                <g id="blades">
+                  <circle
+                    id="_center_"
+                    cx="73.79"
+                    cy="82.32"
+                    r="5.42"
+                    style={{
+                      fill: "none",
+                      stroke: "#005776",
+                      strokeMiterlimit: "10",
+                    }}
+                  />
+                  <polyline
+                    points="67.94 82.8 48.08 84.12 .66 119.3 1.32 120.4 69.58 85.74"
+                    style={{
+                      fill: "none",
+                      stroke: "#005776",
+                      strokeMiterlimit: "10",
+                    }}
+                  />
+                  <polyline
+                    points="75.9 76.9 83.16 58.43 71.8 .52 70.55 .6 71.64 77.34"
+                    style={{
+                      fill: "none",
+                      stroke: "#005776",
+                      strokeMiterlimit: "10",
+                    }}
+                  />
+                  <polyline
+                    points="77.86 86.56 92.02 100.44 149.78 112.44 150.14 111.21 79.21 83.27"
+                    style={{
+                      fill: "none",
+                      stroke: "#005776",
+                      strokeMiterlimit: "10",
+                    }}
+                  />
+                </g>
+              </svg>
+              <svg
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 150.75 218.45"
+                className="turbine"
+                style={{ width: "60%" }}
+              >
+                <polygon
+                  id="_body_"
+                  points="82.58 217.95 64.92 217.95 70.56 89.4 77.23 89.4 82.58 217.95"
                   style={{
                     fill: "none",
                     stroke: "#000",
                     strokeMiterlimit: "10",
                   }}
                 />
-                <polyline
-                  points="67.94 82.8 48.08 84.12 .66 119.3 1.32 120.4 69.58 85.74"
+                <g id="blades">
+                  <circle
+                    id="_center_"
+                    cx="73.79"
+                    cy="82.32"
+                    r="5.42"
+                    style={{
+                      fill: "none",
+                      stroke: "#000",
+                      strokeMiterlimit: "10",
+                    }}
+                  />
+                  <polyline
+                    points="67.94 82.8 48.08 84.12 .66 119.3 1.32 120.4 69.58 85.74"
+                    style={{
+                      fill: "none",
+                      stroke: "#000",
+                      strokeMiterlimit: "10",
+                    }}
+                  />
+                  <polyline
+                    points="75.9 76.9 83.16 58.43 71.8 .52 70.55 .6 71.64 77.34"
+                    style={{
+                      fill: "none",
+                      stroke: "#000",
+                      strokeMiterlimit: "10",
+                    }}
+                  />
+                  <polyline
+                    points="77.86 86.56 92.02 100.44 149.78 112.44 150.14 111.21 79.21 83.27"
+                    style={{
+                      fill: "none",
+                      stroke: "#000",
+                      strokeMiterlimit: "10",
+                    }}
+                  />
+                </g>
+              </svg>
+              <svg
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 150.75 218.45"
+                className="turbine"
+                style={{ width: "30%" }}
+              >
+                <polygon
+                  id="_body_"
+                  points="82.58 217.95 64.92 217.95 70.56 89.4 77.23 89.4 82.58 217.95"
                   style={{
                     fill: "none",
                     stroke: "#000",
                     strokeMiterlimit: "10",
                   }}
                 />
-                <polyline
-                  points="75.9 76.9 83.16 58.43 71.8 .52 70.55 .6 71.64 77.34"
-                  style={{
-                    fill: "none",
-                    stroke: "#000",
-                    strokeMiterlimit: "10",
-                  }}
-                />
-                <polyline
-                  points="77.86 86.56 92.02 100.44 149.78 112.44 150.14 111.21 79.21 83.27"
-                  style={{
-                    fill: "none",
-                    stroke: "#000",
-                    strokeMiterlimit: "10",
-                  }}
-                />
-              </g>
-            </svg>
+                <g id="blades">
+                  <circle
+                    id="_center_"
+                    cx="73.79"
+                    cy="82.32"
+                    r="5.42"
+                    style={{
+                      fill: "none",
+                      stroke: "#000",
+                      strokeMiterlimit: "10",
+                    }}
+                  />
+                  <polyline
+                    points="67.94 82.8 48.08 84.12 .66 119.3 1.32 120.4 69.58 85.74"
+                    style={{
+                      fill: "none",
+                      stroke: "#000",
+                      strokeMiterlimit: "10",
+                    }}
+                  />
+                  <polyline
+                    points="75.9 76.9 83.16 58.43 71.8 .52 70.55 .6 71.64 77.34"
+                    style={{
+                      fill: "none",
+                      stroke: "#000",
+                      strokeMiterlimit: "10",
+                    }}
+                  />
+                  <polyline
+                    points="77.86 86.56 92.02 100.44 149.78 112.44 150.14 111.21 79.21 83.27"
+                    style={{
+                      fill: "none",
+                      stroke: "#000",
+                      strokeMiterlimit: "10",
+                    }}
+                  />
+                </g>
+              </svg>
+            </div>
 
             {/* <svg
               xmlns="http://www.w3.org/2000/svg"
