@@ -99,7 +99,7 @@ export const Frontpage = () => {
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
               viewBox="0 0 325.46 326.93"
-              className="frontpage_svg"
+              className="frontpage_turbine"
             >
               <polygon
                 id="_body_"
@@ -607,6 +607,7 @@ export const Frontpage = () => {
                 />
               </g>
             </svg>
+
             {/* <img
               src={process.env.PUBLIC_URL + "./images/payment_terminal.svg"}
               alt="Payment terminal"

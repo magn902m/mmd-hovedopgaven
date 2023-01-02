@@ -108,7 +108,7 @@ export const GreenGoal = () => {
                   <g id="globe">
                     <use href="#ellipseClip" fill="none" />
                     <g id="continents">
-                      <g id="middle" clipPath="url(#clipPath)">
+                      <g id="map1" clipPath="url(#clipPath)">
                         <g fill="none" stroke="black" strokeWidth={".5px"}>
                           <path
                             d="M263.1,107.1c-0.6,0-1.2,0-1.8-0.1c-1.5,0.8-3,1.6-4.3,2.5c0.4,0.3,0.8,0.8,0.9,1.2
@@ -282,8 +282,8 @@ export const GreenGoal = () => {
                         </g>
                       </g>
 
-                      <g id="left" clipPath="url(#clipPath)">
-                        <g fill="pink">
+                      <g id="map2" clipPath="url(#clipPath)">
+                        <g fill="none" stroke="black" strokeWidth={0.5}>
                           <path
                             d="M114.3,107.1c-0.6,0-1.2,0-1.8-0.1c-1.5,0.8-3,1.6-4.3,2.5c0.4,0.3,0.8,0.8,0.9,1.2
               c0.2,0.3,0.1,0.6-0.3,0.8c-0.2,0.1-0.4,0.2-0.6,0.3c0.3-1.3-0.1-2.2-1.2-2.7c-0.4-0.2-0.8-0.4-1.2-0.5l-0.2,1l1.1,0.9
@@ -460,7 +460,7 @@ export const GreenGoal = () => {
                       xlinkHref="#ellipseClip"
                       opacity="0.82"
                       stroke="#03324F"
-                      strokeWidth="0.9"
+                      strokeWidth="0.5"
                       fill="url(#shadow_5_)"
                     />
                   </g>
@@ -632,23 +632,6 @@ export const GreenGoal = () => {
                 </text>
               </g>
             </svg>
-            {/* <svg
-              id="Layer_1"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 196.22 288.65"
-              className="turbine"
-            >
-              <polygon
-                id="_body_"
-                points="110.31 288.65 86.2 288.65 93.92 113.28 102.94 113.28 110.31 288.65"
-              />
-              <g id="_blades_" className="blades">
-                <circle id="_center_" cx="98.26" cy="109.09" r="7.4" />
-                <polygon points=".9 161.01 94.17 114.71 91.79 109.71 64.73 111.54 0 159.51 .9 161.01" />
-                <polygon points="94.17 .17 95.92 104.29 101.45 104.29 111.43 79.06 95.92 0 94.17 .17" />
-                <polygon points="196.22 160.04 105.6 109.09 102.8 113.88 119.51 135.19 195.49 161.63 196.22 160.04" />
-              </g>
-            </svg> */}
 
             <div>
               <h2>Hvorfor</h2>
@@ -681,7 +664,7 @@ export const GreenGoal = () => {
                   points="82.58 217.95 64.92 217.95 70.56 89.4 77.23 89.4 82.58 217.95"
                   style={{
                     fill: "none",
-                    stroke: "#005776",
+                    stroke: "#000",
                     strokeMiterlimit: "10",
                   }}
                 />
@@ -693,7 +676,7 @@ export const GreenGoal = () => {
                     r="5.42"
                     style={{
                       fill: "none",
-                      stroke: "#005776",
+                      stroke: "#000",
                       strokeMiterlimit: "10",
                     }}
                   />
@@ -701,7 +684,7 @@ export const GreenGoal = () => {
                     points="67.94 82.8 48.08 84.12 .66 119.3 1.32 120.4 69.58 85.74"
                     style={{
                       fill: "none",
-                      stroke: "#005776",
+                      stroke: "#000",
                       strokeMiterlimit: "10",
                     }}
                   />
@@ -709,7 +692,7 @@ export const GreenGoal = () => {
                     points="75.9 76.9 83.16 58.43 71.8 .52 70.55 .6 71.64 77.34"
                     style={{
                       fill: "none",
-                      stroke: "#005776",
+                      stroke: "#000",
                       strokeMiterlimit: "10",
                     }}
                   />
@@ -717,7 +700,7 @@ export const GreenGoal = () => {
                     points="77.86 86.56 92.02 100.44 149.78 112.44 150.14 111.21 79.21 83.27"
                     style={{
                       fill: "none",
-                      stroke: "#005776",
+                      stroke: "#000",
                       strokeMiterlimit: "10",
                     }}
                   />

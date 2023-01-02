@@ -10,6 +10,7 @@ type CartItem = {
   quantity: number;
 };
 
+// context containg all the functions that we need for our shopping cart
 type ShoppingCartContext = {
   getItemQuantity: (id: number) => number;
   increaseCartQuantity: (id: number) => void;
@@ -19,18 +20,31 @@ type ShoppingCartContext = {
   cartItems: CartItem[];
 };
 
+// turning our context into a react context
 const ShoppingCartContext = createContext({} as ShoppingCartContext);
 
 export function useShoppingCart() {
   return useContext(ShoppingCartContext);
 }
-export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
-  const [cartItems, setCartItems] = useLocalStorage<CartItem[]>("shopping-cart", []);
-  const cartQuantity = cartItems.reduce((quantity, item) => item.quantity + quantity, 0);
 
+// provider allows for all components within itself to update when context changes
+export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
+  // adding chosen items to our local storage
+  const [cartItems, setCartItems] = useLocalStorage<CartItem[]>(
+    "shopping-cart",
+    []
+  );
+  // total qty
+  const cartQuantity = cartItems.reduce(
+    (quantity, item) => item.quantity + quantity,
+    0
+  );
+
+  // subtotal qty
   function getItemQuantity(id: number) {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
   }
+
   function increaseCartQuantity(id: number) {
     setCartItems((currItems) => {
       if (currItems.find((item) => item.id === id) == null) {
