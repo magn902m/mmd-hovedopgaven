@@ -188,8 +188,12 @@ export const Modal = (props: any) => {
                         label="Upload nyt logo"
                         type="button"
                         onClick={() => {
-                          uploadFile();
-                          setIsNewImageUpload(true);
+                          if (imageUpload) {
+                            uploadFile();
+                            setIsNewImageUpload(true);
+                          } else {
+                            return console.log("No image is select in input");
+                          }
                         }}
                       />
                     </div>
@@ -209,7 +213,7 @@ export const Modal = (props: any) => {
 
                   <div className={styles.Modal_color_container}>
                     <h4>Vælg din farve</h4>
-                    <p>Tryk på farvefeltet eller indtast en hexkode for at vælge en farve.</p>
+                    <p>Tryk på farvefeltet eller indtast en hexkode.</p>
                     <ColorPicker
                       onChange={handlePickedColor}
                       value={pickedColor}
