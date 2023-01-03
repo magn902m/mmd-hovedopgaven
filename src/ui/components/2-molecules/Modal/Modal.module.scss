@@ -88,3 +88,27 @@
 .Modal_wrapper {
   max-width: 1000px;
 }
+
+.Modal_image_container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Modal_image_label {
+  font-family: var(--font-primary);
+  font-size: var(--font-size--sm);
+  font-weight: var(--font-weight--semibold);
+}
+
+.Modal_image_main_content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Modal_image_checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
