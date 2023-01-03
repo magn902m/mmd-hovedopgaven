@@ -166,6 +166,16 @@ export const Modal = (props: any) => {
                   </div>
                 </div>
                 <div className={styles.Modal_actions_container}>
+                  <div className={styles.Modal_color_container}>
+                    <h4>Vælg din farve</h4>
+                    <p>Tryk på farvefeltet eller indtast en hexkode.</p>
+                    <ColorPicker
+                      onChange={handlePickedColor}
+                      value={pickedColor}
+                      profilcolor={profilData?.color}
+                    />
+                  </div>
+
                   <div className={styles.Modal_image_container}>
                     <label className={styles.Modal_image_label}>Vælg dit logo</label>
                     <p>Upload et logo eller vis dit nuværnede.</p>
@@ -211,15 +221,6 @@ export const Modal = (props: any) => {
                     {/* <img src={imageUrl} alt="Logo eller ikon, som bruger har uploadet" /> */}
                   </div>
 
-                  <div className={styles.Modal_color_container}>
-                    <h4>Vælg din farve</h4>
-                    <p>Tryk på farvefeltet eller indtast en hexkode.</p>
-                    <ColorPicker
-                      onChange={handlePickedColor}
-                      value={pickedColor}
-                      profilcolor={profilData?.color}
-                    />
-                  </div>
                   <Button
                     btnTypeStyle="primary_btn"
                     label="Luk og gem dine ændringer"
