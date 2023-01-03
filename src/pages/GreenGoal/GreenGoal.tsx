@@ -78,8 +78,8 @@ export const GreenGoal = () => {
               <p>
                 Vores nye <span> low impact webshop </span>er vores bud på et
                 grønt digitalt bidrag til vores planet. Vi har været i stand til
-                at reducere <span> vores digitale CO2 aftryk </span> med hele
-                70% i forhold til vores almindelig webshop.
+                at reducere vores digitale<span> CO2 aftryk </span> med hele 70%
+                i forhold til vores almindelig webshop.
               </p>
             </div>
             <svg

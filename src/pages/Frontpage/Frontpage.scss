@@ -1,36 +1,11 @@
 .frontpage {
   &_hero {
-    // display: flex;
-    // flex-direction: column-reverse;
-    // align-items: center;
-    // justify-content: center;
-    // padding-bottom: 4rem;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
     gap: 2rem;
     margin-block-end: 5rem;
 
-    &_text {
-      // display: flex;
-      // flex-direction: column;
-      // align-items: center;
-      // margin-top: 2rem;
-      & > h2 {
-        // font-size: var(--font-size--xl);
-      }
-      & > p {
-        // margin-top: 0.6rem;
-      }
-
-      & > button {
-        // margin-top: 1rem;
-      }
-    }
-
-    &_img {
-      // width: 60%;
-    }
     .frontpage_hero_img {
       width: 50%;
       max-width: 200px;
@@ -60,6 +35,7 @@
   &_how_to {
     display: flex;
     flex-direction: column;
+    padding-top: 3rem;
 
     &_grid {
       margin-top: 1rem;
@@ -155,6 +131,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding-top: 0;
 
       &_grid {
         display: grid;
@@ -204,8 +181,12 @@
   }
 }
 
+// Animation
 .frontpage_turbine {
-  width: 200%;
+  width: 150%;
+  @media only screen and (min-width: 700px) {
+    width: 200%;
+  }
 }
 
 #blades2 {
