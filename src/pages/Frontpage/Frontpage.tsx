@@ -89,7 +89,7 @@ export const Frontpage = () => {
                 className="secondary_btn"
                 onClick={() => goTo("/green-goal")}
                 // label="Læs om vores nye bæredygtige initiativer"
-                label="Læs om vores grønne mål"
+                label="Læs om vores nye low impact webshop"
               />
             </div>
           </div>
@@ -634,7 +634,7 @@ export const Frontpage = () => {
         </section>
 
         <section className="frontpage_how_to">
-          <h2>Sådan kommer du i gang:</h2>
+          <h2>Sådan kommer du i gang</h2>
           <div className="frontpage_how_to_grid">
             <article>
               <h3>1. Spar penge med den pakkeløsning, som passer dig</h3>

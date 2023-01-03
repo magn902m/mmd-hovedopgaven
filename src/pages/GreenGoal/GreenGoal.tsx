@@ -63,11 +63,11 @@ export const GreenGoal = () => {
         <header className="green_goals_header">
           <h1>Vores grønne mål</h1>
           <p>
-            Hos Nets er vi gået igang med at kæmpe for mere CO2 nutralisering,
+            Hos Nets er vi gået igang med at kæmpe for mere CO2 neutralisering,
             og du har som kunde hos os en stemme for en grønnere planet. Lad os
             gøre noget godt sammen, for os alle. Læs mere om{" "}
-            <a href="#green_goals_points">hvad, hvorfor og hvordan</a> vi vil
-            gøre planeten grønnere.
+            <span> hvad, hvorfor og hvordan</span> vi vil gøre planeten
+            grønnere.
           </p>
         </header>
 
@@ -76,10 +76,10 @@ export const GreenGoal = () => {
             <div>
               <h2>Hvad</h2>
               <p>
-                Vores nye low impact webshop er vores bud på et grønt digitalt
-                bidrag til vores planet. Vi har været i stand til at reducere
-                vores digitale CO2 aftryk med hele 70% i forhold til vores
-                almindelig webshop
+                Vores nye <span> low impact webshop </span>er vores bud på et
+                grønt digitalt bidrag til vores planet. Vi har været i stand til
+                at reducere <span> vores digitale CO2 aftryk </span> med hele
+                70% i forhold til vores almindelig webshop.
               </p>
             </div>
 
@@ -636,9 +636,10 @@ export const GreenGoal = () => {
             <div>
               <h2>Hvorfor</h2>
               <p>
-                Internettet er ansvarlig for 3,7% af verdens CO2 udledning.
-                Dette skyldes, at vores digitale adfærd kræver enorme mængder
-                elektricitet for at vedligeholde datalagring.
+                Internettet er ansvarlig for 3,7% af verdens{" "}
+                <span> CO2 udledning</span>. Dette skyldes, at vores digitale
+                adfærd kræver enorme mængder elektricitet for at vedligeholde
+                datalagring.
               </p>
             </div>
           </article>
@@ -648,8 +649,8 @@ export const GreenGoal = () => {
               <h2>Hvordan</h2>
               <p>
                 Ved at skifte vores leverandører på webhosting og database til
-                nye leverandøre som kun gøre brug af grøn energi, har vi været i
-                stand til at reducere vores nye sites CO2 aftryk
+                nye leverandøre som kun gøre brug af <span> grøn energi </span>,
+                har vi været i stand til at reducere vores nye sites CO2 aftryk.
               </p>
             </div>
             <div className="turbines">

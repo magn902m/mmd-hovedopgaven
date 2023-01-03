@@ -13,6 +13,10 @@
     }
     p {
       line-height: 2rem;
+
+      span {
+        font-weight: bold;
+      }
     }
   }
   &_points {
@@ -23,7 +27,6 @@
 
     h2 {
       margin-top: 1rem;
-      text-transform: uppercase;
     }
 
     article {
@@ -36,6 +39,10 @@
     article:last-child {
       display: flex;
       flex-direction: column-reverse;
+    }
+
+    span {
+      font-weight: bold;
     }
   }
 }

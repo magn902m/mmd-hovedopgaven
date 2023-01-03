@@ -15,7 +15,9 @@ export function PaymentTerminalModel(props) {
 
   useEffect(() => {
     // console.log(paymentTerminalRef.current.children[24].material.color, updateModel.pickedColor);
-    paymentTerminalRef.current.children[24].material.color.set(updateModel.pickedColor);
+    paymentTerminalRef.current.children[24].material.color.set(
+      updateModel.pickedColor
+    );
   }, [updateModel.pickedColor]);
 
   // const { nodes, materials } = useGLTF("./models/payment_terminal.glb");
@@ -762,4 +764,5 @@ export function PaymentTerminalModel(props) {
   );
 }
 
+// model kommer hurtigere frem ved brug af preload
 useGLTF.preload("/models/payment_terminal.glb");
