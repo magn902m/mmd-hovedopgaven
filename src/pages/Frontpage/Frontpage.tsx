@@ -197,7 +197,7 @@ export const Frontpage = () => {
                     fill: "none",
                     stroke: "#898891",
                     strokeMiterlimit: "10",
-                    strokeWidth: "2px",
+                    strokeWidth: "1px",
                   }}
                 />
                 <rect x="31.7" y="254.87" width="20.07" height="14.13" style={{ fill: "none" }} />
@@ -207,7 +207,7 @@ export const Frontpage = () => {
                     fill: "none",
                     stroke: "#898891",
                     strokeMiterlimit: "10",
-                    strokeWidth: "2px",
+                    strokeWidth: "1px",
                   }}
                 />
                 <rect x="51.77" y="254.87" width="20.07" height="14.13" style={{ fill: "none" }} />
@@ -217,7 +217,7 @@ export const Frontpage = () => {
                     fill: "none",
                     stroke: "#898891",
                     strokeLinejoin: "round",
-                    strokeWidth: "2px",
+                    strokeWidth: "1px",
                   }}
                 />
                 <rect x="11.63" y="268.99" width="20.07" height="14.13" style={{ fill: "none" }} />
@@ -227,7 +227,7 @@ export const Frontpage = () => {
                     fill: "none",
                     stroke: "#898891",
                     strokeMiterlimit: "10",
-                    strokeWidth: "2px",
+                    strokeWidth: "1px",
                   }}
                 />
                 <rect x="31.7" y="268.99" width="20.07" height="14.13" style={{ fill: "none" }} />
@@ -237,7 +237,7 @@ export const Frontpage = () => {
                     fill: "none",
                     stroke: "#898891",
                     strokeMiterlimit: "10",
-                    strokeWidth: "2px",
+                    strokeWidth: "1px",
                   }}
                 />
                 <rect x="51.77" y="268.99" width="20.07" height="14.13" style={{ fill: "none" }} />
@@ -247,7 +247,7 @@ export const Frontpage = () => {
                     fill: "none",
                     stroke: "#898891",
                     strokeMiterlimit: "10",
-                    strokeWidth: "2px",
+                    strokeWidth: "1px",
                   }}
                 />
                 <rect x="11.63" y="283.12" width="20.07" height="14.13" style={{ fill: "none" }} />
@@ -257,7 +257,7 @@ export const Frontpage = () => {
                     fill: "none",
                     stroke: "#898891",
                     strokeMiterlimit: "10",
-                    strokeWidth: "2px",
+                    strokeWidth: "1px",
                   }}
                 />
                 <rect x="31.7" y="283.12" width="20.07" height="14.13" style={{ fill: "none" }} />
@@ -267,7 +267,7 @@ export const Frontpage = () => {
                     fill: "none",
                     stroke: "#898891",
                     strokeMiterlimit: "10",
-                    strokeWidth: "2px",
+                    strokeWidth: "1px",
                   }}
                 />
                 <rect x="51.77" y="283.12" width="20.07" height="14.13" style={{ fill: "none" }} />
@@ -277,7 +277,7 @@ export const Frontpage = () => {
                     fill: "none",
                     stroke: "#898891",
                     strokeMiterlimit: "10",
-                    strokeWidth: "2px",
+                    strokeWidth: "1px",
                   }}
                 />
                 <rect x="11.63" y="297.25" width="20.07" height="14.13" style={{ fill: "none" }} />
@@ -287,7 +287,7 @@ export const Frontpage = () => {
                     fill: "none",
                     stroke: "#898891",
                     strokeMiterlimit: "10",
-                    strokeWidth: "2px",
+                    strokeWidth: "1px",
                   }}
                 />
                 <rect x="31.7" y="297.25" width="20.07" height="14.13" style={{ fill: "none" }} />
@@ -297,7 +297,7 @@ export const Frontpage = () => {
                     fill: "none",
                     stroke: "#898891",
                     strokeMiterlimit: "10",
-                    strokeWidth: "2px",
+                    strokeWidth: "1px",
                   }}
                 />
                 <rect x="51.77" y="297.25" width="20.07" height="14.13" style={{ fill: "none" }} />
@@ -307,7 +307,7 @@ export const Frontpage = () => {
                     fill: "none",
                     stroke: "#898891",
                     strokeMiterlimit: "10",
-                    strokeWidth: "2px",
+                    strokeWidth: "1px",
                   }}
                 />
                 <path
@@ -316,7 +316,7 @@ export const Frontpage = () => {
                     fill: "none",
                     stroke: "#898891",
                     strokeMiterlimit: "10",
-                    strokeWidth: "3px",
+                    strokeWidth: "1px",
                   }}
                 />
                 <path
@@ -325,7 +325,7 @@ export const Frontpage = () => {
                     fill: "none",
                     stroke: "#db3c37",
                     strokeMiterlimit: "10",
-                    strokeWidth: "3px",
+                    strokeWidth: "1px",
                   }}
                 />
                 <rect
@@ -339,7 +339,7 @@ export const Frontpage = () => {
                     fill: "none",
                     stroke: "#ebcf49",
                     strokeMiterlimit: "10",
-                    strokeWidth: "3px",
+                    strokeWidth: "1px",
                   }}
                 />
                 <rect
@@ -353,7 +353,7 @@ export const Frontpage = () => {
                     fill: "none",
                     stroke: "#01aa71",
                     strokeMiterlimit: "10",
-                    strokeWidth: "3px",
+                    strokeWidth: "1px",
                   }}
                 />
                 <path
@@ -400,7 +400,7 @@ export const Frontpage = () => {
                     strokeMiterlimit: "10",
                   }}
                 />
-                <g id="lKCY8a.tif">
+                {/* <g id="lKCY8a.tif">
                   <image
                     id="Layer_0"
                     width="98"
@@ -408,7 +408,7 @@ export const Frontpage = () => {
                     transform="translate(45.88 180.91) scale(.2)"
                     xlinkHref="data:image/png;base64,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"
                   />
-                </g>
+                </g> */}
               </g>
               <g id="stikkontakt">
                 <rect
@@ -528,13 +528,6 @@ export const Frontpage = () => {
                 />
               </g>
             </svg>
-
-            {/* <img
-              src={process.env.PUBLIC_URL + "./images/payment_terminal.svg"}
-              alt="Payment terminal"
-              width="1600"
-              height="900"
-            /> */}
           </div>
         </section>
 

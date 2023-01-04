@@ -62,13 +62,13 @@ export const GreenGoal = () => {
       <main id="main" className="green_goals">
         <header className="green_goals_header">
           <h1>Vores grønne mål</h1>
-          <p>
+          <h4>
             Hos Nets er vi gået igang med at kæmpe for mere CO2 neutralisering,
             og du har som kunde hos os en stemme for en grønnere planet. Lad os
             gøre noget godt sammen, for os alle. Læs mere om{" "}
             <span> hvad, hvorfor og hvordan</span> vi vil gøre planeten
             grønnere.
-          </p>
+          </h4>
         </header>
 
         <section id="green_goals_points" className="green_goals_points">
@@ -78,11 +78,169 @@ export const GreenGoal = () => {
               <p>
                 Vores nye <span> low impact webshop </span>er vores bud på et
                 grønt digitalt bidrag til vores planet. Vi har været i stand til
-                at reducere <span> vores digitale CO2 aftryk </span> med hele
-                70% i forhold til vores almindelig webshop.
+                at reducere vores digitale<span> CO2 aftryk </span> med hele 70%
+                i forhold til vores almindelig webshop.
               </p>
             </div>
+            <svg
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1675 1342"
+              className="co2"
+            >
+              <polygon
+                points="41.5 1318.5 41.5 493.5 157.87 493.5 200.5 1136.5 495.5 924.5 481.27 1129.1 699.5 930.5 699.97 1127.68 907.5 936.5 907 1318.5 41.5 1318.5"
+                style={{
+                  fill: "none",
+                  stroke: "#000",
+                  strokeMiterlimit: "10",
+                  strokeWidth: "5px",
+                }}
+              />
+              <g className="cloud">
+                <path
+                  d="m635.91,493.27c-36.28,0-60.19-40.13-65.7-65.7-7.64-35.47,27.54-97.17,65.7-65.7"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <path
+                  d="m636.3,361.88c0-36.93,35.41-110.94,97.56-77.89"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <path
+                  d="m733.87,283.59c0-68.44,75.1-117.66,148.7-123.92,120.38-10.23,177.81,98.35,147.92,146.34"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <path
+                  d="m1052.12,427.58c0,44.33-6.56,75.92-68.06,75.92"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <line
+                  x1="635.91"
+                  y1="493.27"
+                  x2="984.06"
+                  y2="503.5"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <path
+                  d="m1030.48,306.02c41.28,0,74.74,31.17,74.74,69.63s-13.38,51.53-53.5,69.63"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <text
+                  transform="translate(778.13 383.72) scale(1.38 1)"
+                  style={{
+                    fontFamily: "Helvetica, Helvetica",
+                    fontSize: "74.71px",
+                  }}
+                >
+                  <tspan x="0" y="0">
+                    CO2
+                  </tspan>
+                </text>
+              </g>
+              <g className="cloud">
+                <path
+                  d="m229.36,487.91c-18.05,0-29.94-19.96-32.68-32.68-3.8-17.64,13.7-48.33,32.68-32.68"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <path
+                  d="m229.56,422.56c0-18.37,17.61-55.18,48.53-38.74"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <path
+                  d="m278.09,383.62c0-34.04,37.35-58.53,73.97-61.64,59.88-5.09,88.45,48.92,73.57,72.79"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <path
+                  d="m436.39,455.23c0,22.05-3.26,37.77-33.85,37.77"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <line
+                  x1="229.36"
+                  y1="487.91"
+                  x2="402.54"
+                  y2="493"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <path
+                  d="m425.63,394.77c20.53,0,37.18,15.51,37.18,34.64s-6.65,25.63-26.61,34.64"
+                  style={{
+                    fill: "#fff",
+                    stroke: "#000",
+                    strokeMiterlimit: "10",
+                    strokeWidth: "3px",
+                  }}
+                />
+                <text
+                  transform="translate(300.11 433.42) scale(1.38 1)"
+                  style={{
+                    fontFamily: "Helvetica, Helvetica",
+                    fontSize: "37.16px",
+                  }}
+                >
+                  <tspan x="0" y="0">
+                    CO2
+                  </tspan>
+                </text>
+              </g>
+            </svg>
+          </article>
 
+          <article>
             <div>
               <svg
                 version="1.1"
@@ -109,7 +267,7 @@ export const GreenGoal = () => {
                     <use href="#ellipseClip" fill="none" />
                     <g id="continents">
                       <g id="map1" clipPath="url(#clipPath)">
-                        <g fill="none" stroke="black" strokeWidth={".5px"}>
+                        <g fill="none" stroke="black" strokeWidth={0.4}>
                           <path
                             d="M263.1,107.1c-0.6,0-1.2,0-1.8-0.1c-1.5,0.8-3,1.6-4.3,2.5c0.4,0.3,0.8,0.8,0.9,1.2
               c0.2,0.3,0.1,0.6-0.3,0.8c-0.2,0.1-0.4,0.2-0.6,0.3c0.3-1.3-0.1-2.2-1.2-2.7c-0.4-0.2-0.8-0.4-1.2-0.5l-0.2,1l1.1,0.9
@@ -283,7 +441,7 @@ export const GreenGoal = () => {
                       </g>
 
                       <g id="map2" clipPath="url(#clipPath)">
-                        <g fill="none" stroke="black" strokeWidth={0.5}>
+                        <g fill="none" stroke="black" strokeWidth={0.4}>
                           <path
                             d="M114.3,107.1c-0.6,0-1.2,0-1.8-0.1c-1.5,0.8-3,1.6-4.3,2.5c0.4,0.3,0.8,0.8,0.9,1.2
               c0.2,0.3,0.1,0.6-0.3,0.8c-0.2,0.1-0.4,0.2-0.6,0.3c0.3-1.3-0.1-2.2-1.2-2.7c-0.4-0.2-0.8-0.4-1.2-0.5l-0.2,1l1.1,0.9
@@ -459,180 +617,14 @@ export const GreenGoal = () => {
                     <use
                       xlinkHref="#ellipseClip"
                       opacity="0.82"
-                      stroke="#03324F"
-                      strokeWidth="0.5"
-                      fill="url(#shadow_5_)"
+                      stroke="#000"
+                      strokeWidth={0.7}
+                      fill="none"
                     />
                   </g>
                 </g>
               </svg>
             </div>
-          </article>
-
-          <article>
-            <svg
-              id="Layer_1"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 1199 1249.86"
-              className="co2"
-            >
-              <polygon
-                points="1.5 1248.36 1.5 634.86 114.57 634.86 178.72 1063.08 334.06 933.54 334.06 1058.96 499.44 917.78 499.44 1057.54 656 916.24 656 1248.36 1.5 1248.36"
-                style={{
-                  fill: "#fff",
-                  stroke: "#000",
-                  strokeMiterlimit: "10",
-                  strokeWidth: "3px",
-                }}
-              />
-              <g className="cloud">
-                <path
-                  d="m601,426.36c-46.12,0-76.5-51-83.5-83.5-9.71-45.08,35-123.5,83.5-83.5"
-                  style={{
-                    fill: "#fff",
-                    stroke: "#000",
-                    strokeMiterlimit: "10",
-                    strokeWidth: "3px",
-                  }}
-                />
-                <path
-                  d="m601.5,259.36c0-46.94,45-141,124-99"
-                  style={{
-                    fill: "#fff",
-                    stroke: "#000",
-                    strokeMiterlimit: "10",
-                    strokeWidth: "3px",
-                  }}
-                />
-                <path
-                  d="m725.5,159.86c0-86.98,95.45-149.55,189-157.5,153-13,226,125,188,186"
-                  style={{
-                    fill: "#fff",
-                    stroke: "#000",
-                    strokeMiterlimit: "10",
-                    strokeWidth: "3px",
-                  }}
-                />
-                <path
-                  d="m1130,342.86c0,56.35-8.34,96.5-86.5,96.5"
-                  style={{
-                    fill: "#fff",
-                    stroke: "#000",
-                    strokeMiterlimit: "10",
-                    strokeWidth: "3px",
-                  }}
-                />
-                <line
-                  x1="601"
-                  y1="426.36"
-                  x2="1043.5"
-                  y2="439.36"
-                  style={{
-                    fill: "#fff",
-                    stroke: "#000",
-                    strokeMiterlimit: "10",
-                    strokeWidth: "3px",
-                  }}
-                />
-                <path
-                  d="m1102.5,188.36c52.47,0,95,39.62,95,88.5s-17,65.5-68,88.5"
-                  style={{
-                    fill: "#fff",
-                    stroke: "#000",
-                    strokeMiterlimit: "10",
-                    strokeWidth: "3px",
-                  }}
-                />
-                <text
-                  transform="translate(781.76 287.12) scale(1.38 1)"
-                  style={{
-                    fontFamily: "MyriadPro-Regular",
-                    fontSize: "94.95px",
-                  }}
-                >
-                  <tspan x="0" y="0" style={{ letterSpacing: "-.02em" }}>
-                    C
-                  </tspan>
-                  <tspan x="53.08" y="0">
-                    O2
-                  </tspan>
-                </text>
-              </g>
-              <g className="cloud">
-                <path
-                  d="m191.36,568.77c-18.05,0-29.94-19.96-32.68-32.68-3.8-17.64,13.7-48.33,32.68-32.68"
-                  style={{
-                    fill: "#fff",
-                    stroke: "#000",
-                    strokeMiterlimit: "10",
-                    strokeWidth: "3px",
-                  }}
-                />
-                <path
-                  d="m191.56,503.41c0-18.37,17.61-55.18,48.53-38.74"
-                  style={{
-                    fill: "#fff",
-                    stroke: "#000",
-                    strokeMiterlimit: "10",
-                    strokeWidth: "3px",
-                  }}
-                />
-                <path
-                  d="m240.09,464.47c0-34.04,37.35-58.53,73.97-61.64,59.88-5.09,88.45,48.92,73.57,72.79"
-                  style={{
-                    fill: "#fff",
-                    stroke: "#000",
-                    strokeMiterlimit: "10",
-                    strokeWidth: "3px",
-                  }}
-                />
-                <path
-                  d="m398.39,536.09c0,22.05-3.26,37.77-33.85,37.77"
-                  style={{
-                    fill: "#fff",
-                    stroke: "#000",
-                    strokeMiterlimit: "10",
-                    strokeWidth: "3px",
-                  }}
-                />
-                <line
-                  x1="191.36"
-                  y1="568.77"
-                  x2="364.54"
-                  y2="573.86"
-                  style={{
-                    fill: "#fff",
-                    stroke: "#000",
-                    strokeMiterlimit: "10",
-                    strokeWidth: "3px",
-                  }}
-                />
-                <path
-                  d="m387.63,475.63c20.53,0,37.18,15.51,37.18,34.64s-6.65,25.63-26.61,34.64"
-                  style={{
-                    fill: "#fff",
-                    stroke: "#000",
-                    strokeMiterlimit: "10",
-                    strokeWidth: "3px",
-                  }}
-                />
-                <text
-                  transform="translate(262.11 514.28) scale(1.38 1)"
-                  style={{
-                    fontFamily: "MyriadPro-Regular",
-                    fontSize: "37.16px",
-                  }}
-                >
-                  <tspan x="0" y="0" style={{ letterSpacing: "-.02em" }}>
-                    C
-                  </tspan>
-                  <tspan x="20.77" y="0">
-                    O2
-                  </tspan>
-                </text>
-              </g>
-            </svg>
-
             <div>
               <h2>Hvorfor</h2>
               <p>
@@ -816,17 +808,6 @@ export const GreenGoal = () => {
                 </g>
               </svg>
             </div>
-
-            {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="200"
-              height="200"
-              fill="currentColor"
-              className="bi bi-people"
-              viewBox="0 0 16 16"
-            >
-              <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
-            </svg> */}
           </article>
         </section>
       </main>

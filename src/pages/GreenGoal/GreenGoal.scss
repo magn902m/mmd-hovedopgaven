@@ -9,10 +9,10 @@
     padding: 1rem;
     h1 {
       margin-bottom: 1rem;
-      font-size: var(--font-size--2xl);
+      font-size: var(--font-size--3xl);
     }
-    p {
-      line-height: 2rem;
+    h4 {
+      font-weight: 400;
 
       span {
         font-weight: bold;
@@ -33,7 +33,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 3rem;
+      // margin-top: 3rem;
     }
     article:first-child,
     article:last-child {
@@ -60,9 +60,6 @@
       h1 {
         text-align: center;
         margin-bottom: 2rem;
-      }
-      p {
-        line-height: 2rem;
       }
     }
     &_points {
@@ -91,27 +88,33 @@
   }
 }
 
-.turbines {
-  display: flex;
+// ANIMATIONS
+
+// co2 clouds
+.co2 {
+  width: 60%;
 }
 
-#blades {
-  transform-origin: 49.18% 37.59%;
-  animation: 4s infinite rotate linear;
+.cloud {
+  animation: 10s infinite clouds linear;
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
+@keyframes clouds {
+  0% {
+    visibility: hidden;
+  }
+  10% {
+    transform: translateX(0vw);
   }
 
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translateX(200vw);
   }
 }
 
+// spining planet
 .earth {
-  max-width: 80%;
+  width: 80%;
 }
 
 #continents > g > g {
@@ -124,6 +127,25 @@
   }
 }
 
-.co2 {
-  width: 30%;
+// the turbines
+.turbines {
+  display: flex;
+  svg {
+    stroke-width: 0.8px;
+  }
+}
+
+#blades {
+  transform-origin: 49.18% 37.59%;
+  animation: 5s infinite rotate linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
