@@ -26,6 +26,15 @@
       & > button {
         // margin-top: 1rem;
       }
+
+      &_span {
+        font-family: var(--font-primary);
+        font-size: var(--font-size--body);
+        font-weight: var(--font-weight--bold);
+        // color: var(--color-nets-darkblue);
+        color: var(--color-nets-orange);
+        letter-spacing: 0.1rem;
+      }
     }
 
     &_img {
