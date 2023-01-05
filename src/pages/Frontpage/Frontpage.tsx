@@ -14,7 +14,9 @@ export const Frontpage = () => {
   return (
     <>
       <Helmet>
-        <title>Tag imod betalinger når som helst, hvor som helst - Nets Denmark</title>
+        <title>
+          Tag imod betalinger når som helst, hvor som helst - Nets Denmark
+        </title>
         <meta
           name="title"
           content="Tag imod betalinger når som helst, hvor som helst - Nets Denmark"
@@ -23,7 +25,10 @@ export const Frontpage = () => {
           name="description"
           content="Uanset om du sælger børnetøj, reparerer cykler eller serverer kaffe til morgentrætte kunder, har vi en terminal, der passer til dine behov."
         />
-        <meta name="keyword" content="Nets betalingsløsninger bæredygtighed betalingsterminal" />
+        <meta
+          name="keyword"
+          content="Nets betalingsløsninger bæredygtighed betalingsterminal"
+        />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
@@ -43,7 +48,10 @@ export const Frontpage = () => {
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://mmd-hovedopgaven.web.app/" />
+        <meta
+          property="twitter:url"
+          content="https://mmd-hovedopgaven.web.app/"
+        />
         <meta
           property="twitter:title"
           content="Tag imod betalinger når som helst, hvor som helstU+002d Nets Denmark"
@@ -63,14 +71,18 @@ export const Frontpage = () => {
           <div className="frontpage_hero_text">
             <div>
               <h1>Design din egen betalingsterminal</h1>
-              <span className="frontpage_hero_text_span">- med en grøn omtankte</span>
+              <span className="frontpage_hero_text_span">
+                - med en grøn omtanke
+              </span>
             </div>
             <p>
-              Hos Nets stræber vi os på at give tilbage - både til dig og naturen. Med vores
-              betalingsterminaler får du alt, hvad du skal bruge til at tage imod betalinger med
-              alle de kortbrands, dine kunder ønsker at betale med. Som noget nyt kan du skræddersy
-              dem, så de passer præcist ind i din visuelle verden. Vi har selvfølgelig også tænkt på
-              miljøet, og hvordan vi kan mindske vores CO2 aftryk.
+              Hos Nets stræber vi os på at give tilbage - både til dig og
+              naturen. Med vores betalingsterminaler får du alt, hvad du skal
+              bruge til at tage imod betalinger med alle de kortbrands, dine
+              kunder ønsker at betale med. Som noget nyt kan du skræddersy dem,
+              så de passer præcist ind i din visuelle verden. Vi har
+              selvfølgelig også tænkt på miljøet, og hvordan vi kan mindske
+              vores CO2 aftryk.
             </p>
             <div className="frontpage_hero_buttons">
               <Button
@@ -190,7 +202,13 @@ export const Frontpage = () => {
                     strokeMiterlimit: "10",
                   }}
                 />
-                <rect x="11.63" y="254.87" width="20.07" height="14.13" style={{ fill: "none" }} />
+                <rect
+                  x="11.63"
+                  y="254.87"
+                  width="20.07"
+                  height="14.13"
+                  style={{ fill: "none" }}
+                />
                 <path
                   d="m13.81,265.43v-6.05c0-1.41,1.05-2.55,2.34-2.55h11.77c1.29,0,2.34,1.14,2.34,2.55v6.05c0,1.41-1.05,2.55-2.34,2.55h-11.77c-1.29,0-2.34-1.14-2.34-2.55Z"
                   style={{
@@ -200,7 +218,13 @@ export const Frontpage = () => {
                     strokeWidth: "1px",
                   }}
                 />
-                <rect x="31.7" y="254.87" width="20.07" height="14.13" style={{ fill: "none" }} />
+                <rect
+                  x="31.7"
+                  y="254.87"
+                  width="20.07"
+                  height="14.13"
+                  style={{ fill: "none" }}
+                />
                 <path
                   d="m34.82,265.43v-6.05c0-1.41,1.05-2.55,2.34-2.55h11.77c1.29,0,2.34,1.14,2.34,2.55v6.05c0,1.41-1.05,2.55-2.34,2.55h-11.77c-1.29,0-2.34-1.14-2.34-2.55Z"
                   style={{
@@ -210,7 +234,13 @@ export const Frontpage = () => {
                     strokeWidth: "1px",
                   }}
                 />
-                <rect x="51.77" y="254.87" width="20.07" height="14.13" style={{ fill: "none" }} />
+                <rect
+                  x="51.77"
+                  y="254.87"
+                  width="20.07"
+                  height="14.13"
+                  style={{ fill: "none" }}
+                />
                 <path
                   d="m55.83,265.43v-6.05c0-1.41,1.05-2.55,2.34-2.55h11.77c1.29,0,2.34,1.14,2.34,2.55v6.05c0,1.41-1.05,2.55-2.34,2.55h-11.77c-1.29,0-2.34-1.14-2.34-2.55Z"
                   style={{
@@ -220,7 +250,13 @@ export const Frontpage = () => {
                     strokeWidth: "1px",
                   }}
                 />
-                <rect x="11.63" y="268.99" width="20.07" height="14.13" style={{ fill: "none" }} />
+                <rect
+                  x="11.63"
+                  y="268.99"
+                  width="20.07"
+                  height="14.13"
+                  style={{ fill: "none" }}
+                />
                 <path
                   d="m13.81,281.57v-6.05c0-1.41,1.05-2.55,2.34-2.55h11.77c1.29,0,2.34,1.14,2.34,2.55v6.05c0,1.41-1.05,2.55-2.34,2.55h-11.77c-1.29,0-2.34-1.14-2.34-2.55Z"
                   style={{
@@ -230,7 +266,13 @@ export const Frontpage = () => {
                     strokeWidth: "1px",
                   }}
                 />
-                <rect x="31.7" y="268.99" width="20.07" height="14.13" style={{ fill: "none" }} />
+                <rect
+                  x="31.7"
+                  y="268.99"
+                  width="20.07"
+                  height="14.13"
+                  style={{ fill: "none" }}
+                />
                 <path
                   d="m34.82,281.57v-6.05c0-1.41,1.05-2.55,2.34-2.55h11.77c1.29,0,2.34,1.14,2.34,2.55v6.05c0,1.41-1.05,2.55-2.34,2.55h-11.77c-1.29,0-2.34-1.14-2.34-2.55Z"
                   style={{
@@ -240,7 +282,13 @@ export const Frontpage = () => {
                     strokeWidth: "1px",
                   }}
                 />
-                <rect x="51.77" y="268.99" width="20.07" height="14.13" style={{ fill: "none" }} />
+                <rect
+                  x="51.77"
+                  y="268.99"
+                  width="20.07"
+                  height="14.13"
+                  style={{ fill: "none" }}
+                />
                 <path
                   d="m55.83,281.57v-6.05c0-1.41,1.05-2.55,2.34-2.55h11.77c1.29,0,2.34,1.14,2.34,2.55v6.05c0,1.41-1.05,2.55-2.34,2.55h-11.77c-1.29,0-2.34-1.14-2.34-2.55Z"
                   style={{
@@ -250,7 +298,13 @@ export const Frontpage = () => {
                     strokeWidth: "1px",
                   }}
                 />
-                <rect x="11.63" y="283.12" width="20.07" height="14.13" style={{ fill: "none" }} />
+                <rect
+                  x="11.63"
+                  y="283.12"
+                  width="20.07"
+                  height="14.13"
+                  style={{ fill: "none" }}
+                />
                 <path
                   d="m13.81,297.7v-6.05c0-1.41,1.05-2.55,2.34-2.55h11.77c1.29,0,2.34,1.14,2.34,2.55v6.05c0,1.41-1.05,2.55-2.34,2.55h-11.77c-1.29,0-2.34-1.14-2.34-2.55Z"
                   style={{
@@ -260,7 +314,13 @@ export const Frontpage = () => {
                     strokeWidth: "1px",
                   }}
                 />
-                <rect x="31.7" y="283.12" width="20.07" height="14.13" style={{ fill: "none" }} />
+                <rect
+                  x="31.7"
+                  y="283.12"
+                  width="20.07"
+                  height="14.13"
+                  style={{ fill: "none" }}
+                />
                 <path
                   d="m34.82,297.7v-6.05c0-1.41,1.05-2.55,2.34-2.55h11.77c1.29,0,2.34,1.14,2.34,2.55v6.05c0,1.41-1.05,2.55-2.34,2.55h-11.77c-1.29,0-2.34-1.14-2.34-2.55Z"
                   style={{
@@ -270,7 +330,13 @@ export const Frontpage = () => {
                     strokeWidth: "1px",
                   }}
                 />
-                <rect x="51.77" y="283.12" width="20.07" height="14.13" style={{ fill: "none" }} />
+                <rect
+                  x="51.77"
+                  y="283.12"
+                  width="20.07"
+                  height="14.13"
+                  style={{ fill: "none" }}
+                />
                 <path
                   d="m55.83,297.7v-6.05c0-1.41,1.05-2.55,2.34-2.55h11.77c1.29,0,2.34,1.14,2.34,2.55v6.05c0,1.41-1.05,2.55-2.34,2.55h-11.77c-1.29,0-2.34-1.14-2.34-2.55Z"
                   style={{
@@ -280,7 +346,13 @@ export const Frontpage = () => {
                     strokeWidth: "1px",
                   }}
                 />
-                <rect x="11.63" y="297.25" width="20.07" height="14.13" style={{ fill: "none" }} />
+                <rect
+                  x="11.63"
+                  y="297.25"
+                  width="20.07"
+                  height="14.13"
+                  style={{ fill: "none" }}
+                />
                 <path
                   d="m13.81,314.29v-4.97c0-1.16,1.05-2.1,2.34-2.1h11.77c1.29,0,2.34.94,2.34,2.1v4.97c0,1.16-1.05,2.1-2.34,2.1h-11.77c-1.29,0-2.34-.94-2.34-2.1Z"
                   style={{
@@ -290,7 +362,13 @@ export const Frontpage = () => {
                     strokeWidth: "1px",
                   }}
                 />
-                <rect x="31.7" y="297.25" width="20.07" height="14.13" style={{ fill: "none" }} />
+                <rect
+                  x="31.7"
+                  y="297.25"
+                  width="20.07"
+                  height="14.13"
+                  style={{ fill: "none" }}
+                />
                 <path
                   d="m34.82,313.84v-6.05c0-1.41,1.05-2.55,2.34-2.55h11.77c1.29,0,2.34,1.14,2.34,2.55v6.05c0,1.41-1.05,2.55-2.34,2.55h-11.77c-1.29,0-2.34-1.14-2.34-2.55Z"
                   style={{
@@ -300,7 +378,13 @@ export const Frontpage = () => {
                     strokeWidth: "1px",
                   }}
                 />
-                <rect x="51.77" y="297.25" width="20.07" height="14.13" style={{ fill: "none" }} />
+                <rect
+                  x="51.77"
+                  y="297.25"
+                  width="20.07"
+                  height="14.13"
+                  style={{ fill: "none" }}
+                />
                 <path
                   d="m55.83,314.29v-4.97c0-1.16,1.05-2.1,2.34-2.1h11.77c1.29,0,2.34.94,2.34,2.1v4.97c0,1.16-1.05,2.1-2.34,2.1h-11.77c-1.29,0-2.34-.94-2.34-2.1Z"
                   style={{
@@ -538,7 +622,9 @@ export const Frontpage = () => {
             <p>Få pengene hurtigt på din konto</p>
           </div>
           <img
-            src={process.env.PUBLIC_URL + "./images/logostrip-complete_1728x.webp"}
+            src={
+              process.env.PUBLIC_URL + "./images/logostrip-complete_1728x.webp"
+            }
             alt="Cards you can pay with"
             width="1600"
             height="900"
@@ -551,25 +637,31 @@ export const Frontpage = () => {
             <article>
               <h3>1. Spar penge med den pakkeløsning, som passer dig</h3>
               <p>
-                Vælg den pakkeløsning, der passer til dit behov. Vær særligt opmærksom på
-                transaktionsgebyret. Hos Nets kan du spare penge ved at vælge den pakke, der passer
-                dig. Du kan altid skifte pakke, hvis din omsætning ændrer sig!
+                Vælg den pakkeløsning, der passer til dit behov. Vær særligt
+                opmærksom på transaktionsgebyret. Hos Nets kan du spare penge
+                ved at vælge den pakke, der passer dig. Du kan altid skifte
+                pakke, hvis din omsætning ændrer sig!
               </p>
             </article>
             <article>
               <h3>2. Vælg den terminal, der passer til din forretning</h3>
               <p>
-                Har du brug for en mobil eller stationær betalingsterminal? En mobil terminal giver
-                dig mulighed for at tage imod betalinger, der hvor dine kunder er. En stationær
-                terminal er til dig, hvor betalingen klares ved kassen.
+                Har du brug for en mobil eller stationær betalingsterminal? En
+                mobil terminal giver dig mulighed for at tage imod betalinger,
+                der hvor dine kunder er. En stationær terminal er til dig, hvor
+                betalingen klares ved kassen.
               </p>
             </article>
             <article>
-              <h3>3. Bestil online i dag - nemt og hurtigt. Vi sikrer, at du kommer godt i gang</h3>
+              <h3>
+                3. Bestil online i dag - nemt og hurtigt. Vi sikrer, at du
+                kommer godt i gang
+              </h3>
               <p>
-                Bestil produktet. Du vil herefter blive ringet op af én af vores specialister, der
-                sikrer, at du kommer hurtigt og trygt i gang med den løsning og pris, der passer til
-                din forretning. Det er derfor mange forretninger vælger os.
+                Bestil produktet. Du vil herefter blive ringet op af én af vores
+                specialister, der sikrer, at du kommer hurtigt og trygt i gang
+                med den løsning og pris, der passer til din forretning. Det er
+                derfor mange forretninger vælger os.
               </p>
             </article>
           </div>
@@ -586,25 +678,37 @@ export const Frontpage = () => {
             />
             <article>
               <p>
-                Natur og vores planet er vigtig for os alle, derfor har vi taget to tiltag, som skal
-                være starten på et mere bæredygtig internetter. Derudover er vigtig for os, at de
-                produkter de køber passer ind i din visuelle identitet, så det passer med resten af
-                din virksomhed.
+                Natur og vores planet er vigtig for os alle, derfor har vi taget
+                to tiltag, som skal være starten på et mere bæredygtig
+                internetter. Derudover er vigtig for os, at de produkter de
+                køber passer ind i din visuelle identitet, så det passer med
+                resten af din virksomhed.
                 <br />
-                Som en del af de produkter du køber, går 1% af dit køb til at kompensere for det
-                klimaaftryk produkter har og vil lave i fremtiden.
+                Som en del af de produkter du køber, går 1% af dit køb til at
+                kompensere for det klimaaftryk produkter har og vil lave i
+                fremtiden.
               </p>
               <ul>
-                <li>Mulighed for at kompensere mere end 1% for at nutralisere mere CO2</li>
+                <li>
+                  Mulighed for at kompensere mere end 1% for at nutralisere mere
+                  CO2
+                </li>
                 <li>Juster nemt og hurtigt</li>
                 <li>
-                  Få gratis tilpasning af dit produkt med i købtet, hvis du kompensere mere end 5%
+                  Få gratis tilpasning af dit produkt med i købtet, hvis du
+                  kompensere mere end 5%
                 </li>
               </ul>
 
               <div className="frontpage_green_id_buttons">
-                <Button onClick={() => goTo("/green-goal")} label="Læs mere om vores mål"></Button>
-                <Button onClick={() => goTo("/products")} label="Tilpas dit produkt nu"></Button>
+                <Button
+                  onClick={() => goTo("/green-goal")}
+                  label="Læs mere om vores mål"
+                ></Button>
+                <Button
+                  onClick={() => goTo("/products")}
+                  label="Tilpas dit produkt nu"
+                ></Button>
               </div>
             </article>
           </div>
