@@ -112,7 +112,7 @@
   }
 }
 
-// spining planet
+// spinning planet
 .earth {
   width: 80%;
 }
@@ -129,6 +129,7 @@
 
 // the turbines
 .turbines {
+  width: 100%;
   display: flex;
   svg {
     stroke-width: 0.8px;
