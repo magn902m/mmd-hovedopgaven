@@ -6,6 +6,20 @@
     gap: 2rem;
     margin-block-end: 5rem;
 
+    &_text {
+      &_span {
+        font-family: var(--font-primary);
+        font-size: var(--font-size--body);
+        font-weight: var(--font-weight--bold);
+        // color: var(--color-nets-darkblue);
+        color: var(--color-nets-orange);
+        letter-spacing: 0.1rem;
+      }
+    }
+
+    &_img {
+      // width: 60%;
+    }
     .frontpage_hero_img {
       width: 50%;
       max-width: 200px;
@@ -191,7 +205,7 @@
 
 #blades2 {
   transform-origin: 76.4% 25.2%;
-  animation: 3s infinite rotate linear;
+  animation: 6s infinite rotate linear;
 }
 
 @keyframes rotate {

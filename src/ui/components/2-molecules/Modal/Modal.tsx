@@ -8,20 +8,14 @@ import { ColorPicker } from "../ColorPicker";
 import { useAuth } from "../../../../contexts/AuthContext";
 import { child, get, getDatabase, ref, update } from "firebase/database";
 import { ThreeJSContext } from "../../../../contexts/ThreeJSContext";
-import {
-  getStorage,
-  ref as refStorage,
-  uploadBytes,
-  getDownloadURL,
-  list,
-} from "firebase/storage";
+import { getStorage, ref as refStorage, uploadBytes, getDownloadURL, list } from "firebase/storage";
 
 export const Modal = (props: any) => {
   const { updateModel, setUpdateModel } = useContext(ThreeJSContext);
 
   const [isRatation360Clicked, setIsRatation360Clicked] = useState(false);
   const [isRatation180Clicked, setIsRatation180Clicked] = useState(false);
-  const [showImage, setShowImage] = useState(true);
+  const [showImage, setShowImage] = useState(false);
 
   //* Database start
 
@@ -140,13 +134,7 @@ export const Modal = (props: any) => {
 
   useEffect(() => {
     updateModelSettings();
-  }, [
-    pickedColor,
-    isRatation360Clicked,
-    isRatation180Clicked,
-    imageUrl,
-    showImage,
-  ]);
+  }, [pickedColor, isRatation360Clicked, isRatation180Clicked, imageUrl, showImage]);
 
   return (
     <>
@@ -157,69 +145,71 @@ export const Modal = (props: any) => {
               <header className={styles.Modal_header}>
                 <div>
                   <h2>Design dit produkt</h2>
-                  <p>
-                    Prøv at vælge en farve og udforsk terminal ved at trække
-                    rundt på den
-                  </p>
+                  <p>Prøv at vælge en farve og udforsk terminal ved at trække rundt på den</p>
                 </div>
-                {/* <Button
-                  label="Luk og gem dine ændringer"
-                  onClick={() => {
-                    saveUserPreference();
-                    props.setIsOpen(false);
-                  }}
-                /> */}
               </header>
               <article className={styles.Modal_content}>
-                <div>
+                <div className={styles.Modal_canvas_container}>
                   <PaymentTerminalCanvas />
                   <div className={styles.Modal_rotate_container}>
                     <h4>Drej produktet</h4>
                     <div className={styles.Modal_action_btns_container}>
                       <Button
                         label={"Drej 360°"}
-                        onClick={() =>
-                          updateModel.setIsRatation360Clicked(true)
-                        }
+                        onClick={() => updateModel.setIsRatation360Clicked(true)}
                       />
                       <Button
                         label={"Vend 180°"}
-                        onClick={() =>
-                          updateModel.setIsRatation180Clicked(true)
-                        }
+                        onClick={() => updateModel.setIsRatation180Clicked(true)}
                       />
                     </div>
                   </div>
                 </div>
                 <div className={styles.Modal_actions_container}>
-                  <div className={styles.Modal_image_container}>
-                    <label className={styles.Modal_image_label}>
-                      Vælg dit logo
-                    </label>
+                  <div className={styles.Modal_color_container}>
+                    <h4>Vælg din farve</h4>
+                    <p>Tryk på farvefeltet eller indtast en hexkode.</p>
+                    <ColorPicker
+                      onChange={handlePickedColor}
+                      value={pickedColor}
+                      profilcolor={profilData?.color}
+                    />
+                  </div>
 
+                  <div className={styles.Modal_image_container}>
+                    <label className={styles.Modal_image_label}>Vælg dit logo</label>
+                    <p>Upload et logo eller vis dit nuværnede.</p>
                     <div className={styles.Modal_image_main_content}>
-                      <input
-                        type="file"
-                        id="image_file"
-                        name="image_file"
-                        placeholder="&nbsp;"
-                        required
-                        onChange={(event: any) => {
-                          setImageUpload(event.target.files[0]);
-                        }}
-                      />
+                      <div className={styles.Modal_image_main_content_file}>
+                        <p className={styles.Modal_image_hint}>Vælg et logo, at uploade</p>
+                        <input
+                          type="file"
+                          id="image_file"
+                          name="image_file"
+                          placeholder="&nbsp;"
+                          required
+                          onChange={(event: any) => {
+                            setImageUpload(event.target.files[0]);
+                          }}
+                        />
+                      </div>
                       <Button
                         btnTypeStyle="se_btn"
                         label="Upload nyt logo"
                         type="button"
                         onClick={() => {
-                          uploadFile();
-                          setIsNewImageUpload(true);
+                          if (imageUpload) {
+                            uploadFile();
+                            setIsNewImageUpload(true);
+                          } else {
+                            return console.log("No image is select in input");
+                          }
                         }}
                       />
                     </div>
+
                     <div className={styles.Modal_image_checkbox}>
-                      <label htmlFor="show_image">Vis logo</label>
+                      <label htmlFor="show_image">Vis logoet på terminalen</label>
                       <input
                         type="checkbox"
                         name="show_image"
@@ -231,37 +221,8 @@ export const Modal = (props: any) => {
                     {/* <img src={imageUrl} alt="Logo eller ikon, som bruger har uploadet" /> */}
                   </div>
 
-                  {/* <div className={styles.Modal_rotate_container}>
-                    <h4>Drej produktet</h4>
-                    <div className={styles.Modal_action_btns_container}>
-                      <Button
-                        label={"Drej 360°"}
-                        onClick={() =>
-                          updateModel.setIsRatation360Clicked(true)
-                        }
-                      />
-                      <Button
-                        label={"Vend 180°"}
-                        onClick={() =>
-                          updateModel.setIsRatation180Clicked(true)
-                        }
-                      />
-                    </div>
-                  </div> */}
-
-                  <div className={styles.Modal_color_container}>
-                    <h4>Vælg din farve</h4>
-                    <p>
-                      Du kan vælge en farve ved at trykke på farvefeltet eller
-                      indtaste en hexkode
-                    </p>
-                    <ColorPicker
-                      onChange={handlePickedColor}
-                      value={pickedColor}
-                      profilcolor={profilData?.color}
-                    />
-                  </div>
                   <Button
+                    btnTypeStyle="primary_btn"
                     label="Luk og gem dine ændringer"
                     onClick={() => {
                       saveUserPreference();
