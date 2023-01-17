@@ -21,20 +21,20 @@ export const Products = () => {
         </title>
         <meta
           name="title"
-          content="Tag imod betalinger med den pakkeløsning, som passer din virksomhed best - Nets Denmark"
+          content="Tag imod betalinger med den pakkeløsning, som passer din virksomhed best - Sts Denmark"
         />
         <meta
           name="description"
           content="Uanset om du sælger børnetøj, reparerer cykler eller serverer kaffe til morgentrætte kunder, har vi en terminal, der passer til dine behov."
         />
-        <meta name="keyword" content="Nets betalingsløsninger bæredygtighed betalingsterminal" />
+        <meta name="keyword" content="Sts betalingsløsninger bæredygtighed betalingsterminal" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://mmd-hovedopgaven.web.app/" />
         <meta
           property="og:title"
-          content="Tag imod betalinger med den pakkeløsning, som passer din virksomhed best - Nets Denmark"
+          content="Tag imod betalinger med den pakkeløsning, som passer din virksomhed best - Sts Denmark"
         />
         <meta
           property="og:description"
@@ -50,7 +50,7 @@ export const Products = () => {
         <meta property="twitter:url" content="https://mmd-hovedopgaven.web.app/" />
         <meta
           property="twitter:title"
-          content="Tag imod betalinger når som helst, hvor som helstU+002d Nets Denmark"
+          content="Tag imod betalinger når som helst, hvor som helstU+002d Sts Denmark"
         />
         <meta
           property="twitter:description"

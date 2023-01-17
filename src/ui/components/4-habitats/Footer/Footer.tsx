@@ -15,10 +15,7 @@ export const Footer = () => {
           </a>
         </li>
         <li className="nets_footer_item">
-          <a
-            href="https://www.nets.eu/da-DK/payments/online"
-            className="nets_footer_links active"
-          >
+          <a href="https://www.nets.eu/da-DK/payments/online" className="nets_footer_links active">
             Betaling online
           </a>
         </li>
@@ -35,7 +32,7 @@ export const Footer = () => {
             href="https://www.nets.eu/da-DK/payments/value-added-services/financing"
             className="nets_footer_links active"
           >
-            Nets Financing
+            Sts Financing
           </a>
         </li>
         <li className="nets_footer_item">
@@ -55,10 +52,7 @@ export const Footer = () => {
           </a>
         </li>
         <li className="nets_footer_item">
-          <a
-            href="https://www.nets.eu/GDPR"
-            className="nets_footer_links active"
-          >
+          <a href="https://www.nets.eu/GDPR" className="nets_footer_links active">
             GDPR regulation
           </a>
         </li>

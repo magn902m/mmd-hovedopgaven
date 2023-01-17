@@ -14,23 +14,23 @@ export const Frontpage = () => {
   return (
     <>
       <Helmet>
-        <title>Tag imod betalinger når som helst, hvor som helst - Nets Denmark</title>
+        <title>Tag imod betalinger når som helst, hvor som helst - Sts Denmark</title>
         <meta
           name="title"
-          content="Tag imod betalinger når som helst, hvor som helst - Nets Denmark"
+          content="Tag imod betalinger når som helst, hvor som helst - Sts Denmark"
         />
         <meta
           name="description"
           content="Uanset om du sælger børnetøj, reparerer cykler eller serverer kaffe til morgentrætte kunder, har vi en terminal, der passer til dine behov."
         />
-        <meta name="keyword" content="Nets betalingsløsninger bæredygtighed betalingsterminal" />
+        <meta name="keyword" content="Sts betalingsløsninger bæredygtighed betalingsterminal" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://mmd-hovedopgaven.web.app/" />
         <meta
           property="og:title"
-          content="Tag imod betalinger når som helst, hvor som helst - Nets Denmark"
+          content="Tag imod betalinger når som helst, hvor som helst - Sts Denmark"
         />
         <meta
           property="og:description"
@@ -46,7 +46,7 @@ export const Frontpage = () => {
         <meta property="twitter:url" content="https://mmd-hovedopgaven.web.app/" />
         <meta
           property="twitter:title"
-          content="Tag imod betalinger når som helst, hvor som helstU+002d Nets Denmark"
+          content="Tag imod betalinger når som helst, hvor som helstU+002d Sts Denmark"
         />
         <meta
           property="twitter:description"
@@ -66,7 +66,7 @@ export const Frontpage = () => {
               <span className="frontpage_hero_text_span">- med en grøn omtankte</span>
             </div>
             <p>
-              Hos Nets stræber vi os på at give tilbage - både til dig og naturen. Med vores
+              Hos Sts stræber vi os på at give tilbage - både til dig og naturen. Med vores
               betalingsterminaler får du alt, hvad du skal bruge til at tage imod betalinger med
               alle de kortbrands, dine kunder ønsker at betale med. Som noget nyt kan du skræddersy
               dem, så de passer præcist ind i din visuelle verden. Vi har selvfølgelig også tænkt på
@@ -552,7 +552,7 @@ export const Frontpage = () => {
               <h3>1. Spar penge med den pakkeløsning, som passer dig</h3>
               <p>
                 Vælg den pakkeløsning, der passer til dit behov. Vær særligt opmærksom på
-                transaktionsgebyret. Hos Nets kan du spare penge ved at vælge den pakke, der passer
+                transaktionsgebyret. Hos Sts kan du spare penge ved at vælge den pakke, der passer
                 dig. Du kan altid skifte pakke, hvis din omsætning ændrer sig!
               </p>
             </article>
