@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import "./Product.scss";
 import WebshopItems from "../../data/terminals.json";
 import { useParams } from "react-router-dom";
-import { NetsAccordion } from "../../ui/components/2-molecules/NetsAccordion";
+import { StsAccordion } from "../../ui/components/2-molecules/StsAccordion/StsAccordion";
 import { Button } from "../../ui/components/1-atoms/Button";
 import { useShoppingCart } from "../../contexts/ShoppingCartContex";
 import { Modal } from "../../ui/components";
@@ -187,7 +187,7 @@ export const Product = () => {
               pr. måned baseret på månedspris og gennemsnitligt transaktionsgebyr.*
             </p>
             {/* <Accordion data={accordionData} /> */}
-            {isOpen ? null : <NetsAccordion />}
+            {isOpen ? null : <StsAccordion />}
           </div>
         </section>
       </main>
