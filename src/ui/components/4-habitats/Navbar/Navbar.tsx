@@ -15,8 +15,8 @@ export const Navbar = () => {
 
   return (
     <header className="navbar_header">
-      <nav className="nets_navbar">
-        <NavLink to="/" className={"nets_navbar_logo"}>
+      <nav className="sts_navbar">
+        <NavLink to="/" className={"sts_navbar_logo"}>
           <img
             src={process.env.PUBLIC_URL + "/images/sts-logo-white-fit.svg"}
             width="100"
@@ -25,21 +25,21 @@ export const Navbar = () => {
           />
         </NavLink>
 
-        <ul className={click ? "nets_navbar_menu active" : "nets_navbar_menu"}>
-          <li className="nets_navbar_items">
-            <NavLink to="/products" className="nets_navbar_links" onClick={handleClick}>
+        <ul className={click ? "sts_navbar_menu active" : "sts_navbar_menu"}>
+          <li className="sts_navbar_items">
+            <NavLink to="/products" className="sts_navbar_links" onClick={handleClick}>
               Produkter
             </NavLink>
           </li>
-          <li className="nets_navbar_items">
-            <NavLink to="/green-goal" onClick={handleClick} className="nets_navbar_links">
+          <li className="sts_navbar_items">
+            <NavLink to="/green-goal" onClick={handleClick} className="sts_navbar_links">
               Vores grønne mål
             </NavLink>
           </li>
-          <li className="nets_navbar_items">
+          <li className="sts_navbar_items">
             <a
-              href="https://www.nets.eu/dk-da/kontakt"
-              className="nets_navbar_links"
+              href="https://www.sts.eu/dk-da/kontakt"
+              className="sts_navbar_links"
               onClick={handleClick}
             >
               Kontakt os
@@ -49,7 +49,7 @@ export const Navbar = () => {
           <li>
             <NavLink
               to={currentUser ? "/account" : "/login"}
-              className="nav-links login_mobile nets_navbar_links "
+              className="nav-links login_mobile sts_navbar_links "
               onClick={handleClick}
             >
               {currentUser ? "Din profil" : "Log ind"}
@@ -57,7 +57,7 @@ export const Navbar = () => {
           </li>
         </ul>
 
-        <ul className="nets_navbar_burger">
+        <ul className="sts_navbar_burger">
           <li className="navbar_burger_li">
             <NavLink
               to={currentUser ? "/account" : "/login"}

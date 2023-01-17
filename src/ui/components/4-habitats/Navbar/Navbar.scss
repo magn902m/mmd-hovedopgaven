@@ -1,4 +1,4 @@
-.nets_navbar {
+.sts_navbar {
   display: flex;
   align-items: center;
   top: 0;
@@ -35,8 +35,8 @@
       width: 1.2rem;
       height: 1.2rem;
       transform: translate(30%, 90%);
-      // background-color: var(--color-nets-middleblue);
-      background-color: var(--color-nets-orange);
+      // background-color: var(--color-sts-middleblue);
+      background-color: var(--color-sts-orange);
       border-radius: 1rem;
 
       p {
@@ -57,7 +57,7 @@
 }
 
 @media screen and (max-width: 760px) {
-  .nets_navbar {
+  .sts_navbar {
     &_logo {
       padding-left: 0;
       width: 80px;
@@ -69,7 +69,7 @@
 
       &.active {
         display: block;
-        background-color: var(--color-nets-darkblue-25);
+        background-color: var(--color-sts-darkblue-25);
         position: absolute;
         top: 0;
         left: 0;
@@ -171,7 +171,7 @@
 .navbar_header {
   position: sticky;
   top: 0;
-  background-color: var(--color-nets-darkblue);
+  background-color: var(--color-sts-darkblue);
   z-index: 10;
 
   a {

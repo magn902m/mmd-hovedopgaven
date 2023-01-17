@@ -17,7 +17,7 @@ export const Products = () => {
     <>
       <Helmet>
         <title>
-          Tag imod betalinger med den pakkeløsning, som passer din virksomhed best - Nets Denmark
+          Tag imod betalinger med den pakkeløsning, som passer din virksomhed best - sts Denmark
         </title>
         <meta
           name="title"
@@ -62,13 +62,13 @@ export const Products = () => {
         />
       </Helmet>
 
-      <main id="main" className="nets_products">
+      <main id="main" className="sts_products">
         <header>
           <h1>Produkter</h1>
           <p>Vælg det produkt, som passer din virksomhed bedst</p>
           <p className="webshop_items_count">{WebshopItems.length} produkter</p>
         </header>
-        <section className="nets_products_overview">
+        <section className="sts_products_overview">
           {WebshopItems.map((webshopItem) => (
             <ProductCard
               key={webshopItem.id}

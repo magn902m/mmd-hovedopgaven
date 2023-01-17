@@ -98,8 +98,8 @@ export const Product = () => {
         />
       </Helmet>
 
-      <main id="main" className="nets_product">
-        <section className="nets_product_top">
+      <main id="main" className="sts_product">
+        <section className="sts_product_top">
           <article className="product_top_image">
             {isImage ? (
               <>
@@ -126,8 +126,8 @@ export const Product = () => {
               </>
             )}
           </article>
-          <article className="nets_product_top_content">
-            <div className="nets_product_top_text">
+          <article className="sts_product_top_content">
+            <div className="sts_product_top_text">
               <div>
                 <h2>{singleProduct.name}</h2>
                 <h4>{singleProduct.desc1}</h4>
@@ -142,18 +142,18 @@ export const Product = () => {
                 </p>
               ) : null}
               <a href="#product_info">Læs mere om pakkeløsningen</a>
-              <div className="nets_product_top_footprint"></div>
+              <div className="sts_product_top_footprint"></div>
             </div>
-            <div className="nets_product_top_btns">
+            <div className="sts_product_top_btns">
               <Button
                 btnTypeStyle="primary_btn"
-                className="nets_modal_open"
+                className="sts_modal_open"
                 label={"Design dit produkt"}
                 onClick={() => setIsOpen(true)}
               />
 
               <Button
-                className="nets_card_button"
+                className="sts_card_button"
                 label={"Tilføj til kurv"}
                 onClick={() => increaseCartQuantity(singleProduct.id)}
               />
@@ -165,7 +165,7 @@ export const Product = () => {
           <Modal setIsOpen={setIsOpen} name={singleProduct.name} desc1={singleProduct.desc1} />
         )}
 
-        <section id="product_info" className="nets_product_bottom">
+        <section id="product_info" className="sts_product_bottom">
           <div className="product_bottom_div">
             <h4>Modtag de mest populære kort</h4>
             <p>

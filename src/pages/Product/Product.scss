@@ -1,4 +1,4 @@
-.nets_product {
+.sts_product {
   &_top {
     display: flex;
     flex-direction: column;
@@ -8,7 +8,7 @@
       width: 50%;
       max-width: 200px;
     }
-    .nets_product_top_content {
+    .sts_product_top_content {
       display: flex;
       flex-direction: column;
       gap: 2rem;
@@ -27,7 +27,7 @@
       }
     }
 
-    .nets_product_top_text {
+    .sts_product_top_text {
     }
 
     .product_top_pickedcolor {
@@ -36,12 +36,12 @@
       span {
         color: var(--color-white);
         border-radius: var(--border--lg);
-        border: 1px solid var(--color-nets-darkblue);
+        border: 1px solid var(--color-sts-darkblue);
         padding: 0.2rem 2rem;
       }
     }
 
-    .nets_product_top_btns {
+    .sts_product_top_btns {
       display: flex;
       flex-direction: column;
       gap: 1rem;
@@ -53,7 +53,7 @@
 
       h2 {
         font-size: var(--font-size--md);
-        color: var(--color-nets-darkblue);
+        color: var(--color-sts-darkblue);
         margin-top: 3rem;
       }
       p {
@@ -80,7 +80,7 @@
     h4 {
       font-size: var(--font-size--sm);
     }
-    .nets_modal {
+    .sts_modal {
       &_top {
         h3 {
           font-size: var(--font-size--xs);
@@ -91,7 +91,7 @@
 }
 
 @media only screen and (min-width: 700px) {
-  .nets_product {
+  .sts_product {
     &_top {
       // flex-direction: row;
       // align-items: flex-start;
@@ -101,7 +101,7 @@
       grid-template-columns: 400px 1fr;
       max-width: 1000px;
 
-      .nets_product_top_text {
+      .sts_product_top_text {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
@@ -118,7 +118,7 @@
         }
         h4 {
           font-size: var(--font-size--4xs);
-          color: var(--color-nets-darkblue);
+          color: var(--color-sts-darkblue);
         }
         p {
           font-size: 0.8rem;

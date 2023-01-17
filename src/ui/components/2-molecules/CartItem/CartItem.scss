@@ -1,4 +1,4 @@
-.nets_cart_item {
+.sts_cart_item {
   display: grid;
   grid-template-columns: 60% 1fr;
   gap: 1rem;
@@ -33,7 +33,7 @@
       margin-top: 1rem;
 
       span {
-        border: solid var(--color-nets-darkblue);
+        border: solid var(--color-sts-darkblue);
         padding: 0.3rem;
       }
 
@@ -50,7 +50,7 @@
 }
 
 @media only screen and (min-width: 700px) {
-  .nets_cart_item {
+  .sts_cart_item {
     grid-template-columns: 50% 1fr 1fr;
 
     &_desc {
