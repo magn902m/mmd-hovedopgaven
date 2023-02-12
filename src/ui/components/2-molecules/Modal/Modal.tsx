@@ -8,7 +8,13 @@ import { ColorPicker } from "../ColorPicker";
 import { useAuth } from "../../../../contexts/AuthContext";
 import { child, get, getDatabase, ref, update } from "firebase/database";
 import { ThreeJSContext } from "../../../../contexts/ThreeJSContext";
-import { getStorage, ref as refStorage, uploadBytes, getDownloadURL, list } from "firebase/storage";
+import {
+  getStorage,
+  ref as refStorage,
+  uploadBytes,
+  getDownloadURL,
+  list,
+} from "firebase/storage";
 
 export const Modal = (props: any) => {
   const { updateModel, setUpdateModel } = useContext(ThreeJSContext);
@@ -134,7 +140,13 @@ export const Modal = (props: any) => {
 
   useEffect(() => {
     updateModelSettings();
-  }, [pickedColor, isRatation360Clicked, isRatation180Clicked, imageUrl, showImage]);
+  }, [
+    pickedColor,
+    isRatation360Clicked,
+    isRatation180Clicked,
+    imageUrl,
+    showImage,
+  ]);
 
   return (
     <>
@@ -145,7 +157,10 @@ export const Modal = (props: any) => {
               <header className={styles.Modal_header}>
                 <div>
                   <h2>Design dit produkt</h2>
-                  <p>Prøv at vælge en farve og udforsk terminal ved at trække rundt på den</p>
+                  <p>
+                    Prøv at vælge en farve og udforsk terminal ved at trække
+                    rundt på den
+                  </p>
                 </div>
               </header>
               <article className={styles.Modal_content}>
@@ -156,11 +171,15 @@ export const Modal = (props: any) => {
                     <div className={styles.Modal_action_btns_container}>
                       <Button
                         label={"Drej 360°"}
-                        onClick={() => updateModel.setIsRatation360Clicked(true)}
+                        onClick={() =>
+                          updateModel.setIsRatation360Clicked(true)
+                        }
                       />
                       <Button
                         label={"Vend 180°"}
-                        onClick={() => updateModel.setIsRatation180Clicked(true)}
+                        onClick={() =>
+                          updateModel.setIsRatation180Clicked(true)
+                        }
                       />
                     </div>
                   </div>
@@ -174,14 +193,21 @@ export const Modal = (props: any) => {
                       value={pickedColor}
                       profilcolor={profilData?.color}
                     />
+                    <p className={styles.Modal_image_hint}>
+                      * Modellen ses i dagslys, derfor kan farven variere.
+                    </p>
                   </div>
 
                   <div className={styles.Modal_image_container}>
-                    <label className={styles.Modal_image_label}>Vælg dit logo</label>
+                    <label className={styles.Modal_image_label}>
+                      Vælg dit logo
+                    </label>
                     <p>Upload et logo eller vis dit nuværnede.</p>
                     <div className={styles.Modal_image_main_content}>
                       <div className={styles.Modal_image_main_content_file}>
-                        <p className={styles.Modal_image_hint}>Vælg et logo, at uploade</p>
+                        <p className={styles.Modal_image_hint}>
+                          Vælg et logo, at uploade
+                        </p>
                         <input
                           type="file"
                           id="image_file"
@@ -209,7 +235,9 @@ export const Modal = (props: any) => {
                     </div>
 
                     <div className={styles.Modal_image_checkbox}>
-                      <label htmlFor="show_image">Vis logoet på terminalen</label>
+                      <label htmlFor="show_image">
+                        Vis logoet på terminalen
+                      </label>
                       <input
                         type="checkbox"
                         name="show_image"

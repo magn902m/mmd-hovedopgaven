@@ -242,7 +242,7 @@ export const GreenGoal = () => {
                 <defs>
                   <ellipse id="ellipseClip" cx="239.7" cy="139.2" rx="65" ry="62.5" />
                   <clipPath id="clipPath">
-                    <use xlinkHref="#ellipseClip" overflow="" />
+                    <use xlinkHref="#ellipseClip" />
                   </clipPath>
                 </defs>
 
@@ -630,7 +630,7 @@ export const GreenGoal = () => {
             </div>
             <div className="turbines">
               <svg
-                id="Layer_1"
+                id="t1"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 150.75 218.45"
                 className="turbine"
@@ -683,7 +683,7 @@ export const GreenGoal = () => {
                 </g>
               </svg>
               <svg
-                id="Layer_1"
+                id="t2"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 150.75 218.45"
                 className="turbine"
@@ -737,7 +737,7 @@ export const GreenGoal = () => {
                 </g>
               </svg>
               <svg
-                id="Layer_1"
+                id="t3"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 150.75 218.45"
                 className="turbine"
