@@ -2,6 +2,33 @@
 
 Link to prototype: https://mmd-hovedopgaven.web.app/
 
+## Firebase infomation
+### Firebase hosting
+Getting started with Firebase Hosting (and GitHub Actions!) - Firebase Fundamentals: https://www.youtube.com/watch?v=P0x0LmiknJc&ab_channel=Firebase
+
+* npm i firebase-tools
+* node_modules/.bin/firebase login
+* node_modules/.bin/firebase init hosting
+* node_modules/.bin/firebase init emulators
+* node_modules/.bin/firebase emulators:start
+* node_modules/.bin/firebase deploy --only hosting
+* This is a way to general a preview: node_modules/.bin/firebase hosting:channel:deploy stage –expires 2h
+* node_modules/.bin/firebase
+* hosting:channel:list
+* node_modules/.bin/firebase 
+* hosting:channel:delete stage
+
+Remember npm run build, before deploy !
+
+### Setup preview channels:
+* Git add remote origin (url)
+* Git branch -M main
+* Push the code you have to github
+* node_modules/.bin/firebase init hosting:github
+
+
+# Create React App info
+
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
