@@ -7,28 +7,24 @@ export const GreenGoal = () => {
     <>
       <Helmet>
         <title>
-          Vi ønsker hos Nets at være mere bæredygtige, deres har vi en række
-          grønne mål - Nets Denmark
+          Vi ønsker hos Sts at være mere bæredygtige, deres har vi en række grønne mål - Sts Denmark
         </title>
         <meta
           name="title"
-          content="Vi ønsker hos Nets at være mere bæredygtige, deres har vi en række grønne mål - Nets Denmark"
+          content="Vi ønsker hos Sts at være mere bæredygtige, deres har vi en række grønne mål - Sts Denmark"
         />
         <meta
           name="description"
           content="Uanset om du sælger børnetøj, reparerer cykler eller serverer kaffe til morgentrætte kunder, har vi en terminal, der passer til dine behov."
         />
-        <meta
-          name="keyword"
-          content="Nets betalingsløsninger bæredygtighed betalingsterminal"
-        />
+        <meta name="keyword" content="Sts betalingsløsninger bæredygtighed betalingsterminal" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://mmd-hovedopgaven.web.app/" />
         <meta
           property="og:title"
-          content="Vi ønsker hos Nets at være mere bæredygtige, deres har vi en række grønne mål - Nets Denmark"
+          content="Vi ønsker hos Sts at være mere bæredygtige, deres har vi en række grønne mål - Sts Denmark"
         />
         <meta
           property="og:description"
@@ -41,13 +37,10 @@ export const GreenGoal = () => {
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:url"
-          content="https://mmd-hovedopgaven.web.app/"
-        />
+        <meta property="twitter:url" content="https://mmd-hovedopgaven.web.app/" />
         <meta
           property="twitter:title"
-          content="Tag imod betalinger når som helst, hvor som helstU+002d Nets Denmark"
+          content="Tag imod betalinger når som helst, hvor som helstU+002d Sts Denmark"
         />
         <meta
           property="twitter:description"
@@ -63,11 +56,9 @@ export const GreenGoal = () => {
         <header className="green_goals_header">
           <h1>Vores grønne mål</h1>
           <h4>
-            Hos Nets er vi gået igang med at kæmpe for mere CO2 neutralisering,
-            og du har som kunde hos os en stemme for en grønnere planet. Lad os
-            gøre noget godt sammen, for os alle. Læs mere om{" "}
-            <span> hvad, hvorfor og hvordan</span> vi vil gøre planeten
-            grønnere.
+            Hos Sts er vi gået igang med at kæmpe for mere CO2 neutralisering, og du har som kunde
+            hos os en stemme for en grønnere planet. Lad os gøre noget godt sammen, for os alle. Læs
+            mere om <span> hvad, hvorfor og hvordan</span> vi vil gøre planeten grønnere.
           </h4>
         </header>
 
@@ -76,10 +67,9 @@ export const GreenGoal = () => {
             <div>
               <h2>Hvad</h2>
               <p>
-                Vores nye <span> low impact webshop </span>er vores bud på et
-                grønt digitalt bidrag til vores planet. Vi har været i stand til
-                at reducere vores digitale<span> CO2 aftryk </span> med hele 70%
-                i forhold til vores almindelig webshop.
+                Vores nye <span> low impact webshop </span>er vores bud på et grønt digitalt bidrag
+                til vores planet. Vi har været i stand til at reducere vores digitale
+                <span> CO2 aftryk </span> med hele 70% i forhold til vores almindelig webshop.
               </p>
             </div>
             <svg
@@ -250,13 +240,7 @@ export const GreenGoal = () => {
                 className="earth"
               >
                 <defs>
-                  <ellipse
-                    id="ellipseClip"
-                    cx="239.7"
-                    cy="139.2"
-                    rx="65"
-                    ry="62.5"
-                  />
+                  <ellipse id="ellipseClip" cx="239.7" cy="139.2" rx="65" ry="62.5" />
                   <clipPath id="clipPath">
                     <use xlinkHref="#ellipseClip" />
                   </clipPath>
@@ -628,10 +612,9 @@ export const GreenGoal = () => {
             <div>
               <h2>Hvorfor</h2>
               <p>
-                Internettet er ansvarlig for 3,7% af verdens{" "}
-                <span> CO2 udledning</span>. Dette skyldes, at vores digitale
-                adfærd kræver enorme mængder elektricitet for at vedligeholde
-                datalagring.
+                Internettet er ansvarlig for 3,7% af verdens <span> CO2 udledning</span>. Dette
+                skyldes, at vores digitale adfærd kræver enorme mængder elektricitet for at
+                vedligeholde datalagring.
               </p>
             </div>
           </article>
@@ -640,9 +623,9 @@ export const GreenGoal = () => {
             <div>
               <h2>Hvordan</h2>
               <p>
-                Ved at skifte vores leverandører på webhosting og database til
-                nye leverandøre som kun gøre brug af <span> grøn energi </span>,
-                har vi været i stand til at reducere vores nye sites CO2 aftryk.
+                Ved at skifte vores leverandører på webhosting og database til nye leverandøre som
+                kun gøre brug af <span> grøn energi </span>, har vi været i stand til at reducere
+                vores nye sites CO2 aftryk.
               </p>
             </div>
             <div className="turbines">

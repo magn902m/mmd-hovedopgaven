@@ -11,14 +11,13 @@ type CartItemProps = {
 };
 
 export function CartItem({ id, quantity }: CartItemProps) {
-  const { removeFromCart, increaseCartQuantity, decreaseCartQuantity } =
-    useShoppingCart();
+  const { removeFromCart, increaseCartQuantity, decreaseCartQuantity } = useShoppingCart();
   const item = WebshopItems.find((i) => i.id === id);
   if (item == null) return null;
 
   return (
-    <section className="nets_cart_item">
-      <div className="nets_cart_item_desc">
+    <section className="sts_cart_item">
+      <div className="sts_cart_item_desc">
         <img src={item.img} alt="" />
         <div>
           <Link to={`/product/${item.id}`}>{item.name}</Link>
@@ -27,7 +26,7 @@ export function CartItem({ id, quantity }: CartItemProps) {
         </div>
       </div>
 
-      <div className="nets_cart_item_price">
+      <div className="sts_cart_item_price">
         <p>{`${item.price} kr. pr. måned`}</p>
         <div className="item_amount">
           <Button onClick={() => decreaseCartQuantity(id)} label="-"></Button>
@@ -37,9 +36,7 @@ export function CartItem({ id, quantity }: CartItemProps) {
           <Button onClick={() => increaseCartQuantity(id)} label="+"></Button>
         </div>
       </div>
-      <p className="table_body_total">{`${
-        item.price * quantity
-      } kr. pr. måned`}</p>
+      <p className="table_body_total">{`${item.price * quantity} kr. pr. måned`}</p>
     </section>
   );
 }

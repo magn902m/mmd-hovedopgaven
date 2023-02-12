@@ -4,6 +4,6 @@ export * from "./CustomizationAccount";
 export * from "./LogoutAccount";
 export * from "./Modal";
 export * from "./DatabaseTest";
-export * from "./NetsAccordion";
+export * from "./StsAccordion";
 export * from "./Styletile";
 export * from "./UpdateAccount";

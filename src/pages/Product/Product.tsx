@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import "./Product.scss";
 import WebshopItems from "../../data/terminals.json";
 import { useParams } from "react-router-dom";
-import { NetsAccordion } from "../../ui/components/2-molecules/NetsAccordion";
+import { StsAccordion } from "../../ui/components/2-molecules/StsAccordion/StsAccordion";
 import { Button } from "../../ui/components/1-atoms/Button";
 import { useShoppingCart } from "../../contexts/ShoppingCartContex";
 import { Modal } from "../../ui/components";
@@ -53,28 +53,24 @@ export const Product = () => {
     <>
       <Helmet>
         <title>
-          Tag imod betalinger med den pakkeløsning, som passer din virksomhed
-          best - Nets Denmark
+          Tag imod betalinger med den pakkeløsning, som passer din virksomhed best - Sts Denmark
         </title>
         <meta
           name="title"
-          content="Tag imod betalinger med den pakkeløsning, som passer din virksomhed best - Nets Denmark"
+          content="Tag imod betalinger med den pakkeløsning, som passer din virksomhed best - Sts Denmark"
         />
         <meta
           name="description"
           content="Uanset om du sælger børnetøj, reparerer cykler eller serverer kaffe til morgentrætte kunder, har vi en terminal, der passer til dine behov."
         />
-        <meta
-          name="keyword"
-          content="Nets betalingsløsninger bæredygtighed betalingsterminal"
-        />
+        <meta name="keyword" content="Sts betalingsløsninger bæredygtighed betalingsterminal" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://mmd-hovedopgaven.web.app/" />
         <meta
           property="og:title"
-          content="Tag imod betalinger med den pakkeløsning, som passer din virksomhed best - Nets Denmark"
+          content="Tag imod betalinger med den pakkeløsning, som passer din virksomhed best - Sts Denmark"
         />
         <meta
           property="og:description"
@@ -93,7 +89,7 @@ export const Product = () => {
         />
         <meta
           property="twitter:title"
-          content="Tag imod betalinger når som helst, hvor som helstU+002d Nets Denmark"
+          content="Tag imod betalinger når som helst, hvor som helstU+002d Sts Denmark"
         />
         <meta
           property="twitter:description"
@@ -105,8 +101,8 @@ export const Product = () => {
         />
       </Helmet>
 
-      <main id="main" className="nets_product">
-        <section className="nets_product_top">
+      <main id="main" className="sts_product">
+        <section className="sts_product_top">
           <article className="product_top_image">
             {isImage ? (
               <>
@@ -348,8 +344,8 @@ export const Product = () => {
               </>
             )}
           </article>
-          <article className="nets_product_top_content">
-            <div className="nets_product_top_text">
+          <article className="sts_product_top_content">
+            <div className="sts_product_top_text">
               <div>
                 <h2>{singleProduct.name}</h2>
                 <h4>{singleProduct.desc1}</h4>
@@ -367,18 +363,18 @@ export const Product = () => {
                 </p>
               ) : null}
               <a href="#product_info">Læs mere om pakkeløsningen</a>
-              <div className="nets_product_top_footprint"></div>
+              <div className="sts_product_top_footprint"></div>
             </div>
-            <div className="nets_product_top_btns">
+            <div className="sts_product_top_btns">
               <Button
                 btnTypeStyle="primary_btn"
-                className="nets_modal_open"
+                className="sts_modal_open"
                 label={"Design dit produkt"}
                 onClick={() => setIsOpen(true)}
               />
 
               <Button
-                className="nets_card_button"
+                className="sts_card_button"
                 label={"Tilføj til kurv"}
                 onClick={() => increaseCartQuantity(singleProduct.id)}
               />
@@ -394,7 +390,7 @@ export const Product = () => {
           />
         )}
 
-        <section id="product_info" className="nets_product_bottom">
+        <section id="product_info" className="sts_product_bottom">
           <div className="product_bottom_div">
             <h4>Modtag de mest populære kort</h4>
             <p>
@@ -420,7 +416,7 @@ export const Product = () => {
               gennemsnitligt transaktionsgebyr.*
             </p>
             {/* <Accordion data={accordionData} /> */}
-            {isOpen ? null : <NetsAccordion />}
+            {isOpen ? null : <StsAccordion />}
           </div>
         </section>
       </main>

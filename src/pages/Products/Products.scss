@@ -1,4 +1,4 @@
-.nets_products {
+.sts_products {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +24,7 @@
 }
 
 @media only screen and (min-width: 800px) {
-  .nets_products {
+  .sts_products {
     &_overview {
       // flex-direction: row;
       display: grid;
@@ -34,7 +34,7 @@
 }
 
 @media only screen and (min-width: 700px) {
-  .nets_products {
+  .sts_products {
     &_overview {
       // flex-direction: row;
 
@@ -42,7 +42,7 @@
         font-size: var(--font-size--4xl);
       }
 
-      .nets_card {
+      .sts_card {
         // align-items: flex-start;
       }
     }

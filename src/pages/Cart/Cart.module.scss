@@ -32,7 +32,7 @@
 .Cart_grid_header {
   grid-column: 1 / 3;
   display: grid;
-  border-bottom: solid var(--color-nets-darkblue);
+  border-bottom: solid var(--color-sts-darkblue);
 
   &_mobile_none {
     display: none;
@@ -41,7 +41,7 @@
   @media only screen and (min-width: 700px) {
     padding: 0 2rem;
     grid-column: 1/ 4;
-    border-bottom: solid var(--color-nets-darkblue);
+    border-bottom: solid var(--color-sts-darkblue);
 
     &_mobile_none {
       display: block;
@@ -74,12 +74,12 @@
 .Cart_grid_body {
   grid-column: 1 / 3;
   display: grid;
-  border-bottom: solid var(--color-nets-darkblue);
+  border-bottom: solid var(--color-sts-darkblue);
 
   @media only screen and (min-width: 700px) {
     grid-column: 1 / 4;
     display: grid;
-    border-bottom: solid var(--color-nets-darkblue);
+    border-bottom: solid var(--color-sts-darkblue);
   }
 }
 .Cart_grid_footer {

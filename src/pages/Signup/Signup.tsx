@@ -87,24 +87,24 @@ export const Signup = () => {
       <Helmet>
         <title>
           Opret en konto, for at få muligheden for at kunne tilpasse dit produkt, til din virksomhed
-          - Nets Denmark
+          - Sts Denmark
         </title>
         <meta
           name="title"
-          content="Opret en konto, for at få muligheden for at kunne tilpasse dit produkt, til din virksomhed - Nets Denmark"
+          content="Opret en konto, for at få muligheden for at kunne tilpasse dit produkt, til din virksomhed - Sts Denmark"
         />
         <meta
           name="description"
           content="Uanset om du sælger børnetøj, reparerer cykler eller serverer kaffe til morgentrætte kunder, har vi en terminal, der passer til dine behov."
         />
-        <meta name="keyword" content="Nets betalingsløsninger bæredygtighed betalingsterminal" />
+        <meta name="keyword" content="Sts betalingsløsninger bæredygtighed betalingsterminal" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://mmd-hovedopgaven.web.app/" />
         <meta
           property="og:title"
-          content="Opret en konto, for at få muligheden for at kunne tilpasse dit produkt, til din virksomhed - Nets Denmark"
+          content="Opret en konto, for at få muligheden for at kunne tilpasse dit produkt, til din virksomhed - Sts Denmark"
         />
         <meta
           property="og:description"
@@ -120,7 +120,7 @@ export const Signup = () => {
         <meta property="twitter:url" content="https://mmd-hovedopgaven.web.app/" />
         <meta
           property="twitter:title"
-          content="Tag imod betalinger når som helst, hvor som helstU+002d Nets Denmark"
+          content="Tag imod betalinger når som helst, hvor som helstU+002d Sts Denmark"
         />
         <meta
           property="twitter:description"

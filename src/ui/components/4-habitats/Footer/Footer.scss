@@ -1,4 +1,4 @@
-.nets_footer {
+.sts_footer {
   background-color: var(--color-gray--light);
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@
 }
 
 @media screen and (min-width: 1180px) {
-  .nets_footer {
+  .sts_footer {
     align-items: center;
     padding: 6rem;
     &_menu {
