@@ -8,14 +8,22 @@ import { ColorPicker } from "../ColorPicker";
 import { useAuth } from "../../../../contexts/AuthContext";
 import { child, get, getDatabase, ref, update } from "firebase/database";
 import { ThreeJSContext } from "../../../../contexts/ThreeJSContext";
+import {
+  getStorage,
+  ref as refStorage,
+  uploadBytes,
+  getDownloadURL,
+  list,
+} from "firebase/storage";
 
 export const Modal = (props: any) => {
   const { updateModel, setUpdateModel } = useContext(ThreeJSContext);
 
   const [isRatation360Clicked, setIsRatation360Clicked] = useState(false);
   const [isRatation180Clicked, setIsRatation180Clicked] = useState(false);
+  const [showImage, setShowImage] = useState(false);
 
-  //* Database
+  //* Database start
 
   const { currentUser } = useAuth();
   const [profilData, setProfilData] = useState({
@@ -47,19 +55,6 @@ export const Modal = (props: any) => {
     fetchData();
   }, []);
 
-  function updateModelSettings() {
-    setUpdateModel((old: any) => {
-      return {
-        ...old,
-        pickedColor,
-        handlePickedColor,
-      };
-    });
-  }
-  useEffect(() => {
-    updateModelSettings();
-  }, [pickedColor]);
-
   async function saveUserPreference() {
     const postData: any = {
       ...profilData,
@@ -87,23 +82,71 @@ export const Modal = (props: any) => {
       });
   }
 
-  //* Database
+  //* Database end
 
-  function updateCubeSettings() {
+  //* Storage start
+
+  const [imageUpload, setImageUpload]: any = useState();
+  const [imageUrl, setImageUrl] = useState("");
+  const [isNewImageUpload, setIsNewImageUpload] = useState(false);
+
+  const storage = getStorage();
+  const imagesListRef = refStorage(storage, "images/");
+  const uploadFile = () => {
+    if (imageUpload === null) return;
+    // const imageRef = refStorage(storage, `images/${imageUpload.name + currentUser.uid}`);
+    const imageRef = refStorage(storage, `images/${currentUser.uid}`);
+
+    uploadBytes(imageRef, imageUpload).then((snapshot) => {
+      getDownloadURL(snapshot.ref).then((url) => {
+        setImageUrl(url);
+      });
+    });
+  };
+
+  useEffect(() => {
+    setIsNewImageUpload(false);
+    list(imagesListRef).then((response) => {
+      response.items.map((item) => {
+        if (item.name === currentUser.uid) {
+          getDownloadURL(item).then((url) => {
+            setImageUrl(url);
+          });
+        }
+        return null;
+      });
+    });
+  }, [isNewImageUpload]);
+
+  const handleShowImage = () => setShowImage(!showImage);
+
+  //* Storage end
+
+  function updateModelSettings() {
     setUpdateModel((old: any) => {
       return {
         ...old,
+        pickedColor,
+        handlePickedColor,
         isRatation360Clicked,
         setIsRatation360Clicked,
         isRatation180Clicked,
         setIsRatation180Clicked,
+        imageUrl,
+        showImage,
       };
     });
   }
 
   useEffect(() => {
-    updateCubeSettings();
-  }, [isRatation360Clicked, isRatation180Clicked]);
+    updateModelSettings();
+  }, [
+    pickedColor,
+    isRatation360Clicked,
+    isRatation180Clicked,
+    imageUrl,
+    showImage,
+  ]);
 
   return (
     <>
@@ -114,41 +157,106 @@ export const Modal = (props: any) => {
               <header className={styles.Modal_header}>
                 <div>
                   <h2>Design dit produkt</h2>
-                  <p>Prøv at vælg en farve og udforsk terminal, ved at trække rundt på den</p>
+                  <p>
+                    Prøv at vælge en farve og udforsk terminal ved at trække
+                    rundt på den
+                  </p>
                 </div>
-                <Button
-                  label="Luk og gem dine ændringer"
-                  onClick={() => {
-                    saveUserPreference();
-                    props.setIsOpen(false);
-                  }}
-                />
               </header>
               <article className={styles.Modal_content}>
-                <PaymentTerminalCanvas />
-                <div className={styles.Modal_actions_container}>
+                <div className={styles.Modal_canvas_container}>
+                  <PaymentTerminalCanvas />
                   <div className={styles.Modal_rotate_container}>
                     <h4>Drej produktet</h4>
                     <div className={styles.Modal_action_btns_container}>
                       <Button
                         label={"Drej 360°"}
-                        onClick={() => updateModel.setIsRatation360Clicked(true)}
+                        onClick={() =>
+                          updateModel.setIsRatation360Clicked(true)
+                        }
                       />
                       <Button
                         label={"Vend 180°"}
-                        onClick={() => updateModel.setIsRatation180Clicked(true)}
+                        onClick={() =>
+                          updateModel.setIsRatation180Clicked(true)
+                        }
                       />
                     </div>
                   </div>
-
+                </div>
+                <div className={styles.Modal_actions_container}>
                   <div className={styles.Modal_color_container}>
                     <h4>Vælg din farve</h4>
+                    <p>Tryk på farvefeltet eller indtast en hexkode.</p>
                     <ColorPicker
                       onChange={handlePickedColor}
                       value={pickedColor}
                       profilcolor={profilData?.color}
                     />
+                    <p className={styles.Modal_image_hint}>
+                      * Modellen ses i dagslys, derfor kan farven variere.
+                    </p>
                   </div>
+
+                  <div className={styles.Modal_image_container}>
+                    <label className={styles.Modal_image_label}>
+                      Vælg dit logo
+                    </label>
+                    <p>Upload et logo eller vis dit nuværnede.</p>
+                    <div className={styles.Modal_image_main_content}>
+                      <div className={styles.Modal_image_main_content_file}>
+                        <p className={styles.Modal_image_hint}>
+                          Vælg et logo, at uploade
+                        </p>
+                        <input
+                          type="file"
+                          id="image_file"
+                          name="image_file"
+                          placeholder="&nbsp;"
+                          required
+                          onChange={(event: any) => {
+                            setImageUpload(event.target.files[0]);
+                          }}
+                        />
+                      </div>
+                      <Button
+                        btnTypeStyle="se_btn"
+                        label="Upload nyt logo"
+                        type="button"
+                        onClick={() => {
+                          if (imageUpload) {
+                            uploadFile();
+                            setIsNewImageUpload(true);
+                          } else {
+                            return console.log("No image is select in input");
+                          }
+                        }}
+                      />
+                    </div>
+
+                    <div className={styles.Modal_image_checkbox}>
+                      <label htmlFor="show_image">
+                        Vis logoet på terminalen
+                      </label>
+                      <input
+                        type="checkbox"
+                        name="show_image"
+                        id="show_image"
+                        onChange={handleShowImage}
+                        checked={showImage}
+                      />
+                    </div>
+                    {/* <img src={imageUrl} alt="Logo eller ikon, som bruger har uploadet" /> */}
+                  </div>
+
+                  <Button
+                    btnTypeStyle="primary_btn"
+                    label="Luk og gem dine ændringer"
+                    onClick={() => {
+                      saveUserPreference();
+                      props.setIsOpen(false);
+                    }}
+                  />
                 </div>
               </article>
             </div>

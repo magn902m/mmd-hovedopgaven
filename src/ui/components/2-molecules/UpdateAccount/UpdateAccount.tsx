@@ -1,10 +1,18 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useAuth } from "../../../../contexts/AuthContext";
 import { getDatabase, ref, update } from "firebase/database";
 import { ColorPicker } from "../ColorPicker";
 import classNames from "classnames";
 import styles from "./UpdateAccount.module.scss";
 import { Button } from "../../1-atoms";
+import {
+  getStorage,
+  ref as refStorage,
+  uploadBytes,
+  getDownloadURL,
+  // listAll,
+  list,
+} from "firebase/storage";
 
 export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) => {
   const updateAccountFormRef: any = useRef(null);
@@ -15,6 +23,39 @@ export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) 
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+
+  //* Storage
+  const [imageUpload, setImageUpload]: any = useState();
+  const [imageUrl, setImageUrl] = useState("");
+  const [isNewImageUpload, setIsNewImageUpload] = useState(false);
+
+  const storage = getStorage();
+  const imagesListRef = refStorage(storage, "images/");
+  const uploadFile = () => {
+    if (imageUpload === null) return;
+    // const imageRef = refStorage(storage, `images/${imageUpload.name + currentUser.uid}`);
+    const imageRef = refStorage(storage, `images/${currentUser.uid}`);
+
+    uploadBytes(imageRef, imageUpload).then((snapshot) => {
+      getDownloadURL(snapshot.ref).then((url) => {
+        setImageUrl(url);
+      });
+    });
+  };
+
+  useEffect(() => {
+    setIsNewImageUpload(false);
+    list(imagesListRef).then((response) => {
+      response.items.map((item) => {
+        if (item.name === currentUser.uid) {
+          getDownloadURL(item).then((url) => {
+            setImageUrl(url);
+          });
+        }
+        return null;
+      });
+    });
+  }, [isNewImageUpload]);
 
   async function handleSubmit(e: any) {
     console.log("submittedGet and resetPassword");
@@ -232,10 +273,31 @@ export const UpdateAccount = ({ profilData, pickedColor, setPickedColor }: any) 
             />
           </div>
 
-          <div id="file">
-            <label htmlFor="file">Logo eller icon</label>
-            <p className="hint">Upload et logo eller icon, som skal være på produkt</p>
-            <input type="file" id="file" name="file" placeholder="&nbsp;" />
+          <div id="file" className={styles.UpdateAccount_file}>
+            <div className={styles.UpdateAccount_main_content}>
+              <label htmlFor="image_file">Logo eller ikon</label>
+              <p className="hint">Upload et logo eller ikon, som skal være på produkt</p>
+              <input
+                type="file"
+                id="image_file"
+                name="image_file"
+                placeholder="&nbsp;"
+                required
+                onChange={(event: any) => {
+                  setImageUpload(event.target.files[0]);
+                }}
+              />
+            </div>
+            <Button
+              btnTypeStyle="se_btn"
+              label="Upload billede"
+              type="button"
+              onClick={() => {
+                uploadFile();
+                setIsNewImageUpload(true);
+              }}
+            />
+            <img src={imageUrl} alt="Logo eller ikon, som bruger har uploadet" />
           </div>
 
           <hr />
