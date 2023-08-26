@@ -36,7 +36,7 @@ export const Environment = () => {
         </Html>
       ) : null}
 
-      <Stage controls={ref} preset="rembrandt" intensity={1} environment="city">
+      <Stage controls={ref} preset="rembrandt" intensity={1}>
         <Suspense fallback={null} r3f>
           <PaymentTerminalModel scale={0.35} />
         </Suspense>

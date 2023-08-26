@@ -27,6 +27,16 @@ Remember npm run build, before deploy !
 * node_modules/.bin/firebase init hosting:github
 
 
+## React three fiber & drei
+There is a problem with drei, and therefore is the hdri file can't load.
+See the issue about [can't load potsdamer-platz/potsdamer_platz_1k.hdr](https://github.com/pmndrs/drei/issues/1063)
+All the hdri file is here: https://github.com/pmndrs/assets/tree/main/src/hdri.
+
+You can self-hosting the hdri file, there is no problem anymore: 
+Put the hdri file, into the /public.
+
+You can also just, don't use the environment attribute on Stage from drei.
+
 # Create React App info
 
 ---
